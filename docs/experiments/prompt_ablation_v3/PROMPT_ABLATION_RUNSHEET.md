@@ -1,5 +1,7 @@
 # Prompt 消融执行清单（box 0 / 10 / 30 / 50）
 
+> **搭档完整操作指南**：[docs/PARTNER_GUIDE.md](../../PARTNER_GUIDE.md)（clone、权重、数据、命令、填表一次看完）
+
 > 依据 Notion 总览与 1016 阶段说明整理（2026-10-19）。协议仍是 v3：Kvasir `val.txt` 120 + CVC-ClinicDB 612，GT box **±N px**。不训新权重，只改已有权重的评测扰动。
 
 ## 目标

@@ -41,6 +41,8 @@ Chen SAM-Adapter / MedSAM+MSA：已定负结果，不进消融主表。
 
 ## 来源
 
+- SAMed ±30：本机 `results/samed_baseline_cloud/.../r4_full_best/summary.json`（Dice 0.8955 / 0.8608）
+
 - Notion 总览结果快照（2026-10-16）
 - [Prompt 消融执行清单](https://app.notion.com/p/3fe3092ac6c481769949e3a5298a8415)
 - 模板生成：2026-10-21（Asia/Shanghai）
