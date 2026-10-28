@@ -104,6 +104,22 @@ def calc_loss(pred_logits, gt_mask):
     return (1 - DICE_WEIGHT) * bce + DICE_WEIGHT * dl, bce.item(), dl.item()
 
 
+def soft_edge_from_mask(mask, kernel_size=3):
+    """GT soft edge via dilation - mask (pure torch). Same construction as PP-SAM A1."""
+    pad = kernel_size // 2
+    dilated = F.max_pool2d(mask, kernel_size=kernel_size, stride=1, padding=pad)
+    return (dilated - mask).clamp(min=0.0)
+
+
+def calc_loss_with_edge(pred_logits, gt_mask, edge_weight=0.5):
+    """Aux ablation: SAMed CE+Dice + isomorphic edge BCE (not PP-SAM structure_loss)."""
+    base, loss_ce, loss_dice = calc_loss(pred_logits, gt_mask)
+    edge = soft_edge_from_mask(gt_mask)
+    edge_bce = F.binary_cross_entropy_with_logits(pred_logits, edge)
+    total = base + float(edge_weight) * edge_bce
+    return total, loss_ce, loss_dice
+
+
 # ── Utilities ─────────────────────────────────────────────────────────────── #
 def clip_gradient(optimizer, grad_clip):
     for group in optimizer.param_groups:
@@ -227,7 +243,7 @@ def validate(model, pairs, infer_perturb=INFER_PERTURB):
 
 
 # ── Training ──────────────────────────────────────────────────────────────── #
-def train_medsam_lora(rank=4, epochs=200, stop_epoch=160, shots=-1, smoke=False, amp=True, lr=None):
+def train_medsam_lora(rank=4, epochs=200, stop_epoch=160, shots=-1, smoke=False, amp=True, lr=None, loss_name="ce_dice", edge_weight=0.5):
     """Train MedSAM + LoRA on Kvasir-SEG train.txt.
 
     Args:
@@ -254,6 +270,19 @@ def train_medsam_lora(rank=4, epochs=200, stop_epoch=160, shots=-1, smoke=False,
     out_dir = OUT_DIR / run_tag
     ckpt_dir.mkdir(parents=True, exist_ok=True)
     out_dir.mkdir(parents=True, exist_ok=True)
+    run_config = {
+        "loss": loss_name,
+        "edge_weight": float(edge_weight) if loss_name == "structure_edge" else None,
+        "shots": shots,
+        "epochs": epochs,
+        "stop_epoch": stop_epoch,
+        "seed": SEED,
+        "rank": rank,
+        "note": "MedSAM+LoRA base is CE+Dice; structure_edge adds isomorphic edge BCE only",
+    }
+    with open(ckpt_dir / "config.json", "w", encoding="utf-8") as f:
+        json.dump(run_config, f, indent=2)
+    print(f"[Config] wrote {ckpt_dir / 'config.json'}: {run_config}")
     print(f"[Out] ckpt_dir={ckpt_dir}  out_dir={out_dir}")
     print(f"[GPU] {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU'}  "
           f"AMP={amp}")
@@ -373,7 +402,10 @@ def train_medsam_lora(rank=4, epochs=200, stop_epoch=160, shots=-1, smoke=False,
                 gt_mask = torch.from_numpy(masks_dict[k]).to(DEVICE)
                 gt_binary = (gt_mask > 0.0).float().unsqueeze(0).unsqueeze(0)
                 upscaled = lora_model.sam.postprocess_masks(low_res_masks, input_size, original_image_size)
-                loss, loss_ce, loss_dice = calc_loss(upscaled, gt_binary)
+                if loss_name == "structure_edge":
+                    loss, loss_ce, loss_dice = calc_loss_with_edge(upscaled, gt_binary, edge_weight=edge_weight)
+                else:
+                    loss, loss_ce, loss_dice = calc_loss(upscaled, gt_binary)
 
             # AMP backward
             scaler.scale(loss).backward()
@@ -462,6 +494,11 @@ if __name__ == "__main__":
                         help="pipeline smoke test (1 epoch, 5 samples; overrides --shots/--epochs)")
     parser.add_argument("--no_amp", action="store_true",
                         help="disable mixed precision (not recommended)")
+    parser.add_argument("--loss", type=str, default="ce_dice",
+                        choices=["ce_dice", "structure_edge"],
+                        help="ce_dice=default SAMed CE+Dice; structure_edge adds edge BCE aux (A1)")
+    parser.add_argument("--edge-weight", type=float, default=0.5, dest="edge_weight",
+                        help="edge BCE weight when --loss structure_edge (default 0.5)")
     args = parser.parse_args()
 
     print(f"[Config] backbone=MedSAM ({SAM_CKPT})")
@@ -471,7 +508,8 @@ if __name__ == "__main__":
     else:
         shots_label = f"{args.shots}-shot" if args.shots > 0 else "full 880"
         print(f"[Config] MedSAM+LoRA rank-{args.rank}, {shots_label}, "
-              f"{args.epochs} epochs (stop @ {args.stop_epoch}), lr={args.lr}")
+              f"{args.epochs} epochs (stop @ {args.stop_epoch}), lr={args.lr}, "
+              f"loss={args.loss}, edge_weight={args.edge_weight}")
 
     train_medsam_lora(
         rank=args.rank,
@@ -481,4 +519,6 @@ if __name__ == "__main__":
         smoke=args.smoke,
         amp=not args.no_amp,
         lr=args.lr,
+        loss_name=args.loss,
+        edge_weight=args.edge_weight,
     )

@@ -89,6 +89,63 @@ def structure_loss(pred, mask):
     return (wbce + wiou).mean()
 
 
+def soft_edge_from_mask(mask, kernel_size=3):
+    """GT soft edge via morphological dilation minus mask (pure torch, no cv2).
+
+    mask: [B,1,H,W] in {0,1}
+    returns non-negative edge map in [0,1], same shape.
+    """
+    pad = kernel_size // 2
+    dilated = F.max_pool2d(mask, kernel_size=kernel_size, stride=1, padding=pad)
+    edge = (dilated - mask).clamp(min=0.0)
+    return edge
+
+
+def structure_edge_loss(pred, mask, edge_weight=0.5):
+    """A1: structure_loss + explicit boundary BCE on soft GT edge."""
+    base = structure_loss(pred, mask)
+    edge = soft_edge_from_mask(mask)
+    # BCE on edge map: encourage logits to fire on boundary band
+    edge_bce = F.binary_cross_entropy_with_logits(pred, edge)
+    return base + float(edge_weight) * edge_bce
+
+
+SHOTS5_IDS_PATH = CKPT_DIR / "shots5_ids_seed42.json"
+
+
+def resolve_train_sample(train_pairs, n_shots, seed=SEED):
+    """Sample n_shots from train_pairs; for n_shots==5 reuse fixed ids file if present."""
+    random.seed(seed)
+    if n_shots == 5:
+        ids_path = SHOTS5_IDS_PATH
+        if ids_path.exists():
+            with open(ids_path, encoding="utf-8") as f:
+                meta = json.load(f)
+            id_list = meta.get("ids") or []
+            by_name = {p[0].name: p for p in train_pairs}
+            selected = []
+            missing = []
+            for name in id_list:
+                if name in by_name:
+                    selected.append(by_name[name])
+                else:
+                    missing.append(name)
+            if len(selected) == 5 and not missing:
+                print(f"[Data] Loaded fixed 5-shot ids from {ids_path}")
+                return selected
+            print(f"[Data] WARN: shots5 ids incomplete (got {len(selected)}, missing={missing}); re-sampling")
+        sample = random.sample(train_pairs, n_shots)
+        ids_path.parent.mkdir(parents=True, exist_ok=True)
+        payload = {"seed": seed, "n": 5, "ids": [p[0].name for p in sample]}
+        with open(ids_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
+        print(f"[Data] Wrote fixed 5-shot ids -> {ids_path}")
+        return sample
+    if n_shots >= len(train_pairs):
+        return list(train_pairs)
+    return random.sample(train_pairs, n_shots)
+
+
 # --------------------------------------------------------------------------- #
 # Utilities
 # --------------------------------------------------------------------------- #
@@ -336,9 +393,28 @@ def test_inference(model, dataset, infer_perturb=INFER_PERTURB, split="val"):
 # --------------------------------------------------------------------------- #
 # Train
 # --------------------------------------------------------------------------- #
-def train_ppsam(n_shots=1, freeze_decoder=True, freeze_image_encoder=False, save_dir=None, resume=False):
+def train_ppsam(n_shots=1, freeze_decoder=True, freeze_image_encoder=False, save_dir=None, resume=False, loss_name="structure", edge_weight=0.5, n_epochs=None):
     save_dir = Path(save_dir) if save_dir else CKPT_DIR
     save_dir.mkdir(parents=True, exist_ok=True)
+    global N_EPOCHS
+    if n_epochs is not None:
+        N_EPOCHS = int(n_epochs)
+    run_config = {
+        "loss": loss_name,
+        "edge_weight": float(edge_weight) if loss_name == "structure_edge" else None,
+        "shots": n_shots,
+        "epochs": N_EPOCHS,
+        "seed": SEED,
+        "freeze_decoder": bool(freeze_decoder),
+        "freeze_image_encoder": bool(freeze_image_encoder),
+        "lr": LR,
+        "weight_decay": WEIGHT_DECAY,
+        "infer_perturb": INFER_PERTURB,
+        "train_perturb": [PERTURB_L, PERTURB_H],
+    }
+    with open(save_dir / "config.json", "w", encoding="utf-8") as f:
+        json.dump(run_config, f, indent=2)
+    print(f"[Config] wrote {save_dir / 'config.json'}: {run_config}")
 
     # 1) Build model
     print(f"[Build] Loading base SAM from {SAM_CKPT}...")
@@ -360,8 +436,7 @@ def train_ppsam(n_shots=1, freeze_decoder=True, freeze_image_encoder=False, save
     # old "sample from all 1000" protocol).
     train_pairs = get_data_paths("kvasir", split="train")
     print(f"[Data] Kvasir-SEG train split has {len(train_pairs)} images, sampling {n_shots}...")
-    random.seed(SEED)  # for reproducibility
-    train_sample = random.sample(train_pairs, n_shots)
+    train_sample = resolve_train_sample(train_pairs, n_shots, seed=SEED)
 
     # 3) Preprocess: read image, mask, derive perturbed box
     transform = ResizeLongestSide(IMG_SIZE)
@@ -463,7 +538,10 @@ def train_ppsam(n_shots=1, freeze_decoder=True, freeze_image_encoder=False, save
             gt_mask = torch.from_numpy(masks_dict[k]).to(DEVICE)
             gt_binary = (gt_mask > 0.0).float().unsqueeze(0).unsqueeze(0)
             upscaled = model.postprocess_masks(low_res_masks, input_size, original_image_size)
-            loss = structure_loss(upscaled, gt_binary)
+            if loss_name == "structure_edge":
+                loss = structure_edge_loss(upscaled, gt_binary, edge_weight=edge_weight)
+            else:
+                loss = structure_loss(upscaled, gt_binary)
             loss.backward()
             clip_gradient(optimizer, CLIP)
             optimizer.step()
@@ -514,8 +592,22 @@ if __name__ == "__main__":
     parser.add_argument("--epochs", type=int, default=N_EPOCHS, help="override epochs (default=100)")
     parser.add_argument("--resume", action="store_true",
                         help="continue from <shots>shot_last.pth + history.json if present")
+    parser.add_argument("--loss", type=str, default="structure", choices=["structure", "structure_edge"],
+                        help="A0 structure (default) or A1 structure_edge (+ boundary BCE)")
+    parser.add_argument("--edge-weight", type=float, default=0.5, dest="edge_weight",
+                        help="edge BCE weight for structure_edge (default 0.5)")
+    parser.add_argument("--save-dir", type=str, default=None, dest="save_dir",
+                        help="override checkpoint/output directory")
     args = parser.parse_args()
     if args.epochs != N_EPOCHS:
         N_EPOCHS = args.epochs
-    print(f"[Config] PP-SAM fine-tuning, {args.shots}-shot, {N_EPOCHS} epochs, resume={args.resume}")
-    train_ppsam(n_shots=args.shots, resume=args.resume)
+    print(f"[Config] PP-SAM fine-tuning, {args.shots}-shot, {N_EPOCHS} epochs, "
+          f"loss={args.loss}, edge_weight={args.edge_weight}, resume={args.resume}")
+    train_ppsam(
+        n_shots=args.shots,
+        resume=args.resume,
+        loss_name=args.loss,
+        edge_weight=args.edge_weight,
+        save_dir=args.save_dir,
+        n_epochs=args.epochs,
+    )
