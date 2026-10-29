@@ -98,9 +98,11 @@ gh release download ckpt-v3-20261021 -R amoymasayukinobunagu-code/bnbu2026finalp
 
 ---
 
-## 4. 数据布局（不在仓库内）
+## 4. 数据布局（图像不在仓库内；split 列表已入库）
 
-数据需自行准备，或向**君涵**要一份。默认根目录：
+**Kvasir `val.txt` / `train.txt` 已在仓库**：[`docs/data_splits/Kvasir-SEG/`](../data_splits/Kvasir-SEG/)（120 / 880 行，MD5 与 DATASET_LOCK 一致）。拷到本地 Data-split 即可，不必再问君涵要这两个文件。
+
+图像与 mask 仍需自行准备（Kvasir-SEG + CVC-ClinicDB），或向**君涵**要一份。默认根目录：
 
 ```text
 $env:FYP_DATA_ROOT = "E:\Project\FYP\材料\datasets"
@@ -124,6 +126,15 @@ $FYP_DATA_ROOT\
     Data-split\
       val.txt        # 120 行 stem（无后缀）
       train.txt      # 880（训练用；本消融不训，可有可无）
+
+从本仓库拷贝 split（示例）：
+
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:FYP_DATA_ROOT\Kvasir-SEG\Data-split" | Out-Null
+Copy-Item docs\data_splits\Kvasir-SEG\val.txt   "$env:FYP_DATA_ROOT\Kvasir-SEG\Data-split\"
+Copy-Item docs\data_splits\Kvasir-SEG\train.txt "$env:FYP_DATA_ROOT\Kvasir-SEG\Data-split\"
+```
+
   CVC-ClinicDB\
     PNG\
       Original\      # 612 张
@@ -346,7 +357,7 @@ git push -u origin feat/prompt-ablation-v3-results
 
 若本机没有：
 
-1. **Kvasir-SEG + CVC-ClinicDB** 按 §4 布局的数据（或网盘链接）
+1. **Kvasir-SEG + CVC-ClinicDB 图像/mask**（`val.txt`/`train.txt` 已在 `docs/data_splits/Kvasir-SEG/`，按 §4 拷贝即可）
 2. Release 若下载失败：让君涵确认 GitHub 协作权限（当前推送账号示例：`Dazzle992`）
 3. 官方 **SAM ViT-B/L**、**MedSAM** 底座若未缓存：按 §3.2 自行下；路径不一致时设 `FYP_SAM_CKPT` / `FYP_MEDSAM_CKPT`
 4. **Medical-SAM-Adapter** 上游 clone（MSA 评测依赖）
