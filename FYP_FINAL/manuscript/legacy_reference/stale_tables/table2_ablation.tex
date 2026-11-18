@@ -1,0 +1,46 @@
+% ============================================================================
+% WARNING (2026-11-17, Asia/Shanghai): THIS TABLE IS STALE. DO NOT COPY NUMBERS.
+% Generated 2026-06-10. Official PP-SAM / SAMed shot curves are in
+%   results/pp_sam_baseline_v3/eval_best_{1,5,10,880}shot/summary.json
+%   results/samed_baseline_cloud/samed_baseline/r4_*_best/summary.json
+% This file still has outdated 1/5-shot figures, no full-880 row, and the
+% 5-shot checkpoint story is obsolete. Do not mark PP-SAM as decided "ours".
+% Official ledger: results/EXPERIMENT_SUMMARY.md  |  index: docs/NUMBERS_INDEX.md
+% ============================================================================
+% Table 2: Ablation on the number of training shots (PP-SAM).
+% Protocol: same as Table 1 (GT box + 30 px perturbation, ResizeLongestSide 1024).
+% 1-shot uses idx=778 as the reference (best epoch = 4).
+% 5-shot uses last.pth from a partial training that reached epoch 6
+% (out of 30) before the process was terminated; the best.pth at epoch 1
+% (Dice 0.7759) is dominated by the 1-shot baseline, so the last.pth
+% (Dice 0.8446 at epoch 6) is reported here.
+% Source: results/EXPERIMENT_SUMMARY.md §1
+% Generated 2026-06-10
+
+\begin{table}[ht]
+\centering
+\caption{Ablation on the number of training shots in PP-SAM.
+All other settings are identical to Table~\ref{tab:sota}.
+``1-shot'' uses a single reference image from the Kvasir-SEG train split
+(per the original PP-SAM paper's protocol).
+``5-shot'' samples five reference images; the reported checkpoint is the
+last epoch (\texttt{last.pth}) of a partial training run that reached
+epoch~6 (of 30), since the run was terminated before completion.
+Best results are \textbf{bolded}.}
+\label{tab:shot-ablation}
+\begin{tabular}{l c c c c c}
+\toprule
+\textbf{Configuration} & \textbf{N\textsubscript{ref}} & \textbf{Dice} $\uparrow$ & \textbf{IoU} $\uparrow$ & \textbf{HD95} $\downarrow$ & \textbf{FPS} \\
+\midrule
+% In-domain Kvasir
+Zero-shot (B1)            & 0 & 0.7497 $\pm$ 0.295 & 0.6680 & 95.63 & 8.24 \\
+PP-SAM 1-shot             & 1 & 0.8251 $\pm$ 0.193 & 0.7388 & 80.94 & 8.11 \\
+PP-SAM 5-shot (ep.~6)     & 5 & \textbf{0.8337} $\pm$ 0.175 & \textbf{0.7451} & 85.23 & 7.15 \\
+\midrule
+% Cross-domain CVC
+Zero-shot (B1)            & 0 & 0.5182 $\pm$ 0.363 & 0.4300 & 63.76 & 8.71 \\
+PP-SAM 1-shot             & 1 & 0.7619 $\pm$ 0.215 & 0.6550 & \textbf{40.11} & 8.75 \\
+PP-SAM 5-shot (ep.~6)     & 5 & \textbf{0.7660} $\pm$ 0.167 & 0.6470 & 44.57 & 7.54 \\
+\bottomrule
+\end{tabular}
+\end{table}

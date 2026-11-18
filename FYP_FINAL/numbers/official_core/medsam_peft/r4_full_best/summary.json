@@ -1,0 +1,32 @@
+{
+  "Kvasir-SEG-val": {
+    "n": 120,
+    "dice_mean": 0.9048652980822726,
+    "dice_std": 0.09782258470781958,
+    "iou_mean": 0.8375096292356836,
+    "iou_std": 0.12880175269287278,
+    "precision_mean": 0.8692018209469078,
+    "recall_mean": 0.9624307091901944,
+    "hd95_mean": 81.7087906499082,
+    "fps_mean": 5.758705627607783,
+    "ckpt": "E:/Project/FYP/checkpoints/medsam_peft/r4_full/medsam_lora_r4_best.pth",
+    "rank": 4,
+    "backbone": "medsam_vit_b",
+    "method": "medsam_lora"
+  },
+  "CVC-ClinicDB": {
+    "n": 612,
+    "dice_mean": 0.8476046391037833,
+    "dice_std": 0.15305185482368303,
+    "iou_mean": 0.7595812344235073,
+    "iou_std": 0.18456509197267928,
+    "precision_mean": 0.8245634553035248,
+    "recall_mean": 0.9097516424935427,
+    "hd95_mean": 35.40981259089593,
+    "fps_mean": 6.030222229284651,
+    "ckpt": "E:/Project/FYP/checkpoints/medsam_peft/r4_full/medsam_lora_r4_best.pth",
+    "rank": 4,
+    "backbone": "medsam_vit_b",
+    "method": "medsam_lora"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "Kvasir-SEG-val": {
+    "n": 120,
+    "dice_mean": 0.8572974120476153,
+    "dice_std": 0.19232820628060068,
+    "iou_mean": 0.7869042615593841,
+    "iou_std": 0.2209416671054187,
+    "precision_mean": 0.8962892262168332,
+    "recall_mean": 0.8671337302335138,
+    "hd95_mean": 101.47890074318602,
+    "fps_mean": 22.782328231669577,
+    "image_size": 512,
+    "ckpt": "E:\\Project\\FYP\\checkpoints\\medical_sam_adapter\\polyp\\best_dice_checkpoint.pth",
+    "box_perturb": 0
+  },
+  "CVC-ClinicDB": {
+    "n": 612,
+    "dice_mean": 0.7893566548152693,
+    "dice_std": 0.25394207547987935,
+    "iou_mean": 0.7081801187207657,
+    "iou_std": 0.27162824448720907,
+    "precision_mean": 0.8277200753481556,
+    "recall_mean": 0.8442416239725448,
+    "hd95_mean": 55.882674575272596,
+    "fps_mean": 25.65849580672062,
+    "image_size": 512,
+    "ckpt": "E:\\Project\\FYP\\checkpoints\\medical_sam_adapter\\polyp\\best_dice_checkpoint.pth",
+    "box_perturb": 0
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "device": "NVIDIA GeForce RTX 4070 Ti SUPER",
+  "torch": "2.11.0+cu126",
+  "cuda": "12.6",
+  "prompt_expansion_pixels": 30,
+  "screened_counts": {
+    "CVC-ColonDB": 342,
+    "ETIS-LaribPolypDB": 190
+  },
+  "source_run": "analysis/outputs/external_box_20261118",
+  "source_file_sha256": {
+    "duplicate_label_audit.csv": "052850b79506ff9c8bc7e4822d64238f5d756a58822572d48b5d32418d24be01",
+    "per_image.csv": "6e909f3ae5d44b410ebb769ce712d17e83ff0475bb0ec11968fd3788595534a2",
+    "summary_reviewed.csv": "fa71dd527a7f87270078078d84a4b65f17bdfb0dc756842821f760fa8d9e3ff1"
+  },
+  "checkpoints": {
+    "SAMed": {
+      "backbone": {
+        "path": "E:\\Project\\FYP\\checkpoints\\sam_vit_b.pth",
+        "sha256": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912"
+      },
+      "adapted": {
+        "path": "E:\\Project\\FYP\\results\\samed_baseline_cloud\\checkpoints\\r4_full\\samed_lora_r4_best.pth",
+        "sha256": "67a6ed720878e31647d431b6adcdbc66a5fa5cee2cf7eed5aba5271e4e48e97a"
+      }
+    },
+    "MedSAM+LoRA": {
+      "backbone": {
+        "path": "E:\\Project\\FYP\\checkpoints\\medsam_vit_b.pth",
+        "sha256": "34b34b78c1d18cb8c6bf84cf9c00e135d6d6c965699f3c0e31ef1bc9dcb5be74"
+      },
+      "adapted": {
+        "path": "E:\\Project\\FYP\\checkpoints\\medsam_peft\\r4_full\\medsam_lora_r4_best.pth",
+        "sha256": "4030aa8d6260ecddc7e364f08f3b16468065378c3e365080addbe16099c8e433"
+      }
+    },
+    "PP-SAM": {
+      "backbone": {
+        "path": "E:\\Project\\FYP\\checkpoints\\sam_vit_b.pth",
+        "sha256": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912"
+      },
+      "adapted": {
+        "path": "E:\\Project\\FYP\\checkpoints\\pp_sam\\pp_sam_vit_b_880shot_best.pth",
+        "sha256": "b54d33787cdc56bdbab9de6c2b422cb8e6f57dafd0afc013140e60899ffe6faa"
+      }
+    }
+  }
+}

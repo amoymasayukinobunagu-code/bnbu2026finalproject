@@ -1,0 +1,9 @@
+dataset,id,area_ratio,contrast_main,selection
+Kvasir-SEG-val,ck2bxskgxxzfv08386xkqtqdy,0.07093049508,0.6757842898,two lowest/two highest contrast within medium-area group
+Kvasir-SEG-val,cju7dymur2od30755eg8yv2ht,0.1407177092,0.714132309,two lowest/two highest contrast within medium-area group
+Kvasir-SEG-val,ck2395w2mb4vu07480otsu6tw,0.1243320795,26.25993538,two lowest/two highest contrast within medium-area group
+Kvasir-SEG-val,cju8dm2cau2km0818jsv9eeq2,0.1175333361,41.37319565,two lowest/two highest contrast within medium-area group
+CVC-ClinicDB,40,0.07165075231,0.3414219916,two lowest/two highest contrast within medium-area group
+CVC-ClinicDB,46,0.0573187934,0.4682469666,two lowest/two highest contrast within medium-area group
+CVC-ClinicDB,580,0.1414568866,34.18101883,two lowest/two highest contrast within medium-area group
+CVC-ClinicDB,9,0.1287706163,34.70767212,two lowest/two highest contrast within medium-area group

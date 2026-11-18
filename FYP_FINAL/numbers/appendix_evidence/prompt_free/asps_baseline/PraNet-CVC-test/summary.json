@@ -1,0 +1,14 @@
+{
+  "dataset": "PraNet-CVC",
+  "n": 62,
+  "model": "ASPS (SAM-B + MSCAN-L, iter 15200)",
+  "checkpoint": "E:\\Project\\FYP\\checkpoints\\asps\\B-L-0015200.pth",
+  "dice_mean": 0.9129103480290767,
+  "dice_std": 0.15557493287001561,
+  "iou_mean": 0.8632079838951783,
+  "iou_std": 0.1664953504762745,
+  "precision_mean": 0.926873686877291,
+  "recall_mean": 0.9293117030503445,
+  "hd95_mean": 14.20845724178626,
+  "fps_mean": 6.959618253756265
+}

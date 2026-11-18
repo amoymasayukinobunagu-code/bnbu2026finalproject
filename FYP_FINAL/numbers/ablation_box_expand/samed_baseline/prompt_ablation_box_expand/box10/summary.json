@@ -1,0 +1,28 @@
+{
+  "Kvasir-SEG-val": {
+    "n": 120,
+    "dice_mean": 0.9019371217545256,
+    "dice_std": 0.1203810987322702,
+    "iou_mean": 0.8384894576778628,
+    "iou_std": 0.15774194726084773,
+    "precision_mean": 0.9058752218182798,
+    "recall_mean": 0.9246744150032247,
+    "hd95_mean": 84.7464558905721,
+    "fps_mean": 8.02847040297071,
+    "ckpt": "E:/Project/FYP/results/samed_baseline_cloud/checkpoints/r4_full/samed_lora_r4_best.pth",
+    "rank": 4
+  },
+  "CVC-ClinicDB": {
+    "n": 612,
+    "dice_mean": 0.8728792165937088,
+    "dice_std": 0.1631671641515249,
+    "iou_mean": 0.8012374594168868,
+    "iou_std": 0.18895710811363708,
+    "precision_mean": 0.8855405999120428,
+    "recall_mean": 0.8963769628919398,
+    "hd95_mean": 29.592143783452578,
+    "fps_mean": 8.22360933426864,
+    "ckpt": "E:/Project/FYP/results/samed_baseline_cloud/checkpoints/r4_full/samed_lora_r4_best.pth",
+    "rank": 4
+  }
+}

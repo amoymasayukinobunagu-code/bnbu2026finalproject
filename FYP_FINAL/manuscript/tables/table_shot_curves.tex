@@ -1,0 +1,32 @@
+% Auto-exported from official summary.json in FYP_FINAL on 2026-11-17
+% Do not mix with June 2026 stale tables. PP-SAM is not labelled Ours.
+% Eval protocol: GT tight box + fixed outward expand (default 30 px), not random jitter.
+% Dice ± is test-image std, not multi-seed. FPS is not a unified measurement.
+\begin{table}[ht]
+\centering
+\caption{Shot curves for SAMed LoRA r4 and PP-SAM (existing method) under the same v3 box-prompt protocol. The 5-shot sweet-spot remark applies only within the 1/5/10-shot ladder; full 880 is also official. Exported from official \texttt{summary.json} on 2026-11-17.}
+\label{tab:shot-curves}
+\begin{tabular}{llccccccc}
+\toprule
+Method & Dataset & N & Dice $\uparrow$ & IoU $\uparrow$ & Prec. & Rec. & HD95 $\downarrow$ & FPS$^*$ \\
+\midrule
+SAMed LoRA r4 1-shot & Kvasir-SEG val & 120 & 0.7456 ± 0.204 & 0.6287 & 0.6367 & 0.9418 & 108.20 & 12.45 \\
+SAMed LoRA r4 1-shot & CVC-ClinicDB & 612 & 0.5759 ± 0.196 & 0.4310 & 0.4348 & 0.9660 & 64.98 & 13.19 \\
+SAMed LoRA r4 5-shot & Kvasir-SEG val & 120 & 0.7571 ± 0.212 & 0.6469 & 0.6601 & 0.9360 & 112.13 & 12.54 \\
+SAMed LoRA r4 5-shot & CVC-ClinicDB & 612 & 0.5747 ± 0.244 & 0.4418 & 0.4510 & 0.8933 & 63.71 & 13.25 \\
+SAMed LoRA r4 10-shot & Kvasir-SEG val & 120 & 0.7230 ± 0.166 & 0.5909 & 0.5972 & 0.9805 & 123.19 & 12.35 \\
+SAMed LoRA r4 10-shot & CVC-ClinicDB & 612 & 0.5435 ± 0.180 & 0.3950 & 0.3972 & 0.9892 & 70.79 & 13.18 \\
+SAMed LoRA r4 full 880 & Kvasir-SEG val & 120 & 0.8955 ± 0.121 & 0.8280 & 0.8866 & 0.9334 & 88.29 & 12.59 \\
+SAMed LoRA r4 full 880 & CVC-ClinicDB & 612 & 0.8608 ± 0.159 & 0.7814 & 0.8513 & 0.9125 & 32.75 & 13.15 \\
+PP-SAM 1-shot (existing method, not Ours) & Kvasir-SEG val & 120 & 0.7992 ± 0.222 & 0.7096 & 0.7764 & 0.8650 & 87.71 & 6.54 \\
+PP-SAM 1-shot (existing method, not Ours) & CVC-ClinicDB & 612 & 0.7516 ± 0.200 & 0.6362 & 0.6605 & 0.9222 & 44.55 & 7.34 \\
+PP-SAM 5-shot (existing method, not Ours) & Kvasir-SEG val & 120 & 0.8512 ± 0.162 & 0.7683 & 0.8223 & 0.9159 & 80.25 & 6.73 \\
+PP-SAM 5-shot (existing method, not Ours) & CVC-ClinicDB & 612 & 0.8040 ± 0.155 & 0.6962 & 0.7212 & 0.9545 & 39.47 & 7.68 \\
+PP-SAM 10-shot (existing method, not Ours) & Kvasir-SEG val & 120 & 0.8550 ± 0.140 & 0.7682 & 0.8444 & 0.8959 & 83.23 & 8.03 \\
+PP-SAM 10-shot (existing method, not Ours) & CVC-ClinicDB & 612 & 0.7709 ± 0.165 & 0.6533 & 0.6932 & 0.9361 & 40.56 & 8.23 \\
+PP-SAM full 880 (existing method, not Ours) & Kvasir-SEG val & 120 & 0.9226 ± 0.0705 & 0.8630 & 0.8962 & 0.9594 & 66.25 & 8.30 \\
+PP-SAM full 880 (existing method, not Ours) & CVC-ClinicDB & 612 & 0.8576 ± 0.130 & 0.7699 & 0.8067 & 0.9511 & 27.72 & 8.83 \\
+\bottomrule
+\end{tabular}
+\\[0.4em]{\small $^*$FPS values are taken from the same official \texttt{summary.json} and are not a unified speed test.}
+\end{table}

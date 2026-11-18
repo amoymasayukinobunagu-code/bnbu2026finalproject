@@ -1,0 +1,24 @@
+% Auto-exported from official summary.json in FYP_FINAL on 2026-11-17
+% Do not mix with June 2026 stale tables. PP-SAM is not labelled Ours.
+% Eval protocol: GT tight box + fixed outward expand (default 30 px), not random jitter.
+% Dice ± is test-image std, not multi-seed. FPS is not a unified measurement.
+\begin{table}[ht]
+\centering
+\caption{Methods that do \emph{not} use the v3 GT-box prompt (automatic, dense, or prompt-free). Do not rank these rows against the box-prompt main table. Exported from official \texttt{summary.json} on 2026-11-17.}
+\label{tab:appendix-prompt-free}
+\begin{tabular}{llccccccc}
+\toprule
+Method & Dataset & N & Dice $\uparrow$ & IoU $\uparrow$ & Prec. & Rec. & HD95 $\downarrow$ & FPS$^*$ \\
+\midrule
+Chen SAM-Adapter (880; automatic, no box) & Kvasir-SEG val & 120 & 0.8378 ± 0.211 & 0.7629 & 0.8615 & 0.8659 & 106.34 & 8.61 \\
+Chen SAM-Adapter (880; automatic, no box) & CVC-ClinicDB & 612 & 0.7576 ± 0.278 & 0.6744 & 0.7688 & 0.8389 & 66.50 & 9.28 \\
+ASPS-v3 (dense, no box; Kvasir-880 train) & Kvasir-SEG val & 120 & 0.9006 ± 0.142 & 0.8412 & 0.9082 & 0.9240 & 82.25 & 7.27 \\
+ASPS-v3 (dense, no box; Kvasir-880 train) & CVC-ClinicDB & 612 & 0.8640 ± 0.174 & 0.7898 & 0.8887 & 0.8840 & 32.68 & 7.32 \\
+Released ASPS (PraNet-Kvasir held-out 100) & PraNet-Kvasir & 100 & 0.9093 ± 0.149 & 0.8572 & 0.9370 & 0.9028 & 80.46 & 7.06 \\
+Released ASPS (PraNet-CVC held-out 62) & PraNet-CVC & 62 & 0.9129 ± 0.156 & 0.8632 & 0.9269 & 0.9293 & 14.21 & 6.96 \\
+OP-SAM CPG (1-shot, training-free, no box) & Kvasir-SEG val & 120 & 0.4373 ± 0.302 & 0.3327 & 0.4583 & 0.6015 & 212.17 & 2.48 \\
+OP-SAM CPG (1-shot, training-free, no box) & CVC-ClinicDB & 612 & 0.3719 ± 0.323 & 0.2847 & 0.3573 & 0.5610 & 110.75 & 2.63 \\
+\bottomrule
+\end{tabular}
+\\[0.4em]{\small $^*$FPS values are taken from the same official \texttt{summary.json} and are not a unified speed test.}
+\end{table}

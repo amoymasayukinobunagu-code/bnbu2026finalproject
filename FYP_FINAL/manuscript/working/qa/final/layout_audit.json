@@ -1,0 +1,56 @@
+{
+  "renderer": "Microsoft Word native PDF export; packaged renderer failed due to missing LibreOffice",
+  "pages": [
+    {
+      "page": 1,
+      "text_items": 76,
+      "within_page_bounds": true,
+      "image": "verified-1.png"
+    },
+    {
+      "page": 2,
+      "text_items": 97,
+      "within_page_bounds": true,
+      "image": "verified-2.png"
+    },
+    {
+      "page": 3,
+      "text_items": 119,
+      "within_page_bounds": true,
+      "image": "verified-3.png"
+    },
+    {
+      "page": 4,
+      "text_items": 103,
+      "within_page_bounds": true,
+      "image": "verified-4.png"
+    },
+    {
+      "page": 5,
+      "text_items": 407,
+      "within_page_bounds": true,
+      "image": "verified-5.png"
+    },
+    {
+      "page": 6,
+      "text_items": 187,
+      "within_page_bounds": true,
+      "image": "verified-6.png"
+    },
+    {
+      "page": 7,
+      "text_items": 74,
+      "within_page_bounds": true,
+      "image": "verified-7.png"
+    }
+  ],
+  "visual_review": "All seven final PNG pages inspected; no clipping, overlap, missing glyphs or blank pages observed",
+  "draft_sha256": "b234123d9e1df80336e029917a547721605a5433fdba070455d977a3143900a8",
+  "changed_package_parts": [
+    "word/document.xml",
+    "word/settings.xml",
+    "word/styles.xml"
+  ],
+  "template_preserved": true,
+  "status": "first review draft, not submission ready"
+}

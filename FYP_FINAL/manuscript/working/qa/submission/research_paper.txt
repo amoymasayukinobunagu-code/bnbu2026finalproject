@@ -1,0 +1,117 @@
+Promptable Endoscopic Polyp Segmentation Under a Common Box
+Protocol
+[Author names and affiliations]
+
+Abstract
+
+This study compares released Segment Anything Model (SAM) and MedSAM checkpoints with low-
+rank and adapter-based adaptations for endoscopic polyp segmentation. Adaptation used 880 Kvasir-
+SEG images. Evaluation used 120 Kvasir-SEG validation images and 612 CVC-ClinicDB frames,
+with boxes derived from the reference masks and expanded by 30 pixels. SAM ViT-L led the zero-
+shot configurations on both datasets. All four full-data LoRA or adapter configurations improved
+mean Dice over their corresponding zero-shot baselines. PP-SAM led on Kvasir validation at 0.9226
+and SAMed led on CVC-ClinicDB at 0.8608. A five-configuration follow-up showed different
+rankings on CVC-ColonDB and ETIS-LaribPolypDB. Prompt and subgroup analyses showed that
+the observed gains depended on the prompt, model and dataset.
+
+1 Introduction
+
+A spatial prompt guides a segmenter towards a lesion, while the model must infer the extent of that
+lesion from the image. SAM [1] and MedSAM [2] provide general and medical-domain starting
+points. SAMed [3] and Medical SAM Adapter [4] offer ways to adapt these checkpoints, while PP-
+SAM [5] uses perturbed training boxes. We compare released and polyp-adapted checkpoints using
+the same location information. We also test whether model rankings persist across datasets and
+whether results change under different prompts and image conditions.
+
+2 Methods
+
+The 880-image training and 120-image validation partitions came from Kvasir-SEG [6]. CVC-
+ClinicDB [7] supplied 612 evaluation frames and did not participate in checkpoint selection. The
+zero-shot group comprised SAM ViT-B, SAM ViT-L and MedSAM. The full-data group included
+rank-four SAMed, rank-four MedSAM+LoRA, Medical SAM Adapter with ViT-B and ViT-L, and
+PP-SAM. The LoRA configurations updated the low-rank matrices, prompt encoder and mask
+decoder. The adapter configurations updated inserted image-encoder modules and the mask decoder.
+PP-SAM updated the image and prompt encoders with a frozen mask decoder.
+The default box was the foreground bounding rectangle expanded by 30 pixels and clipped to the
+native frame bounds. Predictions were restored to native resolution before scoring. We averaged Dice
+and intersection over union (IoU) per image. Surface HD95 was the larger of the two directed 95th
+percentiles of nearest-boundary distance, with empty predictions excluded from this metric. We also
+evaluated fixed box expansions, point prompts and constrained box translations. The subgroup
+analysis used the fraction of annotated foreground pixels and the difference between the mean colours
+inside and outside the annotated boundary.
+
+3 Results
+
+Table 1 summarises the primary comparison. SAM ViT-L gave the highest zero-shot Dice on both datasets. PP-SAM
+gave the lowest mean surface HD95 on both, at 41.58 pixels on Kvasir-SEG and 22.78 pixels on CVC-ClinicDB.
+
+Table 1 Mean Dice and IoU under the default box protocol
+
+ Model                         Kvasir-SEG validation, Dice /          CVC-ClinicDB, Dice / IoU
+                               IoU
+
+ SAM-B                         0.7497 / 0.6680                        0.5182 / 0.4300
+
+ SAM-L                         0.8140 / 0.7367                        0.6588 / 0.5676
+
+ MedSAM                        0.7034 / 0.5846                        0.5172 / 0.3755
+
+ SAMed                         0.8955 / 0.8280                        0.8608 / 0.7814
+
+ MedSAM+LoRA                   0.9049 / 0.8375                        0.8476 / 0.7596
+
+ MSA-B                         0.8524 / 0.7826                        0.7685 / 0.6896
+
+ MSA-L                         0.8555 / 0.7820                        0.8234 / 0.7432
+
+ PP-SAM                        0.9226 / 0.8630                        0.8576 / 0.7699
+The five-configuration follow-up used 342 screened CVC-ColonDB images [8] and 190 ETIS-
+LaribPolypDB images [9]. All four adapted configurations outscored SAM-B on CVC-ColonDB,
+where PP-SAM led at 0.8493 Dice. On ETIS-LaribPolypDB, SAM-B led at 0.8613, followed by PP-
+SAM at 0.8436. The 50-pixel expansion gave lower Dice than 0 and 10 pixels in every verified
+expansion series. With an interior point on CVC-ClinicDB, mean Dice increased from 0.5182 to
+0.6305 for SAM-B and from 0.7685 to 0.8068 for MSA-B. With the same point strategy on Kvasir,
+SAM-B's Dice fell from 0.7497 to 0.6840. On CVC-ClinicDB, SAM-B's Dice declined from 0.5573
+to 0.2295 between the small and large area groups, while PP-SAM's rose from 0.7970 to 0.8986.
+
+4 Discussion and conclusion
+
+The gains from full-data adaptation on the primary datasets were configuration- and dataset-
+dependent. The change in ranking on ETIS-LaribPolypDB motivates testing candidate models on
+more than one source. The comparisons reflect each model's training, preprocessing and decoder
+settings. Validation scores also reflect checkpoint selection. The default box supplies target location
+from the reference annotation, so the main results describe segmentation with a known location cue.
+                                                                                                             2
+Results by boundary colour contrast describe an image-derived proxy. Further work should assess
+expert boundary ratings and evaluate automatic localisation and segmentation together on held-out
+data.
+
+References
+
+[1] A. Kirillov et al., “Segment Anything,” in Proc. IEEE/CVF International Conference on
+Computer Vision, 2023, pp. 4015–4026.
+[2] J. Ma et al., “Segment anything in medical images,” Nature Communications, vol. 15, art. 654,
+2024, doi: 10.1038/s41467-024-44824-z.
+[3] K. Zhang and D. Liu, “Customized Segment Anything Model for Medical Image
+Segmentation,” arXiv:2304.13785, 2023.
+[4] J. Wu et al., “Medical SAM adapter: Adapting segment anything model for medical image
+segmentation,” Medical Image Analysis, vol. 102, art. 103547, 2025.
+[5] M. M. Rahman et al., “PP-SAM: Perturbed Prompts for Robust Adaption of Segment Anything
+Model for Polyp Segmentation,” in Proc. IEEE/CVF Conference on Computer Vision and Pattern
+Recognition Workshops, 2024, pp. 4989–4995.
+[6] D. Jha et al., “Kvasir-SEG: A Segmented Polyp Dataset,” in Multimedia Modeling, 2020, pp.
+451–462.
+[7] J. Bernal et al., “WM-DOVA maps for accurate polyp highlighting in colonoscopy: Validation
+vs. saliency maps from physicians,” Computerized Medical Imaging and Graphics, vol. 43, pp. 99–
+111, 2015.
+[8] J. Bernal, J. Sánchez, and F. Vilariño, “Towards automatic polyp detection with a polyp
+appearance model,” Pattern Recognition, vol. 45, no. 9, pp. 3166–3182, 2012.
+[9] J. Silva, A. Histace, O. Romain, X. Dray, and B. Granado, “Toward embedded detection of
+polyps in WCE images for early diagnosis of colorectal cancer,” International Journal of Computer
+Assisted Radiology and Surgery, vol. 9, no. 2, pp. 283–293, 2014.
+
+
+
+
+                                                                                                    3
+

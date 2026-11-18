@@ -1,0 +1,107 @@
+%% ========================================================================
+%% chapter1.tex -- Introduction (root file, standalone compilable)
+%% Topic: Promptable Medical Image Segmentation Foundation Models
+%%        for Endoscopic Polyp Segmentation
+%% Author: Xu, Junhan; Wu, Keyou
+%% Supervisor: Dr. Donglong Chen
+%% Institution: BNBU United International College
+%% Format reference: [GroupID] FYP I Literature Review.docx
+%% Last updated: 2026-06-11
+%%
+%% Notes:
+%%  - This file is intended to be \input{} from lecture review.tex, but it
+%%    can also be compiled standalone for chapter-level review. It carries
+%%    its own preamble, identical to that of lecture review.tex.
+%%  - The bibliographic references point to the shared ref.bib used by the
+%%    rest of the thesis; the citation keys were chosen to match the keys
+%%    already present in that file.
+%% ========================================================================
+
+\chapter{Introduction}
+\label{chap:intro}
+\setcounter{section}{0}
+
+\section{Clinical motivation}
+\label{sec:motivation}
+
+Colorectal cancer (CRC) is one of the leading causes of cancer-related mortality worldwide, with GLOBOCAN 2022 estimating roughly 1.9~million new cases and 904,000 deaths~\cite{bray2024globocan}, and the early detection and removal of precancerous polyps during routine colonoscopy remains the single most effective intervention for reducing CRC mortality, with long-term follow-up of the National Polyp Study reporting a substantial reduction in CRC mortality after colonoscopic polypectomy~\cite{zauber2012nejm}. Polyp segmentation, the pixel-level delineation of polyp boundaries in an endoscopic frame, is a prerequisite for several downstream tasks: estimating the malignancy risk of a detected lesion, measuring its size for surveillance planning, and providing quantitative feedback to the operator~\cite{tudela2024frontiers}. The task is intrinsically difficult because the appearance of a polyp varies in scale, shape, and texture, the boundary between a polyp and the surrounding mucosa is often weak, and the imaging conditions differ across endoscopes, operators, and clinical sites; the resulting cross-domain shift~\cite{guan2022tbme} means that a model trained on one dataset rarely generalises to another without adaptation. Closing this gap is attractive on three fronts: at the clinical level, a promptable polyp segmentor can reduce per-frame reading time and inter-observer variability during screening colonoscopy; at the engineering level, a single reproducible evaluation pipeline lowers the cost of benchmarking future polyp-specific SAM adaptations; and at the methodological level, the polyp domain offers a controlled stress test for parameter-efficient adaptation of promptable foundation models under a small-data budget.
+
+\section{The opportunity of promptable foundation models}
+\label{sec:sam}
+
+In recent years, the Segment Anything Model (SAM)~\cite{kirillov2023sam} has demonstrated strong zero-shot segmentation capability on natural images and has been adapted to a growing number of medical imaging domains, including CT, MRI, and ultrasound. The natural question for this thesis is therefore not whether SAM \emph{can} be applied to endoscopic polyp segmentation, but how different adaptation strategies compare under one and the same evaluation pipeline.
+
+We address that question through a staged benchmark rather than a single-method claim. The current empirical scope includes three complementary groups: zero-shot foundation-model baselines (SAM ViT-B/L/H and SAM2 Hiera-S/Base+/Large), generic medical pre-training (MedSAM), and polyp-specific adaptation recipes (PP-SAM full-encoder fine-tuning and SAMed LoRA). This design allows the thesis to separate three effects that would otherwise be conflated: backbone capacity, generic medical pre-training, and polyp-specific adaptation.
+
+A broader family of polyp-specific SAM adaptations proposed in 2024--2025 is surveyed in Chapter~2. The present stage treats PP-SAM as a representative full-encoder few-shot adaptation reference because it directly matches the box-perturbation setting of the project, and treats SAMed as the parameter-efficient LoRA reference needed to address the Adapter/LoRA requirement in the project brief. OP-SAM and ASPS are kept as special cases: OP-SAM is reported only as a CPG-only exploratory training-free pilot, while ASPS is reported as an external fully supervised upper-bound reference rather than as a directly ranked v3 baseline.
+
+
+\section{Scope of this thesis}
+\label{sec:scope}
+
+This thesis reports the current-stage reproduction and benchmarking of SAM-family models for endoscopic polyp segmentation. It does not claim that all long-term objectives in the project brief have already been completed. Instead, the empirical work is organised as a staged study: the present stage establishes a reproducible v3 evaluation protocol, reproduces representative zero-shot and few-shot SAM-family baselines, and identifies the next alignment experiments required for a fully unified comparison.
+
+The completed empirical core focuses on two public polyp benchmarks, Kvasir-SEG~\cite{jha2020kvasir} and CVC-ClinicDB~\cite{bernal2015cvc}. The first axis studies zero-shot foundation-model transfer by comparing SAM~\cite{kirillov2023sam} with ViT-B, ViT-L, and ViT-H image encoders, and SAM2~\cite{ravi2024sam2} with Hiera-Small, Hiera-Base+, and Hiera-Large backbones. This axis is used to examine whether larger backbones consistently improve zero-shot polyp segmentation, and whether the scaling behaviour of SAM2 follows that of SAM v1. The second axis studies polyp-specific adaptation under a fixed SAM ViT-B backbone, including vanilla SAM, MedSAM~\cite{ma2024medsam}, PP-SAM~\cite{rahman2024ppsam} at 1-shot, 5-shot, and 10-shot settings, and SAMed~\cite{zhang2023samed} LoRA as the parameter-efficient adaptation extension. At the time of this partial thesis, the PP-SAM 1/5/10-shot experiments and the SAMed LoRA 1/5/10-shot plus full-training runs have been completed and their logs and evaluation files have been archived under the formal results directory.
+
+For all v3-aligned baselines, we use the same evaluation split and the same prompt protocol: Kvasir-SEG is evaluated on its held-out \texttt{val.txt} split of 120 images, CVC-ClinicDB is used as a cross-domain test set of 612 images, and the box prompt is generated from the ground-truth mask with a fixed $\pm30$ pixel perturbation. The primary overlap metric is the Dice coefficient~\eqref{eq:dice}; the secondary overlap metric is IoU~\eqref{eq:iou}; precision and recall quantify the over- and under-segmentation tendency; and HD95~\eqref{eq:hd95} measures boundary quality. This unified protocol is described in detail in Chapter~\ref{chap:outline}.
+
+Two entries are reported separately from the main v3-aligned ranking. ASPS~\cite{li2024asps} is used as an external fully-supervised upper-bound reference because the available checkpoint was trained on the PraNet training split; it is therefore evaluated on the PraNet held-out test set to avoid test-on-train leakage. A fully v3-aligned ASPS retraining on Kvasir \texttt{train.txt} and evaluation on Kvasir \texttt{val.txt} plus CVC-ClinicDB is left as a next-stage experiment. OP-SAM~\cite{li2025opsam} is included only as an exploratory support-conditioned, training-free baseline. The current implementation reports the CPG-only variant; a full reproduction with CPG, SPF, and EPE is also reserved for the next stage.
+
+Several directions in the project brief are intentionally left outside the empirical scope of this partial thesis and are listed as future work. These include a systematic prompt-quality study with multiple perturbation levels, object-scale analysis with area-stratified evaluation and scale-aware modules, explicit weak-boundary refinement beyond the HD95 metric and the structure loss used by PP-SAM, training a polyp-specific Medical SAM Adapter rather than evaluating released non-polyp adapters, extension to additional polyp benchmarks such as PolypGen~\cite{ali2024polypgen}, PICCOLO~\cite{gonzalez2022piccolo}, and SUN-SEG~\cite{sun2022sunseg}, and the 3D/video directions surveyed in Chapter~2.
+
+
+\section{Research questions and hypotheses}
+\label{sec:rq}
+
+The scope above leads to five research questions (RQs). The first four are empirical questions addressed by the current-stage experiments, while the fifth is a planning question that records the remaining alignment work required by the long-term project. Each RQ is paired with a falsifiable hypothesis ($H$), and the corresponding baselines are specified to avoid a promise--execution mismatch.
+
+\begin{itemize}
+    \item \textbf{RQ1 (Foundation-model scaling):} How do SAM v1 and SAM2 backbones scale under zero-shot box-prompt polyp segmentation?
+    \begin{itemize}
+        \item[\textbf{$H_1$:}] Increasing backbone capacity does not monotonically improve zero-shot polyp segmentation. In particular, SAM ViT-L is expected to outperform both ViT-B and ViT-H, while SAM2 is expected to show a different scaling pattern across Hiera-Small, Hiera-Base+, and Hiera-Large.
+        \item[\emph{Baselines:}] SAM ViT-B/L/H and SAM2 Hiera-Small/Base+/Large.
+    \end{itemize}
+
+    \item \textbf{RQ2 (Medical pre-training transfer):} Does generic medical pre-training improve zero-shot endoscopic polyp segmentation over vanilla SAM under the same box-prompt protocol?
+    \begin{itemize}
+        \item[\textbf{$H_2$:}] Generic medical pre-training alone does not guarantee better zero-shot transfer to colonoscopic polyps, because endoscopy differs substantially from the mixed-modality medical data used to train MedSAM.
+        \item[\emph{Baselines:}] SAM ViT-B and MedSAM.
+    \end{itemize}
+
+    \item \textbf{RQ3 (K-shot adaptation strategy):} Under the same v3 box-prompt protocol, how do full-encoder prompt-perturbation fine-tuning and LoRA-based parameter-efficient fine-tuning compare as the support set increases from 1 to 5 to 10 annotated polyps?
+    \begin{itemize}
+        \item[\textbf{$H_3$:}] Full-encoder prompt-perturbation fine-tuning is expected to achieve stronger cross-domain Dice than LoRA-only adaptation at the same support-set size, but LoRA is expected to provide a lower-parameter adaptation baseline that directly addresses the Adapter/LoRA requirement in the project brief.
+        \item[\emph{Baselines:}] PP-SAM 1/5/10-shot and SAMed LoRA 1/5/10-shot. Both PP-SAM and SAMed LoRA have completed 1/5/10-shot evaluations under the v3 protocol.
+    \end{itemize}
+
+    \item \textbf{RQ4 (Gap to full supervision):} How do limited-data adaptation and full-data parameter-efficient adaptation compare with a fully supervised upper-bound reference?
+    \begin{itemize}
+        \item[\textbf{$H_4$:}] Few-shot support can recover a substantial fraction of the fully supervised performance, but it remains data-limited. SAMed LoRA full 880 is therefore interpreted as a full-data PEFT bridge: it uses the full Kvasir training split but updates only a parameter-efficient subset. Because the current ASPS checkpoint follows the PraNet split rather than the v3 split, ASPS should be interpreted as an external reference rather than a directly ranked v3 baseline.
+        \item[\emph{Baselines:}] PP-SAM 5/10-shot for limited-data adaptation, SAMed LoRA full 880 for full-data PEFT, and ASPS as an external fully supervised upper-bound reference.
+    \end{itemize}
+
+    \item \textbf{RQ5 (Prompt-free and robustness extensions):} What remains to be resolved for prompt-free, scale-aware, and boundary-robust polyp segmentation beyond the current-stage benchmark?
+    \begin{itemize}
+        \item[\textbf{$H_5$:}] The current-stage experiments are sufficient to establish a reproducible benchmark and a few-shot adaptation baseline, but they are not sufficient to close the long-term project directions related to full OP-SAM reproduction, systematic prompt-quality perturbation, object-scale robustness, explicit weak-boundary refinement, v3-aligned ASPS retraining, and polyp-specific Medical SAM Adapter training.
+        \item[\emph{Baselines and plans:}] The current OP-SAM result is a CPG-only exploratory pilot; full CPG+SPF+EPE reproduction, ASPS retraining on Kvasir \texttt{train.txt}, polyp-specific Medical SAM Adapter training, multi-level prompt perturbation, area-stratified evaluation, and boundary-specific modules are reserved for the next stage.
+    \end{itemize}
+\end{itemize}
+
+\section{Contributions}
+\label{sec:contributions}
+
+The contributions of this partial thesis are four-fold:
+\begin{itemize}
+    \item A \emph{reproducible v3 evaluation protocol} for promptable polyp segmentation, using Kvasir-SEG \texttt{val.txt} as the held-out in-domain split, CVC-ClinicDB as the cross-domain split, a fixed $\pm30$ pixel box-prompt perturbation, and five metrics: Dice, IoU, precision, recall, and HD95.
+
+    \item A \emph{zero-shot foundation-model benchmark} covering SAM v1 ViT-B/L/H, SAM2 Hiera-Small/Base+/Large, and MedSAM under the same v3 protocol. This benchmark separates backbone-scaling effects from generic medical pre-training effects, rather than attributing all performance differences to adaptation alone.
+
+    \item A \emph{few-shot adaptation comparison} centred on PP-SAM and SAMed. PP-SAM 1/5/10-shot experiments provide the current full-encoder prompt-perturbation fine-tuning baseline, while SAMed LoRA is included as the parameter-efficient Adapter/LoRA extension required by the project brief. At this stage, the SAMed 1/5/10-shot and full 880 runs are available and archived in the formal results directory.
+
+    \item A \emph{transparent separation of aligned results, external references, and future work}. ASPS is reported as an external fully supervised upper-bound reference because the available checkpoint is not v3-aligned, and OP-SAM is reported only as a CPG-only exploratory training-free pilot. Full ASPS-v3 retraining, full OP-SAM reproduction, polyp-specific Medical SAM Adapter training, prompt-quality ablations, object-scale analysis, and weak-boundary refinement are explicitly listed as next-stage objectives rather than claimed as completed work.
+\end{itemize}
+
+\section{Organisation of the thesis}
+\label{sec:organisation}
+
+The remainder of the thesis is organised as follows. Chapter~2 surveys promptable foundation models, medical SAM adaptations, polyp-specific methods, prompt engineering, datasets, and the long-term gaps that motivate the current-stage benchmark. Chapter~\ref{chap:outline} describes the v3 methodology, including the dataset splits, prompt-generation rule, baseline taxonomy, evaluation metrics, protocol caveats, and the PP-SAM/SAMed adaptation recipes. Chapter~\ref{chap:solution} explains how the methodology is implemented as a reproducible benchmark system, including baseline wrappers, training artifacts, and special-case handling. Chapter~\ref{chap:validation} validates the benchmark through quantitative and qualitative results organised by the research questions. Chapter~\ref{chap:conclusion} concludes the partial thesis by summarising the completed empirical findings and listing the next-stage experiments: ASPS-v3 retraining, full OP-SAM reproduction, polyp-specific Medical SAM Adapter training, prompt-quality perturbation analysis, object-scale analysis, weak-boundary refinement, and extension to additional polyp datasets.

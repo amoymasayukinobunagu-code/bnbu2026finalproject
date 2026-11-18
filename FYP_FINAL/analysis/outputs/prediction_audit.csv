@@ -1,0 +1,17 @@
+dataset,model,prediction_status,n
+CVC-ClinicDB,MSA-B,matched,612
+CVC-ClinicDB,MSA-L,matched,612
+CVC-ClinicDB,MedSAM,matched,612
+CVC-ClinicDB,MedSAM+LoRA,matched,612
+CVC-ClinicDB,PP-SAM,matched,612
+CVC-ClinicDB,SAM-B,matched,612
+CVC-ClinicDB,SAM-L,matched,612
+CVC-ClinicDB,SAMed,matched,612
+Kvasir-SEG-val,MSA-B,matched,120
+Kvasir-SEG-val,MSA-L,matched,120
+Kvasir-SEG-val,MedSAM,matched,120
+Kvasir-SEG-val,MedSAM+LoRA,matched,120
+Kvasir-SEG-val,PP-SAM,matched,120
+Kvasir-SEG-val,SAM-B,matched,120
+Kvasir-SEG-val,SAM-L,matched,120
+Kvasir-SEG-val,SAMed,matched,120

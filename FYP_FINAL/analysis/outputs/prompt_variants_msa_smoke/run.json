@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "started_at": "2026-11-18T17:30:56.907489+08:00",
+  "checkpoint": "E:\\Project\\FYP\\checkpoints\\medical_sam_adapter\\polyp\\best_dice_checkpoint.pth",
+  "checkpoint_sha256": "fa0b337dbf9d8957b5702b5b45be860d31500f8af7077aa5cb59990b7950378b",
+  "official_per_image_sha256": "2f194c7200a5d325cb2dca1643bd47fa590981ca4b0f7322a08239ae95230dfc",
+  "random_seeds": [
+    24,
+    42,
+    1234
+  ],
+  "script_sha256": "ae57ae6edfe78a9c01f6632b6a0b004c8bc9a0452a7878ba0a45d5db755ce56f",
+  "toolkit_sha256": "2f25092848f6b3e984c80982f01ee74bb29343e6c841d6f3030385f21881569b",
+  "metric_script_sha256": "b9c14a446e3f72933b719b8e8b01f23b12b38befa826181d191925a5f7081bab",
+  "inference_runtime": {
+    "device": "cuda",
+    "torch": "2.11.0+cu126",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER"
+  },
+  "limit": 4,
+  "model": "msa-b",
+  "mask_selection": "highest predicted IoU among decoder candidates",
+  "translation": "round(5% of width or height), capped to available space, extent preserved",
+  "boundary_f1_tolerance": "max(1, round(0.005 * native image diagonal))",
+  "input_manifest_hashes": {
+    "prompts_kvasir_val.json": "1cb84eb33990226cc82749cd697716730503b4c5ce285f4ef752c5b355df2694",
+    "prompts_cvc.json": "37f8fe035594de1db204bffa7f2e1cb796a221f546170cea67cf9f34b5208113"
+  },
+  "max_baseline_errors": {
+    "Kvasir-SEG-val": {
+      "dice": 0.0,
+      "iou": 0.0,
+      "n": 4
+    },
+    "CVC-ClinicDB": {
+      "dice": 0.0,
+      "iou": 0.0,
+      "n": 4
+    }
+  },
+  "n_rows": 80,
+  "elapsed_seconds": 4.97
+}

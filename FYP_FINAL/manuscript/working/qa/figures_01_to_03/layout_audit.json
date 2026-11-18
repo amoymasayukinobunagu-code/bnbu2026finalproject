@@ -1,0 +1,21 @@
+{
+  "document_sha256": "dd5024f6ccc5b8215341e704b216d54bb9fef938e187f967c231a77ddc808a2e",
+  "renderer": "Microsoft Word and Poppler",
+  "pages": 12,
+  "figures": 3,
+  "figure_mentions": {
+    "2.1": [
+      3,
+      4
+    ],
+    "3.1": [
+      8,
+      8
+    ],
+    "3.2": [
+      10,
+      10
+    ]
+  },
+  "alternate_text": true
+}

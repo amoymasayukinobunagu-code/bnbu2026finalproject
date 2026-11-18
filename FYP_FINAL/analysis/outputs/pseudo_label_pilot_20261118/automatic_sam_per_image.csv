@@ -1,0 +1,733 @@
+dataset,id,condition,box_json,proposal_found,dice,iou
+CVC-ClinicDB,1,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,10,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,100,sam_b_automatic_box,"[174, 134, 266, 193]",True,0.0,0.0
+CVC-ClinicDB,101,sam_b_automatic_box,"[170, 143, 278, 214]",True,0.845289668844996,0.7320361185298232
+CVC-ClinicDB,102,sam_b_automatic_box,"[170, 146, 262, 208]",True,0.8198916641588926,0.6947596582940202
+CVC-ClinicDB,103,sam_b_automatic_box,"[146, 104, 286, 193]",True,0.951866350554116,0.9081536033666492
+CVC-ClinicDB,104,sam_b_automatic_box,"[222, 257, 274, 286]",True,0.0,0.0
+CVC-ClinicDB,105,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,106,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,107,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,108,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,109,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,11,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,110,sam_b_automatic_box,"[234, 140, 278, 184]",True,0.07984560659956104,0.041582909621221076
+CVC-ClinicDB,111,sam_b_automatic_box,"[246, 146, 286, 184]",True,0.06266772498771592,0.03234743249570782
+CVC-ClinicDB,112,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,113,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,114,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,115,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,116,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,117,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,118,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,119,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,12,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,120,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,121,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,122,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,123,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,124,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,125,sam_b_automatic_box,"[158, 257, 270, 286]",True,0.0,0.0
+CVC-ClinicDB,126,sam_b_automatic_box,"[218, 251, 270, 286]",True,0.0,0.0
+CVC-ClinicDB,127,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,128,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,129,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,13,sam_b_automatic_box,"[258, 74, 310, 130]",True,0.0,0.0
+CVC-ClinicDB,130,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,131,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,132,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,133,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,134,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,135,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,136,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,137,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,138,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,139,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,14,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,140,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,141,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,142,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,143,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,144,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,145,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,146,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,147,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,148,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,149,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,15,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,150,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,151,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,152,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,153,sam_b_automatic_box,"[142, 77, 234, 172]",True,0.8533120227313088,0.7441536317175159
+CVC-ClinicDB,154,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,155,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,156,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,157,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,158,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,159,sam_b_automatic_box,"[158, 140, 206, 178]",True,0.0,0.0
+CVC-ClinicDB,16,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,160,sam_b_automatic_box,"[134, 68, 194, 136]",True,0.6222855705542047,0.4516796494644596
+CVC-ClinicDB,161,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,162,sam_b_automatic_box,"[150, 65, 210, 133]",True,0.796530707923113,0.6618620958317102
+CVC-ClinicDB,163,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,164,sam_b_automatic_box,"[166, 131, 210, 178]",True,0.0,0.0
+CVC-ClinicDB,165,sam_b_automatic_box,"[226, 149, 258, 208]",True,0.0,0.0
+CVC-ClinicDB,166,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,167,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,168,sam_b_automatic_box,"[142, 83, 222, 151]",True,0.884981198849812,0.7936917278317794
+CVC-ClinicDB,169,sam_b_automatic_box,"[166, 68, 234, 139]",True,0.7671258376768428,0.6222255775328401
+CVC-ClinicDB,17,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,170,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,171,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,172,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,173,sam_b_automatic_box,"[146, 116, 202, 184]",True,0.20754251910278532,0.11578657865786579
+CVC-ClinicDB,174,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,175,sam_b_automatic_box,"[150, 152, 226, 208]",True,0.08452478427914593,0.04412731816388268
+CVC-ClinicDB,176,sam_b_automatic_box,"[150, 125, 234, 196]",True,0.3284438359736619,0.19648985959438378
+CVC-ClinicDB,177,sam_b_automatic_box,"[118, 68, 162, 127]",True,0.0,0.0
+CVC-ClinicDB,178,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,179,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,18,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,180,sam_b_automatic_box,"[238, 140, 302, 193]",True,0.9348328454783547,0.8776395718831357
+CVC-ClinicDB,181,sam_b_automatic_box,"[242, 140, 302, 193]",True,0.9214083096946437,0.854269801980198
+CVC-ClinicDB,182,sam_b_automatic_box,"[230, 137, 302, 193]",True,0.9258468111077205,0.8619318181818182
+CVC-ClinicDB,183,sam_b_automatic_box,"[230, 143, 290, 193]",True,0.8533795493934142,0.7442563482466747
+CVC-ClinicDB,184,sam_b_automatic_box,"[198, 125, 278, 193]",True,0.9210484511517077,0.8536513545347467
+CVC-ClinicDB,185,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,186,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,187,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,188,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,189,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,19,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,190,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,191,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,192,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,193,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,194,sam_b_automatic_box,"[222, 146, 270, 211]",True,0.16471940241333077,0.08975161761636402
+CVC-ClinicDB,195,sam_b_automatic_box,"[218, 140, 274, 202]",True,0.5867140779052853,0.41514181152790486
+CVC-ClinicDB,196,sam_b_automatic_box,"[210, 134, 278, 196]",True,0.7921201267392203,0.6557937956204379
+CVC-ClinicDB,197,sam_b_automatic_box,"[230, 119, 298, 181]",True,0.22519299566936546,0.1268830893273923
+CVC-ClinicDB,198,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,199,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,2,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,20,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,200,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,201,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,202,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,203,sam_b_automatic_box,"[162, 140, 206, 190]",True,0.0,0.0
+CVC-ClinicDB,204,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,205,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,206,sam_b_automatic_box,"[118, 260, 182, 286]",True,0.0,0.0
+CVC-ClinicDB,207,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,208,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,209,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,21,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,210,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,211,sam_b_automatic_box,"[90, 263, 162, 288]",True,0.0,0.0
+CVC-ClinicDB,212,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,213,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,214,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,215,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,216,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,217,sam_b_automatic_box,"[182, 128, 282, 193]",True,0.5780888774723864,0.40655767320025293
+CVC-ClinicDB,218,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,219,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,22,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,220,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,221,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,222,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,223,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,224,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,225,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,226,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,227,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,228,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,229,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,23,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,230,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,231,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,232,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,233,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,234,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,235,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,236,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,237,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,238,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,239,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,24,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,240,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,241,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,242,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,243,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,244,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,245,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,246,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,247,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,248,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,249,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,25,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,250,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,251,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,252,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,253,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,254,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,255,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,256,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,257,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,258,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,259,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,26,sam_b_automatic_box,"[190, 116, 230, 178]",True,0.0,0.0
+CVC-ClinicDB,260,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,261,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,262,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,263,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,264,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,265,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,266,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,267,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,268,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,269,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,27,sam_b_automatic_box,"[170, 125, 230, 181]",True,0.6406926406926406,0.4713375796178344
+CVC-ClinicDB,270,sam_b_automatic_box,"[150, 200, 302, 256]",True,0.21841231051204704,0.1225941960649835
+CVC-ClinicDB,271,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,272,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,273,sam_b_automatic_box,"[118, 260, 162, 288]",True,0.0,0.0
+CVC-ClinicDB,274,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,275,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,276,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,277,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,278,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,279,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,28,sam_b_automatic_box,"[150, 104, 186, 178]",True,0.0,0.0
+CVC-ClinicDB,280,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,281,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,282,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,283,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,284,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,285,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,286,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,287,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,288,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,289,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,29,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,290,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,291,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,292,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,293,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,294,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,295,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,296,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,297,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,298,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,299,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,3,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,30,sam_b_automatic_box,"[142, 98, 198, 124]",True,0.2631275245239469,0.1514950166112957
+CVC-ClinicDB,300,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,301,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,302,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,303,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,304,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,305,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,306,sam_b_automatic_box,"[286, 95, 326, 145]",True,0.0,0.0
+CVC-ClinicDB,307,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,308,sam_b_automatic_box,"[250, 158, 290, 235]",True,0.0,0.0
+CVC-ClinicDB,309,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,31,sam_b_automatic_box,"[130, 98, 226, 148]",True,0.01615921075012757,0.008145417131098346
+CVC-ClinicDB,310,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,311,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,312,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,313,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,314,sam_b_automatic_box,"[266, 200, 334, 286]",True,0.028606528606528608,0.014510816344698656
+CVC-ClinicDB,315,sam_b_automatic_box,"[258, 191, 298, 229]",True,0.11048997040447221,0.05847546119039332
+CVC-ClinicDB,316,sam_b_automatic_box,"[198, 125, 306, 244]",True,0.39714990684324486,0.24777732399233451
+CVC-ClinicDB,317,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,318,sam_b_automatic_box,"[166, 146, 254, 193]",True,0.0,0.0
+CVC-ClinicDB,319,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,32,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,320,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,321,sam_b_automatic_box,"[186, 113, 238, 142]",True,0.0931167826759474,0.04883192731992213
+CVC-ClinicDB,322,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,323,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,324,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,325,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,326,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,327,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,328,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,329,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,33,sam_b_automatic_box,"[150, 98, 178, 157]",True,0.0,0.0
+CVC-ClinicDB,330,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,331,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,332,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,333,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,334,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,335,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,336,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,337,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,338,sam_b_automatic_box,"[146, 107, 198, 142]",True,0.04699856895382993,0.024064789818742768
+CVC-ClinicDB,339,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,34,sam_b_automatic_box,"[182, 119, 226, 163]",True,0.0,0.0
+CVC-ClinicDB,340,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,341,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,342,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,343,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,344,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,345,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,346,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,347,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,348,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,349,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,35,sam_b_automatic_box,"[162, 107, 254, 181]",True,0.9321772356528768,0.8729699972474539
+CVC-ClinicDB,350,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,351,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,352,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,353,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,354,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,355,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,356,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,357,sam_b_automatic_box,"[206, 212, 254, 244]",True,0.12122811647752266,0.06452519198351751
+CVC-ClinicDB,358,sam_b_automatic_box,"[130, 260, 206, 288]",True,0.05413564097403904,0.027820870824283795
+CVC-ClinicDB,359,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,36,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,360,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,361,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,362,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,363,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,364,sam_b_automatic_box,"[246, 170, 302, 208]",True,0.504739336492891,0.3375594294770206
+CVC-ClinicDB,365,sam_b_automatic_box,"[242, 173, 302, 208]",True,0.6689895470383276,0.5026178010471204
+CVC-ClinicDB,366,sam_b_automatic_box,"[250, 173, 302, 208]",True,0.6079722703639515,0.43675298804780877
+CVC-ClinicDB,367,sam_b_automatic_box,"[246, 170, 302, 208]",True,0.6473779385171791,0.4786096256684492
+CVC-ClinicDB,368,sam_b_automatic_box,"[206, 173, 266, 208]",True,0.7183573398712841,0.5604973696795792
+CVC-ClinicDB,369,sam_b_automatic_box,"[194, 173, 238, 223]",True,0.9008077544426495,0.8195179306290418
+CVC-ClinicDB,37,sam_b_automatic_box,"[158, 122, 254, 193]",True,0.8737836494069181,0.7758577194752775
+CVC-ClinicDB,370,sam_b_automatic_box,"[186, 173, 238, 220]",True,0.8702648340596715,0.770326409495549
+CVC-ClinicDB,371,sam_b_automatic_box,"[242, 149, 302, 208]",True,0.0,0.0
+CVC-ClinicDB,372,sam_b_automatic_box,"[242, 149, 302, 208]",True,0.0,0.0
+CVC-ClinicDB,373,sam_b_automatic_box,"[190, 173, 234, 208]",True,0.4502541757443718,0.29053420805998126
+CVC-ClinicDB,374,sam_b_automatic_box,"[234, 164, 286, 211]",True,0.0,0.0
+CVC-ClinicDB,375,sam_b_automatic_box,"[222, 158, 302, 220]",True,0.0,0.0
+CVC-ClinicDB,376,sam_b_automatic_box,"[186, 131, 246, 178]",True,0.6796954314720812,0.514801999231065
+CVC-ClinicDB,377,sam_b_automatic_box,"[170, 143, 226, 193]",True,0.816304347826087,0.689623507805326
+CVC-ClinicDB,378,sam_b_automatic_box,"[162, 143, 226, 190]",True,0.9383938393839384,0.883937823834197
+CVC-ClinicDB,379,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,38,sam_b_automatic_box,"[158, 101, 230, 139]",True,0.0032935364347468094,0.0016494845360824743
+CVC-ClinicDB,380,sam_b_automatic_box,"[182, 131, 246, 199]",True,0.0,0.0
+CVC-ClinicDB,381,sam_b_automatic_box,"[162, 128, 302, 196]",True,0.0,0.0
+CVC-ClinicDB,382,sam_b_automatic_box,"[234, 164, 282, 214]",True,0.0,0.0
+CVC-ClinicDB,383,sam_b_automatic_box,"[234, 170, 270, 205]",True,0.44223211946554886,0.28388832828792465
+CVC-ClinicDB,384,sam_b_automatic_box,"[178, 107, 238, 196]",True,0.08250128008192524,0.04302546813979105
+CVC-ClinicDB,385,sam_b_automatic_box,"[170, 107, 230, 226]",True,0.23226459669254135,0.13139104204055138
+CVC-ClinicDB,386,sam_b_automatic_box,"[234, 98, 278, 130]",True,0.05121126371730278,0.026278509703924067
+CVC-ClinicDB,387,sam_b_automatic_box,"[282, 119, 318, 163]",True,0.0,0.0
+CVC-ClinicDB,388,sam_b_automatic_box,"[178, 86, 238, 220]",True,0.09944792322798177,0.052325808086715796
+CVC-ClinicDB,389,sam_b_automatic_box,"[230, 89, 278, 154]",True,0.18387000975775317,0.10124275836292282
+CVC-ClinicDB,39,sam_b_automatic_box,"[162, 134, 210, 163]",True,0.4042113179169017,0.25329877474081053
+CVC-ClinicDB,390,sam_b_automatic_box,"[230, 77, 322, 193]",True,0.5057206354432463,0.33843780984906907
+CVC-ClinicDB,391,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,392,sam_b_automatic_box,"[78, 260, 154, 288]",True,0.0,0.0
+CVC-ClinicDB,393,sam_b_automatic_box,"[266, 98, 306, 169]",True,0.5034081796311147,0.3363697253851306
+CVC-ClinicDB,394,sam_b_automatic_box,"[254, 98, 298, 163]",True,0.49363331737673527,0.32769797889919916
+CVC-ClinicDB,395,sam_b_automatic_box,"[234, 89, 286, 172]",True,0.5486554459276456,0.37803252466009063
+CVC-ClinicDB,396,sam_b_automatic_box,"[238, 95, 298, 178]",True,0.5724142256789814,0.4009666080843585
+CVC-ClinicDB,397,sam_b_automatic_box,"[226, 71, 266, 121]",True,0.17585108988488857,0.09640171858216971
+CVC-ClinicDB,398,sam_b_automatic_box,"[190, 92, 258, 208]",True,0.5223813968588937,0.35352925020598736
+CVC-ClinicDB,399,sam_b_automatic_box,"[254, 101, 302, 178]",True,0.4908161333080856,0.3252195734002509
+CVC-ClinicDB,4,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,40,sam_b_automatic_box,"[170, 113, 230, 145]",True,0.27645459488852636,0.16039878849066128
+CVC-ClinicDB,400,sam_b_automatic_box,"[262, 98, 306, 169]",True,0.6696664384231634,0.5033823529411765
+CVC-ClinicDB,401,sam_b_automatic_box,"[202, 89, 298, 208]",True,0.9622797813000497,0.9273017562533262
+CVC-ClinicDB,402,sam_b_automatic_box,"[210, 65, 282, 208]",True,0.7948320413436692,0.6595197255574614
+CVC-ClinicDB,403,sam_b_automatic_box,"[238, 83, 290, 166]",True,0.5931116743700612,0.4215769393810937
+CVC-ClinicDB,404,sam_b_automatic_box,"[242, 80, 298, 199]",True,0.5607192437363654,0.38958295057872494
+CVC-ClinicDB,405,sam_b_automatic_box,"[226, 89, 302, 181]",True,0.8727114210985178,0.774168600154679
+CVC-ClinicDB,406,sam_b_automatic_box,"[250, 92, 302, 160]",True,0.46318969629511847,0.3013967925504397
+CVC-ClinicDB,407,sam_b_automatic_box,"[198, 68, 262, 211]",True,0.7773589152084622,0.6358030372756558
+CVC-ClinicDB,408,sam_b_automatic_box,"[226, 122, 278, 193]",True,0.5352708544100064,0.3654401607434384
+CVC-ClinicDB,409,sam_b_automatic_box,"[170, 80, 226, 145]",True,0.10565589196685046,0.05577439258200579
+CVC-ClinicDB,41,sam_b_automatic_box,"[166, 116, 226, 178]",True,0.8233987412069604,0.6998112020138452
+CVC-ClinicDB,410,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,411,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,412,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,413,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,414,sam_b_automatic_box,"[186, 143, 230, 181]",True,0.05122206488949086,0.026284197889682188
+CVC-ClinicDB,415,sam_b_automatic_box,"[218, 77, 254, 121]",True,0.0,0.0
+CVC-ClinicDB,416,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,417,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,418,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,419,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,42,sam_b_automatic_box,"[174, 110, 230, 178]",True,0.6307401135571272,0.4606430961734323
+CVC-ClinicDB,420,sam_b_automatic_box,"[218, 65, 254, 106]",True,0.0009478672985781991,0.000474158368895211
+CVC-ClinicDB,421,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,422,sam_b_automatic_box,"[182, 92, 226, 127]",True,0.016669069935111754,0.008404583260629326
+CVC-ClinicDB,423,sam_b_automatic_box,"[218, 140, 302, 229]",True,0.0,0.0
+CVC-ClinicDB,424,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,425,sam_b_automatic_box,"[186, 68, 230, 109]",True,0.0,0.0
+CVC-ClinicDB,426,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,427,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,428,sam_b_automatic_box,"[150, 194, 226, 244]",True,0.0,0.0
+CVC-ClinicDB,429,sam_b_automatic_box,"[182, 113, 242, 196]",True,0.5015111631081213,0.3346779440468445
+CVC-ClinicDB,43,sam_b_automatic_box,"[166, 104, 230, 151]",True,0.0,0.0
+CVC-ClinicDB,430,sam_b_automatic_box,"[130, 110, 174, 157]",True,0.0,0.0
+CVC-ClinicDB,431,sam_b_automatic_box,"[138, 80, 190, 142]",True,0.0,0.0
+CVC-ClinicDB,432,sam_b_automatic_box,"[170, 104, 246, 208]",True,0.9297252190498897,0.8686789930942304
+CVC-ClinicDB,433,sam_b_automatic_box,"[130, 83, 222, 190]",True,0.9478501610260467,0.9008699387820857
+CVC-ClinicDB,434,sam_b_automatic_box,"[126, 80, 222, 187]",True,0.9510071338648762,0.9065906590659066
+CVC-ClinicDB,435,sam_b_automatic_box,"[134, 68, 218, 178]",True,0.9042515934720179,0.8252365124009204
+CVC-ClinicDB,436,sam_b_automatic_box,"[138, 68, 258, 196]",True,0.9767007143334001,0.9544624217118998
+CVC-ClinicDB,437,sam_b_automatic_box,"[198, 98, 250, 166]",True,0.35877173176789345,0.2185995322602834
+CVC-ClinicDB,438,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,439,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,44,sam_b_automatic_box,"[166, 122, 226, 178]",True,0.002162799842705466,0.0010825706131286292
+CVC-ClinicDB,440,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,441,sam_b_automatic_box,"[130, 119, 258, 214]",True,0.7647729122578545,0.6191354770690564
+CVC-ClinicDB,442,sam_b_automatic_box,"[130, 134, 254, 214]",True,0.058508604206500954,0.03013590703171164
+CVC-ClinicDB,443,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,444,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,445,sam_b_automatic_box,"[142, 119, 246, 217]",True,0.6568300809138505,0.4890148830616584
+CVC-ClinicDB,446,sam_b_automatic_box,"[142, 143, 214, 196]",True,0.09920806335493161,0.052193015680630256
+CVC-ClinicDB,447,sam_b_automatic_box,"[118, 137, 214, 214]",True,0.962283044058745,0.9273078160180123
+CVC-ClinicDB,448,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,449,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,45,sam_b_automatic_box,"[186, 110, 226, 163]",True,0.0,0.0
+CVC-ClinicDB,450,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,451,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,452,sam_b_automatic_box,"[142, 65, 254, 178]",True,0.6555969081019182,0.487649063032368
+CVC-ClinicDB,453,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,454,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,455,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,456,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,457,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,458,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,459,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,46,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,460,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,461,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,462,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,463,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,464,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,465,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,466,sam_b_automatic_box,"[186, 101, 234, 175]",True,0.46838091381521224,0.30580770247642547
+CVC-ClinicDB,467,sam_b_automatic_box,"[166, 149, 274, 229]",True,0.6702212743268462,0.5040096230954291
+CVC-ClinicDB,468,sam_b_automatic_box,"[138, 128, 246, 208]",True,0.07431642907221313,0.03859223300970874
+CVC-ClinicDB,469,sam_b_automatic_box,"[150, 134, 294, 217]",True,0.08762886597938144,0.04582210242587601
+CVC-ClinicDB,47,sam_b_automatic_box,"[218, 149, 246, 193]",True,0.208031713202344,0.11609118014811964
+CVC-ClinicDB,470,sam_b_automatic_box,"[266, 59, 314, 208]",True,0.0,0.0
+CVC-ClinicDB,471,sam_b_automatic_box,"[206, 116, 302, 211]",True,0.08988564843542239,0.04705773157601634
+CVC-ClinicDB,472,sam_b_automatic_box,"[170, 116, 302, 196]",True,0.01262538913870633,0.006352797841789226
+CVC-ClinicDB,473,sam_b_automatic_box,"[190, 116, 254, 172]",True,0.0988296488946684,0.05198358413132695
+CVC-ClinicDB,474,sam_b_automatic_box,"[146, 128, 246, 202]",True,0.004869270667936911,0.002440577249575552
+CVC-ClinicDB,475,sam_b_automatic_box,"[150, 137, 230, 208]",True,0.0005887795441164101,0.0002944764629169997
+CVC-ClinicDB,476,sam_b_automatic_box,"[210, 152, 278, 208]",True,0.0771550885386262,0.04012548702120124
+CVC-ClinicDB,477,sam_b_automatic_box,"[210, 152, 282, 211]",True,0.004154002026342452,0.0020813239250723386
+CVC-ClinicDB,478,sam_b_automatic_box,"[218, 146, 282, 211]",True,0.11017196152725153,0.058297347316471314
+CVC-ClinicDB,479,sam_b_automatic_box,"[150, 101, 246, 229]",True,0.5106401272516229,0.34285879228726474
+CVC-ClinicDB,48,sam_b_automatic_box,"[190, 98, 226, 133]",True,0.0,0.0
+CVC-ClinicDB,480,sam_b_automatic_box,"[142, 98, 246, 223]",True,0.6317485196795541,0.46171959523961054
+CVC-ClinicDB,481,sam_b_automatic_box,"[142, 98, 250, 217]",True,0.6997458758668217,0.538160858619319
+CVC-ClinicDB,482,sam_b_automatic_box,"[138, 98, 254, 223]",True,0.5820934652946189,0.41053020847778854
+CVC-ClinicDB,483,sam_b_automatic_box,"[142, 95, 258, 223]",True,0.5580618759207726,0.38702206884025064
+CVC-ClinicDB,484,sam_b_automatic_box,"[154, 98, 262, 235]",True,0.6687781176894008,0.5023791499945929
+CVC-ClinicDB,485,sam_b_automatic_box,"[162, 107, 254, 208]",True,0.5905370720131725,0.4189802089059923
+CVC-ClinicDB,486,sam_b_automatic_box,"[278, 170, 326, 208]",True,0.0,0.0
+CVC-ClinicDB,487,sam_b_automatic_box,"[130, 80, 222, 181]",True,0.001215436037678517,0.0006080875646093037
+CVC-ClinicDB,488,sam_b_automatic_box,"[126, 104, 206, 181]",True,0.0009324009324009324,0.0004664179104477612
+CVC-ClinicDB,489,sam_b_automatic_box,"[118, 122, 258, 208]",True,0.046782200834526236,0.02395134882270388
+CVC-ClinicDB,49,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,490,sam_b_automatic_box,"[182, 65, 278, 208]",True,0.21405719185988983,0.1198566890743887
+CVC-ClinicDB,491,sam_b_automatic_box,"[186, 77, 258, 187]",True,0.40374177156715557,0.2529301114165823
+CVC-ClinicDB,492,sam_b_automatic_box,"[170, 110, 318, 244]",True,0.8514916679329383,0.7413891951488424
+CVC-ClinicDB,493,sam_b_automatic_box,"[186, 152, 306, 244]",True,0.6107824237186731,0.4396592975404345
+CVC-ClinicDB,494,sam_b_automatic_box,"[238, 173, 302, 217]",True,0.027968193035371538,0.01418242491657397
+CVC-ClinicDB,495,sam_b_automatic_box,"[158, 137, 270, 211]",True,0.3911465042745052,0.2431212694715388
+CVC-ClinicDB,496,sam_b_automatic_box,"[106, 128, 250, 232]",True,0.7547157367101965,0.6060590011122292
+CVC-ClinicDB,497,sam_b_automatic_box,"[154, 98, 274, 223]",True,0.13466981132075473,0.07219623214059932
+CVC-ClinicDB,498,sam_b_automatic_box,"[158, 110, 278, 229]",True,0.5268670894200406,0.3576507493900314
+CVC-ClinicDB,499,sam_b_automatic_box,"[158, 98, 290, 205]",True,0.6007600576595465,0.429347418895632
+CVC-ClinicDB,5,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,50,sam_b_automatic_box,"[150, 98, 230, 139]",True,0.8530549110595514,0.7437626432906271
+CVC-ClinicDB,500,sam_b_automatic_box,"[170, 98, 294, 241]",True,0.9247727033383649,0.8600718250081619
+CVC-ClinicDB,501,sam_b_automatic_box,"[194, 125, 302, 226]",True,0.6871251112573042,0.5233744031126569
+CVC-ClinicDB,502,sam_b_automatic_box,"[158, 110, 290, 226]",True,0.7705478378124118,0.6267408049788298
+CVC-ClinicDB,503,sam_b_automatic_box,"[150, 104, 282, 214]",True,0.4836173867089444,0.3189283380527118
+CVC-ClinicDB,504,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,505,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,506,sam_b_automatic_box,"[138, 107, 258, 229]",True,0.3175917215428034,0.18877208678148066
+CVC-ClinicDB,507,sam_b_automatic_box,"[214, 107, 306, 232]",True,0.24703603584427747,0.1409247656515615
+CVC-ClinicDB,508,sam_b_automatic_box,"[110, 32, 230, 208]",True,0.005022989838105174,0.0025178184071893398
+CVC-ClinicDB,509,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,51,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,510,sam_b_automatic_box,"[150, 98, 186, 178]",True,0.0,0.0
+CVC-ClinicDB,511,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,512,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,513,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,514,sam_b_automatic_box,"[166, 158, 294, 256]",True,0.7341246974760862,0.5799344501092498
+CVC-ClinicDB,515,sam_b_automatic_box,"[190, 155, 234, 193]",True,0.32617436500931646,0.1948675884696508
+CVC-ClinicDB,516,sam_b_automatic_box,"[130, 167, 254, 256]",True,0.7282827315391246,0.57267660792288
+CVC-ClinicDB,517,sam_b_automatic_box,"[278, 65, 326, 157]",True,0.0,0.0
+CVC-ClinicDB,518,sam_b_automatic_box,"[286, 68, 326, 160]",True,0.0,0.0
+CVC-ClinicDB,519,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,52,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,520,sam_b_automatic_box,"[182, 167, 278, 268]",True,0.357223433857261,0.21745101629738142
+CVC-ClinicDB,521,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,522,sam_b_automatic_box,"[170, 197, 246, 244]",True,0.0,0.0
+CVC-ClinicDB,523,sam_b_automatic_box,"[238, 80, 326, 229]",True,0.0,0.0
+CVC-ClinicDB,524,sam_b_automatic_box,"[126, 155, 298, 274]",True,0.9151947339550192,0.8436488673139159
+CVC-ClinicDB,525,sam_b_automatic_box,"[210, 209, 242, 250]",True,0.18269310545092507,0.10052958363769175
+CVC-ClinicDB,526,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,527,sam_b_automatic_box,"[130, 56, 194, 112]",True,0.0,0.0
+CVC-ClinicDB,528,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,529,sam_b_automatic_box,"[130, 116, 254, 235]",True,0.4177530394023729,0.26402518052212554
+CVC-ClinicDB,53,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,530,sam_b_automatic_box,"[198, 65, 238, 103]",True,0.0,0.0
+CVC-ClinicDB,531,sam_b_automatic_box,"[118, 122, 254, 229]",True,0.5109014675052411,0.3430944671265662
+CVC-ClinicDB,532,sam_b_automatic_box,"[190, 158, 302, 244]",True,0.0,0.0
+CVC-ClinicDB,533,sam_b_automatic_box,"[198, 56, 302, 244]",True,0.7940675076713263,0.6584676279332767
+CVC-ClinicDB,534,sam_b_automatic_box,"[130, 80, 270, 226]",True,0.13956941351150706,0.07501995211492418
+CVC-ClinicDB,535,sam_b_automatic_box,"[126, 80, 266, 226]",True,0.1173688736027515,0.06234300068508792
+CVC-ClinicDB,536,sam_b_automatic_box,"[166, 119, 254, 193]",True,0.0,0.0
+CVC-ClinicDB,537,sam_b_automatic_box,"[174, 80, 278, 166]",True,0.8981176470588236,0.8150758061071962
+CVC-ClinicDB,538,sam_b_automatic_box,"[142, 86, 298, 217]",True,0.5279565821027389,0.358655577467204
+CVC-ClinicDB,539,sam_b_automatic_box,"[130, 89, 246, 229]",True,0.005829457364341086,0.0029232491603433264
+CVC-ClinicDB,54,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,540,sam_b_automatic_box,"[130, 107, 258, 211]",True,0.013787160706591986,0.006941431670281995
+CVC-ClinicDB,541,sam_b_automatic_box,"[142, 65, 274, 226]",True,0.645344338405984,0.4763899466869764
+CVC-ClinicDB,542,sam_b_automatic_box,"[134, 74, 258, 190]",True,0.6309617769759838,0.4608795915005765
+CVC-ClinicDB,543,sam_b_automatic_box,"[170, 56, 326, 238]",True,0.7056824124106676,0.5452158103831392
+CVC-ClinicDB,544,sam_b_automatic_box,"[190, 131, 250, 196]",True,0.009585459977592432,0.004815810869973107
+CVC-ClinicDB,545,sam_b_automatic_box,"[134, 98, 254, 181]",True,0.3441192510452645,0.20781644527390494
+CVC-ClinicDB,546,sam_b_automatic_box,"[182, 95, 246, 157]",True,0.052652156913853776,0.027037879801900682
+CVC-ClinicDB,547,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,548,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,549,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,55,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,550,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,551,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,552,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,553,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,554,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,555,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,556,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,557,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,558,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,559,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,56,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,560,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,561,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,562,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,563,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,564,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,565,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,566,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,567,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,568,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,569,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,57,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,570,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,571,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,572,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,573,sam_b_automatic_box,"[130, 32, 314, 127]",True,0.0,0.0
+CVC-ClinicDB,574,sam_b_automatic_box,"[130, 74, 262, 145]",True,0.0,0.0
+CVC-ClinicDB,575,sam_b_automatic_box,"[242, 14, 334, 127]",True,0.0,0.0
+CVC-ClinicDB,576,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,577,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,578,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,579,sam_b_automatic_box,"[242, 38, 314, 106]",True,0.3504747339578156,0.2124700610368539
+CVC-ClinicDB,58,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,580,sam_b_automatic_box,"[230, 44, 318, 121]",True,0.5033245635015546,0.33629506520071595
+CVC-ClinicDB,581,sam_b_automatic_box,"[170, 56, 282, 127]",True,0.40513527485783213,0.25402485143165854
+CVC-ClinicDB,582,sam_b_automatic_box,"[150, 77, 238, 163]",True,0.1653557382910261,0.09012959173730878
+CVC-ClinicDB,583,sam_b_automatic_box,"[150, 86, 238, 151]",True,0.0,0.0
+CVC-ClinicDB,584,sam_b_automatic_box,"[154, 89, 238, 163]",True,0.0,0.0
+CVC-ClinicDB,585,sam_b_automatic_box,"[150, 92, 206, 139]",True,0.0,0.0
+CVC-ClinicDB,586,sam_b_automatic_box,"[138, 65, 238, 139]",True,0.0,0.0
+CVC-ClinicDB,587,sam_b_automatic_box,"[130, 65, 238, 136]",True,0.0,0.0
+CVC-ClinicDB,588,sam_b_automatic_box,"[130, 80, 238, 145]",True,0.0,0.0
+CVC-ClinicDB,589,sam_b_automatic_box,"[130, 47, 238, 115]",True,0.0,0.0
+CVC-ClinicDB,59,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,590,sam_b_automatic_box,"[118, 65, 238, 133]",True,0.08098987626546682,0.04220398593200469
+CVC-ClinicDB,591,sam_b_automatic_box,"[130, 74, 198, 109]",True,0.0,0.0
+CVC-ClinicDB,592,sam_b_automatic_box,"[186, 206, 258, 244]",True,0.6056663775657705,0.4343769438109061
+CVC-ClinicDB,593,sam_b_automatic_box,"[186, 203, 254, 244]",True,0.5991039703383284,0.4276576973974415
+CVC-ClinicDB,594,sam_b_automatic_box,"[186, 203, 254, 244]",True,0.616938616938617,0.4460674157303371
+CVC-ClinicDB,595,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,596,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,597,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,598,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,599,sam_b_automatic_box,"[130, 143, 226, 193]",True,0.0,0.0
+CVC-ClinicDB,6,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,60,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,600,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,601,sam_b_automatic_box,"[150, 200, 230, 244]",True,0.5414283976152816,0.37120453787120455
+CVC-ClinicDB,602,sam_b_automatic_box,"[146, 200, 214, 244]",True,0.559799909049568,0.3886959267445532
+CVC-ClinicDB,603,sam_b_automatic_box,"[142, 155, 242, 208]",True,0.17445104937522746,0.09556087187666135
+CVC-ClinicDB,604,sam_b_automatic_box,"[170, 176, 226, 226]",True,0.5316005775852494,0.3620272314674735
+CVC-ClinicDB,605,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,606,sam_b_automatic_box,"[126, 128, 170, 178]",True,0.685511044552602,0.5215038450583879
+CVC-ClinicDB,607,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,608,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,609,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,61,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,610,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,611,sam_b_automatic_box,"[158, 80, 210, 121]",True,0.0,0.0
+CVC-ClinicDB,612,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,62,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,63,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,64,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,65,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,66,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,67,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,68,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,69,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,7,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,70,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,71,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,72,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,73,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,74,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,75,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,76,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,77,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,78,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,79,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,8,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,80,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,81,sam_b_automatic_box,"[154, 125, 194, 169]",True,0.1834028971274245,0.1009595891336667
+CVC-ClinicDB,82,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,83,sam_b_automatic_box,"[194, 128, 234, 184]",True,0.0,0.0
+CVC-ClinicDB,84,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,85,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,86,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,87,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,88,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,89,sam_b_automatic_box,"[166, 116, 214, 181]",True,0.0,0.0
+CVC-ClinicDB,9,sam_b_automatic_box,"[290, 59, 326, 115]",True,0.0,0.0
+CVC-ClinicDB,90,sam_b_automatic_box,"[182, 119, 226, 181]",True,0.0,0.0
+CVC-ClinicDB,91,sam_b_automatic_box,"[150, 68, 194, 127]",True,0.532059186189889,0.3624527509449811
+CVC-ClinicDB,92,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,93,sam_b_automatic_box,"[186, 89, 234, 178]",True,0.0,0.0
+CVC-ClinicDB,94,sam_b_automatic_box,"[170, 113, 210, 178]",True,0.0,0.0
+CVC-ClinicDB,95,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,96,sam_b_automatic_box,"[154, 143, 194, 193]",True,0.0,0.0
+CVC-ClinicDB,97,sam_b_automatic_box,null,False,0.0,0.0
+CVC-ClinicDB,98,sam_b_automatic_box,"[154, 86, 254, 190]",True,0.8033900342609845,0.6713883865782599
+CVC-ClinicDB,99,sam_b_automatic_box,"[166, 128, 238, 187]",True,0.0,0.0
+Kvasir-SEG-val,cju0s690hkp960855tjuaqvv0,sam_b_automatic_box,"[416, 188, 463, 259]",True,0.0,0.0
+Kvasir-SEG-val,cju0sr5ghl0nd08789uzf1raf,sam_b_automatic_box,"[470, 138, 820, 775]",True,0.5214357360265633,0.35266355932699
+Kvasir-SEG-val,cju0sxqiclckk08551ycbwhno,sam_b_automatic_box,"[411, 272, 509, 376]",True,0.6095810910625725,0.4384154208089854
+Kvasir-SEG-val,cju0t4oil7vzk099370nun5h9,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cju0tl3uz8blh0993wxvn7ly3,sam_b_automatic_box,"[275, 160, 509, 374]",True,0.0,0.0
+Kvasir-SEG-val,cju0u2g7pmnux0801vkk47ivj,sam_b_automatic_box,"[193, 210, 380, 441]",True,0.3669776988219873,0.22472301728963573
+Kvasir-SEG-val,cju0u82z3cuma0835wlxrnrjv,sam_b_automatic_box,"[237, 200, 402, 403]",True,0.13704371873953483,0.07356249855032125
+Kvasir-SEG-val,cju0ue769mxii08019zqgdbxn,sam_b_automatic_box,"[342, 132, 487, 409]",True,0.0,0.0
+Kvasir-SEG-val,cju0vtox5ain6099360pu62rp,sam_b_automatic_box,"[210, 128, 270, 171]",True,0.22231619645985623,0.1250594712159315
+Kvasir-SEG-val,cju13cgqmnhwn0988yrainhcp,sam_b_automatic_box,"[250, 302, 415, 471]",True,0.7031400265612359,0.5421865436225811
+Kvasir-SEG-val,cju13fwthn9mq0835gacxgy01,sam_b_automatic_box,"[470, 89, 536, 192]",True,0.11082591595942869,0.058663686367321895
+Kvasir-SEG-val,cju13hp5rnbjx0835bf0jowgx,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cju14g8o4xui30878gkgbrvqj,sam_b_automatic_box,"[450, 211, 516, 276]",True,0.20573254768800558,0.1146610263831682
+Kvasir-SEG-val,cju14hjh2ob2o0835ouz3r5aa,sam_b_automatic_box,"[193, 137, 328, 403]",True,0.0,0.0
+Kvasir-SEG-val,cju14pxbaoksp0835qzorx6g6,sam_b_automatic_box,"[365, 166, 529, 358]",True,0.0,0.0
+Kvasir-SEG-val,cju15czxqp3lv0835jvhgzurz,sam_b_automatic_box,"[183, 286, 327, 461]",True,0.1801654841689432,0.09900102597332469
+Kvasir-SEG-val,cju15jr8jz8sb0855ukmkswkz,sam_b_automatic_box,"[237, 105, 388, 291]",True,0.348826483979976,0.21125973775353707
+Kvasir-SEG-val,cju15l5ubz9yh0855b3ivdpse,sam_b_automatic_box,"[250, 217, 487, 358]",True,0.12737630416693338,0.06802023516543615
+Kvasir-SEG-val,cju15mhjczc8z0801kit5c6di,sam_b_automatic_box,"[224, 132, 374, 437]",True,0.0,0.0
+Kvasir-SEG-val,cju15ptjtppz40988odsm9azx,sam_b_automatic_box,"[171, 254, 509, 468]",True,0.01614482703861525,0.00813810768984471
+Kvasir-SEG-val,cju15wdt3zla10801odjiw7sy,sam_b_automatic_box,"[197, 342, 302, 462]",True,0.0,0.0
+Kvasir-SEG-val,cju160wshltz10993i1gmqxbe,sam_b_automatic_box,"[274, 249, 403, 375]",True,0.0,0.0
+Kvasir-SEG-val,cju16ach3m1da0993r1dq3sn2,sam_b_automatic_box,"[195, 204, 402, 461]",True,0.5554527957607419,0.3845168881506091
+Kvasir-SEG-val,cju16b6ynq8e40988m8vx0xnj,sam_b_automatic_box,"[406, 183, 457, 248]",True,0.0,0.0
+Kvasir-SEG-val,cju16d65tzw9d0799ouslsw25,sam_b_automatic_box,"[240, 238, 336, 353]",True,0.8883601586190809,0.7991438643612556
+Kvasir-SEG-val,cju16fpvhzypl0799p9phnlx6,sam_b_automatic_box,"[257, 115, 526, 352]",True,0.7498324984845101,0.5997856267864434
+Kvasir-SEG-val,cju16jgnyzp970878melv7r25,sam_b_automatic_box,"[281, 237, 460, 391]",True,0.6993661958586448,0.5377118398982011
+Kvasir-SEG-val,cju16whaj0e7n0855q7b6cjkm,sam_b_automatic_box,"[250, 246, 415, 369]",True,0.017457097428587094,0.008805407139459508
+Kvasir-SEG-val,cju32qr9tbvsj08013pkpjenq,sam_b_automatic_box,"[252, 166, 472, 357]",True,0.8781313810448728,0.7827399449524993
+Kvasir-SEG-val,cju32srle1xfq083575i3fl75,sam_b_automatic_box,"[368, 121, 487, 227]",True,0.30737961225766103,0.18159985220764827
+Kvasir-SEG-val,cju32upim1z7u0988l883nqp6,sam_b_automatic_box,"[185, 109, 432, 310]",True,0.928881154789753,0.8672064346019656
+Kvasir-SEG-val,cju32zhbnc1oy0801iyv1ix6p,sam_b_automatic_box,"[197, 200, 328, 425]",True,0.0025413442573205885,0.0012722887905660737
+Kvasir-SEG-val,cju330ofbc2l30801th5g3hw6,sam_b_automatic_box,"[155, 111, 361, 462]",True,0.010943658706236958,0.005501935002564461
+Kvasir-SEG-val,cju33231uy4gi0993qc7b1jch,sam_b_automatic_box,"[288, 72, 483, 214]",True,0.0,0.0
+Kvasir-SEG-val,cju334jzo261t0835yqudnfs1,sam_b_automatic_box,"[327, 116, 523, 384]",True,0.7352121875780454,0.5812929096542925
+Kvasir-SEG-val,cju336l68y7if0993wf092166,sam_b_automatic_box,"[184, 194, 423, 441]",True,0.6036339636603634,0.4322892049442129
+Kvasir-SEG-val,cju3381d8bz3h07991xtl7ra0,sam_b_automatic_box,"[167, 342, 353, 461]",True,0.0,0.0
+Kvasir-SEG-val,cju33belnbyhm0878yxl42233,sam_b_automatic_box,"[315, 204, 528, 373]",True,0.05764889737801702,0.029679957089218667
+Kvasir-SEG-val,cju33eqwbcch208012jikwdky,sam_b_automatic_box,"[250, 143, 428, 369]",True,0.0,0.0
+Kvasir-SEG-val,cju33jon3ygbj0993pu22a4k6,sam_b_automatic_box,"[433, 348, 519, 455]",True,0.0,0.0
+Kvasir-SEG-val,cju33mirdc8mj0799k33wzoes,sam_b_automatic_box,"[250, 229, 506, 432]",True,0.8974961172771696,0.8140525682872358
+Kvasir-SEG-val,cju33o12x2jm50988944mxq0v,sam_b_automatic_box,"[281, 161, 522, 441]",True,0.5699822829663377,0.3985840707964602
+Kvasir-SEG-val,cju33qpdvc9g0087825jhf3s9,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cju33w4sdcivk0855x879zht7,sam_b_automatic_box,"[253, 246, 345, 347]",True,0.3841311019013572,0.23772417573811574
+Kvasir-SEG-val,cju33x0f22peh0988g0ln7w5v,sam_b_automatic_box,"[182, 111, 464, 346]",True,0.3935509951727582,0.24498194090828349
+Kvasir-SEG-val,cju7dp3dw2k4n0755zhe003ad,sam_b_automatic_box,"[361, 274, 513, 437]",True,0.8946963873943121,0.8094575799721836
+Kvasir-SEG-val,cju7dqcwi2dz00850gcmr2ert,sam_b_automatic_box,"[242, 105, 477, 373]",True,0.010609131004887352,0.0053328539756725985
+Kvasir-SEG-val,cju7druhp2gp308715i6km7be,sam_b_automatic_box,"[283, 160, 376, 238]",True,0.11707175282762394,0.06217536595110966
+Kvasir-SEG-val,cju7dsrtb2f8i085064kwugfk,sam_b_automatic_box,"[184, 271, 315, 447]",True,0.8496098526109864,0.7385406199273402
+Kvasir-SEG-val,cju7dtb1e2j0t0818deq51ib3,sam_b_automatic_box,"[249, 94, 548, 456]",True,0.012791095054435386,0.006436713836477988
+Kvasir-SEG-val,cju7dubap2g0w0801fgl42mg9,sam_b_automatic_box,"[236, 111, 530, 373]",True,0.45690837007669793,0.29609931206704043
+Kvasir-SEG-val,cju7dvl5m2n4t0755hlnnjjet,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cju7dwe282dc309876rco45ts,sam_b_automatic_box,"[197, 216, 399, 331]",True,0.2420055766284006,0.13766003657978967
+Kvasir-SEG-val,cju7dxffn2eam0817qxosfwch,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cju7dymur2od30755eg8yv2ht,sam_b_automatic_box,"[197, 172, 328, 325]",True,0.42396548209553575,0.2690077389036194
+Kvasir-SEG-val,cju7dz5yy2i7z0801ausi7rna,sam_b_automatic_box,"[176, 210, 507, 468]",True,0.8383186320406051,0.7216424874862136
+Kvasir-SEG-val,cju7ea4om2l910801bohqjccy,sam_b_automatic_box,"[413, 143, 539, 318]",True,0.9481133364299571,0.9013455244428282
+Kvasir-SEG-val,cju7ebe962hr409872ovibahw,sam_b_automatic_box,"[391, 105, 522, 264]",True,0.24167073766487543,0.13744339177062206
+Kvasir-SEG-val,cju7ecl9i2i060987xawjp4l0,sam_b_automatic_box,"[326, 304, 451, 440]",True,0.0,0.0
+Kvasir-SEG-val,cju7eea9b2m0z0801ynqv1fqu,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cju85nr8elly209872w9n5m0s,sam_b_automatic_box,"[195, 182, 363, 457]",True,0.025701571156116612,0.013018078108468651
+Kvasir-SEG-val,cju85omszllp30850b6rm9mi3,sam_b_automatic_box,"[223, 222, 373, 353]",True,0.0,0.0
+Kvasir-SEG-val,cju85plp7lmkw0850rx42jdpf,sam_b_automatic_box,"[201, 232, 259, 320]",True,0.0,0.0
+Kvasir-SEG-val,cju85qefyln6v0850szeb9byi,sam_b_automatic_box,"[304, 188, 491, 396]",True,0.1655436701794947,0.09024127066338643
+Kvasir-SEG-val,cju85rkbnlo1c08503uxcpax1,sam_b_automatic_box,"[236, 294, 425, 464]",True,0.307586330827518,0.18174417781553054
+Kvasir-SEG-val,cju87kbcen2av0987usezo8kn,sam_b_automatic_box,"[187, 210, 411, 419]",True,0.0,0.0
+Kvasir-SEG-val,cju87li0zn3yb0817kbwgjiz8,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cju87mrypnb1e0818scv1mxxg,sam_b_automatic_box,"[239, 139, 523, 375]",True,0.8384255991395247,0.7218010301522079
+Kvasir-SEG-val,cju87nkyrnb970801q84m47yt,sam_b_automatic_box,"[248, 227, 411, 414]",True,0.0,0.0
+Kvasir-SEG-val,cju87ox0kncom0801b98hqnd2,sam_b_automatic_box,"[211, 109, 447, 335]",True,0.2530747272096684,0.14486866218692732
+Kvasir-SEG-val,cju87q6yoneim0871dl4phvkd,sam_b_automatic_box,"[231, 109, 526, 323]",True,0.4927175146545619,0.32689128908815074
+Kvasir-SEG-val,cju87r56lnkyp0755hz30leew,sam_b_automatic_box,"[278, 258, 388, 337]",True,0.010320795871681651,0.005187165775401069
+Kvasir-SEG-val,cju87tyddnnad0755bj0wxahe,sam_b_automatic_box,"[259, 79, 470, 328]",True,0.43083189515515796,0.27456070119253295
+Kvasir-SEG-val,cju87vqa0ndwg0850onjdz7ol,sam_b_automatic_box,"[175, 255, 335, 441]",True,0.01950420977506276,0.009848145030819553
+Kvasir-SEG-val,cju87xn2snfmv0987sc3d9xnq,sam_b_automatic_box,"[241, 128, 388, 380]",True,0.03176366059529098,0.016138133393522176
+Kvasir-SEG-val,cju87z6o6nh73085045bzsx6o,sam_b_automatic_box,"[443, 243, 496, 336]",True,0.015967961389366674,0.008048237668857719
+Kvasir-SEG-val,cju87zv8lni0o0850hbbecbq6,sam_b_automatic_box,"[229, 122, 419, 373]",True,0.8723887375113533,0.7736608940797423
+Kvasir-SEG-val,cju8828oxnool0801qno9luhr,sam_b_automatic_box,"[184, 127, 529, 412]",True,0.8450794254074925,0.7317208161311554
+Kvasir-SEG-val,cju884985nlmx0817vzpax3y4,sam_b_automatic_box,"[226, 177, 458, 380]",True,0.07773584905660377,0.04043973301923832
+Kvasir-SEG-val,cju8ceacrsqkr0755hdz145es,sam_b_automatic_box,"[196, 133, 476, 410]",True,0.0,0.0
+Kvasir-SEG-val,cju8cgi2kspp308011nxdtjp6,sam_b_automatic_box,"[286, 67, 501, 358]",True,0.4406366504158302,0.28257471264367817
+Kvasir-SEG-val,cju8chdlqsu620755azjty1tj,sam_b_automatic_box,"[339, 100, 483, 281]",True,0.5321998860927711,0.36258335249482637
+Kvasir-SEG-val,cju8chxndsre008015uisl4si,sam_b_automatic_box,"[399, 91, 534, 205]",True,0.0001639344262295082,8.197393228953193e-05
+Kvasir-SEG-val,cju8cj10qsrau0871o2dr6ai1,sam_b_automatic_box,"[197, 83, 354, 226]",True,0.8754179596353227,0.7784385026737968
+Kvasir-SEG-val,cju8clorgsuwn08714toqb7v6,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cju8cwy02t9eq08185qn12c02,sam_b_automatic_box,"[257, 257, 441, 461]",True,0.0,0.0
+Kvasir-SEG-val,cju8czvnztbf40871b4m7t78w,sam_b_automatic_box,"[374, 177, 487, 329]",True,0.0,0.0
+Kvasir-SEG-val,cju8d2q30tfhs0801n7lx77xl,sam_b_automatic_box,"[380, 319, 458, 386]",True,0.037035758663537206,0.01886726099417981
+Kvasir-SEG-val,cju8d4jgatgpj0871q2ophhkm,sam_b_automatic_box,"[275, 404, 386, 442]",True,0.0,0.0
+Kvasir-SEG-val,cju8dic9mtppa0987swn23wbc,sam_b_automatic_box,"[352, 415, 411, 530]",True,0.13248048823425856,0.07093927929513204
+Kvasir-SEG-val,cju8djdqztu6408506pzhlo18,sam_b_automatic_box,"[416, 188, 481, 259]",True,0.24380490760375645,0.13882563996412062
+Kvasir-SEG-val,cju8dk7eztzup08182yxko5zh,sam_b_automatic_box,"[197, 94, 328, 346]",True,0.9126499684276994,0.8393341076267905
+Kvasir-SEG-val,cju8dm2cau2km0818jsv9eeq2,sam_b_automatic_box,"[218, 331, 402, 478]",True,0.579686617730096,0.4081399393728569
+Kvasir-SEG-val,cju8dn0c3u2v50801k8rvq02f,sam_b_automatic_box,"[439, 335, 783, 791]",True,0.18958433712056844,0.10471867925570096
+Kvasir-SEG-val,cju8doa16u5gh0818w1ywda3q,sam_b_automatic_box,"[216, 348, 309, 440]",True,0.03902317674862142,0.019899866375737894
+Kvasir-SEG-val,cju8dpa89u6l80818dj6lldh9,sam_b_automatic_box,"[230, 348, 406, 451]",True,0.00034365737359852227,0.00017185821697099891
+Kvasir-SEG-val,cju8dqkrqu83i0818ev74qpxq,sam_b_automatic_box,"[481, 224, 1134, 713]",True,0.24265522551086197,0.13808060264179073
+Kvasir-SEG-val,cjyzjzssvd8pq0838f4nolj5l,sam_b_automatic_box,"[462, 140, 565, 376]",True,0.0,0.0
+Kvasir-SEG-val,cjyzk8qieoboa0848ogj51wwm,sam_b_automatic_box,"[207, 134, 415, 346]",True,0.2613848591331132,0.1503408390903491
+Kvasir-SEG-val,cjyzkmjy8evns070165gf9dmq,sam_b_automatic_box,"[440, 80, 603, 220]",True,0.0,0.0
+Kvasir-SEG-val,cjyzkpsbjdsjq07211dfi4sru,sam_b_automatic_box,"[290, 122, 415, 196]",True,0.7861257943814218,0.6476171836774636
+Kvasir-SEG-val,cjyzl833ndne80838pzuq6ila,sam_b_automatic_box,"[230, 116, 460, 382]",True,0.7905472209087392,0.6536404186881342
+Kvasir-SEG-val,cjyzlw7f9faqr070129au64sq,sam_b_automatic_box,"[387, 182, 438, 280]",True,0.09403115023701267,0.04933509288397117
+Kvasir-SEG-val,cjyztzaqtrv430848l8xgcerw,sam_b_automatic_box,"[320, 320, 430, 406]",True,0.06564785633585063,0.03393790347371657
+Kvasir-SEG-val,cjyzu3reghjya0794w7pwoi50,sam_b_automatic_box,"[455, 140, 573, 334]",True,0.5614211448430364,0.39026094595404
+Kvasir-SEG-val,cjyzu9th0qt4r0a46pyl4zik0,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cjyzufihqquiw0a46jatrbwln,sam_b_automatic_box,"[425, 230, 490, 298]",True,0.022129714728514535,0.011188658272135868
+Kvasir-SEG-val,cjyzuio1qgh040763k56deohv,sam_b_automatic_box,"[230, 104, 558, 334]",True,0.8762694651320244,0.7797861123663202
+Kvasir-SEG-val,cjyzul1qggwwj07216mhiv5sy,sam_b_automatic_box,"[630, 235, 970, 725]",True,0.9602309006058026,0.923503979071184
+Kvasir-SEG-val,cjyzurzvohqnr0794es1itzek,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,cjz14qsk2wci60794un9ozwmw,sam_b_automatic_box,"[365, 188, 430, 310]",True,0.008909263904506531,0.004474564490203745
+Kvasir-SEG-val,ck2395w2mb4vu07480otsu6tw,sam_b_automatic_box,"[365, 296, 528, 406]",True,0.20329182269441784,0.11314682331956805
+Kvasir-SEG-val,ck2bxiswtxuw80838qkisqjwz,sam_b_automatic_box,null,False,0.0,0.0
+Kvasir-SEG-val,ck2bxknhjvs1x0794iogrq49k,sam_b_automatic_box,"[398, 144, 507, 302]",True,0.3483588810946566,0.21091681304564402
+Kvasir-SEG-val,ck2bxlujamu330725szlc2jdu,sam_b_automatic_box,"[215, 302, 475, 478]",True,0.0020527859237536657,0.0010274475267870247
+Kvasir-SEG-val,ck2bxpfgxu2mk0748gsh7xelu,sam_b_automatic_box,"[371, 200, 483, 348]",True,0.0,0.0
+Kvasir-SEG-val,ck2bxqz3evvg20794iiyv5v2m,sam_b_automatic_box,"[230, 116, 618, 514]",True,0.45938745707858075,0.2981849389642496
+Kvasir-SEG-val,ck2bxskgxxzfv08386xkqtqdy,sam_b_automatic_box,"[282, 72, 498, 441]",True,0.0002731920540139718,0.0001366146880306017
+Kvasir-SEG-val,ck2bxw18mmz1k0725litqq2mc,sam_b_automatic_box,"[190, 155, 404, 434]",True,0.4109337465463102,0.2586007635950882
+Kvasir-SEG-val,ck2da7fwcjfis07218r1rvm95,sam_b_automatic_box,"[275, 170, 640, 478]",True,0.0,0.0

@@ -1,0 +1,11 @@
+{
+  "loss": "ce_dice",
+  "edge_weight": null,
+  "shots": 5,
+  "epochs": 12,
+  "stop_epoch": 12,
+  "seed": 1234,
+  "rank": 4,
+  "detail_branch": false,
+  "note": "SAMed CE+Dice base; structure_edge adds isomorphic edge BCE; B1 DetailBranch residual"
+}

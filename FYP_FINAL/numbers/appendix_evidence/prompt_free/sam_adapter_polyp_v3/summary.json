@@ -1,0 +1,30 @@
+{
+  "Kvasir-SEG-val": {
+    "n": 120,
+    "dice_mean": 0.8378140637918776,
+    "dice_std": 0.21130911728234494,
+    "iou_mean": 0.762927525645513,
+    "iou_std": 0.23552455308856657,
+    "precision_mean": 0.8614654187456681,
+    "recall_mean": 0.865870562664242,
+    "hd95_mean": 106.34051059616189,
+    "fps_mean": 8.611616570863173,
+    "prompt": "none_automatic_fft_adapter",
+    "method": "chen_sam_adapter",
+    "ckpt": "E:\\Project\\FYP\\checkpoints\\sam_adapter\\polyp_kvasir_880\\model_epoch_best.pth"
+  },
+  "CVC-ClinicDB": {
+    "n": 612,
+    "dice_mean": 0.7575787253688097,
+    "dice_std": 0.2775003766081161,
+    "iou_mean": 0.6743718611889269,
+    "iou_std": 0.29336406236997065,
+    "precision_mean": 0.768792130918783,
+    "recall_mean": 0.8389411500423352,
+    "hd95_mean": 66.50044955930527,
+    "fps_mean": 9.284290654135283,
+    "prompt": "none_automatic_fft_adapter",
+    "method": "chen_sam_adapter",
+    "ckpt": "E:\\Project\\FYP\\checkpoints\\sam_adapter\\polyp_kvasir_880\\model_epoch_best.pth"
+  }
+}

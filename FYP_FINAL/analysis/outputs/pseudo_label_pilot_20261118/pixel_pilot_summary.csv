@@ -1,0 +1,5 @@
+dataset,condition,n,dice,iou
+CVC-ClinicDB,pseudo_label_student,612,0.07926734940714461,0.048987655745311914
+CVC-ClinicDB,supervised_teacher,612,0.07850360896853448,0.04791581691667481
+Kvasir-SEG-val,pseudo_label_student,120,0.2153608382752668,0.1360569800654072
+Kvasir-SEG-val,supervised_teacher,120,0.21389812014939336,0.13420766521982438

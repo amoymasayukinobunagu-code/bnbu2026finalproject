@@ -1,0 +1,276 @@
+%% ========================================================================
+%% main.tex -- Root file for FYP thesis
+%% Topic: Promptable Medical Image Segmentation Foundation Models
+%%        for Endoscopic Polyp Segmentation
+%% Author: Xu, Junhan; Wu, Keyou
+%% Supervisor: Dr. Donglong Chen
+%% Institution: Beijing Normal University -- Hong Kong Baptist University
+%%              United International College (BNBU)
+%% Last updated: 2026-06-09
+%%
+%% Compilation (Overleaf: just click "Recompile"):
+%%   pdflatex main
+%%   bibtex main
+%%   pdflatex main
+%%   pdflatex main
+%%
+%% Format reference: E:/Project/FYP/sample/Partial_thesis_ZHANGYingfang.docx
+%% ========================================================================
+
+%% WARNING (2026-11-17): manuscript/tables/table1_sota.tex and
+%% table2_ablation.tex are June 2026 STALE tables. Do not copy numbers
+%% from them. Official numbers are in results/summary.json files; see
+%% results/EXPERIMENT_SUMMARY.md and docs/NUMBERS_INDEX.md.
+%% PP-SAM is not a decided "Ours". Prompt eval is fixed expand, not random.
+%%
+\documentclass[11pt,a4paper,oneside]{report}
+
+%% ---------- Encoding & Fonts ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}              % Times New Roman-like serif font (BNBU standard)
+\usepackage{xcolor}            % color support for hyperref link colors
+\usepackage{microtype}          % better typography
+
+%% ---------- Math & Symbols ----------
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}                 % bold math
+\usepackage{siunitx}            % SI units (e.g. \SI{0.86}{\percent})
+
+%% ---------- Graphics & Tables ----------
+\usepackage{graphicx}
+\usepackage{float}              % [H] figure placement
+\usepackage{booktabs}           % nicer tables (\toprule, \midrule, \bottomrule)
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{font=small, labelfont=bf, labelsep=period}
+
+%% ---------- Page Layout (BNBU FYP default, matching sample) ----------
+\usepackage[
+    a4paper,
+    left=1.5in, right=1.0in,
+    top=1.0in, bottom=1.0in,
+    headheight=14pt
+]{geometry}
+
+%% ---------- Line Spacing & Paragraphs (BNBU FYP: 1.5x line spacing) ----------
+\linespread{1.5}                % 1.5x line spacing (BNBU FYP requirement)
+\setlength{\parindent}{2em}     % paragraph indent
+\setlength{\parskip}{0.3em}     % space between paragraphs
+
+%% ---------- Headers & Footers ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \textit{Promptable Medical Image Segmentation}}
+\fancyhead[R]{\small \textit{Chapter \thechapter}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyfoot[C]{\thepage}%
+    \renewcommand{\headrulewidth}{0pt}%
+}
+
+%% ---------- Hyperlinks (load near end) ----------
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=blue!60!black,
+    urlcolor=blue!60!black,
+    bookmarks=true,
+    bookmarksnumbered=true
+]{hyperref}
+\usepackage{url}
+\usepackage{bookmark}
+
+%% ---------- Bibliography Style (BNBU FYP: numeric [1], [2,3], [10-12]) ----------
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{IEEEtran}    % IEEE Transactions bibliography style
+
+%% ---------- Custom Commands ----------
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\etal}{\textit{et al.}}
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\eg}{\textit{e.g.}}
+\newcommand{\cf}{\textit{cf.}}
+
+%% ========================================================================
+%%                              TITLE PAGE
+%% ========================================================================
+\begin{document}
+
+%% Suppress page numbers on title, declaration, acknowledgement, abstract
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1.5cm}
+
+        {\Large\textbf{Promptable Medical Image Segmentation Foundation Models}}\\[0.2cm]
+        {\Large\textbf{for Endoscopic Polyp Segmentation}}\\[1.2cm]
+
+        {\Large\textbf{Partial Thesis}}\\[1.6cm]
+
+        {\large by}\\[0.8cm]
+
+        {\large Xu, Junhan and Wu, Keyou}\\[0.3cm]
+        {\large (2330024269, 2330026127)}\\[1.8cm]
+
+        {\large Supervisor: Dr.\ Donglong Chen}\\[2.2cm]
+
+        {\large Beijing Normal-Hong Kong Baptist University}\\[2.0cm]
+
+        {\large June, 2026}
+
+        \vfill
+    \end{center}
+\end{titlepage}
+
+%% ========================================================================
+%%                              DECLARATION
+%% ========================================================================
+\chapter*{Declaration}
+\addcontentsline{toc}{chapter}{Declaration}
+\thispagestyle{plain}
+
+We hereby declare that this Final Year Project report is our own original work
+and that all sources of information have been duly acknowledged. This work
+has not been submitted previously, in whole or in part, for the award of any
+other academic degree or diploma at this or any other university or
+institution.
+
+\vspace{2cm}
+\begin{flushright}
+    \rule{6cm}{0.5pt}\\
+    Xu, Junhan; Wu, Keyou\\
+    (2330024269, 2330026127)\\
+    Date: \today
+\end{flushright}
+
+%% ========================================================================
+%%                              ACKNOWLEDGEMENT
+%% ========================================================================
+\chapter*{Acknowledgement}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\thispagestyle{plain}
+
+I would like to express my sincere gratitude to my supervisor, Dr.\ Donglong
+Chen, for his invaluable guidance, encouragement, and support throughout this
+Final Year Project. I am also grateful to the academic staff of the Data
+Science programme at BNBU for providing a stimulating learning environment.
+Finally, I would like to thank my family and friends for their constant
+support and patience.
+
+%% ========================================================================
+%%                              ABSTRACT
+%% ========================================================================
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\thispagestyle{plain}
+
+\noindent Endoscopic polyp segmentation is a clinically important task for
+computer-aided colonoscopy, but it remains challenging because polyps vary in
+scale, texture, boundary clarity, and imaging domain. This partial thesis
+reports a current-stage reproduction and benchmarking study of SAM-family
+models for promptable polyp segmentation. The work establishes a reproducible
+v3 evaluation protocol using the held-out Kvasir-SEG validation split, the
+cross-domain CVC-ClinicDB dataset, a fixed $\pm30$ pixel box-prompt setting,
+and five metrics: Dice, IoU, precision, recall, and HD95. Under this protocol,
+the thesis evaluates zero-shot SAM and SAM2 backbone scaling, generic medical
+pre-training transfer through MedSAM, PP-SAM 1/5/10-shot prompt-perturbation
+fine-tuning, and SAMed LoRA parameter-efficient fine-tuning. ASPS is reported separately as an external fully supervised
+upper-bound reference, while OP-SAM is reported as a CPG-only exploratory
+training-free pilot. The results show that larger backbones do not monotonically
+improve zero-shot polyp segmentation, generic medical pre-training does not
+guarantee better transfer to colonoscopy, PP-SAM provides the strongest K-shot
+cross-domain performance, and SAMed LoRA becomes competitive only when trained
+on the full Kvasir training split. The thesis concludes by identifying the next
+alignment tasks required for the long-term project: ASPS-v3 retraining, full
+OP-SAM reproduction, polyp-specific Medical SAM Adapter training, prompt-quality
+ablation, object-scale analysis, weak-boundary refinement, and extension to
+additional datasets.
+
+\vspace{0.5em}
+\noindent\textbf{Keywords:} Medical Image Segmentation, Segment Anything Model
+(SAM), Promptable Foundation Models, Endoscopic Polyp Segmentation,
+Parameter-Efficient Fine-Tuning, Cross-Domain Generalization
+
+%% ========================================================================
+%%                              TABLE OF CONTENTS
+%% ========================================================================
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+%% ---------- List of Figures ----------
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+%% ---------- List of Tables ----------
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+%% ========================================================================
+%%                              MAIN BODY
+%% ========================================================================
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%% ---------- Chapter 1: Introduction ----------
+\input{chapter1}     % placeholder (to be written)
+
+%% ---------- Chapter 2: Literature Review ----------
+\input{chapter2}     % ready (30 refs, 12 figures, 4 tables, 9 equations, ~5917 words)
+
+%% ---------- Chapter 3: Methodology ----------
+\input{chapter3}     % placeholder (to be written)
+
+%% ---------- Chapter 4: Solution / Design and Implementation ----------
+\input{chapter4}     % design and implementation
+
+%% ---------- Chapter 5: Validation / Testing ----------
+\input{chapter5}     % validation and results
+
+%% ---------- Chapter 6: Conclusion & Future Work ----------
+\input{chapter6}     % conclusion and future work
+
+%% ========================================================================
+%%                              BACK MATTER
+%% ========================================================================
+
+%% ---------- Bibliography ----------
+\bibliography{ref}   % uses ref.bib
+\addcontentsline{toc}{chapter}{Bibliography}
+
+%% ---------- Appendices (optional) ----------
+\appendix
+\input{appendixA}    % placeholder (to be written)
+
+%% ---------- Authenticity Declaration (BNBU standard back matter) ----------
+\chapter*{Authenticity Declaration}
+\addcontentsline{toc}{chapter}{Authenticity Declaration}
+\thispagestyle{plain}
+
+We, the undersigned, hereby declare that this Final Year Project report is our
+own original work and that all sources of information have been duly
+acknowledged. This work has not been submitted previously, in whole or in
+part, for the award of any other academic degree or diploma at this or any
+other university or institution.
+
+\vspace{2cm}
+\begin{flushright}
+    \rule{6cm}{0.5pt}\\
+    Xu, Junhan; Wu, Keyou\\
+    (2330024269, 2330026127)\\
+    Date: \today
+\end{flushright}
+
+\end{document}

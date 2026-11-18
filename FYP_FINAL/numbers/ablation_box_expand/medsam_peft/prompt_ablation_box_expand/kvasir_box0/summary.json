@@ -1,0 +1,17 @@
+{
+  "Kvasir-SEG-val": {
+    "n": 120,
+    "dice_mean": 0.9269449993816908,
+    "dice_std": 0.07341272161955055,
+    "iou_mean": 0.8711943860659601,
+    "iou_std": 0.10850898911902725,
+    "precision_mean": 0.920200748709853,
+    "recall_mean": 0.9456528451576813,
+    "hd95_mean": 69.10350987708902,
+    "fps_mean": 8.009961922266013,
+    "ckpt": "E:/Project/FYP/checkpoints/medsam_peft/r4_full/medsam_lora_r4_best.pth",
+    "rank": 4,
+    "backbone": "medsam_vit_b",
+    "method": "medsam_lora"
+  }
+}

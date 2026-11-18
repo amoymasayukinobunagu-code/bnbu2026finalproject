@@ -1,0 +1,15 @@
+{
+  "dataset": "Kvasir-SEG",
+  "n": 120,
+  "model": "ASPS (SAM-B + MSCAN-L) \u2014 asps_v3_best.pth",
+  "checkpoint": "E:\\Project\\FYP\\results\\asps_baseline_v3\\asps_v3_vitb\\checkpoints\\asps_v3_best.pth",
+  "prompt_type": "none (dense, self-prompting; no external box prompt)",
+  "dice_mean": 0.9005916466233148,
+  "dice_std": 0.14215273394571082,
+  "iou_mean": 0.8411615904196439,
+  "iou_std": 0.17352820537450808,
+  "precision_mean": 0.9081819918219204,
+  "recall_mean": 0.9239787368849863,
+  "hd95_mean": 82.25382779238099,
+  "fps_mean": 7.2697606016713054
+}

@@ -1,0 +1,332 @@
+% ref.bib — Bibliography for FYP Chapter 2 (Related Work)
+% Last updated: 2026-06-02
+% Topic: Promptable Medical Image Segmentation Foundation Models for Endoscopic Polyp Segmentation
+% Supervisor: Dr. Donglong Chen
+%
+% Note: This file is auto-generated based on the 19 PDF papers in
+% reference/papers/ and the 7 supplementary references cited in chapter2.tex.
+% Citation keys follow the pattern: <author><year><short>
+% Please verify all entries against the original papers before final submission.
+
+% ====== Section 2.1: Foundation Models for Medical Image Segmentation ======
+
+@article{kirillov2023sam,
+  title  = {Segment Anything},
+  author = {Kirillov, Alexander and Mintun, Eric and Ravi, Nikhila and Mao, Hanzi and Rolland, Chloe and Gustafson, Laura and Xiao, Tete and Whitehead, Spencer and Berg, Alexander C. and Lo, Wan-Yen and Doll{\'a}r, Piotr and Girshick, Ross},
+  journal= {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year   = {2023},
+  note   = {CCF-A; foundation paper for SAM}
+}
+
+
+@inproceedings{ravi2024sam2,
+  title     = {SAM 2: Segment Anything in Images and Videos},
+  author    = {Ravi, Nikhila and Gabeur, Valentin and Hu, Yuan-Ting and Hu, Ronghang and Ryali, Chaitanya and Ma, Tengyu and Khedr, Haitham and R{\"a}dle, Roman and Rolland, Chloe and Gustafson, Laura and Mintun, Eric and Pan, Junting and Alwala, Kalyan Vasudev and Carion, Nicolas and Wu, Chao-Yuan and Girshick, Ross and Doll{\'a}r, Piotr and Feichtenhofer, Christoph},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2025},
+  note      = {arXiv:2408.00714; verified against arXiv and OpenReview records on 2026-06-25}
+}
+
+@article{ma2024medsam,
+  title   = {Segment Anything in Medical Images},
+  author  = {Ma, Jun and He, Yuting and Li, Feifei and Han, Lin and You, Chenyu and Wang, Bo},
+  journal = {Nature Communications},
+  volume  = {15},
+  number  = {1},
+  pages   = {654},
+  year    = {2024},
+  publisher= {Nature Publishing Group},
+  note    = {Top-tier journal; fine-tunes SAM on 1.57M medical image-mask pairs}
+}
+
+@article{zhang2023samed,
+  title  = {Customized Segment Anything Model for Medical Image Segmentation},
+  author = {Zhang, Kaidong and Liu, Dong},
+  journal= {arXiv preprint arXiv:2304.13785},
+  year   = {2023},
+  note   = {LoRA-based medical SAM adaptation}
+}
+
+@article{wu2023medical,
+  title  = {Medical SAM Adapter: Adapting Segment Anything Model for Medical Image Segmentation},
+  author = {Wu, Junde and Zhang, Yao and Fu, Ji and others},
+  journal= {arXiv preprint arXiv:2304.12620},
+  year   = {2023},
+  note   = {SD-Trans 3D adapter + HyP-Adpt}
+}
+
+@inproceedings{cheng2024masksam,
+  title     = {MaskSAM: Auto-prompt SAM with Mask Classification for Volumetric Medical Image Segmentation},
+  author    = {Xie, Bin and Tang, Hao and Duan, Bin and Cai, Dawen and Yan, Yan and Agam, Gady},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025},
+  note      = {arXiv:2403.14103; 3D volumetric medical (AMOS/Synapse/ACDC), 3D depth-conv/MLP adapters, prompt-free via auto-prompt generator. Out-of-scope for 2D polyp.}
+}
+
+% ====== Section 2.2: Polyp-Specific Adaptation ======
+
+@inproceedings{li2024asps,
+  title     = {ASPS: Adaptive Sample Pairing System for Polyp Segmentation},
+  author    = {Li, Heng and others},
+  booktitle = {International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
+  year      = {2024},
+  note      = {CCF-B; Cross-Branch Attention module}
+}
+
+@inproceedings{rahman2024ppsam,
+  title     = {PP-SAM: Perturbed Prompts for Robust Few-Shot Polyp Segmentation},
+  author    = {Rahman, Md Mostafijur and Munir, Mustafa and Jha, Debesh and Bagci, Ulas and Marculescu, Radu},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPR-W)},
+  year      = {2024},
+  note      = {CCF-A workshop; 0-50 pixel bounding-box perturbation; UT Austin + Northwestern}
+}
+
+% ====== Section 2.3: Prompt Engineering for SAM ======
+
+@inproceedings{li2025opsam,
+  title     = {One Polyp Identifies All: One-Shot Polyp Segmentation with SAM via Cascaded Priors and Iterative Prompt Evolution},
+  author    = {Mao, Xinyu and Xing, Xiaohan and Meng, Fei and Liu, Jianbang and Bai, Fan and Nie, Qiang and Meng, Max},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025},
+  note      = {CCF-A; training-free, CPG + SPF + EPE; CUHK + Stanford + HKUST}
+}
+
+@inproceedings{yuan2024tpp,
+  title     = {Text-Promptable Propagation for Referring Medical Image Sequence Segmentation},
+  author    = {Yuan, Runtian and Chen, Mohan and Xu, Jilan and Zhou, Ling and Li, Qingqiu and Zhang, Yuejie and Feng, Rui and Zhang, Tao and Gao, Shang},
+  booktitle = {International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
+  year      = {2024},
+  note      = {CCF-B; text-promptable, triple-propagation Transformer; SAM is only cited in references, not used as backbone. NOT polyp-specific.}
+}
+
+@inproceedings{konwer2025efficient,
+  title     = {Efficient Prompting for Medical Image Segmentation via Preference Optimization},
+  author    = {Konwer, Aishik and others},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2025},
+  note      = {BiomedCLIP-VQA + DPO-inspired 4-candidate alignment}
+}
+
+% ====== Section 2.4: 3D and Video Extensions ======
+
+@inproceedings{wang2024sammed3dmoe,
+  title     = {SAM-Med3D-MoE: Towards a 3D Foundation Model for Medical Image Segmentation via Mixture-of-Experts},
+  author    = {Wang, Xinyu and others},
+  booktitle = {International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
+  year      = {2024},
+  note      = {CCF-B; 3D adapter + MoE decoder}
+}
+
+@article{qi2025dcsam,
+  title  = {DC-SAM: In-Context Segment Anything in Images and Videos via Dual Consistency},
+  author = {Qi, Lu and others},
+  journal= {arXiv preprint arXiv:2504.12080},
+  year   = {2025},
+  note   = {Cyclic Consistent Cross-Attention; IC-VOS benchmark}
+}
+
+@inproceedings{choudhuri2025polypsegtrack,
+  title     = {PolypSegTrack: Towards Unified Polyp Detection, Segmentation, and Tracking},
+  author    = {Choudhuri, Suman and others},
+  booktitle = {International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
+  year      = {2025},
+  note      = {CCF-B; MaskDINO + query-cosine tracking}
+}
+
+@article{mansoori2024selfprompt,
+  title  = {Self-Prompting Polyp Segmentation in Endoscopy using YOLO and SAM2},
+  author = {Mansoori, Reza and others},
+  journal= {arXiv preprint arXiv:2409.09484},
+  year   = {2024},
+  note   = {YOLO detector + SAM2 for images and videos}
+}
+
+% ====== Section 2.5: Datasets and Benchmarks ======
+
+@article{jha2020kvasir,
+  title   = {Kvasir-SEG: A Segmented Polyp Dataset},
+  author  = {Jha, Debesh and Smedsrud, Pia H. and Riegler, Michael A. and Halvorsen, P{\aa}l and de Lange, Thomas and Johansen, Dag and Johansen, H{\aa}vard D.},
+  journal = {Proceedings of the International Conference on Multimedia Modeling (MMM)},
+  pages   = {451--462},
+  year    = {2020},
+  publisher= {Springer},
+  note    = {1000 polyp images; 612 train / 488 test}
+}
+
+@inproceedings{bernal2015cvc,
+  title     = {WM-DOVA Maps for Accurate Polyp Highlighting in Colonoscopy: Validation vs. Saliency Maps from Physicians},
+  author    = {Bernal, Jorge and S{\'a}nchez, F. Javier and Fern{\'a}ndez-Esparrach, Gloria and Gil, Debora and Rodr{\'\i}guez, Cristina and Vilar{\'i}{\~n}o, Fernando},
+  booktitle = {Computerized Medical Imaging and Graphics},
+  volume    = {43},
+  pages     = {99--111},
+  year      = {2015},
+  publisher = {Elsevier},
+  note      = {612 polyp images from 31 colonoscopy videos}
+}
+
+@article{ali2024polypgen,
+  title   = {PolypGen: A Multi-Center Polyp Detection and Segmentation Dataset for Generalisability Assessment},
+  author  = {Ali, Sharib and others},
+  journal = {Scientific Data},
+  year    = {2024},
+  note    = {8133 frames; 6 centers; 300+ patients; 8.1x larger than Kvasir-SEG}
+}
+
+@inproceedings{gonzalez2022piccolo,
+  title     = {PICCOLO: A Multi-Source Polyp Dataset for General-Purpose Endoscopic Image Analysis},
+  author    = {Gonzalez, Cristina and others},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
+  year      = {2022},
+  note      = {3046 annotated frames; 76 polyp types; 3 instrument types}
+}
+
+@article{sun2022sunseg,
+  title  = {SUN-SEG: A Large-Scale Polyp Video Dataset for Surgical Scene Understanding},
+  author = {Sun, Li and others},
+  journal= {arXiv preprint arXiv:2206.00913},
+  year   = {2022},
+  note   = {158690 frames; 49136 masks; Seen/Unseen splits}
+}
+
+% ====== Supplementary references (for completeness) ======
+
+@article{mazurowski2023segmenting,
+  title  = {Segment Anything Model for Medical Image Analysis: an Experimental Study},
+  author = {Mazurowski, Maciej A. and Dong, Haoyu and Gu, Haixin and Yang, Jichen and Konz, Nicholas and Zhang, Yixin},
+  journal= {Medical Image Analysis},
+  volume = {89},
+  pages  = {102918},
+  year   = {2023},
+  note   = {Early SAM medical adaptation study}
+}
+
+@article{huang2024sam,
+  title   = {Segment Anything Model for Medical Images?},
+  author  = {Huang, Yuhao and Yang, Xin and Liu, Lian and Zhou, Han and Chang, Ao and Zhou, Xinrui and Chen, Ruosi and Yu, Junxuan and others},
+  journal = {Medical Image Analysis},
+  volume  = {91},
+  pages   = {103140},
+  year    = {2024},
+  publisher= {Elsevier},
+  doi     = {10.1016/j.media.2024.103140},
+  note    = {CCF-B; evaluation of SAM on medical images (COSMOS 1050K benchmark across 53 datasets / 18 modalities); arXiv:2304.14660v7}
+}
+
+@inproceedings{robustbox2024,
+  title     = {Robust Box Prompt-based SAM for Medical Image Segmentation},
+  author    = {Huang, Yuhao and Yang, Xin and Zhou, Han and Cao, Yan and Dou, Haoran and Dong, Fajin and Ni, Dong},
+  booktitle = {arXiv preprint arXiv:2407.21284},
+  year      = {2024},
+  note      = {RoBox-SAM with prompt refinement (PRM + PEM + SIE); 0-30\% box shift robustness on 5 medical modalities}
+}
+
+@article{sammed2024,
+  title   = {SAM-Mamba-Adapter: Adapting Segment Anything Model with Mamba for Medical Image Segmentation},
+  author  = {Dutta, Tapas Kumar and Majhi, Snehashis and Nayak, Deepak Ranjan and Jha, Debesh},
+  journal= {arXiv preprint arXiv:2412.08482},
+  year    = {2024},
+  note    = {Mamba-Adapter for efficient fine-tuning; CCM (Channel Concatenation Mamba) replaces self-attention}
+}
+
+@article{polypprior2024,
+  title  = {Polyp Segmentation with Shape and Text Priors in the SAM2 Era},
+  author = {Zhao, Cong and others},
+  journal= {arXiv preprint},
+  year   = {2024},
+  note   = {SAM2 with shape + text dual priors}
+}
+
+% ====== Section 2.2: Polyp-Specific Adaptation -- Traditional baselines (pre-SAM era) ======
+
+@article{fan2020pranet,
+  title   = {PraNet: Parallel Reverse Attention Network for Polyp Segmentation},
+  author  = {Fan, Deng-Ping and Ji, Ge-Peng and Zhou, Tao and Chen, Geng and Fu, Huazhu and Shen, Jianbing and Shao, Ling},
+  journal = {International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
+  year    = {2020},
+  note    = {Pre-SAM baseline; reverse attention for boundary refinement; 89.7\% Dice on Kvasir-SEG}
+}
+
+@inproceedings{chen2021transunet,
+  title     = {TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation},
+  author    = {Chen, Jieneng and Lu, Yongyi and Yu, Qihang and Luo, Xiangde and Adeli, Ehsan and Wang, Yan and Lu, Le and Yuille, Alan L. and Zhou, Yuyin},
+  booktitle = {arXiv preprint arXiv:2102.04306},
+  year      = {2021},
+  note      = {Pre-SAM baseline; Transformer encoder + U-Net decoder; demonstrates long-range dependency benefits for low-contrast polyp regions}
+}
+
+@inproceedings{dong2022polyppvt,
+  title     = {Polyp-PVT: Polyp Segmentation with Pyramid Vision Transformers},
+  author    = {Dong, Bo and Wang, Wenhai and Fan, Deng-Ping and Li, Jinpeng and Fu, Huazhu and Shao, Ling},
+  booktitle = {International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
+  year      = {2022},
+  note      = {Pre-SAM baseline; SimAM attention + CMFU feature fusion; 92.4\% Dice on Kvasir-SEG}
+}
+
+@article{cheng2023sammed2d,
+  title   = {SAM-Med2D: Promptable Medical Image Segmentation via a 2D Slice-Aware Foundation Model},
+  author  = {Cheng, Junlong and others},
+  journal = {arXiv preprint arXiv:2306.06899},
+  year    = {2023},
+  note    = {Most widely cited 2D medical SAM adaptation; 4.6M image-mask pairs; default backbone in downstream polyp works (OP-SAM, Efficient Prompting)}
+}
+
+% ====== External references cited via equation context ======
+
+@inproceedings{carion2020end,
+  title     = {End-to-End Object Detection with Transformers},
+  author    = {Carion, Nicolas and Massa, Francisco and Synnaeve, Gabriel and Usunier, Nicolas and Kirillov, Alexander and Zagoruyko, Sergey},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2020},
+  note      = {Original Hungarian-matching set-prediction loss; reused by MaskSAM}
+}
+
+% ====== Chapter 1: Introduction supplementary references ======
+% (Clinical motivation + cross-domain / survey context; verified against
+% publisher records on 2026-06-11.)
+
+@article{bray2024globocan,
+  title   = {Global Cancer Statistics 2022: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries},
+  author  = {Bray, Freddie and Laversanne, Mathieu and Sung, Hyuna and Ferlay, Jacques and Siegel, Rebecca L. and Soerjomataram, Isabelle and Jemal, Ahmedin},
+  journal = {CA: A Cancer Journal for Clinicians},
+  volume  = {74},
+  number  = {3},
+  pages   = {229--263},
+  year    = {2024},
+  doi     = {10.3322/caac.21834},
+  note    = {IARC flagship estimate; CRC ranked 3rd in incidence and 2nd in cancer-related mortality worldwide in 2022 (1.9~M new cases / 904,000 deaths)}
+}
+
+@article{zauber2012nejm,
+  title   = {Colonoscopic Polypectomy and Long-Term Prevention of Colorectal-Cancer Deaths},
+  author  = {Zauber, Ann G. and Winawer, Sidney J. and O'Brien, Michael J. and Lansdorp-Vogelaar, Iris and van Ballegooijen, Marjolein and Hankey, Benjamin F. and Shi, Wei and Bond, John H. and Schapiro, Melvin and Panish, Joel F. and others},
+  journal = {New England Journal of Medicine},
+  volume  = {366},
+  number  = {8},
+  pages   = {687--696},
+  year    = {2012},
+  doi     = {10.1056/NEJMoa1100370},
+  note    = {National Polyp Study long-term follow-up; observed-vs-expected analysis shows substantial reduction in CRC mortality after colonoscopic polypectomy (Section~1.1 of Chapter~1 cites this paper at the qualitative level to avoid the 53\% vs 65\% numerical dispute)}
+}
+
+@article{tudela2024frontiers,
+  title   = {A Complete Benchmark for Polyp Detection, Segmentation and Classification in Colonoscopy Images},
+  author  = {Tudela, Yago and Maj{\'o}, Marc and de la Fuente, Natalia and Galdran, Adrian and Krenzer, Andreas and Puppe, Frank and Yamlahi, Amine and Tran, Thi-Ngoc-Nh{\^\i} and Matuszewski, Bogdan J. and Fitzgerald, Kieran and Bian, Cong and Pan, Jun and Liu, Shenglan and Fern{\'a}ndez-Esparrach, Gloria and Histace, Aymeric and Bernal, Jorge},
+  journal = {Frontiers in Oncology},
+  volume  = {14},
+  pages   = {1417862},
+  year    = {2024},
+  doi     = {10.3389/fonc.2024.1417862},
+  note    = {GIANA challenge benchmark; unified validation framework for polyp detection, segmentation, and classification; published 24 September 2024}
+}
+
+@article{guan2022tbme,
+  title   = {Domain Adaptation for Medical Image Analysis: A Survey},
+  author  = {Guan, Hao and Liu, Mingxia},
+  journal = {IEEE Transactions on Biomedical Engineering},
+  volume  = {69},
+  number  = {3},
+  pages   = {1173--1185},
+  year    = {2022},
+  doi     = {10.1109/TBME.2021.3117867},
+  note    = {Comprehensive survey of shallow and deep domain-adaptation methods for medical image analysis (segmentation, classification, detection); cited in Chapter~2 Gap~1 to flag the domain-shift problem as a central obstacle, not as a formal definition}
+}

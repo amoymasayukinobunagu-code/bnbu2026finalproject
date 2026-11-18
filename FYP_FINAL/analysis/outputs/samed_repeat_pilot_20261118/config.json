@@ -1,0 +1,16 @@
+{
+  "epochs": 12,
+  "seeds": [
+    1234,
+    2345,
+    3456
+  ],
+  "shots": 5,
+  "warmup": 10,
+  "lr": 0.005,
+  "trainer_sha256": "da230dfc9d69ea5985a75904f911d50f8e6493e32c6a70751266612b8982fcb5",
+  "base_sha256": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912",
+  "selection": "final epoch",
+  "torch": "2.11.0+cu126",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER"
+}

@@ -1,0 +1,234 @@
+Supplementary Polyp Segmentation Analysis
+补充实验与提示工具包审阅报告 | 2026 年 11 月 18 日
+本报告汇总本轮新增分析及其适用范围，供后续整合进 Word 论文。复用现有图像、真实掩
+膜、正式逐图记录和保存预测，未重新训练模型，也未改写正式结果。所有新增分析均为事
+后描述性分析，仍需作者和导师审阅。
+
+本轮交付
+项目      已完成内容                       解释范围
+
+目标尺度    732 张图像、8 模型；固定面积分组与训练集三分   图像相对面积，不是临床毫米尺寸
+        位敏感性
+
+弱边界探索   颜色对比度分组、梯度敏感性、尺度交叉分组、       图像代理指标，未作临床弱边界标注
+        边界 F1 与表面 HD95              验证
+
+提示敏感性   整理 28 个数据集／模型／外扩量组合的原始      固定框外扩；未新增点提示或位移推
+        JSON 结果并绘图                  理
+
+提示工具包   独立脚本、使用说明及 732 条提示记录        支持框与点生成；依赖真实标注
+
+
+数据与一致性检查
+Kvasir 验证集 120 张，CVC 评估集 612 张。8 模型共 5856 条逐图结果按数据集和文件名逐
+一匹配；5856 份保存预测重算 Dice 与正式逐图值的绝对差均不超过 1e−6。分组加权均值还
+原正式 Dice／IoU 均值，缺失或重复 ID 均会触发失败。
+
+发现的指标命名问题
+已检查的原始 SAM 与 PP-SAM 评估函数将最大 Hausdorff 距离写入名为 hd95 的字段，未计
+算 95 百分位。旧字段保留为 legacy_distance，不再直接解释为 HD95。本轮另算双向表面距
+离各自 95 百分位的较大值，单位为原图像素；边界 F1 容差为图像对角线的 0.5%，至少 1 像
+素。
+有 5 条空预测：边界 F1 记 0，表面 HD95 不定义，表中保留有效数量而非填 0。新指标与旧
+距离不同，不能只修改表头后继续使用旧数值。
+目标尺度分析
+面积比为真实前景像素数除以整幅图像像素数。小目标≤5%，中目标>5%且≤20%，大目
+标>20%。阈值是本研究的操作定义；另用 880 张训练掩膜的面积三分位数作敏感性分析，
+不根据模型得分调整分组。
+
+
+
+
+图 S1 8 个模型的面积分组 Dice。组内样本数在横轴标明；连线仅辅助阅读有序分组。
+
+数据集      模型            小目标 Dice      中目标 Dice      大目标 Dice
+
+Kvasir   SAM-B         0.8190        0.7894        0.6022
+
+Kvasir   SAMed         0.9122        0.8925        0.8854
+
+Kvasir   MedSAM+LoRA   0.8761        0.9114        0.9193
+
+Kvasir   PP-SAM        0.9082        0.9205        0.9408
+
+CVC      SAM-B         0.5573        0.5460        0.2295
+
+CVC      SAMed         0.8231        0.8881        0.8587
+
+CVC      MedSAM+LoRA   0.8131        0.8731        0.8428
+
+CVC      PP-SAM        0.7970        0.8930        0.8986
+Kvasir 各组 n=29／61／30，CVC 各组 n=229／321／62。CVC 上 PP-SAM 由小目标 0.7970 升
+至大目标 0.8986；SAM-B 却由 0.5573 降至 0.2295，因此不能概括为所有模型均在小目标上
+更差。面积分组同时受到形态、外观及固定像素框相对大小的影响。
+
+
+
+
+                                                                  2
+边界对比度探索分析
+在真实边界内外分别取窄带，计算两个带状区域的平均 CIELAB 颜色距离。主分析带宽为图
+像对角线的 0.5%，至少 2 像素。每个数据集按对比度 Q25 和 Q75 划分低、中、高组；分组
+只使用图像与真实标注，不使用模型预测或得分。
+
+
+
+
+图 S2 边界 F1 按颜色对比度代理值分组。低组代表较小的平均颜色分离，不等同于临床标注的弱边界。
+
+数据集      模型            低组 Dice   高组 Dice   低组 BF1   高组 BF1
+
+Kvasir   SAM-B         0.7805    0.6770    0.3725   0.4217
+
+Kvasir   SAMed         0.8741    0.9069    0.6011   0.6601
+
+Kvasir   MedSAM+LoRA   0.9051    0.8997    0.5820   0.5483
+
+Kvasir   PP-SAM        0.8928    0.9290    0.5557   0.6159
+
+CVC      SAM-B         0.5633    0.4135    0.2526   0.3374
+
+CVC      SAMed         0.8374    0.8597    0.4787   0.5617
+
+CVC      MedSAM+LoRA   0.8316    0.8458    0.4277   0.4897
+
+CVC      PP-SAM        0.8261    0.8815    0.3973   0.5237
+低／中／高组数量为 Kvasir30／60／30、CVC153／306／153。CVC 的 SAMed 低组 BF1 为
+0.4787，高组 0.5617；但 SAM-B 的高组 Dice 反而更低。对比度分组对重叠与边界指标的关
+系不同，不能据此声称低对比度必然导致更差的所有指标。
+
+
+
+
+                                                             3
+代理指标的检查与限制
+
+
+
+
+图 S3 每个数据集在中等面积组内选取对比度最低 2 张与最高 2 张；青色为真实轮廓。按图像特征选图，未按
+预测好坏筛选。ID 见 boundary_proxy_example_ids.csv。
+
+这些示例用于核查代理指标的含义，不能替代专家标注。均值颜色距离可能忽略局部模糊、
+纹理和反光，出现颜色相消；也不能据此判断病理或临床难度。
+尺度与颜色对比度存在相关：Spearman 相关系数在 Kvasir 为 0.2574，在 CVC 为 0.3707。已
+输出尺度×对比度交叉分组表，但稀疏组不能支持可靠的独立效应结论。
+敏感性检查使用 0.25%和 1%对角线带宽，以及真实边界上的灰度梯度中位数。CVC 图像的
+0.25%与 0.5%带宽均因至少 2 像素规则取 2，二者不构成独立的带宽变化。CVC 的 MSA-L
+在主对比度定义下高减低组 BF1 为−0.0231，在较宽带下为+0.0037，说明趋势依赖定义。
+边界梯度分组中，两数据集的 8 模型均表现为高组平均 BF1 更高；该结果作为敏感性分析报
+告，不因趋势更整齐而替换已记录的主代理定义。灰度梯度同样可能受纹理、反光和成像条
+件影响。
+
+
+
+
+                                                           4
+提示框敏感性与工具包
+
+
+
+
+图 S4 仅使用现有原始 summary JSON 绘制固定框外扩曲线。CVC 缺少 MedSAM+LoRA 的 0／10／50 原始
+JSON，因此没有连接该模型的 CVC 曲线。
+
+PP-SAM 在两个数据集均于 10 像素外扩取得本次四档中的最高 Dice；CVC 从 0.8948 降至 50
+像素的 0.8025。该结果说明已测试模型对框范围敏感，不代表存在适用于所有模型的全局最
+佳外扩量。SAMed 的 Kvasir box30 消融仍用本机 0.8951，主表保留云端 0.8955。
+
+可复用提示接口
+tools/prompt_toolkit.py 提供紧框／固定外扩框、确定性内部正点、随机前景正点、背景负点
+以及四向平移框。已生成 Kvasir120 条和 CVC612 条记录，包含坐标、尺寸、随机种子和掩
+膜 SHA256。
+5 项几何测试与 2 项表面指标测试通过；另用 100 个随机掩膜×4 档外扩，共 400 次对照，确
+认 legacy_v3 框与原 SAM 评估函数一致。提供 half_open 坐标选项，明确处理空掩膜、全前
+景、单像素和裁剪后的退化框。
+点提示和位移框仅完成生成与几何检查，没有运行新的模型评估；各模型仍需自己的缩放与
+坐标适配。工具依赖真实掩膜，不能称作自动息肉检测器。命令、依赖和接入示例见
+tools/README.md。
+
+
+
+
+                                                                  5
+可纳入论文的英文结果草稿
+以下段落需与方法部分一同整合，并由作者核验。相应新表与图尚未编入正式论文章节号。
+
+Performance across relative object sizes
+Object scale was defined as the fraction of image pixels occupied by the ground-truth foreground.
+Images were grouped into small (at most 5%), medium (more than 5% and at most 20%), and large
+(more than 20%) foreground regions. The Kvasir validation groups contained 29, 61, and 30 images,
+respectively, while the corresponding CVC groups contained 229, 321, and 62 images. These
+categories describe relative image area rather than physical lesion dimensions.
+The relationship between scale and overlap accuracy differed across models. On CVC, PP-SAM
+achieved mean Dice scores of 0.7970, 0.8930, and 0.8986 across the small, medium, and large groups.
+SAM ViT-B showed a different pattern, with corresponding scores of 0.5573, 0.5460, and 0.2295.
+The observed results therefore do not support a general statement that smaller polyps were more
+difficult for every evaluated model. Other image properties and the relative extent of the fixed-pixel
+box prompt may contribute to the group differences.
+
+Boundary visibility proxy analysis
+Boundary visibility was explored using the colour separation between narrow foreground and
+background bands adjacent to the ground-truth contour. This image-derived measure was treated as
+a proxy rather than an expert annotation of weak boundaries. In the CVC colour-contrast groups,
+SAMed achieved mean boundary F1 scores of 0.4787 in the lowest quartile and 0.5617 in the highest
+quartile. However, the relationship was not uniform across methods and outcomes. SAM ViT-B had
+lower mean Dice in the high-contrast group despite a higher boundary F1 score.
+Relative area and the contrast proxy were correlated, with Spearman coefficients of 0.2574 on Kvasir
+and 0.3707 on CVC. Crossed size and contrast tables and alternative band widths were therefore
+examined descriptively. The results remain dependent on the operational proxy and do not establish
+an independent causal effect of boundary visibility. Further validation with expert boundary
+assessments would be needed before interpreting these groups as clinically defined weak-boundary
+cases.
+
+Sensitivity to box extent
+The existing fixed-expansion evaluations showed that prompt extent affected the recorded
+segmentation results. PP-SAM obtained its highest mean Dice among the four tested settings at an
+expansion of 10 pixels on both datasets. On CVC, its mean Dice decreased from 0.8948 at 10 pixels
+to 0.8025 at 50 pixels. This comparison concerns deterministic outward expansion of ground-truth-
+derived boxes; it does not evaluate displaced user prompts, point prompts, or automatic lesion
+localisation.
+
+
+
+
+                                                                                                     6
+复现入口与证据状态
+新增分析协议：analysis/PROTOCOL.md。执行脚本：analysis/complete_supplement.py。所有
+原始图像、模型权重、正式 summary 和 per-image 文件均作为只读输入；结果写入本项目
+analysis/outputs。
+
+输出                                                  用途
+
+image_features.csv                                  732 条图像面积、对比度、梯度及分组
+
+per_image_joined.csv                                5856 条正式指标与新增表面指标
+
+scale_groups.csv / scale_training_tertiles.csv      主要尺度表与训练分位数敏感性
+
+boundary_*_sensitivity.csv                          带宽及梯度定义敏感性
+
+scale_contrast_crossed.csv                          尺度与对比度交叉分组
+
+prediction_audit.csv / summary_reconciliation.csv   预测来源匹配及正式均值复核
+
+prompt_expansion_curves.csv                         可追溯的框外扩曲线数据
+
+provenance.json                                     输入路径、SHA256、软件与阈值记录
+复现命令：使用现有 sam_env 的 Python 运行 analysis/complete_supplement.py。生成 Word 报
+告需使用 Codex 工作区依赖中的 Python 运行 analysis/build_supplement_report.py。提示工具
+包的完整命令见 tools/README.md。
+
+现在可以如何表述
+目标尺度：已补充系统的图像相对面积分组描述性分析。弱边界：已补充操作定义明确的图
+像对比度／梯度探索分析及表面指标，尚无临床或专家弱边界标签。提示质量：已有固定外
+扩敏感性研究，不宣称覆盖所有提示方式。工具包：已整理为可执行、可复用的标注派生提
+示脚本与说明，仍需模型特定接入。
+这轮补充不改变多种子、显著性检验、独立测试和临床验证尚未完成的状态，也不构成
+SOTA 或部署效果证明。
+
+
+
+
+                                                                          7
+

@@ -1,0 +1,106 @@
+%% ========================================================================
+%% chapter6.tex -- Chapter 6: Conclusion and Future Work
+%% Topic: Current progress summary and next-stage plan
+%% Last updated: 2026-06-25
+%% ========================================================================
+
+\chapter{Conclusion and Future Work}
+\label{chap:conclusion}
+
+This chapter concludes the partial thesis by summarising what has been completed in the current stage, answering the research questions at the level supported by the available evidence, and translating the unresolved items into a bounded next-phase plan. The central conclusion is deliberately modest: this partial thesis has established a reproducible current-stage benchmark and validation study of SAM-family adaptation strategies for endoscopic polyp segmentation. It does not claim that a final main model has been selected, nor does it claim that all long-term objectives in the project brief have already been completed.
+
+\section{Summary of Current Progress}
+\label{sec:summary-progress}
+
+The project has completed the core infrastructure required for a fair current-stage evaluation. The v3 protocol fixes the in-domain split, cross-domain split, prompt construction rule, and metric suite. Kvasir-SEG \texttt{val.txt} is used as the held-out in-domain evaluation split, CVC-ClinicDB is used as the cross-domain evaluation set, and v3-aligned promptable baselines use a fixed $\pm30$ pixel box prompt derived from the ground-truth mask. The reported metrics include Dice, IoU, precision, recall, HD95, and FPS. This protocol replaces earlier smoke-test-style evaluations and provides a stable basis for comparing zero-shot, few-shot, and parameter-efficient adaptation strategies.
+
+The current empirical core covers five groups of experiments. First, SAM v1 and SAM2 are evaluated under zero-shot box prompts to study foundation-model scaling. Second, MedSAM is evaluated to test whether generic medical pre-training transfers to colonoscopic polyps under the v3 box-prompt protocol. Third, PP-SAM 1/5/10-shot experiments provide a full-encoder prompt-perturbation adaptation reference. Fourth, SAMed LoRA provides the Adapter/LoRA PEFT reference required by the project brief, including 1/5/10-shot and full 880-sample training. Fifth, ASPS and OP-SAM are reported as non-aligned special entries: ASPS as an external fully supervised upper-bound reference and OP-SAM as a CPG-only exploratory training-free pilot.
+
+\begin{table}[H]
+\centering
+\caption{Current-stage completion summary.}
+\label{tab:current-stage-completion}
+\begin{tabular}{p{3.2cm}p{5.3cm}p{5.2cm}}
+\toprule
+\textbf{Completed component} & \textbf{Current output} & \textbf{Role in the thesis} \\
+\midrule
+Unified v3 protocol & Kvasir \texttt{val.txt}, CVC-ClinicDB, fixed $\pm30$ box prompt, and five metrics & Provides the fair-comparison contract for v3-aligned entries. \\
+Zero-shot benchmark & SAM v1, SAM2, and MedSAM & Validates scaling and medical-transfer behaviour without polyp fine-tuning. \\
+K-shot adaptation study & PP-SAM and SAMed LoRA at 1/5/10 shots & Compares full-encoder fine-tuning with rank-4 LoRA PEFT under limited support. \\
+Full-training PEFT bridge & SAMed LoRA full 880 run & Tests whether LoRA becomes competitive when the training signal is no longer extremely small. \\
+Special-case references & ASPS PraNet-held-out evaluation and OP-SAM CPG-only pilot & Separates external upper-bound and prompt-free exploratory evidence from direct v3 ranking. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Answers to the Research Questions}
+\label{sec:answers-rqs}
+
+The validation results answer the five research questions at different levels of certainty. The first four questions are empirical questions supported by the completed current-stage experiments. The fifth question is a planning question: it records what remains unresolved beyond the current benchmark and therefore should not be interpreted as a completed empirical claim.
+
+\begin{table}[H]
+\centering
+\caption{Current-stage answers to the research questions.}
+\label{tab:rq-answer-summary}
+\begin{tabular}{p{1.5cm}p{5.8cm}p{6.1cm}}
+\toprule
+\textbf{RQ} & \textbf{Question focus} & \textbf{Current-stage answer} \\
+\midrule
+RQ1 & Foundation-model scaling under zero-shot box prompts & Supported: scaling is family-specific and non-monotonic. SAM ViT-L is the strongest tested SAM v1 backbone, while SAM2 follows a different pattern. \\
+RQ2 & Generic medical pre-training transfer & Supported with caution: MedSAM does not improve over vanilla SAM under the v3 protocol. \\
+RQ3 & K-shot adaptation strategy & Supported: full-encoder prompt-perturbation fine-tuning is stronger than rank-4 LoRA in the K-shot setting, especially on CVC-ClinicDB. \\
+RQ4 & Gap to full supervision & Partially supported: PP-SAM reflects limited-data adaptation, while SAMed full 880 is full-data PEFT. SAMed narrows the gap to ASPS, but ASPS remains non-v3-aligned and the cross-domain gap is not closed. \\
+RQ5 & Prompt-free and robustness extensions & Remains open by design: CPG-only OP-SAM is exploratory, and full OP-SAM reproduction, polyp-specific Medical SAM Adapter training, prompt-quality, object-scale, and boundary-specific analyses require next-stage experiments. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These answers should be read as strategy-level findings rather than as a final method selection. The thesis does not claim that PP-SAM, SAMed, ASPS, OP-SAM, or Medical SAM Adapter is the final main model. Instead, the current evidence clarifies which adaptation directions are promising, which require more data or stronger alignment, and which remain exploratory.
+
+\section{Limitations of the Current Stage}
+\label{sec:limitations}
+
+Several limitations remain. First, the v3 prompt protocol uses ground-truth-derived boxes with a fixed $\pm30$ pixel perturbation. This is appropriate for controlled segmentation benchmarking, but it is not a full automatic detection-and-segmentation pipeline. A deployment-oriented system would need automatic prompt generation or lesion detection before segmentation.
+
+Second, object scale is not yet analysed through area-stratified evaluation. The current benchmark reports dataset-level averages, but it does not yet separate tiny, small, medium, and large polyps. As a result, the current thesis cannot quantify whether the same adaptation strategy behaves differently across object sizes.
+
+Third, weak boundaries are only partially addressed. The benchmark reports HD95 and includes PP-SAM's structure loss, but it does not implement explicit contour supervision, boundary-refinement heads, or uncertainty-guided boundary modules. Therefore, boundary robustness remains an open research direction rather than a solved contribution.
+
+Fourth, ASPS and OP-SAM are not yet fully aligned with the main v3 protocol. ASPS needs retraining on Kvasir-SEG \texttt{train.txt} before it can be directly compared with v3-aligned full-training entries. OP-SAM needs full CPG+SPF+EPE reproduction before the project can draw a stronger conclusion about prompt-free support-conditioned segmentation. Fifth, Medical SAM Adapter is not evaluated as a current-stage baseline because the released adapter checkpoints are domain-specific and do not include a polyp-specific adapter; a fair test would require training a new polyp adapter rather than reusing non-polyp checkpoints.
+
+\section{Phase Three Future Work Plan}
+\label{sec:future-work-plan}
+
+The next phase is constrained by the Phase Three schedule of the FYP: Year~4, Semester~1 (Fall~2026). According to the schedule, Week~1--Week~9 are allocated to working on the project and thesis under supervisor guidance, while Week~10 is the thesis submission point. The future work plan is therefore intentionally limited to tasks that can be completed or documented before the Week~10 thesis submission, rather than an open-ended long-term roadmap.
+
+\begin{table}[H]
+\centering
+\caption{Phase Three schedule and planned thesis-completion tasks.}
+\label{tab:future-work-plan}
+\begin{tabular}{p{2.4cm}p{6.0cm}p{5.0cm}}
+\toprule
+\textbf{Week} & \textbf{Planned task} & \textbf{Submission / completion evidence} \\
+\midrule
+Week 1--Week 3 & Consolidate the benchmark: finalise Ch1--Ch5, verify v3 tables/figures against \texttt{EXPERIMENT\_SUMMARY.md}, and clean inconsistencies. & Updated draft and checked result tables. \\
+Week 4--Week 6 & Attempt priority alignment work: ASPS-v3 retraining, full OP-SAM reproduction, and/or setup for polyp-specific Medical SAM Adapter training. If blocked, document the reason. & New artifacts or documented limitations. \\
+Week 7--Week 9 & Finalise the thesis: revise Ch5--Ch6, proofread all chapters, check references, figures, tables, and Overleaf compilation. & Final package draft for supervisor review. \\
+Week 10 & Submit the thesis according to the Phase Three schedule. & Thesis submission to Supervisor and Examiner. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Tasks that are important but unlikely to be fully completed before Week~10---such as a full prompt-quality perturbation grid, object-scale stratification, weak-boundary module design, full polyp-specific Medical SAM Adapter training, and extra-dataset evaluation on PolypGen, ETIS-Larib, ColonDB, PICCOLO, or SUN-SEG---are retained as future research directions rather than promised deliverables for this partial-thesis schedule.
+
+\section{Future Research Directions Beyond the Submission Plan}
+\label{sec:future-research-directions}
+
+Beyond the Week~10 submission plan, the benchmark can be extended in five directions. The first direction is prompt robustness: the fixed $\pm30$ pixel setting should be expanded into a perturbation grid, such as 0/10/30/50 pixels, and should eventually include point prompts or automatically generated prompts. The second direction is polyp-specific Adapter training: instead of evaluating released non-polyp Medical SAM Adapter checkpoints, a new adapter should be trained on Kvasir-SEG or future polyp datasets to test Adapter PEFT fairly. The third direction is object-scale analysis: per-image records should be grouped by polyp area so that the benchmark can report whether each method fails differently on tiny, small, medium, and large lesions. The fourth direction is boundary refinement: contour supervision, boundary-aware losses, or uncertainty-guided refinement modules should be evaluated with HD95 and qualitative boundary evidence. The fifth direction is dataset expansion: once access permits, additional datasets such as PolypGen, ETIS-Larib, ColonDB, PICCOLO, and SUN-SEG should be added to test whether the current conclusions generalise beyond Kvasir-SEG and CVC-ClinicDB.
+
+These directions are deliberately separated from the Phase Three deliverables. They are important for the long-term project, but they should not be presented as completed work in this partial thesis unless the corresponding experiments, artifacts, and manuscript updates are actually finished.
+
+\section{Closing Remarks}
+\label{sec:closing-remarks}
+
+This partial thesis provides a reproducible foundation for the remaining project. Its contribution is not a single final architecture, but a cleaned and auditable current-stage benchmark that separates v3-aligned results, external references, exploratory pilots, and future work. This separation is essential for a long-term FYP project: it prevents incomparable numbers from being treated as one ranking table, while still preserving useful evidence for the next research phase.
+
+The next stage should use this benchmark as the decision base for method selection or method design. Rather than choosing a main model prematurely, the project should first complete the highest-priority alignment experiments, verify which findings survive under the same protocol, and then decide whether the final contribution should be a new adaptation method, a robustness extension, or a broader benchmark study.

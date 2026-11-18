@@ -1,0 +1,1465 @@
+dataset,id,condition,box_json,dice,iou
+Kvasir-SEG-val,cju0s690hkp960855tjuaqvv0,supervised_teacher,"[416, 188, 463, 259]",0.10889959432048682,0.057585305356304885
+Kvasir-SEG-val,cju0s690hkp960855tjuaqvv0,pseudo_label_student,"[352, 277, 444, 353]",0.0859502336194719,0.04490491058756742
+Kvasir-SEG-val,cju0sr5ghl0nd08789uzf1raf,supervised_teacher,"[470, 138, 820, 775]",0.23679802846623232,0.13430000209235662
+Kvasir-SEG-val,cju0sr5ghl0nd08789uzf1raf,pseudo_label_student,"[432, 127, 832, 764]",0.2581266301398638,0.14818909032439603
+Kvasir-SEG-val,cju0sxqiclckk08551ycbwhno,supervised_teacher,"[411, 272, 509, 376]",0.19834484645373093,0.11009035001138866
+Kvasir-SEG-val,cju0sxqiclckk08551ycbwhno,pseudo_label_student,"[411, 277, 497, 376]",0.17776247848537005,0.09755176061659362
+Kvasir-SEG-val,cju0t4oil7vzk099370nun5h9,supervised_teacher,null,0.002548542607889789,0.0012758971430610825
+Kvasir-SEG-val,cju0t4oil7vzk099370nun5h9,pseudo_label_student,null,0.003314503626352086,0.0016600028559188918
+Kvasir-SEG-val,cju0tl3uz8blh0993wxvn7ly3,supervised_teacher,"[275, 160, 509, 374]",0.0,0.0
+Kvasir-SEG-val,cju0tl3uz8blh0993wxvn7ly3,pseudo_label_student,"[184, 166, 496, 457]",0.0,0.0
+Kvasir-SEG-val,cju0u2g7pmnux0801vkk47ivj,supervised_teacher,"[193, 210, 380, 441]",0.2997782049386367,0.1763171168664011
+Kvasir-SEG-val,cju0u2g7pmnux0801vkk47ivj,pseudo_label_student,"[180, 166, 380, 447]",0.329333848118559,0.19712726432368052
+Kvasir-SEG-val,cju0u82z3cuma0835wlxrnrjv,supervised_teacher,"[237, 200, 402, 403]",0.25589049893629834,0.14671699155370418
+Kvasir-SEG-val,cju0u82z3cuma0835wlxrnrjv,pseudo_label_student,"[244, 160, 408, 403]",0.29511154219204655,0.17309727263417798
+Kvasir-SEG-val,cju0ue769mxii08019zqgdbxn,supervised_teacher,"[342, 132, 487, 409]",0.02842920353982301,0.014419570218257308
+Kvasir-SEG-val,cju0ue769mxii08019zqgdbxn,pseudo_label_student,"[335, 126, 487, 398]",0.003989463724010945,0.0019987187700192185
+Kvasir-SEG-val,cju0vtox5ain6099360pu62rp,supervised_teacher,"[210, 128, 270, 171]",0.07349012965014007,0.03814677037538045
+Kvasir-SEG-val,cju0vtox5ain6099360pu62rp,pseudo_label_student,"[210, 144, 270, 193]",0.07614577221461634,0.03957980345645544
+Kvasir-SEG-val,cju13cgqmnhwn0988yrainhcp,supervised_teacher,"[250, 302, 415, 471]",0.5218763253880736,0.35306675236433754
+Kvasir-SEG-val,cju13cgqmnhwn0988yrainhcp,pseudo_label_student,"[250, 291, 415, 460]",0.5469153706389291,0.3763823245996421
+Kvasir-SEG-val,cju13fwthn9mq0835gacxgy01,supervised_teacher,"[470, 89, 536, 192]",0.10436943466556223,0.0550578981865851
+Kvasir-SEG-val,cju13fwthn9mq0835gacxgy01,pseudo_label_student,"[483, 116, 536, 198]",0.04459002535925613,0.022803415108613424
+Kvasir-SEG-val,cju13hp5rnbjx0835bf0jowgx,supervised_teacher,null,0.0,0.0
+Kvasir-SEG-val,cju13hp5rnbjx0835bf0jowgx,pseudo_label_student,null,0.0,0.0
+Kvasir-SEG-val,cju14g8o4xui30878gkgbrvqj,supervised_teacher,"[450, 211, 516, 276]",0.20188133140376266,0.11227364185110664
+Kvasir-SEG-val,cju14g8o4xui30878gkgbrvqj,pseudo_label_student,"[313, 421, 432, 481]",0.15548357242017585,0.08429503261414953
+Kvasir-SEG-val,cju14hjh2ob2o0835ouz3r5aa,supervised_teacher,"[193, 137, 328, 403]",0.12282069675326701,0.06542832458297335
+Kvasir-SEG-val,cju14hjh2ob2o0835ouz3r5aa,pseudo_label_student,"[193, 132, 359, 414]",0.11838249658136354,0.06291528239202658
+Kvasir-SEG-val,cju14pxbaoksp0835qzorx6g6,supervised_teacher,"[365, 166, 529, 358]",0.007893948879875875,0.003962614779186707
+Kvasir-SEG-val,cju14pxbaoksp0835qzorx6g6,pseudo_label_student,"[339, 155, 516, 353]",0.0035831591519856674,0.0017947950942267424
+Kvasir-SEG-val,cju15czxqp3lv0835jvhgzurz,supervised_teacher,"[183, 286, 327, 461]",0.25903704534409927,0.14878952171345752
+Kvasir-SEG-val,cju15czxqp3lv0835jvhgzurz,pseudo_label_student,"[196, 280, 430, 478]",0.27259561826958784,0.15780648767170405
+Kvasir-SEG-val,cju15jr8jz8sb0855ukmkswkz,supervised_teacher,"[237, 105, 388, 291]",0.27964110046216617,0.1625481174522888
+Kvasir-SEG-val,cju15jr8jz8sb0855ukmkswkz,pseudo_label_student,"[231, 94, 388, 291]",0.29184847196800806,0.1708563129081731
+Kvasir-SEG-val,cju15l5ubz9yh0855b3ivdpse,supervised_teacher,"[250, 217, 487, 358]",0.30600838379133677,0.18064338740720373
+Kvasir-SEG-val,cju15l5ubz9yh0855b3ivdpse,pseudo_label_student,"[244, 217, 454, 364]",0.3157681558588845,0.18748496945793852
+Kvasir-SEG-val,cju15mhjczc8z0801kit5c6di,supervised_teacher,"[224, 132, 374, 437]",0.17854656163392357,0.09802422498051208
+Kvasir-SEG-val,cju15mhjczc8z0801kit5c6di,pseudo_label_student,"[224, 92, 374, 437]",0.18484509958856707,0.10183433906751929
+Kvasir-SEG-val,cju15ptjtppz40988odsm9azx,supervised_teacher,"[171, 254, 509, 468]",0.32893092985900413,0.19683862010039518
+Kvasir-SEG-val,cju15ptjtppz40988odsm9azx,pseudo_label_student,"[177, 144, 535, 473]",0.32978488449136445,0.1974505448005924
+Kvasir-SEG-val,cju15wdt3zla10801odjiw7sy,supervised_teacher,"[197, 342, 302, 462]",0.23187176412086466,0.13113967607987162
+Kvasir-SEG-val,cju15wdt3zla10801odjiw7sy,pseudo_label_student,"[197, 243, 302, 446]",0.2639513134753357,0.15204142344863075
+Kvasir-SEG-val,cju160wshltz10993i1gmqxbe,supervised_teacher,"[274, 249, 403, 375]",0.06723513894853077,0.03478702469370913
+Kvasir-SEG-val,cju160wshltz10993i1gmqxbe,pseudo_label_student,"[249, 232, 403, 358]",0.06608633860365962,0.03417233143487047
+Kvasir-SEG-val,cju16ach3m1da0993r1dq3sn2,supervised_teacher,"[195, 204, 402, 461]",0.38501437058513,0.23840111241400064
+Kvasir-SEG-val,cju16ach3m1da0993r1dq3sn2,pseudo_label_student,"[195, 210, 428, 445]",0.3970033703740782,0.24766325957074756
+Kvasir-SEG-val,cju16b6ynq8e40988m8vx0xnj,supervised_teacher,"[406, 183, 457, 248]",0.0,0.0
+Kvasir-SEG-val,cju16b6ynq8e40988m8vx0xnj,pseudo_label_student,null,0.0,0.0
+Kvasir-SEG-val,cju16d65tzw9d0799ouslsw25,supervised_teacher,"[240, 238, 336, 353]",0.6142749112907917,0.4432877172361682
+Kvasir-SEG-val,cju16d65tzw9d0799ouslsw25,pseudo_label_student,"[235, 227, 341, 353]",0.6246096189881324,0.45413260672116257
+Kvasir-SEG-val,cju16fpvhzypl0799p9phnlx6,supervised_teacher,"[257, 115, 526, 352]",0.3795343800757986,0.23421316404944872
+Kvasir-SEG-val,cju16fpvhzypl0799p9phnlx6,pseudo_label_student,"[257, 98, 526, 420]",0.38107123389849956,0.2353848062235296
+Kvasir-SEG-val,cju16jgnyzp970878melv7r25,supervised_teacher,"[281, 237, 460, 391]",0.5707260097129158,0.3993118279569893
+Kvasir-SEG-val,cju16jgnyzp970878melv7r25,pseudo_label_student,"[275, 232, 460, 391]",0.6035083503544395,0.4321603716768476
+Kvasir-SEG-val,cju16whaj0e7n0855q7b6cjkm,supervised_teacher,"[250, 246, 415, 369]",0.10818168792090557,0.05718397333939256
+Kvasir-SEG-val,cju16whaj0e7n0855q7b6cjkm,pseudo_label_student,"[270, 263, 395, 369]",0.12283873545422763,0.06543856288444756
+Kvasir-SEG-val,cju32qr9tbvsj08013pkpjenq,supervised_teacher,"[252, 166, 472, 357]",0.6583135794107687,0.4906612821807168
+Kvasir-SEG-val,cju32qr9tbvsj08013pkpjenq,pseudo_label_student,"[239, 166, 472, 357]",0.6484827526584248,0.4798183330134971
+Kvasir-SEG-val,cju32srle1xfq083575i3fl75,supervised_teacher,"[368, 121, 487, 227]",0.2262321974498546,0.12754329914242477
+Kvasir-SEG-val,cju32srle1xfq083575i3fl75,pseudo_label_student,"[381, 126, 493, 221]",0.18967640801701938,0.10477486392874814
+Kvasir-SEG-val,cju32upim1z7u0988l883nqp6,supervised_teacher,"[185, 109, 432, 310]",0.5221268163804491,0.35329608938547485
+Kvasir-SEG-val,cju32upim1z7u0988l883nqp6,pseudo_label_student,"[191, 109, 432, 315]",0.5527545029898763,0.38193554869012636
+Kvasir-SEG-val,cju32zhbnc1oy0801iyv1ix6p,supervised_teacher,"[197, 200, 328, 425]",0.033418794112115305,0.016993345615253744
+Kvasir-SEG-val,cju32zhbnc1oy0801iyv1ix6p,pseudo_label_student,"[197, 133, 321, 425]",0.02397871216575808,0.01213484506132989
+Kvasir-SEG-val,cju330ofbc2l30801th5g3hw6,supervised_teacher,"[155, 111, 361, 462]",0.033080534488985194,0.016818448883666275
+Kvasir-SEG-val,cju330ofbc2l30801th5g3hw6,pseudo_label_student,"[144, 111, 351, 490]",0.03734552779138767,0.019028070564739822
+Kvasir-SEG-val,cju33231uy4gi0993qc7b1jch,supervised_teacher,"[288, 72, 483, 214]",0.07407837782877727,0.03846385905635333
+Kvasir-SEG-val,cju33231uy4gi0993qc7b1jch,pseudo_label_student,"[301, 89, 477, 236]",0.060088169575457456,0.030974691031348256
+Kvasir-SEG-val,cju334jzo261t0835yqudnfs1,supervised_teacher,"[327, 116, 523, 384]",0.4689659868577849,0.3063067069916385
+Kvasir-SEG-val,cju334jzo261t0835yqudnfs1,pseudo_label_student,"[320, 116, 504, 390]",0.42007047151003757,0.26587924583669575
+Kvasir-SEG-val,cju336l68y7if0993wf092166,supervised_teacher,"[184, 194, 423, 441]",0.6621252622804749,0.4949082627937954
+Kvasir-SEG-val,cju336l68y7if0993wf092166,pseudo_label_student,"[184, 194, 423, 447]",0.6341067376164019,0.46424325756599205
+Kvasir-SEG-val,cju3381d8bz3h07991xtl7ra0,supervised_teacher,"[167, 342, 353, 461]",0.23143238466255456,0.13085865796451152
+Kvasir-SEG-val,cju3381d8bz3h07991xtl7ra0,pseudo_label_student,"[196, 336, 359, 456]",0.2883832509450422,0.16848587810575494
+Kvasir-SEG-val,cju33belnbyhm0878yxl42233,supervised_teacher,"[315, 204, 528, 373]",0.16745120854709897,0.09137612560609559
+Kvasir-SEG-val,cju33belnbyhm0878yxl42233,pseudo_label_student,"[309, 215, 528, 390]",0.18187754281983023,0.10003591457855623
+Kvasir-SEG-val,cju33eqwbcch208012jikwdky,supervised_teacher,"[250, 143, 428, 369]",0.03460129613975768,0.01760522995756394
+Kvasir-SEG-val,cju33eqwbcch208012jikwdky,pseudo_label_student,"[244, 143, 421, 369]",0.035451927803918815,0.018045843879141463
+Kvasir-SEG-val,cju33jon3ygbj0993pu22a4k6,supervised_teacher,"[433, 348, 519, 455]",0.13016480694710303,0.06961298377028714
+Kvasir-SEG-val,cju33jon3ygbj0993pu22a4k6,pseudo_label_student,"[433, 286, 526, 461]",0.0768040768040768,0.039935648717706065
+Kvasir-SEG-val,cju33mirdc8mj0799k33wzoes,supervised_teacher,"[250, 229, 506, 432]",0.6372938708817633,0.46766786856248727
+Kvasir-SEG-val,cju33mirdc8mj0799k33wzoes,pseudo_label_student,"[250, 217, 506, 432]",0.6145523269548784,0.44357671452443476
+Kvasir-SEG-val,cju33o12x2jm50988944mxq0v,supervised_teacher,"[281, 161, 522, 441]",0.399195093905711,0.2493714832994134
+Kvasir-SEG-val,cju33o12x2jm50988944mxq0v,pseudo_label_student,"[281, 155, 529, 447]",0.41128254580520734,0.25887708649468893
+Kvasir-SEG-val,cju33qpdvc9g0087825jhf3s9,supervised_teacher,null,0.03286680295643969,0.016707970261411784
+Kvasir-SEG-val,cju33qpdvc9g0087825jhf3s9,pseudo_label_student,null,0.05632256040163163,0.02897731858907095
+Kvasir-SEG-val,cju33w4sdcivk0855x879zht7,supervised_teacher,"[253, 246, 345, 347]",0.4173666082542752,0.2637165438509412
+Kvasir-SEG-val,cju33w4sdcivk0855x879zht7,pseudo_label_student,"[253, 252, 345, 347]",0.37895903228785127,0.2337751110773554
+Kvasir-SEG-val,cju33x0f22peh0988g0ln7w5v,supervised_teacher,"[182, 111, 464, 346]",0.21592733721571164,0.12103057331685563
+Kvasir-SEG-val,cju33x0f22peh0988g0ln7w5v,pseudo_label_student,"[189, 94, 471, 368]",0.2319349593495935,0.13118010594467333
+Kvasir-SEG-val,cju7dp3dw2k4n0755zhe003ad,supervised_teacher,"[361, 274, 513, 437]",0.2868920032976092,0.16746871992300288
+Kvasir-SEG-val,cju7dp3dw2k4n0755zhe003ad,pseudo_label_student,"[361, 291, 487, 426]",0.2338907553508739,0.1324327790364639
+Kvasir-SEG-val,cju7dqcwi2dz00850gcmr2ert,supervised_teacher,"[242, 105, 477, 373]",0.06344253770150807,0.03276047261009667
+Kvasir-SEG-val,cju7dqcwi2dz00850gcmr2ert,pseudo_label_student,"[236, 89, 490, 373]",0.011695906432748537,0.0058823529411764705
+Kvasir-SEG-val,cju7druhp2gp308715i6km7be,supervised_teacher,"[283, 160, 376, 238]",0.05794559647855841,0.029837267366706215
+Kvasir-SEG-val,cju7druhp2gp308715i6km7be,pseudo_label_student,"[296, 154, 421, 357]",0.08736284713576681,0.045676644419950875
+Kvasir-SEG-val,cju7dsrtb2f8i085064kwugfk,supervised_teacher,"[184, 271, 315, 447]",0.5046470010968077,0.3374768375540457
+Kvasir-SEG-val,cju7dsrtb2f8i085064kwugfk,pseudo_label_student,"[184, 266, 315, 447]",0.5587121212121212,0.3876478318002628
+Kvasir-SEG-val,cju7dtb1e2j0t0818deq51ib3,supervised_teacher,"[249, 94, 548, 456]",0.2357747411225117,0.1336420844991906
+Kvasir-SEG-val,cju7dtb1e2j0t0818deq51ib3,pseudo_label_student,"[242, 105, 548, 445]",0.23558588868595598,0.13352074616457463
+Kvasir-SEG-val,cju7dubap2g0w0801fgl42mg9,supervised_teacher,"[236, 111, 530, 373]",0.4697945525851833,0.30701403748030753
+Kvasir-SEG-val,cju7dubap2g0w0801fgl42mg9,pseudo_label_student,"[217, 100, 536, 390]",0.492522467805681,0.3267196076141539
+Kvasir-SEG-val,cju7dvl5m2n4t0755hlnnjjet,supervised_teacher,null,0.0,0.0
+Kvasir-SEG-val,cju7dvl5m2n4t0755hlnnjjet,pseudo_label_student,null,0.0,0.0
+Kvasir-SEG-val,cju7dwe282dc309876rco45ts,supervised_teacher,"[197, 216, 399, 331]",0.1733468972533062,0.09489864112274449
+Kvasir-SEG-val,cju7dwe282dc309876rco45ts,pseudo_label_student,"[197, 216, 393, 342]",0.17434061954067068,0.09549460398073117
+Kvasir-SEG-val,cju7dxffn2eam0817qxosfwch,supervised_teacher,null,0.01806121108629975,0.009112900553401597
+Kvasir-SEG-val,cju7dxffn2eam0817qxosfwch,pseudo_label_student,null,0.0063661532850345665,0.0031932409732732384
+Kvasir-SEG-val,cju7dymur2od30755eg8yv2ht,supervised_teacher,"[197, 172, 328, 325]",0.3356415040183697,0.2016641876306883
+Kvasir-SEG-val,cju7dymur2od30755eg8yv2ht,pseudo_label_student,"[197, 172, 328, 320]",0.3135258938796284,0.18590614154217594
+Kvasir-SEG-val,cju7dz5yy2i7z0801ausi7rna,supervised_teacher,"[176, 210, 507, 468]",0.23418722652478483,0.13262290886246772
+Kvasir-SEG-val,cju7dz5yy2i7z0801ausi7rna,pseudo_label_student,"[183, 204, 513, 490]",0.24817692767483562,0.1416678040125563
+Kvasir-SEG-val,cju7ea4om2l910801bohqjccy,supervised_teacher,"[413, 143, 539, 318]",0.41229434394695913,0.25967933185544156
+Kvasir-SEG-val,cju7ea4om2l910801bohqjccy,pseudo_label_student,"[413, 143, 539, 318]",0.402975821450713,0.25232919254658387
+Kvasir-SEG-val,cju7ebe962hr409872ovibahw,supervised_teacher,"[391, 105, 522, 264]",0.20292215866699825,0.11291784584939213
+Kvasir-SEG-val,cju7ebe962hr409872ovibahw,pseudo_label_student,"[398, 105, 516, 264]",0.19506537326022774,0.10807337305760019
+Kvasir-SEG-val,cju7ecl9i2i060987xawjp4l0,supervised_teacher,"[326, 304, 451, 440]",0.049982874487710965,0.02563201821859896
+Kvasir-SEG-val,cju7ecl9i2i060987xawjp4l0,pseudo_label_student,"[475, 215, 522, 314]",0.05137659483548013,0.026365584391173043
+Kvasir-SEG-val,cju7eea9b2m0z0801ynqv1fqu,supervised_teacher,null,0.0,0.0
+Kvasir-SEG-val,cju7eea9b2m0z0801ynqv1fqu,pseudo_label_student,null,0.0,0.0
+Kvasir-SEG-val,cju85nr8elly209872w9n5m0s,supervised_teacher,"[195, 182, 363, 457]",0.4833341146687919,0.3186819980217606
+Kvasir-SEG-val,cju85nr8elly209872w9n5m0s,pseudo_label_student,"[195, 177, 363, 446]",0.4625366551986885,0.3008440212657315
+Kvasir-SEG-val,cju85omszllp30850b6rm9mi3,supervised_teacher,"[223, 222, 373, 353]",0.004582598292677981,0.0022965612551825057
+Kvasir-SEG-val,cju85omszllp30850b6rm9mi3,pseudo_label_student,"[242, 305, 321, 442]",0.0014703179562580407,0.0007356998344675372
+Kvasir-SEG-val,cju85plp7lmkw0850rx42jdpf,supervised_teacher,"[201, 232, 259, 320]",0.04038956193917022,0.020611015921684153
+Kvasir-SEG-val,cju85plp7lmkw0850rx42jdpf,pseudo_label_student,"[374, 150, 439, 209]",0.04031423417740235,0.020571784967004667
+Kvasir-SEG-val,cju85qefyln6v0850szeb9byi,supervised_teacher,"[304, 188, 491, 396]",0.23149554610751932,0.13089904613923778
+Kvasir-SEG-val,cju85qefyln6v0850szeb9byi,pseudo_label_student,"[322, 226, 491, 396]",0.19436542882749483,0.1076438344339419
+Kvasir-SEG-val,cju85rkbnlo1c08503uxcpax1,supervised_teacher,"[236, 294, 425, 464]",0.3509017685168972,0.21278403057974093
+Kvasir-SEG-val,cju85rkbnlo1c08503uxcpax1,pseudo_label_student,"[242, 294, 425, 447]",0.387443818220732,0.24026686486869117
+Kvasir-SEG-val,cju87kbcen2av0987usezo8kn,supervised_teacher,"[187, 210, 411, 419]",0.0,0.0
+Kvasir-SEG-val,cju87kbcen2av0987usezo8kn,pseudo_label_student,"[187, 249, 417, 430]",0.0,0.0
+Kvasir-SEG-val,cju87li0zn3yb0817kbwgjiz8,supervised_teacher,null,0.0,0.0
+Kvasir-SEG-val,cju87li0zn3yb0817kbwgjiz8,pseudo_label_student,null,0.0,0.0
+Kvasir-SEG-val,cju87mrypnb1e0818scv1mxxg,supervised_teacher,"[239, 139, 523, 375]",0.39452970405874854,0.24574089290605314
+Kvasir-SEG-val,cju87mrypnb1e0818scv1mxxg,pseudo_label_student,"[246, 139, 523, 375]",0.3957976174776913,0.24672548912149941
+Kvasir-SEG-val,cju87nkyrnb970801q84m47yt,supervised_teacher,"[248, 227, 411, 414]",0.0,0.0
+Kvasir-SEG-val,cju87nkyrnb970801q84m47yt,pseudo_label_student,"[254, 232, 417, 414]",0.008549378437081196,0.004293040633049451
+Kvasir-SEG-val,cju87ox0kncom0801b98hqnd2,supervised_teacher,"[211, 109, 447, 335]",0.5339045892724726,0.3641676969765089
+Kvasir-SEG-val,cju87ox0kncom0801b98hqnd2,pseudo_label_student,"[211, 115, 447, 340]",0.5327477070145976,0.3630920936784645
+Kvasir-SEG-val,cju87q6yoneim0871dl4phvkd,supervised_teacher,"[231, 109, 526, 323]",0.49955589817499285,0.33293869299587864
+Kvasir-SEG-val,cju87q6yoneim0871dl4phvkd,pseudo_label_student,"[237, 120, 519, 323]",0.48010589560000344,0.31588114869985184
+Kvasir-SEG-val,cju87r56lnkyp0755hz30leew,supervised_teacher,"[278, 258, 388, 337]",0.17643258529687825,0.09675133689839573
+Kvasir-SEG-val,cju87r56lnkyp0755hz30leew,pseudo_label_student,"[273, 258, 394, 337]",0.16143938649100384,0.08780748663101605
+Kvasir-SEG-val,cju87tyddnnad0755bj0wxahe,supervised_teacher,"[259, 79, 470, 328]",0.30503753330143063,0.17996713160001684
+Kvasir-SEG-val,cju87tyddnnad0755bj0wxahe,pseudo_label_student,"[213, 94, 470, 338]",0.3219013407252362,0.19182503897855127
+Kvasir-SEG-val,cju87vqa0ndwg0850onjdz7ol,supervised_teacher,"[175, 255, 335, 441]",0.12810860787199516,0.06843805597415492
+Kvasir-SEG-val,cju87vqa0ndwg0850onjdz7ol,pseudo_label_student,"[175, 249, 341, 447]",0.124986415547229,0.06665893867841322
+Kvasir-SEG-val,cju87xn2snfmv0987sc3d9xnq,supervised_teacher,"[241, 128, 388, 380]",0.13087548606478694,0.07001967235946449
+Kvasir-SEG-val,cju87xn2snfmv0987sc3d9xnq,pseudo_label_student,"[235, 111, 394, 380]",0.11852744395471985,0.06299716866657679
+Kvasir-SEG-val,cju87z6o6nh73085045bzsx6o,supervised_teacher,"[443, 243, 496, 336]",0.07237452963886039,0.03754595005704145
+Kvasir-SEG-val,cju87z6o6nh73085045bzsx6o,pseudo_label_student,"[437, 243, 503, 336]",0.08823601420002448,0.0461542401967062
+Kvasir-SEG-val,cju87zv8lni0o0850hbbecbq6,supervised_teacher,"[229, 122, 419, 373]",0.14551260120880374,0.07846513343992129
+Kvasir-SEG-val,cju87zv8lni0o0850hbbecbq6,pseudo_label_student,"[242, 111, 412, 357]",0.1533159268929504,0.08302228254722316
+Kvasir-SEG-val,cju8828oxnool0801qno9luhr,supervised_teacher,"[184, 127, 529, 412]",0.40243768126583207,0.2519073444250391
+Kvasir-SEG-val,cju8828oxnool0801qno9luhr,pseudo_label_student,"[190, 133, 535, 406]",0.4186623790584187,0.26475205137352836
+Kvasir-SEG-val,cju884985nlmx0817vzpax3y4,supervised_teacher,"[226, 177, 458, 380]",0.16303258578389024,0.08875094055680963
+Kvasir-SEG-val,cju884985nlmx0817vzpax3y4,pseudo_label_student,"[219, 171, 470, 385]",0.14935960591133005,0.08070698466780238
+Kvasir-SEG-val,cju8ceacrsqkr0755hdz145es,supervised_teacher,"[196, 133, 476, 410]",0.0,0.0
+Kvasir-SEG-val,cju8ceacrsqkr0755hdz145es,pseudo_label_student,"[231, 143, 447, 338]",0.0,0.0
+Kvasir-SEG-val,cju8cgi2kspp308011nxdtjp6,supervised_teacher,"[286, 67, 501, 358]",0.32551175958188155,0.19439477192183893
+Kvasir-SEG-val,cju8cgi2kspp308011nxdtjp6,pseudo_label_student,"[286, 67, 494, 358]",0.29322628067397943,0.17180149738289274
+Kvasir-SEG-val,cju8chdlqsu620755azjty1tj,supervised_teacher,"[339, 100, 483, 281]",0.427762633675823,0.27207255268071484
+Kvasir-SEG-val,cju8chdlqsu620755azjty1tj,pseudo_label_student,"[313, 111, 490, 303]",0.5095769097962749,0.3419008422142877
+Kvasir-SEG-val,cju8chxndsre008015uisl4si,supervised_teacher,"[399, 91, 534, 205]",0.0,0.0
+Kvasir-SEG-val,cju8chxndsre008015uisl4si,pseudo_label_student,"[412, 96, 521, 186]",0.0,0.0
+Kvasir-SEG-val,cju8cj10qsrau0871o2dr6ai1,supervised_teacher,"[197, 83, 354, 226]",0.665702701936435,0.4989163231481875
+Kvasir-SEG-val,cju8cj10qsrau0871o2dr6ai1,pseudo_label_student,"[197, 78, 354, 226]",0.6944134701159679,0.5318785497715335
+Kvasir-SEG-val,cju8clorgsuwn08714toqb7v6,supervised_teacher,null,0.0,0.0
+Kvasir-SEG-val,cju8clorgsuwn08714toqb7v6,pseudo_label_student,null,0.0,0.0
+Kvasir-SEG-val,cju8cwy02t9eq08185qn12c02,supervised_teacher,"[257, 257, 441, 461]",0.002433213362396715,0.00121808861594681
+Kvasir-SEG-val,cju8cwy02t9eq08185qn12c02,pseudo_label_student,"[257, 252, 447, 461]",0.004959508904572806,0.0024859189207982755
+Kvasir-SEG-val,cju8czvnztbf40871b4m7t78w,supervised_teacher,"[374, 177, 487, 329]",0.14229851860265127,0.0765992383747336
+Kvasir-SEG-val,cju8czvnztbf40871b4m7t78w,pseudo_label_student,"[309, 172, 519, 329]",0.2542499450911487,0.14563937396205526
+Kvasir-SEG-val,cju8d2q30tfhs0801n7lx77xl,supervised_teacher,"[380, 319, 458, 386]",0.06200309845247621,0.03199339400541129
+Kvasir-SEG-val,cju8d2q30tfhs0801n7lx77xl,pseudo_label_student,"[399, 331, 439, 386]",0.025091098386257157,0.01270493963835732
+Kvasir-SEG-val,cju8d4jgatgpj0871q2ophhkm,supervised_teacher,"[275, 404, 386, 442]",0.025891136801541426,0.013115354114561092
+Kvasir-SEG-val,cju8d4jgatgpj0871q2ophhkm,pseudo_label_student,"[268, 404, 373, 447]",0.02275372205947269,0.011507783483184835
+Kvasir-SEG-val,cju8dic9mtppa0987swn23wbc,supervised_teacher,"[352, 415, 411, 530]",0.037832172143781984,0.01928080340870527
+Kvasir-SEG-val,cju8dic9mtppa0987swn23wbc,pseudo_label_student,null,0.008684987735896281,0.004361433365593696
+Kvasir-SEG-val,cju8djdqztu6408506pzhlo18,supervised_teacher,"[416, 188, 481, 259]",0.11454857624153682,0.06075392598192502
+Kvasir-SEG-val,cju8djdqztu6408506pzhlo18,pseudo_label_student,"[346, 133, 494, 275]",0.2038787283662698,0.11351055832706895
+Kvasir-SEG-val,cju8dk7eztzup08182yxko5zh,supervised_teacher,"[197, 94, 328, 346]",0.3570604600664993,0.21733024946307616
+Kvasir-SEG-val,cju8dk7eztzup08182yxko5zh,pseudo_label_student,"[197, 94, 335, 340]",0.3645129722891854,0.22287732407110125
+Kvasir-SEG-val,cju8dm2cau2km0818jsv9eeq2,supervised_teacher,"[218, 331, 402, 478]",0.25146630751183907,0.14381553446305223
+Kvasir-SEG-val,cju8dm2cau2km0818jsv9eeq2,pseudo_label_student,"[185, 320, 402, 478]",0.2874042553191489,0.16781791979327138
+Kvasir-SEG-val,cju8dn0c3u2v50801k8rvq02f,supervised_teacher,"[439, 335, 783, 791]",0.32471222901797114,0.1938247473910883
+Kvasir-SEG-val,cju8dn0c3u2v50801k8rvq02f,pseudo_label_student,"[439, 335, 783, 791]",0.31125624036089194,0.1843122963944564
+Kvasir-SEG-val,cju8doa16u5gh0818w1ywda3q,supervised_teacher,"[216, 348, 309, 440]",0.02527650087052369,0.012800020297356269
+Kvasir-SEG-val,cju8doa16u5gh0818w1ywda3q,pseudo_label_student,"[216, 326, 309, 446]",0.03391211449807327,0.017248524213054582
+Kvasir-SEG-val,cju8dpa89u6l80818dj6lldh9,supervised_teacher,"[230, 348, 406, 451]",0.0,0.0
+Kvasir-SEG-val,cju8dpa89u6l80818dj6lldh9,pseudo_label_student,"[230, 331, 406, 446]",0.0018449475343044932,0.0009233255107144231
+Kvasir-SEG-val,cju8dqkrqu83i0818ev74qpxq,supervised_teacher,"[481, 224, 1134, 713]",0.25529960830745024,0.1463286244005378
+Kvasir-SEG-val,cju8dqkrqu83i0818ev74qpxq,pseudo_label_student,"[439, 257, 1148, 713]",0.24666353412135156,0.14068237267724948
+Kvasir-SEG-val,cjyzjzssvd8pq0838f4nolj5l,supervised_teacher,"[462, 140, 565, 376]",0.0031600331051087204,0.0015825169555388093
+Kvasir-SEG-val,cjyzjzssvd8pq0838f4nolj5l,pseudo_label_student,"[462, 140, 565, 244]",0.0,0.0
+Kvasir-SEG-val,cjyzk8qieoboa0848ogj51wwm,supervised_teacher,"[207, 134, 415, 346]",0.17096006741562572,0.09346983866780025
+Kvasir-SEG-val,cjyzk8qieoboa0848ogj51wwm,pseudo_label_student,"[215, 140, 423, 370]",0.17808530471601422,0.09774623651534667
+Kvasir-SEG-val,cjyzkmjy8evns070165gf9dmq,supervised_teacher,"[440, 80, 603, 220]",0.10545498724334831,0.05566243426959087
+Kvasir-SEG-val,cjyzkmjy8evns070165gf9dmq,pseudo_label_student,"[447, 98, 603, 202]",0.13818359375,0.07421977445580907
+Kvasir-SEG-val,cjyzkpsbjdsjq07211dfi4sru,supervised_teacher,"[290, 122, 415, 196]",0.4235493434985176,0.2686727565824825
+Kvasir-SEG-val,cjyzkpsbjdsjq07211dfi4sru,pseudo_label_student,"[282, 122, 423, 196]",0.5608465608465608,0.3897058823529412
+Kvasir-SEG-val,cjyzl833ndne80838pzuq6ila,supervised_teacher,"[230, 116, 460, 382]",0.7719210862550621,0.6285598405896772
+Kvasir-SEG-val,cjyzl833ndne80838pzuq6ila,pseudo_label_student,"[230, 116, 468, 388]",0.7621073086473065,0.615648928191443
+Kvasir-SEG-val,cjyzlw7f9faqr070129au64sq,supervised_teacher,"[387, 182, 438, 280]",0.05662148823996726,0.029135594480093154
+Kvasir-SEG-val,cjyzlw7f9faqr070129au64sq,pseudo_label_student,"[305, 440, 363, 484]",0.028482638803924928,0.014447064664267097
+Kvasir-SEG-val,cjyztzaqtrv430848l8xgcerw,supervised_teacher,"[320, 320, 430, 406]",0.14011850819100732,0.07533733133433283
+Kvasir-SEG-val,cjyztzaqtrv430848l8xgcerw,pseudo_label_student,"[312, 320, 438, 406]",0.16727000649186316,0.09126822122427415
+Kvasir-SEG-val,cjyzu3reghjya0794w7pwoi50,supervised_teacher,"[455, 140, 573, 334]",0.33670950180414,0.20243577545195052
+Kvasir-SEG-val,cjyzu3reghjya0794w7pwoi50,pseudo_label_student,"[455, 170, 565, 340]",0.3275666738112006,0.19586232149395827
+Kvasir-SEG-val,cjyzu9th0qt4r0a46pyl4zik0,supervised_teacher,null,0.0,0.0
+Kvasir-SEG-val,cjyzu9th0qt4r0a46pyl4zik0,pseudo_label_student,null,0.0,0.0
+Kvasir-SEG-val,cjyzufihqquiw0a46jatrbwln,supervised_teacher,"[425, 230, 490, 298]",0.02274567670187688,0.011503667704181
+Kvasir-SEG-val,cjyzufihqquiw0a46jatrbwln,pseudo_label_student,"[372, 314, 468, 394]",0.02689438202247191,0.013630482715891904
+Kvasir-SEG-val,cjyzuio1qgh040763k56deohv,supervised_teacher,"[230, 104, 558, 334]",0.23268760241531797,0.13166184016664126
+Kvasir-SEG-val,cjyzuio1qgh040763k56deohv,pseudo_label_student,"[222, 98, 543, 340]",0.2192795041567068,0.1231408885721074
+Kvasir-SEG-val,cjyzul1qggwwj07216mhiv5sy,supervised_teacher,"[630, 235, 970, 725]",0.5849597985281824,0.41338740618093495
+Kvasir-SEG-val,cjyzul1qggwwj07216mhiv5sy,pseudo_label_student,"[630, 235, 970, 747]",0.6253649469122208,0.4549316165825194
+Kvasir-SEG-val,cjyzurzvohqnr0794es1itzek,supervised_teacher,null,0.0,0.0
+Kvasir-SEG-val,cjyzurzvohqnr0794es1itzek,pseudo_label_student,null,0.0027270071096971073,0.0013653652352004161
+Kvasir-SEG-val,cjz14qsk2wci60794un9ozwmw,supervised_teacher,"[365, 188, 430, 310]",0.133815254446133,0.0717052557443437
+Kvasir-SEG-val,cjz14qsk2wci60794un9ozwmw,pseudo_label_student,"[365, 188, 430, 316]",0.1673587872434786,0.0913210867891321
+Kvasir-SEG-val,ck2395w2mb4vu07480otsu6tw,supervised_teacher,"[365, 296, 528, 406]",0.3109412266430794,0.18409141916660432
+Kvasir-SEG-val,ck2395w2mb4vu07480otsu6tw,pseudo_label_student,"[357, 290, 535, 388]",0.332671884177607,0.1995239455393697
+Kvasir-SEG-val,ck2bxiswtxuw80838qkisqjwz,supervised_teacher,null,0.0034241549674705277,0.001715013720109761
+Kvasir-SEG-val,ck2bxiswtxuw80838qkisqjwz,pseudo_label_student,null,0.0009935141715701021,0.0004970039760318082
+Kvasir-SEG-val,ck2bxknhjvs1x0794iogrq49k,supervised_teacher,"[398, 144, 507, 302]",0.29023887973640855,0.16975405294726953
+Kvasir-SEG-val,ck2bxknhjvs1x0794iogrq49k,pseudo_label_student,"[398, 144, 475, 302]",0.2539464653397392,0.14544025157232704
+Kvasir-SEG-val,ck2bxlujamu330725szlc2jdu,supervised_teacher,"[215, 302, 475, 478]",0.30369384526529897,0.17903244907626717
+Kvasir-SEG-val,ck2bxlujamu330725szlc2jdu,pseudo_label_student,"[215, 302, 460, 496]",0.11983014653543114,0.06373368146214099
+Kvasir-SEG-val,ck2bxpfgxu2mk0748gsh7xelu,supervised_teacher,"[371, 200, 483, 348]",0.0413921512460613,0.02113345521023766
+Kvasir-SEG-val,ck2bxpfgxu2mk0748gsh7xelu,pseudo_label_student,"[358, 183, 457, 287]",0.01901618169423415,0.009599362457436788
+Kvasir-SEG-val,ck2bxqz3evvg20794iiyv5v2m,supervised_teacher,"[230, 116, 618, 514]",0.38899497346325573,0.2414610550902483
+Kvasir-SEG-val,ck2bxqz3evvg20794iiyv5v2m,pseudo_label_student,"[215, 116, 610, 562]",0.39124456292970394,0.24319704158526376
+Kvasir-SEG-val,ck2bxskgxxzfv08386xkqtqdy,supervised_teacher,"[282, 72, 498, 441]",0.11105459477789081,0.05879184992370523
+Kvasir-SEG-val,ck2bxskgxxzfv08386xkqtqdy,pseudo_label_student,"[282, 94, 504, 447]",0.1482505224836513,0.08005970801325227
+Kvasir-SEG-val,ck2bxw18mmz1k0725litqq2mc,supervised_teacher,"[190, 155, 404, 434]",0.29343025961141694,0.17194155777343348
+Kvasir-SEG-val,ck2bxw18mmz1k0725litqq2mc,pseudo_label_student,"[190, 182, 404, 434]",0.26472315660206097,0.15255384615384615
+Kvasir-SEG-val,ck2da7fwcjfis07218r1rvm95,supervised_teacher,"[275, 170, 640, 478]",0.0,0.0
+Kvasir-SEG-val,ck2da7fwcjfis07218r1rvm95,pseudo_label_student,"[275, 212, 618, 466]",0.0,0.0
+CVC-ClinicDB,1,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,1,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,10,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,10,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,100,supervised_teacher,"[174, 134, 266, 193]",0.0,0.0
+CVC-ClinicDB,100,pseudo_label_student,"[174, 131, 254, 196]",0.0,0.0
+CVC-ClinicDB,101,supervised_teacher,"[170, 143, 278, 214]",0.42427896693799616,0.26926020408163265
+CVC-ClinicDB,101,pseudo_label_student,"[170, 137, 278, 211]",0.5025116102739077,0.33556962025316456
+CVC-ClinicDB,102,supervised_teacher,"[170, 146, 262, 208]",0.29703615242644665,0.17442305240341707
+CVC-ClinicDB,102,pseudo_label_student,"[170, 125, 278, 214]",0.4134450388614111,0.26059295075709377
+CVC-ClinicDB,103,supervised_teacher,"[146, 104, 286, 193]",0.44431011032189816,0.2856032640373033
+CVC-ClinicDB,103,pseudo_label_student,"[146, 104, 254, 193]",0.4580152671755725,0.297029702970297
+CVC-ClinicDB,104,supervised_teacher,"[222, 257, 274, 286]",0.0,0.0
+CVC-ClinicDB,104,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,105,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,105,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,106,supervised_teacher,null,0.0006869547296833139,0.00034359538207806486
+CVC-ClinicDB,106,pseudo_label_student,null,0.0005513819008891033,0.00027576697690451566
+CVC-ClinicDB,107,supervised_teacher,null,0.009189240930410644,0.004615828445042792
+CVC-ClinicDB,107,pseudo_label_student,null,0.0011532916866890917,0.000576978555630349
+CVC-ClinicDB,108,supervised_teacher,null,0.01205484956552313,0.006063974935570266
+CVC-ClinicDB,108,pseudo_label_student,null,0.0024226517942764854,0.0012127949871140534
+CVC-ClinicDB,109,supervised_teacher,null,0.0026357695898083576,0.0013196239071864518
+CVC-ClinicDB,109,pseudo_label_student,null,0.0026357695898083576,0.0013196239071864518
+CVC-ClinicDB,11,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,11,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,110,supervised_teacher,"[234, 140, 278, 184]",0.07904599659284497,0.04114934373891451
+CVC-ClinicDB,110,pseudo_label_student,"[234, 143, 278, 184]",0.06939847049423582,0.03594655315123566
+CVC-ClinicDB,111,supervised_teacher,"[246, 146, 286, 184]",0.020392399196663063,0.0103012330263774
+CVC-ClinicDB,111,pseudo_label_student,null,0.010248447204968944,0.0051506165131887
+CVC-ClinicDB,112,supervised_teacher,null,0.004650441791970238,0.0023306401491609697
+CVC-ClinicDB,112,pseudo_label_student,null,0.0018627755355479665,0.0009322560596643878
+CVC-ClinicDB,113,supervised_teacher,null,0.004617338104582708,0.0023140113386555593
+CVC-ClinicDB,113,pseudo_label_student,null,0.0009251763617439575,0.00046280226773111186
+CVC-ClinicDB,114,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,114,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,115,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,115,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,116,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,116,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,117,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,117,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,118,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,118,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,119,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,119,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,12,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,12,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,120,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,120,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,121,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,121,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,122,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,122,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,123,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,123,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,124,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,124,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,125,supervised_teacher,"[158, 257, 270, 286]",0.0,0.0
+CVC-ClinicDB,125,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,126,supervised_teacher,"[218, 251, 270, 286]",0.0,0.0
+CVC-ClinicDB,126,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,127,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,127,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,128,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,128,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,129,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,129,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,13,supervised_teacher,"[258, 74, 310, 130]",0.0,0.0
+CVC-ClinicDB,13,pseudo_label_student,"[258, 74, 310, 130]",0.0,0.0
+CVC-ClinicDB,130,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,130,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,131,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,131,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,132,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,132,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,133,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,133,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,134,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,134,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,135,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,135,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,136,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,136,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,137,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,137,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,138,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,138,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,139,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,139,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,14,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,14,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,140,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,140,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,141,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,141,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,142,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,142,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,143,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,143,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,144,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,144,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,145,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,145,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,146,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,146,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,147,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,147,pseudo_label_student,null,0.0017750166407810074,0.0008882966910948257
+CVC-ClinicDB,148,supervised_teacher,null,0.0024181360201511333,0.0012105316251387068
+CVC-ClinicDB,148,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,149,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,149,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,15,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,15,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,150,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,150,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,151,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,151,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,152,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,152,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,153,supervised_teacher,"[142, 77, 234, 172]",0.5431051887744801,0.3727827050997783
+CVC-ClinicDB,153,pseudo_label_student,"[146, 77, 230, 175]",0.5082343131123619,0.34069312465064283
+CVC-ClinicDB,154,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,154,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,155,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,155,pseudo_label_student,"[146, 98, 186, 142]",0.26,0.14942528735632185
+CVC-ClinicDB,156,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,156,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,157,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,157,pseudo_label_student,null,0.01271523178807947,0.006398293788323114
+CVC-ClinicDB,158,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,158,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,159,supervised_teacher,"[158, 140, 206, 178]",0.0,0.0
+CVC-ClinicDB,159,pseudo_label_student,"[154, 119, 222, 193]",0.0,0.0
+CVC-ClinicDB,16,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,16,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,160,supervised_teacher,"[134, 68, 194, 136]",0.2203023758099352,0.12378640776699029
+CVC-ClinicDB,160,pseudo_label_student,"[154, 65, 194, 139]",0.16607142857142856,0.09055501460564752
+CVC-ClinicDB,161,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,161,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,162,supervised_teacher,"[150, 65, 210, 133]",0.41372941357549636,0.26081894042305453
+CVC-ClinicDB,162,pseudo_label_student,"[154, 62, 214, 136]",0.43553344065564176,0.2783910196445276
+CVC-ClinicDB,163,supervised_teacher,null,0.027262400605831124,0.01381957773512476
+CVC-ClinicDB,163,pseudo_label_student,null,0.07814227792112054,0.04065976217874952
+CVC-ClinicDB,164,supervised_teacher,"[166, 131, 210, 178]",0.0,0.0
+CVC-ClinicDB,164,pseudo_label_student,"[158, 86, 222, 184]",0.0,0.0
+CVC-ClinicDB,165,supervised_teacher,"[226, 149, 258, 208]",0.0,0.0
+CVC-ClinicDB,165,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,166,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,166,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,167,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,167,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,168,supervised_teacher,"[142, 83, 222, 151]",0.5746664753980778,0.4031803542673108
+CVC-ClinicDB,168,pseudo_label_student,"[146, 83, 222, 154]",0.5752956261575723,0.4038
+CVC-ClinicDB,169,supervised_teacher,"[166, 68, 234, 139]",0.4233611442193087,0.2685213184154823
+CVC-ClinicDB,169,pseudo_label_student,"[162, 65, 234, 142]",0.441197266085317,0.28303598427577864
+CVC-ClinicDB,17,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,17,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,170,supervised_teacher,null,0.05986281438370401,0.03085493893293336
+CVC-ClinicDB,170,pseudo_label_student,"[178, 65, 226, 97]",0.09315628192032686,0.04885365331047782
+CVC-ClinicDB,171,supervised_teacher,null,0.004602109300095877,0.0023063617143955412
+CVC-ClinicDB,171,pseudo_label_student,"[182, 62, 230, 97]",0.06687720601894855,0.03459542571593312
+CVC-ClinicDB,172,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,172,pseudo_label_student,"[174, 149, 218, 184]",0.0,0.0
+CVC-ClinicDB,173,supervised_teacher,"[146, 116, 202, 184]",0.148890966261579,0.08043338536406207
+CVC-ClinicDB,173,pseudo_label_student,"[146, 122, 202, 187]",0.1804360537966753,0.09916444770911761
+CVC-ClinicDB,174,supervised_teacher,null,0.0700642255400784,0.03630391563661509
+CVC-ClinicDB,174,pseudo_label_student,"[162, 146, 206, 181]",0.08390227852266184,0.043788099939898684
+CVC-ClinicDB,175,supervised_teacher,"[150, 152, 226, 208]",0.06664123108228412,0.034469148796211026
+CVC-ClinicDB,175,pseudo_label_student,"[154, 158, 226, 208]",0.07105697246542317,0.0368372582554927
+CVC-ClinicDB,176,supervised_teacher,"[150, 125, 234, 196]",0.21525790465554548,0.12061008994915917
+CVC-ClinicDB,176,pseudo_label_student,"[146, 125, 234, 205]",0.2315512829379625,0.1309346890887759
+CVC-ClinicDB,177,supervised_teacher,"[118, 68, 162, 127]",0.032708688245315164,0.01662625562868029
+CVC-ClinicDB,177,pseudo_label_student,null,0.01685985247629083,0.008501594048884165
+CVC-ClinicDB,178,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,178,pseudo_label_student,"[202, 170, 254, 199]",0.0,0.0
+CVC-ClinicDB,179,supervised_teacher,null,0.07697241821680564,0.0400266844563042
+CVC-ClinicDB,179,pseudo_label_student,null,0.054510058403634,0.028018679119412943
+CVC-ClinicDB,18,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,18,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,180,supervised_teacher,"[238, 140, 302, 193]",0.2726347914547304,0.15783274440518258
+CVC-ClinicDB,180,pseudo_label_student,null,0.10714285714285714,0.05660377358490566
+CVC-ClinicDB,181,supervised_teacher,"[242, 140, 302, 193]",0.29314922995220394,0.1717485998755445
+CVC-ClinicDB,181,pseudo_label_student,null,0.09934949733885275,0.0522713130056005
+CVC-ClinicDB,182,supervised_teacher,"[230, 137, 302, 193]",0.3667980523997218,0.22458830210107894
+CVC-ClinicDB,182,pseudo_label_student,"[234, 146, 294, 196]",0.21923369703121035,0.12311199772014819
+CVC-ClinicDB,183,supervised_teacher,"[230, 143, 290, 193]",0.2745718050065876,0.15913255956017106
+CVC-ClinicDB,183,pseudo_label_student,"[230, 143, 286, 193]",0.18045112781954886,0.09917355371900827
+CVC-ClinicDB,184,supervised_teacher,"[198, 125, 278, 193]",0.46198962327994586,0.3003813435024934
+CVC-ClinicDB,184,pseudo_label_student,"[198, 125, 278, 190]",0.42026537997587454,0.26603543066585217
+CVC-ClinicDB,185,supervised_teacher,null,0.05253731343283582,0.0269773145309626
+CVC-ClinicDB,185,pseudo_label_student,null,0.061794414735591205,0.03188228080931944
+CVC-ClinicDB,186,supervised_teacher,null,0.03474484256243214,0.017679558011049725
+CVC-ClinicDB,186,pseudo_label_student,null,0.040418621436304585,0.020626151012891343
+CVC-ClinicDB,187,supervised_teacher,null,0.003651023047082985,0.0018288501104930274
+CVC-ClinicDB,187,pseudo_label_student,null,0.010913224706328155,0.005486550331479083
+CVC-ClinicDB,188,supervised_teacher,null,0.009029345372460496,0.0045351473922902496
+CVC-ClinicDB,188,pseudo_label_student,null,0.021534320323014805,0.010884353741496598
+CVC-ClinicDB,189,supervised_teacher,null,0.004646660212971926,0.0023287405394915583
+CVC-ClinicDB,189,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,19,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,19,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,190,supervised_teacher,null,0.007071302298173247,0.0035481963335304554
+CVC-ClinicDB,190,pseudo_label_student,null,0.021064950263311878,0.010644589000591367
+CVC-ClinicDB,191,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,191,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,192,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,192,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,193,supervised_teacher,null,0.04942339373970346,0.02533783783783784
+CVC-ClinicDB,193,pseudo_label_student,null,0.020066889632107024,0.010135135135135136
+CVC-ClinicDB,194,supervised_teacher,"[222, 146, 270, 211]",0.22617064593744216,0.1275041736227045
+CVC-ClinicDB,194,pseudo_label_student,"[222, 146, 270, 196]",0.1779806046776954,0.09768315591734503
+CVC-ClinicDB,195,supervised_teacher,"[218, 140, 274, 202]",0.26767576180043817,0.15451828006438262
+CVC-ClinicDB,195,pseudo_label_student,"[218, 140, 266, 193]",0.1898022892819979,0.1048516900436882
+CVC-ClinicDB,196,supervised_teacher,"[210, 134, 278, 196]",0.27824719984279817,0.16160693905501028
+CVC-ClinicDB,196,pseudo_label_student,"[222, 134, 270, 187]",0.1703904781791606,0.09312942250627711
+CVC-ClinicDB,197,supervised_teacher,"[230, 119, 298, 181]",0.2914627514953779,0.1705919796308084
+CVC-ClinicDB,197,pseudo_label_student,"[242, 119, 286, 169]",0.2014882655981683,0.11203055378739657
+CVC-ClinicDB,198,supervised_teacher,null,0.03694743787112382,0.018821420569123906
+CVC-ClinicDB,198,pseudo_label_student,null,0.03175303197353914,0.016132646202106207
+CVC-ClinicDB,199,supervised_teacher,null,0.06380150642445724,0.032951945080091534
+CVC-ClinicDB,199,pseudo_label_student,null,0.02708803611738149,0.013729977116704805
+CVC-ClinicDB,2,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,2,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,20,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,20,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,200,supervised_teacher,null,0.012246980779044054,0.00616121855211364
+CVC-ClinicDB,200,pseudo_label_student,null,0.0040574809805579036,0.002032864645095714
+CVC-ClinicDB,201,supervised_teacher,null,0.032005334222370396,0.01626291716076571
+CVC-ClinicDB,201,pseudo_label_student,null,0.031877801759920305,0.01619706428209887
+CVC-ClinicDB,202,supervised_teacher,null,0.010150444081928585,0.005101111313536163
+CVC-ClinicDB,202,pseudo_label_student,null,0.004340748779164406,0.002175095160413268
+CVC-ClinicDB,203,supervised_teacher,"[162, 140, 206, 190]",0.0,0.0
+CVC-ClinicDB,203,pseudo_label_student,"[162, 140, 206, 190]",0.013298854820834873,0.00669393826701376
+CVC-ClinicDB,204,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,204,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,205,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,205,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,206,supervised_teacher,"[118, 260, 182, 286]",0.0027235587834770767,0.0013636363636363637
+CVC-ClinicDB,206,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,207,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,207,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,208,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,208,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,209,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,209,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,21,supervised_teacher,null,0.000802112228869356,0.0004012170249757598
+CVC-ClinicDB,21,pseudo_label_student,null,0.0008024340499515196,0.00040137806468876474
+CVC-ClinicDB,210,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,210,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,211,supervised_teacher,"[90, 263, 162, 288]",0.0,0.0
+CVC-ClinicDB,211,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,212,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,212,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,213,supervised_teacher,null,0.001480932987782303,0.0007410151908114116
+CVC-ClinicDB,213,pseudo_label_student,null,0.011786372007366482,0.005928121526491293
+CVC-ClinicDB,214,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,214,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,215,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,215,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,216,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,216,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,217,supervised_teacher,"[182, 128, 282, 193]",0.2667710371819961,0.15391563544395268
+CVC-ClinicDB,217,pseudo_label_student,"[182, 131, 278, 199]",0.23189331629801166,0.13115346400505826
+CVC-ClinicDB,218,supervised_teacher,null,0.02188034188034188,0.01106118216384376
+CVC-ClinicDB,218,pseudo_label_student,null,0.01106118216384376,0.005561348627042058
+CVC-ClinicDB,219,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,219,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,22,supervised_teacher,null,0.0017896758076844206,0.0008956393558860299
+CVC-ClinicDB,22,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,220,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,220,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,221,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,221,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,222,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,222,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,223,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,223,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,224,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,224,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,225,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,225,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,226,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,226,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,227,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,227,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,228,supervised_teacher,null,0.008489564909798374,0.004262877442273535
+CVC-ClinicDB,228,pseudo_label_student,null,0.005667729365922777,0.002841918294849023
+CVC-ClinicDB,229,supervised_teacher,null,0.002837885775097552,0.0014209591474245115
+CVC-ClinicDB,229,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,23,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,23,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,230,supervised_teacher,null,0.0032334845286747203,0.001619360352660699
+CVC-ClinicDB,230,pseudo_label_student,null,0.0032317428968984246,0.0016184867149215483
+CVC-ClinicDB,231,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,231,pseudo_label_student,null,0.0012484394506866417,0.0006246096189881324
+CVC-ClinicDB,232,supervised_teacher,null,0.008025413810399598,0.004028873594090985
+CVC-ClinicDB,232,pseudo_label_student,null,0.004020773998994806,0.0020144367970454926
+CVC-ClinicDB,233,supervised_teacher,null,0.005225342913128674,0.0026195153896529143
+CVC-ClinicDB,233,pseudo_label_student,null,0.010423452768729642,0.005239030779305829
+CVC-ClinicDB,234,supervised_teacher,null,0.0029635117614373032,0.0014839547393804488
+CVC-ClinicDB,234,pseudo_label_student,null,0.004441976679622432,0.0022259321090706734
+CVC-ClinicDB,235,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,235,pseudo_label_student,null,0.003356408642752255,0.0016810254255095608
+CVC-ClinicDB,236,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,236,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,237,supervised_teacher,null,0.0017390044199695675,0.0008702589020233519
+CVC-ClinicDB,237,pseudo_label_student,null,0.0017390044199695675,0.0008702589020233519
+CVC-ClinicDB,238,supervised_teacher,null,0.009061390923506758,0.004551316088902374
+CVC-ClinicDB,238,pseudo_label_student,null,0.0018188707843880257,0.0009102632177804749
+CVC-ClinicDB,239,supervised_teacher,null,0.003604415408875873,0.0018054615211013315
+CVC-ClinicDB,239,pseudo_label_student,null,0.0018038331454340473,0.0009027307605506658
+CVC-ClinicDB,24,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,24,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,240,supervised_teacher,null,0.0018964836033188463,0.0009491418176065807
+CVC-ClinicDB,240,pseudo_label_student,null,0.0018964836033188463,0.0009491418176065807
+CVC-ClinicDB,241,supervised_teacher,null,0.0034423407917383822,0.0017241379310344827
+CVC-ClinicDB,241,pseudo_label_student,null,0.0017226528854435831,0.0008620689655172414
+CVC-ClinicDB,242,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,242,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,243,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,243,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,244,supervised_teacher,null,0.0050858232676414495,0.0025493945188017845
+CVC-ClinicDB,244,pseudo_label_student,null,0.0050858232676414495,0.0025493945188017845
+CVC-ClinicDB,245,supervised_teacher,null,0.009115077857956703,0.004578405188859214
+CVC-ClinicDB,245,pseudo_label_student,null,0.009115077857956703,0.004578405188859214
+CVC-ClinicDB,246,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,246,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,247,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,247,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,248,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,248,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,249,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,249,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,25,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,25,pseudo_label_student,null,0.0004728877679697352,0.0002364998029168309
+CVC-ClinicDB,250,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,250,pseudo_label_student,null,0.007050528789659225,0.003537735849056604
+CVC-ClinicDB,251,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,251,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,252,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,252,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,253,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,253,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,254,supervised_teacher,null,0.012205458552296999,0.006140201262152482
+CVC-ClinicDB,254,pseudo_label_student,"[146, 209, 190, 247]",0.021262234222072223,0.010745352208766844
+CVC-ClinicDB,255,supervised_teacher,null,0.0011342155009451795,0.0005674295441649329
+CVC-ClinicDB,255,pseudo_label_student,null,0.006786050895381715,0.0034045772649895973
+CVC-ClinicDB,256,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,256,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,257,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,257,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,258,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,258,pseudo_label_student,null,0.0060491493383742915,0.0030337504740235114
+CVC-ClinicDB,259,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,259,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,26,supervised_teacher,"[190, 116, 230, 178]",0.012232415902140673,0.006153846153846154
+CVC-ClinicDB,26,pseudo_label_student,"[146, 95, 234, 193]",0.04074702886247878,0.02079722703639515
+CVC-ClinicDB,260,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,260,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,261,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,261,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,262,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,262,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,263,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,263,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,264,supervised_teacher,null,0.011295889551302165,0.005680025244556642
+CVC-ClinicDB,264,pseudo_label_student,null,0.0018915510718789407,0.0009466708740927738
+CVC-ClinicDB,265,supervised_teacher,null,0.0018750732450486347,0.00093841642228739
+CVC-ClinicDB,265,pseudo_label_student,null,0.0018750732450486347,0.00093841642228739
+CVC-ClinicDB,266,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,266,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,267,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,267,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,268,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,268,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,269,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,269,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,27,supervised_teacher,"[170, 125, 230, 181]",0.20162016201620162,0.11211211211211211
+CVC-ClinicDB,27,pseudo_label_student,"[146, 95, 234, 193]",0.3981444130697862,0.2485520020146059
+CVC-ClinicDB,270,supervised_teacher,"[150, 200, 302, 256]",0.10024869222193637,0.05276937660813434
+CVC-ClinicDB,270,pseudo_label_student,"[146, 200, 306, 247]",0.0906958561376075,0.0475020475020475
+CVC-ClinicDB,271,supervised_teacher,null,0.0008145257084676735,0.0004074287848436492
+CVC-ClinicDB,271,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,272,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,272,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,273,supervised_teacher,"[118, 260, 162, 288]",0.0,0.0
+CVC-ClinicDB,273,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,274,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,274,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,275,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,275,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,276,supervised_teacher,null,0.002174208452235358,0.0010882873078492722
+CVC-ClinicDB,276,pseudo_label_student,null,0.004343694855436405,0.0021765746156985444
+CVC-ClinicDB,277,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,277,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,278,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,278,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,279,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,279,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,28,supervised_teacher,"[150, 104, 186, 178]",0.03245635603639046,0.016495876030992253
+CVC-ClinicDB,28,pseudo_label_student,"[178, 95, 226, 142]",0.14516476416110274,0.07826288899210404
+CVC-ClinicDB,280,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,280,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,281,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,281,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,282,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,282,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,283,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,283,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,284,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,284,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,285,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,285,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,286,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,286,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,287,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,287,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,288,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,288,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,289,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,289,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,29,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,29,pseudo_label_student,"[154, 95, 226, 178]",0.0,0.0
+CVC-ClinicDB,290,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,290,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,291,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,291,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,292,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,292,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,293,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,293,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,294,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,294,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,295,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,295,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,296,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,296,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,297,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,297,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,298,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,298,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,299,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,299,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,3,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,3,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,30,supervised_teacher,"[142, 98, 198, 124]",0.0815806246016571,0.0425249169435216
+CVC-ClinicDB,30,pseudo_label_student,"[146, 89, 230, 175]",0.45344267896805057,0.293194874060981
+CVC-ClinicDB,300,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,300,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,301,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,301,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,302,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,302,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,303,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,303,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,304,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,304,pseudo_label_student,null,0.002463559843974543,0.0012332990750256938
+CVC-ClinicDB,305,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,305,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,306,supervised_teacher,"[286, 95, 326, 145]",0.0,0.0
+CVC-ClinicDB,306,pseudo_label_student,"[294, 137, 326, 193]",0.0,0.0
+CVC-ClinicDB,307,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,307,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,308,supervised_teacher,"[250, 158, 290, 235]",0.0,0.0
+CVC-ClinicDB,308,pseudo_label_student,"[250, 155, 290, 235]",0.0,0.0
+CVC-ClinicDB,309,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,309,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,31,supervised_teacher,"[130, 98, 226, 148]",0.0,0.0
+CVC-ClinicDB,31,pseudo_label_student,"[146, 95, 230, 148]",0.14578076815250912,0.07862110674327184
+CVC-ClinicDB,310,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,310,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,311,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,311,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,312,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,312,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,313,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,313,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,314,supervised_teacher,"[266, 200, 334, 286]",0.005048842059049501,0.0025308098591549297
+CVC-ClinicDB,314,pseudo_label_student,"[294, 188, 342, 247]",0.012681753580408878,0.006381340081417098
+CVC-ClinicDB,315,supervised_teacher,"[258, 191, 298, 229]",0.021252521277119102,0.010740390830888569
+CVC-ClinicDB,315,pseudo_label_student,null,0.016568864342423197,0.008353637312913331
+CVC-ClinicDB,316,supervised_teacher,"[198, 125, 306, 244]",0.21769926369719197,0.12214507869686783
+CVC-ClinicDB,316,pseudo_label_student,"[210, 125, 306, 238]",0.19649281849344175,0.10895039426973704
+CVC-ClinicDB,317,supervised_teacher,null,0.010452961672473868,0.005253940455341506
+CVC-ClinicDB,317,pseudo_label_student,null,0.0044932601098352475,0.002251688766574931
+CVC-ClinicDB,318,supervised_teacher,"[166, 146, 254, 193]",0.15380281690140846,0.08330790357033872
+CVC-ClinicDB,318,pseudo_label_student,"[162, 146, 254, 190]",0.06167904054825814,0.03182086034177961
+CVC-ClinicDB,319,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,319,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,32,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,32,pseudo_label_student,"[154, 101, 226, 157]",0.0,0.0
+CVC-ClinicDB,320,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,320,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,321,supervised_teacher,"[186, 113, 238, 142]",0.04751131221719457,0.02433371958285052
+CVC-ClinicDB,321,pseudo_label_student,null,0.025607353906762966,0.012969737279680744
+CVC-ClinicDB,322,supervised_teacher,null,0.0205078125,0.010360138135175136
+CVC-ClinicDB,322,pseudo_label_student,null,0.011822660098522168,0.005946481665014866
+CVC-ClinicDB,323,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,323,pseudo_label_student,null,0.00481444332998997,0.0024130303639654134
+CVC-ClinicDB,324,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,324,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,325,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,325,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,326,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,326,pseudo_label_student,"[174, 95, 218, 133]",0.0,0.0
+CVC-ClinicDB,327,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,327,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,328,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,328,pseudo_label_student,"[174, 95, 226, 142]",0.0,0.0
+CVC-ClinicDB,329,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,329,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,33,supervised_teacher,"[150, 98, 178, 157]",0.004137574347039048,0.0020730759264058047
+CVC-ClinicDB,33,pseudo_label_student,"[154, 95, 226, 151]",0.00127867018300967,0.0006397441023590564
+CVC-ClinicDB,330,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,330,pseudo_label_student,"[154, 143, 226, 181]",0.0,0.0
+CVC-ClinicDB,331,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,331,pseudo_label_student,"[154, 161, 226, 187]",0.0004970178926441351,0.00024857071836937607
+CVC-ClinicDB,332,supervised_teacher,null,0.008382815228781,0.004209049456331112
+CVC-ClinicDB,332,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,333,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,333,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,334,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,334,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,335,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,335,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,336,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,336,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,337,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,337,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,338,supervised_teacher,"[146, 107, 198, 142]",0.0610184700515965,0.03146934053220208
+CVC-ClinicDB,338,pseudo_label_student,"[146, 107, 198, 148]",0.07802904414420923,0.04059845124426735
+CVC-ClinicDB,339,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,339,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,34,supervised_teacher,"[182, 119, 226, 163]",0.0,0.0
+CVC-ClinicDB,34,pseudo_label_student,"[154, 95, 226, 178]",0.0,0.0
+CVC-ClinicDB,340,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,340,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,341,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,341,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,342,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,342,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,343,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,343,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,344,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,344,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,345,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,345,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,346,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,346,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,347,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,347,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,348,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,348,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,349,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,349,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,35,supervised_teacher,"[162, 107, 254, 181]",0.45781913817519726,0.29686475141020596
+CVC-ClinicDB,35,pseudo_label_student,"[146, 95, 230, 178]",0.579099864786556,0.4075584556824361
+CVC-ClinicDB,350,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,350,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,351,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,351,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,352,supervised_teacher,null,0.011730205278592375,0.0058997050147492625
+CVC-ClinicDB,352,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,353,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,353,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,354,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,354,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,355,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,355,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,356,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,356,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,357,supervised_teacher,"[206, 212, 254, 244]",0.017820679413402638,0.008990447649372542
+CVC-ClinicDB,357,pseudo_label_student,"[206, 212, 254, 247]",0.020025959577229743,0.01011425360554411
+CVC-ClinicDB,358,supervised_teacher,"[130, 260, 206, 288]",0.07220216606498195,0.03745318352059925
+CVC-ClinicDB,358,pseudo_label_student,"[150, 260, 202, 288]",0.04528804528804529,0.023168654173764906
+CVC-ClinicDB,359,supervised_teacher,null,0.008453680873547023,0.004244782454899187
+CVC-ClinicDB,359,pseudo_label_student,null,0.01265377855887522,0.006367173682348779
+CVC-ClinicDB,36,supervised_teacher,null,0.08092485549132948,0.04216867469879518
+CVC-ClinicDB,36,pseudo_label_student,"[154, 104, 226, 184]",0.22069417157825802,0.12403386087596614
+CVC-ClinicDB,360,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,360,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,361,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,361,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,362,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,362,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,363,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,363,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,364,supervised_teacher,"[246, 170, 302, 208]",0.13673983447283194,0.07338740826573967
+CVC-ClinicDB,364,pseudo_label_student,null,0.09497427779976256,0.04985459077690071
+CVC-ClinicDB,365,supervised_teacher,"[242, 173, 302, 208]",0.1443558539655896,0.0777928539122569
+CVC-ClinicDB,365,pseudo_label_student,null,0.12115649380449747,0.06448461162677088
+CVC-ClinicDB,366,supervised_teacher,"[250, 173, 302, 208]",0.11643528884908196,0.061816452686638136
+CVC-ClinicDB,366,pseudo_label_student,null,0.0693307655272027,0.035910224438902745
+CVC-ClinicDB,367,supervised_teacher,"[246, 170, 302, 208]",0.12885802469135801,0.0688659793814433
+CVC-ClinicDB,367,pseudo_label_student,null,0.07960199004975124,0.04145077720207254
+CVC-ClinicDB,368,supervised_teacher,"[206, 173, 266, 208]",0.24888888888888888,0.14213197969543148
+CVC-ClinicDB,368,pseudo_label_student,"[202, 173, 258, 208]",0.13756613756613756,0.07386363636363637
+CVC-ClinicDB,369,supervised_teacher,"[194, 173, 238, 223]",0.37425910245554617,0.23020833333333332
+CVC-ClinicDB,369,pseudo_label_student,null,0.16578108395324123,0.09038238702201622
+CVC-ClinicDB,37,supervised_teacher,"[158, 122, 254, 193]",0.44343980343980344,0.28488445510796817
+CVC-ClinicDB,37,pseudo_label_student,"[154, 122, 238, 184]",0.44359683417564605,0.2850140914103664
+CVC-ClinicDB,370,supervised_teacher,"[186, 173, 238, 220]",0.35615287694246117,0.21665815022994378
+CVC-ClinicDB,370,pseudo_label_student,"[186, 176, 238, 208]",0.2099507927829415,0.11728772144166158
+CVC-ClinicDB,371,supervised_teacher,"[242, 149, 302, 208]",0.2878787878787879,0.168141592920354
+CVC-ClinicDB,371,pseudo_label_student,"[182, 176, 226, 211]",0.24869791666666666,0.14200743494423793
+CVC-ClinicDB,372,supervised_teacher,"[242, 149, 302, 208]",0.25153374233128833,0.14385964912280702
+CVC-ClinicDB,372,pseudo_label_student,"[242, 170, 282, 208]",0.2596899224806202,0.1492204899777283
+CVC-ClinicDB,373,supervised_teacher,"[190, 173, 234, 208]",0.2744186046511628,0.15902964959568733
+CVC-ClinicDB,373,pseudo_label_student,"[182, 176, 234, 208]",0.3066465256797583,0.18108831400535236
+CVC-ClinicDB,374,supervised_teacher,"[234, 164, 286, 211]",0.21820062047569805,0.122460824143935
+CVC-ClinicDB,374,pseudo_label_student,"[178, 155, 214, 199]",0.2885682574916759,0.16861219195849547
+CVC-ClinicDB,375,supervised_teacher,"[222, 158, 302, 220]",0.14509970301230377,0.07822506861848125
+CVC-ClinicDB,375,pseudo_label_student,"[226, 158, 306, 202]",0.09258226436140547,0.048538011695906436
+CVC-ClinicDB,376,supervised_teacher,"[186, 131, 246, 178]",0.34987925945800913,0.21203252032520326
+CVC-ClinicDB,376,pseudo_label_student,"[186, 131, 246, 178]",0.353310323187951,0.2145579268292683
+CVC-ClinicDB,377,supervised_teacher,"[170, 143, 226, 193]",0.35813704496788007,0.218128464297359
+CVC-ClinicDB,377,pseudo_label_student,"[166, 152, 222, 193]",0.3230769230769231,0.1926605504587156
+CVC-ClinicDB,378,supervised_teacher,"[162, 143, 226, 190]",0.435258358662614,0.27816627816627815
+CVC-ClinicDB,378,pseudo_label_student,"[170, 146, 226, 190]",0.44958924570575054,0.28998073217726394
+CVC-ClinicDB,379,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,379,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,38,supervised_teacher,"[158, 101, 230, 139]",0.12232297896970866,0.06514591039868475
+CVC-ClinicDB,38,pseudo_label_student,"[150, 98, 246, 181]",0.38797734862784955,0.2406773554314538
+CVC-ClinicDB,380,supervised_teacher,"[182, 131, 246, 199]",0.0,0.0
+CVC-ClinicDB,380,pseudo_label_student,"[174, 131, 246, 199]",0.0,0.0
+CVC-ClinicDB,381,supervised_teacher,"[162, 128, 302, 196]",0.0,0.0
+CVC-ClinicDB,381,pseudo_label_student,"[162, 134, 282, 199]",0.0,0.0
+CVC-ClinicDB,382,supervised_teacher,"[234, 164, 282, 214]",0.0,0.0
+CVC-ClinicDB,382,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,383,supervised_teacher,"[234, 170, 270, 205]",0.11556099052277591,0.06132381570408826
+CVC-ClinicDB,383,pseudo_label_student,null,0.05521669341894061,0.028392208649719378
+CVC-ClinicDB,384,supervised_teacher,"[178, 107, 238, 196]",0.08133252341826784,0.0423901089745726
+CVC-ClinicDB,384,pseudo_label_student,"[178, 113, 226, 208]",0.09095831077422847,0.0476460578559274
+CVC-ClinicDB,385,supervised_teacher,"[170, 107, 230, 226]",0.14922637718958165,0.08062918951858623
+CVC-ClinicDB,385,pseudo_label_student,"[182, 104, 230, 217]",0.15819760750531858,0.08589282332891497
+CVC-ClinicDB,386,supervised_teacher,"[234, 98, 278, 130]",0.0192227329711659,0.009704641350210971
+CVC-ClinicDB,386,pseudo_label_student,"[230, 65, 270, 130]",0.05075726565697913,0.026039479210415793
+CVC-ClinicDB,387,supervised_teacher,"[282, 119, 318, 163]",0.009366684406599254,0.004705379103839161
+CVC-ClinicDB,387,pseudo_label_student,"[278, 122, 318, 226]",0.023462867916623022,0.0118706942236354
+CVC-ClinicDB,388,supervised_teacher,"[178, 86, 238, 220]",0.1171200699224298,0.06220262272252524
+CVC-ClinicDB,388,pseudo_label_student,"[190, 95, 238, 217]",0.09270499944818453,0.04860548547621803
+CVC-ClinicDB,389,supervised_teacher,"[230, 89, 278, 154]",0.058770179575548705,0.030274715006540834
+CVC-ClinicDB,389,pseudo_label_student,"[230, 89, 278, 160]",0.06508768757909962,0.033638572229489815
+CVC-ClinicDB,39,supervised_teacher,"[162, 134, 210, 163]",0.09407665505226481,0.04936014625228519
+CVC-ClinicDB,39,pseudo_label_student,"[154, 107, 250, 184]",0.5146541617819461,0.34648776637726914
+CVC-ClinicDB,390,supervised_teacher,"[230, 77, 322, 193]",0.2024740227610094,0.11264038757982824
+CVC-ClinicDB,390,pseudo_label_student,"[234, 83, 314, 190]",0.18376538884996496,0.10117932326683567
+CVC-ClinicDB,391,supervised_teacher,null,0.004368401892974154,0.0021889821233126595
+CVC-ClinicDB,391,pseudo_label_student,null,0.0044069041498347415,0.002208317997791682
+CVC-ClinicDB,392,supervised_teacher,"[78, 260, 154, 288]",0.04633204633204633,0.023715415019762844
+CVC-ClinicDB,392,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,393,supervised_teacher,"[266, 98, 306, 169]",0.13770737183485093,0.07394507702612191
+CVC-ClinicDB,393,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,394,supervised_teacher,"[254, 98, 298, 163]",0.14989779695662048,0.08102136017677387
+CVC-ClinicDB,394,pseudo_label_student,"[186, 260, 238, 288]",0.026399413346370082,0.013376269507059698
+CVC-ClinicDB,395,supervised_teacher,"[234, 89, 286, 172]",0.20535158680771623,0.1144244105409154
+CVC-ClinicDB,395,pseudo_label_student,"[238, 95, 282, 169]",0.15619915392124958,0.08471584892340275
+CVC-ClinicDB,396,supervised_teacher,"[238, 95, 298, 178]",0.17262092949731267,0.09446366782006921
+CVC-ClinicDB,396,pseudo_label_student,"[238, 83, 290, 166]",0.1389514313284014,0.07466297960594538
+CVC-ClinicDB,397,supervised_teacher,"[226, 71, 266, 121]",0.12251071338542979,0.06525241675617616
+CVC-ClinicDB,397,pseudo_label_student,"[226, 71, 266, 121]",0.08927655207798871,0.04672395273899033
+CVC-ClinicDB,398,supervised_teacher,"[190, 92, 258, 208]",0.23724814797338745,0.13458964612666632
+CVC-ClinicDB,398,pseudo_label_student,"[186, 95, 258, 217]",0.2509611376163787,0.14348516949152543
+CVC-ClinicDB,399,supervised_teacher,"[254, 101, 302, 178]",0.1469767441860465,0.07931726907630522
+CVC-ClinicDB,399,pseudo_label_student,null,0.011976047904191617,0.006024096385542169
+CVC-ClinicDB,4,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,4,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,40,supervised_teacher,"[170, 113, 230, 145]",0.13552941176470587,0.07269056032306916
+CVC-ClinicDB,40,pseudo_label_student,"[146, 110, 238, 160]",0.3621331128565523,0.22110045431600203
+CVC-ClinicDB,400,supervised_teacher,"[262, 98, 306, 169]",0.12967843964153927,0.0693348365276212
+CVC-ClinicDB,400,pseudo_label_student,"[206, 260, 262, 288]",0.0,0.0
+CVC-ClinicDB,401,supervised_teacher,"[202, 89, 298, 208]",0.5680772086117297,0.3967233513065118
+CVC-ClinicDB,401,pseudo_label_student,"[214, 86, 298, 217]",0.5953330379559888,0.42382504468510146
+CVC-ClinicDB,402,supervised_teacher,"[210, 65, 282, 208]",0.3229742173112339,0.19258750857927248
+CVC-ClinicDB,402,pseudo_label_student,"[214, 80, 278, 214]",0.3036093418259023,0.17897371714643304
+CVC-ClinicDB,403,supervised_teacher,"[238, 83, 290, 166]",0.20770364909694067,0.11588688946015424
+CVC-ClinicDB,403,pseudo_label_student,"[234, 83, 286, 163]",0.19088213491475167,0.10551116574472444
+CVC-ClinicDB,404,supervised_teacher,"[242, 80, 298, 199]",0.23300970873786409,0.13186813186813187
+CVC-ClinicDB,404,pseudo_label_student,"[242, 80, 298, 199]",0.2218798151001541,0.12478336221837089
+CVC-ClinicDB,405,supervised_teacher,"[226, 89, 302, 181]",0.4110975112199102,0.25873048479868527
+CVC-ClinicDB,405,pseudo_label_student,"[226, 89, 282, 181]",0.3521827825377397,0.21372684955927504
+CVC-ClinicDB,406,supervised_teacher,"[250, 92, 302, 160]",0.1839080459770115,0.10126582278481013
+CVC-ClinicDB,406,pseudo_label_student,"[250, 95, 290, 157]",0.13502352828195524,0.07239958805355304
+CVC-ClinicDB,407,supervised_teacher,"[198, 68, 262, 211]",0.287298536152595,0.16774583441250107
+CVC-ClinicDB,407,pseudo_label_student,"[206, 98, 250, 208]",0.15167575993764615,0.08206122965336932
+CVC-ClinicDB,408,supervised_teacher,"[226, 122, 278, 193]",0.1926153171907527,0.10657129000969932
+CVC-ClinicDB,408,pseudo_label_student,"[226, 122, 274, 193]",0.17900478681954804,0.09830052573664262
+CVC-ClinicDB,409,supervised_teacher,"[170, 80, 226, 145]",0.11213846204468428,0.059399728099836166
+CVC-ClinicDB,409,pseudo_label_student,"[170, 80, 226, 145]",0.10075800205223263,0.05305169228624211
+CVC-ClinicDB,41,supervised_teacher,"[166, 116, 226, 178]",0.47726933969294977,0.3134299138606108
+CVC-ClinicDB,41,pseudo_label_student,"[146, 89, 226, 181]",0.637356851388706,0.4677357032457496
+CVC-ClinicDB,410,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,410,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,411,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,411,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,412,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,412,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,413,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,413,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,414,supervised_teacher,"[186, 143, 230, 181]",0.014286609436681497,0.007194698643105081
+CVC-ClinicDB,414,pseudo_label_student,null,0.013524513180139001,0.006808296034797957
+CVC-ClinicDB,415,supervised_teacher,"[218, 77, 254, 121]",0.0,0.0
+CVC-ClinicDB,415,pseudo_label_student,"[218, 77, 254, 118]",0.0,0.0
+CVC-ClinicDB,416,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,416,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,417,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,417,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,418,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,418,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,419,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,419,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,42,supervised_teacher,"[174, 110, 230, 178]",0.29714709151537605,0.17449956483899043
+CVC-ClinicDB,42,pseudo_label_student,"[146, 89, 230, 184]",0.5579641847313855,0.3869281045751634
+CVC-ClinicDB,420,supervised_teacher,"[218, 65, 254, 106]",0.0,0.0
+CVC-ClinicDB,420,pseudo_label_student,"[218, 65, 254, 106]",0.0,0.0
+CVC-ClinicDB,421,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,421,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,422,supervised_teacher,"[182, 92, 226, 127]",0.05761735299101847,0.02966323503751527
+CVC-ClinicDB,422,pseudo_label_student,"[162, 173, 214, 220]",0.07393715341959335,0.03838771593090211
+CVC-ClinicDB,423,supervised_teacher,"[218, 140, 302, 229]",0.0,0.0
+CVC-ClinicDB,423,pseudo_label_student,"[242, 143, 306, 235]",0.0,0.0
+CVC-ClinicDB,424,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,424,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,425,supervised_teacher,"[186, 68, 230, 109]",0.0,0.0
+CVC-ClinicDB,425,pseudo_label_student,"[174, 62, 230, 109]",0.0,0.0
+CVC-ClinicDB,426,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,426,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,427,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,427,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,428,supervised_teacher,"[150, 194, 226, 244]",0.0,0.0
+CVC-ClinicDB,428,pseudo_label_student,"[154, 200, 226, 247]",0.0,0.0
+CVC-ClinicDB,429,supervised_teacher,"[182, 113, 242, 196]",0.27139284549309556,0.1570008806139137
+CVC-ClinicDB,429,pseudo_label_student,"[182, 104, 246, 196]",0.25835694050991503,0.1483409238776838
+CVC-ClinicDB,43,supervised_teacher,"[166, 104, 230, 151]",0.0,0.0
+CVC-ClinicDB,43,pseudo_label_student,"[154, 95, 254, 193]",0.0,0.0
+CVC-ClinicDB,430,supervised_teacher,"[130, 110, 174, 157]",0.07091360359295591,0.036760200955765224
+CVC-ClinicDB,430,pseudo_label_student,"[162, 146, 206, 193]",0.07940203406445288,0.041342350389179536
+CVC-ClinicDB,431,supervised_teacher,"[138, 80, 190, 142]",0.0798447463265872,0.041582442968524404
+CVC-ClinicDB,431,pseudo_label_student,"[142, 80, 194, 142]",0.07584027578282103,0.039414750671842344
+CVC-ClinicDB,432,supervised_teacher,"[170, 104, 246, 208]",0.4017714791851196,0.2513855021059632
+CVC-ClinicDB,432,pseudo_label_student,"[170, 104, 246, 202]",0.4017905102954342,0.25140040331615504
+CVC-ClinicDB,433,supervised_teacher,"[130, 83, 222, 190]",0.5904617713853142,0.4189044038668099
+CVC-ClinicDB,433,pseudo_label_student,"[130, 74, 226, 196]",0.5649019910480012,0.39363303936330396
+CVC-ClinicDB,434,supervised_teacher,"[126, 80, 222, 187]",0.5733560573782133,0.40189148830263816
+CVC-ClinicDB,434,pseudo_label_student,"[126, 68, 222, 190]",0.5585819282317337,0.38752249550089984
+CVC-ClinicDB,435,supervised_teacher,"[134, 68, 218, 178]",0.5181766811075532,0.34968857251811364
+CVC-ClinicDB,435,pseudo_label_student,"[142, 68, 218, 169]",0.48903551329322725,0.32365784741844333
+CVC-ClinicDB,436,supervised_teacher,"[138, 68, 258, 196]",0.6877704395354134,0.5241235682054842
+CVC-ClinicDB,436,pseudo_label_student,"[146, 80, 254, 196]",0.6966292134831461,0.5344827586206896
+CVC-ClinicDB,437,supervised_teacher,"[198, 98, 250, 166]",0.16371834894207424,0.08915753683415187
+CVC-ClinicDB,437,pseudo_label_student,"[198, 104, 250, 163]",0.1367211131276467,0.07337662337662337
+CVC-ClinicDB,438,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,438,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,439,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,439,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,44,supervised_teacher,"[166, 122, 226, 178]",0.02465331278890601,0.0124804992199688
+CVC-ClinicDB,44,pseudo_label_student,"[154, 92, 226, 184]",0.11778189191571894,0.06257611241217799
+CVC-ClinicDB,440,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,440,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,441,supervised_teacher,"[130, 119, 258, 214]",0.3280673261479404,0.1962204168138467
+CVC-ClinicDB,441,pseudo_label_student,"[146, 119, 258, 202]",0.368913560666138,0.22617658498638663
+CVC-ClinicDB,442,supervised_teacher,"[130, 134, 254, 214]",0.012476960158797675,0.006277643030389499
+CVC-ClinicDB,442,pseudo_label_student,"[138, 137, 242, 202]",0.023693173404412852,0.011988610819721265
+CVC-ClinicDB,443,supervised_teacher,null,0.0037599874667084443,0.0018835347669125726
+CVC-ClinicDB,443,pseudo_label_student,null,0.029362287811591985,0.01489989135495887
+CVC-ClinicDB,444,supervised_teacher,null,0.028869286287089013,0.014646053702196907
+CVC-ClinicDB,444,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,445,supervised_teacher,"[142, 119, 246, 217]",0.32805670407560544,0.19621281707058574
+CVC-ClinicDB,445,pseudo_label_student,"[158, 134, 250, 202]",0.2857489976916535,0.16669029057406096
+CVC-ClinicDB,446,supervised_teacher,"[142, 143, 214, 196]",0.11964959760700805,0.06363154306491932
+CVC-ClinicDB,446,pseudo_label_student,"[138, 146, 218, 202]",0.1387381036305957,0.07453980759033406
+CVC-ClinicDB,447,supervised_teacher,"[118, 137, 214, 214]",0.5589600742804085,0.38788659793814434
+CVC-ClinicDB,447,pseudo_label_student,"[142, 134, 214, 202]",0.6063630692451654,0.4350940017905103
+CVC-ClinicDB,448,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,448,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,449,supervised_teacher,null,0.004903964037597058,0.0024580090126997134
+CVC-ClinicDB,449,pseudo_label_student,null,0.004903964037597058,0.0024580090126997134
+CVC-ClinicDB,45,supervised_teacher,"[186, 110, 226, 163]",0.06748207507380852,0.034919249236141425
+CVC-ClinicDB,45,pseudo_label_student,"[154, 95, 226, 178]",0.0055574852379298365,0.002786485545106235
+CVC-ClinicDB,450,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,450,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,451,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,451,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,452,supervised_teacher,"[142, 65, 254, 178]",0.22490470139771285,0.12670007158196134
+CVC-ClinicDB,452,pseudo_label_student,"[134, 56, 254, 178]",0.20826367327442083,0.1162356704878699
+CVC-ClinicDB,453,supervised_teacher,null,0.005902606984751598,0.0029600394671928957
+CVC-ClinicDB,453,pseudo_label_student,null,0.02916869227029655,0.01480019733596448
+CVC-ClinicDB,454,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,454,pseudo_label_student,null,0.0036872023352281457,0.0018470063106048947
+CVC-ClinicDB,455,supervised_teacher,null,0.04194826380797017,0.021423470602237562
+CVC-ClinicDB,455,pseudo_label_student,"[190, 68, 230, 142]",0.1283136556025841,0.0685551059271602
+CVC-ClinicDB,456,supervised_teacher,null,0.030357788218286955,0.015412844036697248
+CVC-ClinicDB,456,pseudo_label_student,"[186, 74, 230, 139]",0.10236768802228412,0.053944954128440366
+CVC-ClinicDB,457,supervised_teacher,null,0.014640097600650671,0.007374027038099139
+CVC-ClinicDB,457,pseudo_label_student,null,0.017017828200972446,0.00858193706579485
+CVC-ClinicDB,458,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,458,pseudo_label_student,null,0.015100671140939598,0.0076077768385460695
+CVC-ClinicDB,459,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,459,pseudo_label_student,"[190, 146, 226, 181]",0.0,0.0
+CVC-ClinicDB,46,supervised_teacher,null,0.03715745471435207,0.01893043066729768
+CVC-ClinicDB,46,pseudo_label_student,"[154, 95, 226, 157]",0.3577424770760687,0.21783579742057252
+CVC-ClinicDB,460,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,460,pseudo_label_student,"[194, 68, 230, 115]",0.0,0.0
+CVC-ClinicDB,461,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,461,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,462,supervised_teacher,null,0.028055591635277308,0.014227374522460808
+CVC-ClinicDB,462,pseudo_label_student,null,0.03112436778627934,0.015808193913845345
+CVC-ClinicDB,463,supervised_teacher,null,0.0020380434782608695,0.0010200612036722204
+CVC-ClinicDB,463,pseudo_label_student,null,0.006089309878213802,0.003053953172718018
+CVC-ClinicDB,464,supervised_teacher,null,0.01675197766402978,0.008446738620366025
+CVC-ClinicDB,464,pseudo_label_student,null,0.025023169601482854,0.012670107930549039
+CVC-ClinicDB,465,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,465,pseudo_label_student,null,0.00793322865878853,0.003982411018003816
+CVC-ClinicDB,466,supervised_teacher,"[186, 101, 234, 175]",0.12120208626541933,0.06451044328897505
+CVC-ClinicDB,466,pseudo_label_student,"[182, 68, 230, 178]",0.18763462305544476,0.10353024033805792
+CVC-ClinicDB,467,supervised_teacher,"[166, 149, 274, 229]",0.22868985402775274,0.1291077423949537
+CVC-ClinicDB,467,pseudo_label_student,"[198, 146, 274, 211]",0.1820536540240518,0.10014247913698351
+CVC-ClinicDB,468,supervised_teacher,"[138, 128, 246, 208]",0.2850492880613363,0.16621427430943636
+CVC-ClinicDB,468,pseudo_label_student,"[146, 131, 254, 202]",0.2661698163428267,0.15351550506601166
+CVC-ClinicDB,469,supervised_teacher,"[150, 134, 294, 217]",0.29179447852760737,0.1708193041526375
+CVC-ClinicDB,469,pseudo_label_student,"[154, 134, 282, 208]",0.2850539291217257,0.16621743036837378
+CVC-ClinicDB,47,supervised_teacher,"[218, 149, 246, 193]",0.0517192916705706,0.026546119072809463
+CVC-ClinicDB,47,pseudo_label_student,"[154, 134, 230, 184]",0.23628972040155977,0.13397309248283
+CVC-ClinicDB,470,supervised_teacher,"[266, 59, 314, 208]",0.018623900672529746,0.009399477806788513
+CVC-ClinicDB,470,pseudo_label_student,"[270, 68, 314, 223]",0.01987083954297069,0.010035122930255895
+CVC-ClinicDB,471,supervised_teacher,"[206, 116, 302, 211]",0.18687655204343617,0.10306885185013231
+CVC-ClinicDB,471,pseudo_label_student,"[202, 116, 298, 208]",0.18703649390371643,0.10316616593482783
+CVC-ClinicDB,472,supervised_teacher,"[170, 116, 302, 196]",0.17095105451651413,0.09346445043947438
+CVC-ClinicDB,472,pseudo_label_student,"[158, 116, 306, 217]",0.15686903520731413,0.08511008615438169
+CVC-ClinicDB,473,supervised_teacher,"[190, 116, 254, 172]",0.10539947075052081,0.05563150074294205
+CVC-ClinicDB,473,pseudo_label_student,"[190, 119, 254, 166]",0.10653480923751193,0.0562644667339308
+CVC-ClinicDB,474,supervised_teacher,"[146, 128, 246, 202]",0.20972644376899696,0.11714770797962648
+CVC-ClinicDB,474,pseudo_label_student,"[150, 128, 254, 202]",0.2544915725134284,0.14579796264855688
+CVC-ClinicDB,475,supervised_teacher,"[150, 137, 230, 208]",0.1407844824214931,0.07572251903579992
+CVC-ClinicDB,475,pseudo_label_student,"[146, 134, 254, 205]",0.16913775176185158,0.0923814732236759
+CVC-ClinicDB,476,supervised_teacher,"[210, 152, 278, 208]",0.09375452134072823,0.04918281637403228
+CVC-ClinicDB,476,pseudo_label_student,"[182, 155, 230, 193]",0.05204277758612193,0.026716591610585438
+CVC-ClinicDB,477,supervised_teacher,"[210, 152, 282, 211]",0.09293770269616147,0.04873343824559622
+CVC-ClinicDB,477,pseudo_label_student,"[210, 152, 274, 208]",0.05911621262131139,0.03045839890349764
+CVC-ClinicDB,478,supervised_teacher,"[218, 146, 282, 211]",0.09374212515749684,0.049175993654710495
+CVC-ClinicDB,478,pseudo_label_student,"[218, 146, 274, 208]",0.05652136678941509,0.029082576892570725
+CVC-ClinicDB,479,supervised_teacher,"[150, 101, 246, 229]",0.41341396371632766,0.26056826056826055
+CVC-ClinicDB,479,pseudo_label_student,"[146, 101, 246, 208]",0.39040713887339656,0.24255024255024255
+CVC-ClinicDB,48,supervised_teacher,"[190, 98, 226, 133]",0.0,0.0
+CVC-ClinicDB,48,pseudo_label_student,"[146, 86, 230, 178]",0.0,0.0
+CVC-ClinicDB,480,supervised_teacher,"[142, 98, 246, 223]",0.4646887159533074,0.3026674269783945
+CVC-ClinicDB,480,pseudo_label_student,"[150, 98, 246, 208]",0.4608150470219436,0.29938900203665986
+CVC-ClinicDB,481,supervised_teacher,"[142, 98, 250, 217]",0.5549673296132017,0.3840517525909301
+CVC-ClinicDB,481,pseudo_label_student,"[142, 95, 250, 214]",0.544081336238199,0.37370311252992816
+CVC-ClinicDB,482,supervised_teacher,"[138, 98, 254, 223]",0.4357779944390279,0.27859088600581744
+CVC-ClinicDB,482,pseudo_label_student,"[134, 98, 254, 220]",0.43203303270672605,0.2755370755370755
+CVC-ClinicDB,483,supervised_teacher,"[142, 95, 258, 223]",0.4640144917438863,0.3020956182527443
+CVC-ClinicDB,483,pseudo_label_student,"[142, 92, 258, 214]",0.4663277387004666,0.30405957678684953
+CVC-ClinicDB,484,supervised_teacher,"[154, 98, 262, 235]",0.5628389896172323,0.3916325210265258
+CVC-ClinicDB,484,pseudo_label_student,"[154, 98, 262, 232]",0.5298329355608592,0.36038961038961037
+CVC-ClinicDB,485,supervised_teacher,"[162, 107, 254, 208]",0.41210672173015267,0.25953049072616524
+CVC-ClinicDB,485,pseudo_label_student,"[158, 107, 254, 208]",0.3974690508940853,0.24802581885600494
+CVC-ClinicDB,486,supervised_teacher,"[278, 170, 326, 208]",0.03838090630543461,0.01956593225912529
+CVC-ClinicDB,486,pseudo_label_student,"[282, 170, 326, 208]",0.0776233828461907,0.04037886340977069
+CVC-ClinicDB,487,supervised_teacher,"[130, 80, 222, 181]",0.050997326753033104,0.02616585777590209
+CVC-ClinicDB,487,pseudo_label_student,"[154, 110, 222, 181]",0.03164139749505603,0.016075016744809108
+CVC-ClinicDB,488,supervised_teacher,"[126, 104, 206, 181]",0.04510625993928003,0.023073509835823104
+CVC-ClinicDB,488,pseudo_label_student,"[146, 104, 206, 190]",0.027031085748610902,0.013700715481808495
+CVC-ClinicDB,489,supervised_teacher,"[118, 122, 258, 208]",0.26717825393823125,0.15418680804615625
+CVC-ClinicDB,489,pseudo_label_student,"[118, 122, 254, 205]",0.2541583861922522,0.14557929206299705
+CVC-ClinicDB,49,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,49,pseudo_label_student,"[154, 125, 226, 175]",0.0,0.0
+CVC-ClinicDB,490,supervised_teacher,"[182, 65, 278, 208]",0.1866086374288584,0.10290588191854669
+CVC-ClinicDB,490,pseudo_label_student,"[170, 59, 278, 208]",0.1987891690506287,0.1103641870429194
+CVC-ClinicDB,491,supervised_teacher,"[186, 77, 258, 187]",0.18298935191271198,0.10070901461438286
+CVC-ClinicDB,491,pseudo_label_student,"[186, 110, 250, 181]",0.1508223024468512,0.08156182212581345
+CVC-ClinicDB,492,supervised_teacher,"[170, 110, 318, 244]",0.2850981727386222,0.16624751819986763
+CVC-ClinicDB,492,pseudo_label_student,"[174, 110, 314, 238]",0.2574097566601315,0.14771674387822634
+CVC-ClinicDB,493,supervised_teacher,"[186, 152, 306, 244]",0.1775220158688639,0.09740694670366472
+CVC-ClinicDB,493,pseudo_label_student,"[190, 152, 306, 208]",0.13938584779706276,0.07491389207807118
+CVC-ClinicDB,494,supervised_teacher,"[238, 173, 302, 217]",0.06284737067122702,0.03244316927830501
+CVC-ClinicDB,494,pseudo_label_student,"[238, 173, 306, 211]",0.04535637149028078,0.023204419889502764
+CVC-ClinicDB,495,supervised_teacher,"[158, 137, 270, 211]",0.28553600399351053,0.16654534866792836
+CVC-ClinicDB,495,pseudo_label_student,"[154, 134, 270, 211]",0.2965902045877247,0.17411559178919783
+CVC-ClinicDB,496,supervised_teacher,"[106, 128, 250, 232]",0.271372264757849,0.15698710556662124
+CVC-ClinicDB,496,pseudo_label_student,"[154, 137, 250, 223]",0.2375749686177879,0.13480004220744962
+CVC-ClinicDB,497,supervised_teacher,"[154, 98, 274, 223]",0.293156656667458,0.17175369831837148
+CVC-ClinicDB,497,pseudo_label_student,"[154, 89, 274, 214]",0.2743874500905461,0.15900872423820964
+CVC-ClinicDB,498,supervised_teacher,"[158, 110, 278, 229]",0.37238327565666307,0.22879051934471942
+CVC-ClinicDB,498,pseudo_label_student,"[158, 110, 282, 220]",0.3459210147016431,0.20913210177762287
+CVC-ClinicDB,499,supervised_teacher,"[158, 98, 290, 205]",0.33837535014005604,0.20364126770060686
+CVC-ClinicDB,499,pseudo_label_student,"[158, 95, 286, 208]",0.3494713411240957,0.21173297370195548
+CVC-ClinicDB,5,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,5,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,50,supervised_teacher,"[150, 98, 230, 139]",0.30494505494505497,0.17990275526742303
+CVC-ClinicDB,50,pseudo_label_student,"[154, 95, 242, 184]",0.7067567567567568,0.5464994775339603
+CVC-ClinicDB,500,supervised_teacher,"[170, 98, 294, 241]",0.5028119775041799,0.3358375634517767
+CVC-ClinicDB,500,pseudo_label_student,"[170, 101, 298, 238]",0.47686832740213525,0.3130841121495327
+CVC-ClinicDB,501,supervised_teacher,"[194, 125, 302, 226]",0.2782573780365388,0.16161380597014927
+CVC-ClinicDB,501,pseudo_label_student,"[190, 125, 306, 208]",0.2835790749343567,0.1652153447870087
+CVC-ClinicDB,502,supervised_teacher,"[158, 110, 290, 226]",0.41136188662425544,0.2589399581696679
+CVC-ClinicDB,502,pseudo_label_student,"[162, 110, 290, 226]",0.38305769785952903,0.23690251492118553
+CVC-ClinicDB,503,supervised_teacher,"[150, 104, 282, 214]",0.3444520572644333,0.2080592463515574
+CVC-ClinicDB,503,pseudo_label_student,"[154, 104, 282, 202]",0.3372568903697802,0.20283162709649313
+CVC-ClinicDB,504,supervised_teacher,null,0.011822660098522168,0.005946481665014866
+CVC-ClinicDB,504,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,505,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,505,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,506,supervised_teacher,"[138, 107, 258, 229]",0.26621928276343604,0.1535484159656345
+CVC-ClinicDB,506,pseudo_label_student,"[138, 107, 258, 229]",0.24992658431057774,0.14280919992840524
+CVC-ClinicDB,507,supervised_teacher,"[214, 107, 306, 232]",0.3207811405897456,0.19102997729694668
+CVC-ClinicDB,507,pseudo_label_student,"[214, 110, 306, 232]",0.27128540992661565,0.1569289757166332
+CVC-ClinicDB,508,supervised_teacher,"[110, 32, 230, 208]",0.19807118788489098,0.10992176081162411
+CVC-ClinicDB,508,pseudo_label_student,"[90, 32, 230, 253]",0.19159639535304548,0.10594780659622158
+CVC-ClinicDB,509,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,509,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,51,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,51,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,510,supervised_teacher,"[150, 98, 186, 178]",0.0,0.0
+CVC-ClinicDB,510,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,511,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,511,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,512,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,512,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,513,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,513,pseudo_label_student,"[118, 182, 162, 238]",0.007027747485762753,0.0035262645914396888
+CVC-ClinicDB,514,supervised_teacher,"[166, 158, 294, 256]",0.39678749728673757,0.24749526130517194
+CVC-ClinicDB,514,pseudo_label_student,"[162, 158, 282, 247]",0.3448744059742023,0.20836751435602954
+CVC-ClinicDB,515,supervised_teacher,"[190, 155, 234, 193]",0.06791940230925968,0.035153503632528706
+CVC-ClinicDB,515,pseudo_label_student,"[190, 161, 226, 193]",0.052042912577037206,0.026716662760721818
+CVC-ClinicDB,516,supervised_teacher,"[130, 167, 254, 256]",0.45756414721931965,0.29665035754610464
+CVC-ClinicDB,516,pseudo_label_student,"[130, 167, 258, 253]",0.457914790439903,0.2969451931716083
+CVC-ClinicDB,517,supervised_teacher,"[278, 65, 326, 157]",0.00948429164196799,0.004764740917212627
+CVC-ClinicDB,517,pseudo_label_student,"[282, 74, 334, 166]",0.0024286581663630845,0.0012158054711246201
+CVC-ClinicDB,518,supervised_teacher,"[286, 68, 326, 160]",0.0,0.0
+CVC-ClinicDB,518,pseudo_label_student,"[286, 74, 330, 160]",0.0,0.0
+CVC-ClinicDB,519,supervised_teacher,null,0.004117108874656907,0.00206280082512033
+CVC-ClinicDB,519,pseudo_label_student,null,0.002746623941405356,0.0013752005500802201
+CVC-ClinicDB,52,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,52,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,520,supervised_teacher,"[182, 167, 278, 268]",0.2917954536562463,0.17081997251488776
+CVC-ClinicDB,520,pseudo_label_student,"[182, 167, 278, 271]",0.30525703200775944,0.18011995787738658
+CVC-ClinicDB,521,supervised_teacher,null,0.011698186781048937,0.0058835065699156695
+CVC-ClinicDB,521,pseudo_label_student,null,0.00940254652301665,0.004723479629994096
+CVC-ClinicDB,522,supervised_teacher,"[170, 197, 246, 244]",0.0,0.0
+CVC-ClinicDB,522,pseudo_label_student,"[166, 206, 218, 244]",0.0,0.0
+CVC-ClinicDB,523,supervised_teacher,"[238, 80, 326, 229]",0.0,0.0
+CVC-ClinicDB,523,pseudo_label_student,"[238, 80, 326, 229]",0.0,0.0
+CVC-ClinicDB,524,supervised_teacher,"[126, 155, 298, 274]",0.38289601554907676,0.23677884615384615
+CVC-ClinicDB,524,pseudo_label_student,"[130, 158, 298, 274]",0.3895601739971,0.2418967587034814
+CVC-ClinicDB,525,supervised_teacher,"[210, 209, 242, 250]",0.07112970711297072,0.0368763557483731
+CVC-ClinicDB,525,pseudo_label_student,"[206, 206, 246, 250]",0.10113519091847266,0.05326086956521739
+CVC-ClinicDB,526,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,526,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,527,supervised_teacher,"[130, 56, 194, 112]",0.12006003001500751,0.06386375731772219
+CVC-ClinicDB,527,pseudo_label_student,"[134, 59, 190, 118]",0.026637069922308545,0.013498312710911136
+CVC-ClinicDB,528,supervised_teacher,null,0.02010611561016476,0.010155148095909733
+CVC-ClinicDB,528,pseudo_label_student,null,0.017912118667786175,0.009036995199096301
+CVC-ClinicDB,529,supervised_teacher,"[130, 116, 254, 235]",0.6372634643377001,0.46763512070070495
+CVC-ClinicDB,529,pseudo_label_student,"[146, 116, 254, 208]",0.6229609110495538,0.4523915958873491
+CVC-ClinicDB,53,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,53,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,530,supervised_teacher,"[198, 65, 238, 103]",0.11794071762870514,0.0626657824933687
+CVC-ClinicDB,530,pseudo_label_student,"[162, 74, 194, 124]",0.11519687601692158,0.06111878453038674
+CVC-ClinicDB,531,supervised_teacher,"[118, 122, 254, 229]",0.666156202143951,0.49942594718714123
+CVC-ClinicDB,531,pseudo_label_student,"[146, 125, 254, 217]",0.6932773109243697,0.5305466237942122
+CVC-ClinicDB,532,supervised_teacher,"[190, 158, 302, 244]",0.32413895929625763,0.19341637010676158
+CVC-ClinicDB,532,pseudo_label_student,"[226, 161, 306, 232]",0.38726033909047697,0.24012576144625664
+CVC-ClinicDB,533,supervised_teacher,"[198, 56, 302, 244]",0.5223710708344278,0.3535197914197677
+CVC-ClinicDB,533,pseudo_label_student,"[198, 59, 306, 247]",0.5263594852635949,0.3571830985915493
+CVC-ClinicDB,534,supervised_teacher,"[130, 80, 270, 226]",0.44452507074958275,0.28578092927785037
+CVC-ClinicDB,534,pseudo_label_student,"[146, 80, 270, 226]",0.425381550259379,0.27014896867838045
+CVC-ClinicDB,535,supervised_teacher,"[126, 80, 266, 226]",0.4409952065738416,0.2828696925329429
+CVC-ClinicDB,535,pseudo_label_student,"[146, 77, 266, 217]",0.4536932883389576,0.29340446168768186
+CVC-ClinicDB,536,supervised_teacher,"[166, 119, 254, 193]",0.004264825345247766,0.0021369695736236896
+CVC-ClinicDB,536,pseudo_label_student,"[166, 113, 254, 202]",0.0,0.0
+CVC-ClinicDB,537,supervised_teacher,"[174, 80, 278, 166]",0.6008647313156269,0.42945435281652833
+CVC-ClinicDB,537,pseudo_label_student,"[202, 77, 278, 163]",0.5996921785364488,0.42825739408473223
+CVC-ClinicDB,538,supervised_teacher,"[142, 86, 298, 217]",0.5188702019795607,0.35032054764750625
+CVC-ClinicDB,538,pseudo_label_student,"[154, 83, 298, 187]",0.5501211522929194,0.37942560039613765
+CVC-ClinicDB,539,supervised_teacher,"[130, 89, 246, 229]",0.38445099058510945,0.2379692527708259
+CVC-ClinicDB,539,pseudo_label_student,"[146, 74, 306, 208]",0.333631431467239,0.20021466905187835
+CVC-ClinicDB,54,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,54,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,540,supervised_teacher,"[130, 107, 258, 211]",0.13561184680476948,0.07273798997936928
+CVC-ClinicDB,540,pseudo_label_student,"[138, 107, 254, 202]",0.10531490686622604,0.055584385631090354
+CVC-ClinicDB,541,supervised_teacher,"[142, 65, 274, 226]",0.47054165346848276,0.30765248006627316
+CVC-ClinicDB,541,pseudo_label_student,"[146, 65, 274, 196]",0.4989565217391304,0.332406441895493
+CVC-ClinicDB,542,supervised_teacher,"[134, 74, 258, 190]",0.3282840824435063,0.19637551990493166
+CVC-ClinicDB,542,pseudo_label_student,"[138, 80, 254, 190]",0.25383262126162354,0.14536557282671272
+CVC-ClinicDB,543,supervised_teacher,"[170, 56, 326, 238]",0.5624277456647399,0.39123441897868916
+CVC-ClinicDB,543,pseudo_label_student,"[170, 56, 326, 238]",0.6035400040924903,0.4321928346399004
+CVC-ClinicDB,544,supervised_teacher,"[190, 131, 250, 196]",0.04274594870486156,0.021839754873199037
+CVC-ClinicDB,544,pseudo_label_student,"[186, 131, 246, 199]",0.04957417058599212,0.025417101147028155
+CVC-ClinicDB,545,supervised_teacher,"[134, 98, 254, 181]",0.2782753593001458,0.16162593757561095
+CVC-ClinicDB,545,pseudo_label_student,"[150, 98, 246, 175]",0.18243395800406412,0.10037267080745342
+CVC-ClinicDB,546,supervised_teacher,"[182, 95, 246, 157]",0.11600279524807827,0.06157270029673591
+CVC-ClinicDB,546,pseudo_label_student,"[182, 95, 242, 157]",0.13901657612480847,0.07470059880239521
+CVC-ClinicDB,547,supervised_teacher,null,0.009797917942437232,0.004923076923076923
+CVC-ClinicDB,547,pseudo_label_student,null,0.009919404835709857,0.004984423676012461
+CVC-ClinicDB,548,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,548,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,549,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,549,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,55,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,55,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,550,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,550,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,551,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,551,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,552,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,552,pseudo_label_student,null,0.00384677031575573,0.0019270916974466034
+CVC-ClinicDB,553,supervised_teacher,null,0.0007591093117408907,0.0003796987723073029
+CVC-ClinicDB,553,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,554,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,554,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,555,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,555,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,556,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,556,pseudo_label_student,null,0.0033412223305025754,0.001673406777297448
+CVC-ClinicDB,557,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,557,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,558,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,558,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,559,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,559,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,56,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,56,pseudo_label_student,"[78, 98, 110, 145]",0.0,0.0
+CVC-ClinicDB,560,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,560,pseudo_label_student,null,0.006057546693589096,0.0030379746835443038
+CVC-ClinicDB,561,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,561,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,562,supervised_teacher,null,0.0016839741790625876,0.0008426966292134832
+CVC-ClinicDB,562,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,563,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,563,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,564,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,564,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,565,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,565,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,566,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,566,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,567,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,567,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,568,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,568,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,569,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,569,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,57,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,57,pseudo_label_student,"[110, 95, 138, 145]",0.0,0.0
+CVC-ClinicDB,570,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,570,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,571,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,571,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,572,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,572,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,573,supervised_teacher,"[130, 32, 314, 127]",0.0016642011834319527,0.0008327935597298048
+CVC-ClinicDB,573,pseudo_label_student,"[130, 32, 314, 121]",0.0,0.0
+CVC-ClinicDB,574,supervised_teacher,"[130, 74, 262, 145]",0.0,0.0
+CVC-ClinicDB,574,pseudo_label_student,"[130, 74, 262, 145]",0.0,0.0
+CVC-ClinicDB,575,supervised_teacher,"[242, 14, 334, 127]",0.13529682466635987,0.07255676209279369
+CVC-ClinicDB,575,pseudo_label_student,"[238, 14, 338, 124]",0.2167707404103479,0.12156078039019509
+CVC-ClinicDB,576,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,576,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,577,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,577,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,578,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,578,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,579,supervised_teacher,"[242, 38, 314, 106]",0.21660351360661384,0.12145561307270339
+CVC-ClinicDB,579,pseudo_label_student,"[242, 38, 314, 100]",0.20023639018285475,0.11125705014293441
+CVC-ClinicDB,58,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,58,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,580,supervised_teacher,"[230, 44, 318, 121]",0.32073851438385576,0.19099974431091793
+CVC-ClinicDB,580,pseudo_label_student,"[222, 44, 318, 118]",0.3304162219850587,0.1979033495269752
+CVC-ClinicDB,581,supervised_teacher,"[170, 56, 282, 127]",0.28374055357225647,0.16532497703819762
+CVC-ClinicDB,581,pseudo_label_student,"[170, 44, 278, 130]",0.29888332337668305,0.17569830893079041
+CVC-ClinicDB,582,supervised_teacher,"[150, 77, 238, 163]",0.3242101843579956,0.19346709314723273
+CVC-ClinicDB,582,pseudo_label_student,"[146, 74, 254, 178]",0.3861174796426595,0.23924757519349465
+CVC-ClinicDB,583,supervised_teacher,"[150, 86, 238, 151]",0.0,0.0
+CVC-ClinicDB,583,pseudo_label_student,"[146, 83, 238, 151]",0.0,0.0
+CVC-ClinicDB,584,supervised_teacher,"[154, 89, 238, 163]",0.0,0.0
+CVC-ClinicDB,584,pseudo_label_student,"[154, 89, 234, 163]",0.0,0.0
+CVC-ClinicDB,585,supervised_teacher,"[150, 92, 206, 139]",0.0,0.0
+CVC-ClinicDB,585,pseudo_label_student,"[158, 98, 202, 136]",0.0,0.0
+CVC-ClinicDB,586,supervised_teacher,"[138, 65, 238, 139]",0.0,0.0
+CVC-ClinicDB,586,pseudo_label_student,"[146, 65, 254, 142]",0.00025523226135783564,0.00012763241863433312
+CVC-ClinicDB,587,supervised_teacher,"[130, 65, 238, 136]",0.0,0.0
+CVC-ClinicDB,587,pseudo_label_student,"[130, 62, 254, 136]",0.0,0.0
+CVC-ClinicDB,588,supervised_teacher,"[130, 80, 238, 145]",0.0,0.0
+CVC-ClinicDB,588,pseudo_label_student,"[130, 77, 254, 145]",0.0,0.0
+CVC-ClinicDB,589,supervised_teacher,"[130, 47, 238, 115]",0.0,0.0
+CVC-ClinicDB,589,pseudo_label_student,"[118, 44, 254, 115]",0.0,0.0
+CVC-ClinicDB,59,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,59,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,590,supervised_teacher,"[118, 65, 238, 133]",0.13755585778123178,0.07385770915919049
+CVC-ClinicDB,590,pseudo_label_student,"[118, 56, 254, 133]",0.1634283639004903,0.08898556456397073
+CVC-ClinicDB,591,supervised_teacher,"[130, 74, 198, 109]",0.0,0.0
+CVC-ClinicDB,591,pseudo_label_student,"[294, 53, 334, 100]",0.0,0.0
+CVC-ClinicDB,592,supervised_teacher,"[186, 206, 258, 244]",0.18188707843880259,0.1000416840350146
+CVC-ClinicDB,592,pseudo_label_student,"[178, 206, 266, 247]",0.16098121885779992,0.08753647353063776
+CVC-ClinicDB,593,supervised_teacher,"[186, 203, 254, 244]",0.11972562876740803,0.06367455228830422
+CVC-ClinicDB,593,pseudo_label_student,"[186, 203, 254, 241]",0.10077682133109385,0.053062126906920186
+CVC-ClinicDB,594,supervised_teacher,"[186, 203, 254, 244]",0.4252729550742796,0.27006137758581494
+CVC-ClinicDB,594,pseudo_label_student,"[202, 182, 270, 211]",0.15594215049255922,0.08456467378949761
+CVC-ClinicDB,595,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,595,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,596,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,596,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,597,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,597,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,598,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,598,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,599,supervised_teacher,"[130, 143, 226, 193]",0.01444043321299639,0.007272727272727273
+CVC-ClinicDB,599,pseudo_label_student,"[146, 143, 226, 202]",0.0,0.0
+CVC-ClinicDB,6,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,6,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,60,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,60,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,600,supervised_teacher,null,0.023099133782483156,0.011684518013631937
+CVC-ClinicDB,600,pseudo_label_student,null,0.03397129186602871,0.01727914334387929
+CVC-ClinicDB,601,supervised_teacher,"[150, 200, 230, 244]",0.17582681900180397,0.09638713080168776
+CVC-ClinicDB,601,pseudo_label_student,"[170, 191, 234, 229]",0.1380467036511418,0.07414079822616408
+CVC-ClinicDB,602,supervised_teacher,"[146, 200, 214, 244]",0.27458458185780443,0.15914114303757498
+CVC-ClinicDB,602,pseudo_label_student,"[130, 200, 182, 244]",0.0730149072102221,0.03789074834227976
+CVC-ClinicDB,603,supervised_teacher,"[142, 155, 242, 208]",0.2953020134228188,0.1732283464566929
+CVC-ClinicDB,603,pseudo_label_student,"[146, 155, 242, 211]",0.3027027027027027,0.17834394904458598
+CVC-ClinicDB,604,supervised_teacher,"[170, 176, 226, 226]",0.10706576485825299,0.05656074197962597
+CVC-ClinicDB,604,pseudo_label_student,"[154, 170, 214, 202]",0.10050541516245487,0.05291166185190817
+CVC-ClinicDB,605,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,605,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,606,supervised_teacher,"[126, 128, 170, 178]",0.1979381443298969,0.10983981693363844
+CVC-ClinicDB,606,pseudo_label_student,"[122, 128, 166, 184]",0.219959266802444,0.12356979405034325
+CVC-ClinicDB,607,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,607,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,608,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,608,pseudo_label_student,"[126, 230, 182, 256]",0.0,0.0
+CVC-ClinicDB,609,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,609,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,61,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,61,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,610,supervised_teacher,null,0.011194029850746268,0.005628517823639775
+CVC-ClinicDB,610,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,611,supervised_teacher,"[158, 80, 210, 121]",0.03247631935047361,0.016506189821182942
+CVC-ClinicDB,611,pseudo_label_student,null,0.027816411682892908,0.014104372355430184
+CVC-ClinicDB,612,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,612,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,62,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,62,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,63,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,63,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,64,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,64,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,65,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,65,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,66,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,66,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,67,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,67,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,68,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,68,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,69,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,69,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,7,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,7,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,70,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,70,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,71,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,71,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,72,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,72,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,73,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,73,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,74,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,74,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,75,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,75,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,76,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,76,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,77,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,77,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,78,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,78,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,79,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,79,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,8,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,8,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,80,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,80,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,81,supervised_teacher,"[154, 125, 194, 169]",0.07377994107851928,0.03830296581992286
+CVC-ClinicDB,81,pseudo_label_student,"[154, 125, 198, 169]",0.08987641992260642,0.0470526728532218
+CVC-ClinicDB,82,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,82,pseudo_label_student,"[158, 125, 210, 163]",0.0,0.0
+CVC-ClinicDB,83,supervised_teacher,"[194, 128, 234, 184]",0.0,0.0
+CVC-ClinicDB,83,pseudo_label_student,"[194, 128, 226, 187]",0.0027819636026428654,0.0013929193267556588
+CVC-ClinicDB,84,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,84,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,85,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,85,pseudo_label_student,"[182, 107, 218, 148]",0.0,0.0
+CVC-ClinicDB,86,supervised_teacher,null,0.00587179905398793,0.0029445444135449044
+CVC-ClinicDB,86,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,87,supervised_teacher,null,0.0,0.0
+CVC-ClinicDB,87,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,88,supervised_teacher,null,0.01051939513477975,0.005287508261731659
+CVC-ClinicDB,88,pseudo_label_student,"[162, 143, 218, 193]",0.0,0.0
+CVC-ClinicDB,89,supervised_teacher,"[166, 116, 214, 181]",0.00435097897026831,0.002180232558139535
+CVC-ClinicDB,89,pseudo_label_student,"[158, 116, 214, 184]",0.0,0.0
+CVC-ClinicDB,9,supervised_teacher,"[290, 59, 326, 115]",0.0,0.0
+CVC-ClinicDB,9,pseudo_label_student,"[290, 53, 326, 112]",0.0,0.0
+CVC-ClinicDB,90,supervised_teacher,"[182, 119, 226, 181]",0.045470203238029624,0.02326401127952062
+CVC-ClinicDB,90,pseudo_label_student,"[166, 107, 226, 187]",0.08105618667485416,0.04224
+CVC-ClinicDB,91,supervised_teacher,"[150, 68, 194, 127]",0.17403915881073242,0.09531374106433678
+CVC-ClinicDB,91,pseudo_label_student,"[170, 107, 226, 175]",0.16449086161879894,0.08961593172119488
+CVC-ClinicDB,92,supervised_teacher,null,0.02397003745318352,0.012130401819560273
+CVC-ClinicDB,92,pseudo_label_student,null,0.0,0.0
+CVC-ClinicDB,93,supervised_teacher,"[186, 89, 234, 178]",0.0,0.0
+CVC-ClinicDB,93,pseudo_label_student,"[162, 83, 238, 193]",0.0,0.0
+CVC-ClinicDB,94,supervised_teacher,"[170, 113, 210, 178]",0.009598080383923215,0.004822182037371911
+CVC-ClinicDB,94,pseudo_label_student,"[162, 104, 214, 178]",0.05114352602197011,0.026242838661984846
+CVC-ClinicDB,95,supervised_teacher,null,0.01565217391304348,0.007887817703768623
+CVC-ClinicDB,95,pseudo_label_student,"[146, 140, 198, 193]",0.0,0.0
+CVC-ClinicDB,96,supervised_teacher,"[154, 143, 194, 193]",0.041025641025641026,0.020942408376963352
+CVC-ClinicDB,96,pseudo_label_student,"[146, 125, 206, 196]",0.02262443438914027,0.011441647597254004
+CVC-ClinicDB,97,supervised_teacher,null,0.02733485193621868,0.013856812933025405
+CVC-ClinicDB,97,pseudo_label_student,null,0.03428571428571429,0.01744186046511628
+CVC-ClinicDB,98,supervised_teacher,"[154, 86, 254, 190]",0.41338582677165353,0.26054590570719605
+CVC-ClinicDB,98,pseudo_label_student,"[134, 89, 254, 193]",0.5199208816049732,0.3512791141657121
+CVC-ClinicDB,99,supervised_teacher,"[166, 128, 238, 187]",0.011039558417663294,0.005550416281221091
+CVC-ClinicDB,99,pseudo_label_student,"[166, 125, 230, 193]",0.01068566340160285,0.005371530886302597

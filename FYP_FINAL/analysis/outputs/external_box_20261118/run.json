@@ -1,0 +1,18 @@
+{
+  "mode": "external",
+  "device": "NVIDIA GeForce RTX 4070 Ti SUPER",
+  "torch": "2.11.0+cu126",
+  "cuda": "12.6",
+  "batch_size": 1,
+  "seed": 20261118,
+  "warmups_per_dataset": 5,
+  "timed_passes": 3,
+  "sampled_images_per_dataset": 30,
+  "timing_excludes": "image and mask disk reads; model loading; prompt generation",
+  "timing_includes": "model-specific input preprocessing, encoding, prompt decoding, mask returned on CPU",
+  "checkpoint_sha256": {
+    "sam_vit_b.pth": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912",
+    "sam_vit_l_0b3195.pth": "3adcc4315b642a4d2101128f611684e8734c41232a17c648ed1693702a49a622",
+    "best_dice_checkpoint.pth": "fa0b337dbf9d8957b5702b5b45be860d31500f8af7077aa5cb59990b7950378b"
+  }
+}
