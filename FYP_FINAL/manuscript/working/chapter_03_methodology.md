@@ -34,22 +34,69 @@ Table 3.2 Data partitions and analysis roles
 | ETIS-LaribPolypDB | 190 | Evaluate five fixed configurations on an additional dataset. |
 | CVC-ColonDB | 342 | Evaluate the same five configurations on a second additional dataset. |
 
-## 3.3 Model groups and comparisons
+## 3.3 Model architectures and comparison design
 
-The zero-shot group consists of Segment Anything Model (SAM) ViT-B and ViT-L [3] and the medical-domain MedSAM model [4]. Zero-shot here indicates that these checkpoints were evaluated without polyp-specific fitting in this project. Ground-truth-derived prompts were supplied during inference for all configurations in the main comparison.
+### 3.3.1 Shared SAM architecture
 
-The adapted group includes rank-four low-rank adaptation (LoRA) configurations based on SAMed [5] and MedSAM, and polyp-trained Medical SAM Adapter configurations with ViT-B and ViT-L backbones [6]. The adapter configurations are referred to as MSA-B and MSA-L. The main adaptation comparison uses the checkpoints trained with all 880 Kvasir training images. Comparisons with zero-shot configurations use the closest available initial weights and backbone as the reference. For example, MedSAM with LoRA is compared with zero-shot MedSAM. The wider comparison describes the performance of complete model configurations, which can differ in training recipes, input resolution and mask selection.
+The eight configurations share the promptable segmentation architecture shown in Figure 3.1 [3]. A Vision Transformer (ViT) encodes the RGB endoscopy frame as a spatial feature grid [30]. A separate prompt encoder converts the coordinates of a box or point into embeddings. The mask decoder combines both representations through attention and returns mask logits and an estimated intersection over union (IoU) for each candidate. When several prompts are evaluated on the same frame with a fixed checkpoint, the image embedding can be reused.
 
-PP-SAM is an existing polyp adaptation method based on perturbed box prompts [7]. In the project implementation, it serves as a full-encoder fine-tuning reference. The evaluated training recipe left the mask decoder frozen. Training details and trainable modules are documented in Chapter 4. Results from methods evaluated without the default annotation-derived box belong in separate comparisons because the input information differs.
+![An endoscopy frame enters the ViT image encoder. A box or point on the same frame enters the prompt encoder. Both embeddings feed the mask decoder. The example output shows a SAM-B mask under the box condition.](figures/implementation/sam_daisy_trial/sam_shared_architecture.png)
+Figure 3.1 Shared SAM architecture for promptable polyp segmentation, based on Kirillov et al. [3], Fig. 4, and Ma et al. [4], Fig. 2(b). The overlay shows a saved SAM-B prediction for a Kvasir-SEG validation frame with the default box.
+
+### 3.3.2 Zero-shot configurations
+
+SAM-B uses the released SAM ViT-B checkpoint. Its image encoder contains 12 Transformer blocks with a token dimension of 768. SAM-L uses the released ViT-L checkpoint, with 24 blocks and a token dimension of 1,024. The two SAM configurations use the same prompt interface and image preprocessing, so their comparison describes how the two released backbones perform under matched evaluation conditions.
+
+MedSAM also uses ViT-B, with weights obtained through medical-domain training [4]. It was evaluated through the same SAM predictor interface as SAM-B. Comparing these two ViT-B checkpoints examines how each transfers to the polyp task. All three baseline checkpoints were used directly, with no further training on the Kvasir-SEG split.
+
+### 3.3.3 LoRA in SAMed and MedSAM+LoRA
+
+Both configurations add LoRA to the self-attention layers of a ViT-B image encoder [5, 11]. SAMed starts from SAM ViT-B and MedSAM+LoRA starts from MedSAM ViT-B. Figure 3.2 shows how the local implementation sends the same input tokens through the frozen query–key–value projection and two independent trainable branches. In each branch, the first linear map reduces the token dimension from 768 to 4 and the second restores it to 768. The branch outputs are added to the query and value projections, respectively. The original key projection feeds attention directly. Training updates the LoRA branches, the prompt encoder and the mask decoder.
+
+![The shared architecture and starting weights are shown above. Below, independent low-rank branches add to the frozen Q and V projection outputs while K passes directly to attention.](figures/implementation/lora_daisy_trial/lora_samed_medsam_architecture.png)
+Figure 3.2 LoRA in SAMed and MedSAM+LoRA. (A) The two configurations use different ViT-B initialisations and the same adaptation structure. (B) Rank-four branches add to the query and value projections. The schematic follows Zhang and Liu [5], Figs. 2–3, and Hu et al. [11], Fig. 1.
+
+### 3.3.4 Adapters in MSA-B and MSA-L
+
+MSA-B and MSA-L insert the two-dimensional Medical SAM Adapter modules into ViT-B and ViT-L, respectively [6]. Figure 3.3 locates the adapters in the image encoder and enlarges one Transformer block. The Spatial Adapter processes the attention output, with an internal skip connection, before the block adds the original input. The resulting tensor is normalised and passed to both the frozen feed-forward network and the MLP Adapter. The latter output is scaled by 0.5, then both outputs are added to the feed-forward residual. Training updates both adapters and the mask decoder. The original image-encoder parameters and the prompt encoder are held fixed.
+
+![The upper panel locates the adapted ViT blocks within SAM and shows an MSA-B prediction. The lower panel shows both adapter branches and their residual connections.](figures/implementation/msa_daisy_trial/msa_architecture_overview.png)
+Figure 3.3 Medical SAM Adapter in MSA-B and MSA-L. (A) The adapted blocks and mask decoder are trainable. The overlay is a saved MSA-B prediction for a Kvasir-SEG validation frame with the default box. (B) A ViT block contains a Spatial Adapter after attention and an MLP Adapter parallel to the feed-forward layer. The block schematic draws on Wu et al. [6], Fig. 1(b).
+
+### 3.3.5 Fine-tuning and box perturbation in PP-SAM
+
+PP-SAM starts from SAM ViT-B and updates the full image encoder and the prompt encoder. The mask decoder combines their outputs using fixed weights [7]. As illustrated in Figure 3.4, the training pipeline draws a tight box around the annotated foreground, independently samples an outward expansion between 0 and 50 pixels for each side, and clips the expanded coordinates to the frame boundaries. The primary evaluation instead uses the common fixed expansion specified in Section 3.4.
+
+![The upper panel shows the trainable image and prompt encoders and the frozen mask decoder. The lower panel shows the annotation mask, tight box and an example perturbed box on a training frame.](figures/implementation/ppsam_daisy_trial/ppsam_architecture.png)
+Figure 3.4 PP-SAM fine-tuning and training prompt construction, based on Rahman et al. [7], Fig. 1. The tight and perturbed boxes are shown on the same Kvasir-SEG training frame. The yellow outline illustrates one set of unequal outward offsets.
+
+### 3.3.6 Comparison design
+
+Table 3.3 summarises the starting weights, updated modules and inference settings. The primary adapted configurations use the same 880 labelled Kvasir-SEG training images. The MSA evaluators resize each frame to 512 × 512 and select the candidate with the highest estimated IoU. The other configurations resize the longest side to 1,024 pixels and request a single mask.
+
+Table 3.3 Architecture and inference settings for the eight primary configurations
+
+| Model | Starting weights | Locally updated modules | Evaluation input and mask policy |
+|---|---|---|---|
+| SAM-B | SAM ViT-B | None | 1,024 px, one mask |
+| SAM-L | SAM ViT-L | None | 1,024 px, one mask |
+| MedSAM | MedSAM (ViT-B) | None | 1,024 px, one mask |
+| SAMed | SAM ViT-B | LoRA on Q and V, prompt encoder, mask decoder | 1,024 px, one mask |
+| MedSAM+LoRA | MedSAM (ViT-B) | LoRA on Q and V, prompt encoder, mask decoder | 1,024 px, one mask |
+| MSA-B | SAM ViT-B | Spatial and MLP adapters, mask decoder | 512², top predicted IoU |
+| MSA-L | SAM ViT-L | Spatial and MLP adapters, mask decoder | 512², top predicted IoU |
+| PP-SAM | SAM ViT-B | Full image encoder and prompt encoder | 1,024 px, one mask |
+
+RQ1 compares the released checkpoints under the same annotation-derived box protocol. For RQ2, SAM-B serves as the starting-weight reference for SAMed, MSA-B and PP-SAM, while MedSAM and SAM-L serve as the references for MedSAM+LoRA and MSA-L, respectively. These comparisons capture each configuration as evaluated. In the MSA comparisons, the input resolution and mask selection also differ from the reference. In PP-SAM, the adapted modules and the training prompt distribution both change. For the prompt component of RQ3, each prompt variant is evaluated within a fixed model configuration. Chapter 4 gives the training and inference settings.
 
 ## 3.4 Prompt construction and variants
 
 The default evaluation prompt was derived from the tight bounding box of the annotated foreground in the original image. Let the box coordinates be x_min, y_min, x_max and y_max, with maxima defined by the foreground pixel indices. Each minimum is decreased by the chosen expansion and each maximum is increased by the same amount. The resulting coordinates are clipped to the image bounds using the evaluation code's coordinate convention. The default expansion is 30 pixels. Prompt generation takes place before any model-specific coordinate transformation. The same prompt is supplied to every configuration in the main comparison.
 
-Figure 3.1 shows how the reference mask and an annotation box relate to the original frame.
+Figure 3.5 shows how the reference mask and an annotation box relate to the original frame.
 
 ![Six Kvasir-SEG examples. Each column shows a colonoscopy frame, its binary annotation and the frame with an annotation box.](legacy_reference/figures/chapter2/fig_2.12_Kvasir-SEG-sample.png)
-Figure 3.1 Examples of image, mask and box annotations in Kvasir-SEG. The bottom row shows dataset boxes. The 30-pixel expansion used in this study is applied separately. Source: Jha et al. [1], Fig. 2.
+Figure 3.5 Examples of image, mask and box annotations in Kvasir-SEG. The bottom row shows dataset boxes. The 30-pixel expansion used in this study is applied separately. Source: Jha et al. [1], Fig. 2.
 
 The expansion experiment uses deterministic outward expansions of 0, 10, 30 and 50 pixels on selected trained configurations. Its analysis uses runs with traceable raw outputs for the plotted comparisons. The local SAMed expansion series uses its own 30-pixel rerun, while the main comparison retains the formal SAMed checkpoint evaluation. The training-time random box perturbation in PP-SAM serves a separate purpose from these fixed evaluation settings.
 
@@ -65,7 +112,7 @@ Metrics are computed between a binary prediction and the reference mask at nativ
 
 Boundary F1 measures contour agreement. A boundary pixel is obtained from the difference between a foreground mask and its four-connected erosion. The matching tolerance is 0.5% of the image diagonal, rounded to a whole pixel with a minimum of one pixel. Boundary precision is the proportion of predicted boundary pixels within the tolerance of the reference boundary. Boundary recall uses the reverse direction. Their harmonic mean gives boundary F1.
 
-Surface HD95 describes contour distance. For each boundary pixel, find the distance to its nearest point on the other boundary. Take the 95th percentile separately in each direction and report the larger value in original-image pixels. Surface HD95 is undefined for an empty prediction and the table gives the number of finite measurements. The same implementation was applied to saved predictions in all 28 rows of the main results table. The saved predictions were reconciled against the recorded overlap metrics before recomputation.
+Distance metrics complement overlap metrics by describing the spatial separation between contours [27]. For surface HD95, each boundary pixel is matched to its nearest point on the other boundary. This study takes the 95th percentile separately in each direction and reports the larger value in original-image pixels. An empty prediction yields an undefined surface HD95. The same implementation recomputed the metric for 28 configuration–dataset entries in the results archive, including the few-shot runs. Tables 5.1 and 5.2 show the 16 entries in the primary comparison. The saved predictions were reconciled against the recorded overlap metrics before recomputation.
 
 ### 3.5.2 Image subgroup definitions
 
@@ -73,10 +120,10 @@ Relative polyp area is the fraction of original-image pixels labelled as foregro
 
 Boundary contrast is the Euclidean distance between the mean CIELAB colours in narrow bands immediately inside and outside the annotated boundary. The primary band width is 0.5% of the image diagonal, rounded to the nearest pixel with a minimum of two pixels. The lower and upper quartiles within each dataset define the low, intermediate and high contrast groups. Alternative band widths and the median grayscale gradient magnitude along the annotated boundary provide sensitivity checks. Area and contrast groups are also crossed to examine how their overlap may affect the descriptive results.
 
-Figure 3.2 illustrates examples selected by the contrast measure within the medium-area group.
+Figure 3.6 illustrates examples selected by the contrast measure within the medium-area group.
 
 ![Two rows show Kvasir-SEG and CVC-ClinicDB examples. Each row contains two lower-contrast and two higher-contrast frames with cyan reference contours.](figures/supplementary/boundary_proxy_examples.png)
-Figure 3.2 Boundary-contrast examples from Kvasir-SEG validation and CVC-ClinicDB. Each row shows the two lowest and two highest proxy values within that dataset's medium-area group. Cyan indicates the annotated contour. Selection used image and annotation features.
+Figure 3.6 Boundary-contrast examples from Kvasir-SEG validation and CVC-ClinicDB. Each row shows the two lowest and two highest proxy values within that dataset's medium-area group. Cyan indicates the annotated contour. Selection used image and annotation features.
 
 ### 3.5.3 Inference timing
 
@@ -88,7 +135,7 @@ SAM ViT-B, SAM ViT-L and MSA-B were benchmarked at batch size one on an NVIDIA G
 
 For the point and box-translation study, the effect for a frame is the metric under the tested prompt minus the metric under that frame's 30-pixel reference box. The three trials for the random-positive condition are averaged within each frame before aggregation. This yields a matched comparison of prompts for each configuration.
 
-For CVC-ClinicDB, frame-level Dice changes are averaged within each of the 29 video sequences, then averaged equally across sequences. The exploratory analysis considers 21 contrasts across seven nonreference prompt conditions. These comprise the paired change within SAM ViT-B, the paired change within MSA-B and the difference between the two configurations' paired changes. Two-sided Monte Carlo sign-flip tests use 100,000 draws and assume independent, symmetric sequence-level paired differences under the null. Holm correction is applied across all 21 contrasts. Unadjusted 95% percentile intervals are obtained by bootstrapping sequences. Kvasir prompt results and the image subgroup comparisons are reported descriptively.
+For CVC-ClinicDB, frame-level Dice changes are averaged within each of the 29 video sequences, then averaged equally across sequences. The exploratory analysis considers 21 contrasts across seven nonreference prompt conditions. These comprise the paired change within SAM ViT-B, the paired change within MSA-B and the difference between the two configurations' paired changes. Two-sided Monte Carlo sign-flip tests use 100,000 draws and assume independent, symmetric sequence-level paired differences under the null. Holm's procedure adjusts the p values across all 21 contrasts [28]. Unadjusted 95% percentile intervals are obtained by resampling entire sequences with replacement [29]. Kvasir prompt results and the image subgroup comparisons are reported descriptively.
 
 ### 3.6.2 Validity of comparisons
 

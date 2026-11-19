@@ -28,13 +28,13 @@ Table 5.2 Segmentation on CVC-ClinicDB (612 images per configuration)
 | MSA-L | 0.8234 ± 0.2165 | 0.7432 | 0.8904 | 0.8170 | 0.4652 | 36.78 |
 | PP-SAM | 0.8576 ± 0.1299 | 0.7699 | 0.8067 | 0.9511 | 0.4340 | 22.78 |
 
-Surface HD95 was defined for all 120 Kvasir frames per configuration. On CVC-ClinicDB, it was defined for 611 frames each for SAM-B, SAM-L and MSA-L, 610 for SAMed, and all 612 for the remaining configurations.
+Surface HD95 sample counts. The metric was defined for all 120 Kvasir frames per configuration. On CVC-ClinicDB, it was defined for 611 frames each for SAM-B, SAM-L and MSA-L, 610 for SAMed, and 612 for the remaining configurations.
 
 ## 5.1 Zero-shot performance (RQ1)
 
 SAM-L had the highest mean Dice and IoU among the zero-shot configurations on both datasets. Its Dice was 0.8140 on Kvasir validation and 0.6588 on CVC-ClinicDB, compared with 0.7497 and 0.5182 for SAM-B. All three zero-shot configurations had lower mean Dice on CVC-ClinicDB than on Kvasir validation. The size of the difference varied by checkpoint.
 
-MedSAM reached a mean Dice of 0.7034 on Kvasir and 0.5172 on CVC. On CVC its Dice was close to SAM-B's, but its higher recall (0.7672 versus 0.6377) came with lower precision (0.4096 versus 0.4767) and substantially lower boundary F1 (0.0863 versus 0.2950). Under the shared box protocol, medical pretraining alone did not confer a zero-shot Dice advantage for this MedSAM checkpoint.
+MedSAM reached a mean Dice of 0.7034 on Kvasir and 0.5172 on CVC. Its CVC Dice was close to SAM-B's. It had higher recall (0.7672 versus 0.6377), lower precision (0.4096 versus 0.4767) and lower boundary F1 (0.0863 versus 0.2950). Under the shared box-prompt protocol, SAM-B achieved a higher mean Dice than the evaluated MedSAM checkpoint on both primary datasets.
 
 ## 5.2 Polyp-specific adaptation (RQ2)
 

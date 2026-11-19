@@ -26,7 +26,13 @@ SOURCES = [MANUSCRIPT/'working'/name for name in (
 ADDITIONAL_REFERENCES = MANUSCRIPT/'working/references_chapters_01_to_03.md'
 APPENDICES = MANUSCRIPT/'working/thesis_appendices.md'
 CITATION = re.compile(r'\[(\d+(?:,\s*\d+)*)\]')
+FIGURES_WITH_INTRO = {
+    'figures/implementation/lora_daisy_trial/lora_samed_medsam_architecture.png',
+    'figures/implementation/msa_daisy_trial/msa_architecture_overview.png',
+    'figures/implementation/ppsam_daisy_trial/ppsam_architecture.png',
+}
 TABLE_WIDTHS = {
+    '3.3': (3.45, 2.8, 6.25, 3.8),
     '1': (4.5, 5.9, 5.9),
     '4.1': (3.5, 6.4, 6.4),
     '5.1': (3.65, 3.3, 1.60, 1.95, 1.65, 2.25, 1.90),
@@ -46,6 +52,7 @@ def add_table(doc, lines, column_widths=None):
     if column_widths is None:
         column_widths = (3.6, 12.7) if len(body[0]) == 2 else (4.0, 2.1, 10.2)
     widths = [Cm(width) for width in column_widths]
+    row_spacing = Pt(2 if body[0][-1] == 'HD95 (px)' else 3)
     table = doc.add_table(rows=0, cols=len(widths))
     table.autofit = False
     for column, width in zip(table.columns, widths):
@@ -64,8 +71,8 @@ def add_table(doc, lines, column_widths=None):
             form = para.paragraph_format
             form.left_indent = Pt(0)
             form.right_indent = Pt(0)
-            form.space_before = Pt(3)
-            form.space_after = Pt(3)
+            form.space_before = row_spacing
+            form.space_after = row_spacing
             form.line_spacing = 1.07
             form.keep_with_next = i < len(body) - 1
             run = para.add_run(value)
@@ -208,19 +215,28 @@ def add_source(doc, content, start_on_new_page=False):
             if match is None or not caption.startswith('Figure '):
                 raise ValueError(f'Invalid figure block: {block}')
             alt, relative = match.groups()
+            intro_example = relative == 'figures/introduction/prompted_polyp_task.png'
+            if relative in FIGURES_WITH_INTRO:
+                intro = doc.paragraphs[-1].paragraph_format
+                intro.keep_together = True
+                intro.keep_with_next = True
             para = doc.add_paragraph()
             para.alignment = WD_ALIGN_PARAGRAPH.CENTER
             form = para.paragraph_format
             form.left_indent = form.right_indent = Pt(0)
             form.keep_with_next = True
             form.keep_together = True
-            picture = para.add_run().add_picture(str(MANUSCRIPT / relative), width=Cm(16.3))
+            picture = para.add_run().add_picture(
+                str(MANUSCRIPT / relative), width=Cm(15.0 if intro_example else 16.3)
+            )
             picture._inline.docPr.set('descr', alt)
             caption_para = doc.add_paragraph(caption, style='Caption')
             caption_para.paragraph_format.left_indent = Pt(0)
             caption_para.paragraph_format.right_indent = Pt(0)
             caption_para.paragraph_format.keep_together = True
             caption_para.paragraph_format.keep_with_next = False
+            if intro_example:
+                caption_para.paragraph_format.line_spacing = 1.05
             continue
         heading = re.match(r'^(#{1,3}) (.+)$', block)
         if heading:
@@ -229,15 +245,26 @@ def add_source(doc, content, start_on_new_page=False):
                 para.paragraph_format.page_break_before = True
                 start_on_new_page = False
         elif re.match(r'^Table (?:\d+|(?:\d+|[A-Z])\.\d+) ', block):
+            if block.startswith('Table 3.3 '):
+                intro = doc.paragraphs[-1].paragraph_format
+                intro.keep_together = True
+                intro.keep_with_next = True
             para = doc.add_paragraph(block, style='Caption')
             para.paragraph_format.keep_with_next = True
             table_widths = TABLE_WIDTHS.get(block.split()[1])
         elif re.match(r'^\[\d+\]', block):
             para = doc.add_paragraph(block)
+            para.runs[0].font.size = Pt(11)
             para.alignment = WD_ALIGN_PARAGRAPH.LEFT
             para.paragraph_format.keep_together = True
             para.paragraph_format.line_spacing = 1.0
             para.paragraph_format.space_after = Pt(4)
+        elif block.startswith('Surface HD95 sample counts.'):
+            for cell in doc.tables[-1].rows[-1].cells:
+                cell.paragraphs[0].paragraph_format.keep_with_next = True
+            para = doc.add_paragraph(block, style='Caption')
+            para.paragraph_format.keep_together = True
+            para.paragraph_format.keep_with_next = False
         else:
             para = doc.add_paragraph()
             for part in re.split(r'\b([xy]_(?:min|max))\b', block):

@@ -2,7 +2,10 @@
 
 ## 1.1 Background and motivation
 
-Endoscopic polyp segmentation delineates the visible extent of a polyp in a colonoscopy image. The output is a mask that assigns each pixel to foreground or background. A location cue such as a point or a box can narrow the region of interest, but the model must still infer the shape and boundary of the lesion from the image. Variation in apparent size, indistinct transitions between polyps and surrounding tissue, and differences across imaging sources can make this task difficult [8, 9, 10].
+Endoscopic polyp segmentation delineates the visible extent of a polyp in a colonoscopy image. The output is a mask that assigns each pixel to foreground or background. A location cue such as a point or a box can narrow the region of interest, but the model must still infer the shape and boundary of the lesion from the image. Variation in apparent size, indistinct transitions between polyps and surrounding tissue, and differences across imaging sources can make this task difficult [8, 9, 10]. Figure 1.1 illustrates the prompt, the predicted mask and the reference annotation.
+
+![Three views of one Kvasir-SEG validation frame show the input bounding box, the saved SAM-B predicted mask in amber and the reference mask in cyan.](figures/introduction/prompted_polyp_task.png)
+Figure 1.1 Box-prompted segmentation on a Kvasir-SEG validation frame. The input box was derived from the reference annotation and expanded by 30 pixels on each side.
 
 The Segment Anything Model (SAM) accepts spatial prompts and predicts a corresponding mask [3]. Its use on colonoscopy images raises two practical questions. The first is how well existing checkpoints segment polyps when given an informative prompt. The second is how much the observed performance changes when the models are adapted to labelled polyp images. MedSAM provides a medical-domain reference [4], while low-rank updates and adapter modules offer different ways to fit a segmentation model to a specific task. These approaches motivate a comparison that gives the evaluated configurations the same prompt information and uses the same outcome definitions.
 
@@ -32,4 +35,4 @@ It also examines sensitivity to box size, box position and point prompts, and re
 
 ## 1.5 Thesis organisation
 
-Chapter 2 reviews polyp segmentation, promptable models and adaptation methods. Chapter 3 specifies the datasets, experimental comparisons, prompting protocols and evaluation measures. Chapter 4 describes the implementation and the information required to reproduce the reported results. Chapter 5 presents and discusses the findings for each research question. Chapter 6 summarises the conclusions and outlines further work.
+Chapter 2 reviews related work. Chapters 3 and 4 describe the study design and implementation. Chapters 5 and 6 present the results, conclusions and future work.
