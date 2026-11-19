@@ -1,0 +1,46 @@
+% ============================================================================
+% WARNING (2026-11-17, Asia/Shanghai): THIS TABLE IS STALE. DO NOT COPY NUMBERS.
+% Generated 2026-06-10. It does not match official v3 summary.json:
+%   - old 1-shot numbers; missing later formal methods
+%   - prompt is written as "random perturbation"; official eval is FIXED outward expand
+%   - PP-SAM is marked "ours", but that decision is NOT settled
+% Official numbers: results/**/summary.json
+% Readable ledger:  results/EXPERIMENT_SUMMARY.md (updated 2026-11-17)
+% Copy index:       docs/NUMBERS_INDEX.md
+% Also see:         manuscript/README_NUMBERS.md
+% ============================================================================
+% Table 1: SOTA comparison on Kvasir-SEG (val 120) + CVC-ClinicDB (all 612)
+% Protocol: GT box + 30px perturbation, ResizeLongestSide 1024, single mask
+% All numbers from E:/Project/FYP/results/EXPERIMENT_SUMMARY.md §1
+% Generated 2026-06-10
+
+\begin{table}[ht]
+\centering
+\caption{Comparison with state-of-the-art methods on Kvasir-SEG (val split, 120 images) and CVC-ClinicDB (612 images).
+All methods use the same evaluation protocol: ground-truth bounding box with $\pm$30\,px random perturbation, ResizeLongestSide 1024, single-mask output.
+Best results are \textbf{bolded}; second-best are \underline{underlined}.
+Numbers in parentheses are standard deviation across the test set.
+\dag: MSA is omitted because the public MSA checkpoint zoo provides no polyp-domain fine-tuned weights (only lung, melanoma, retina, surgical-instrument); see Appendix~\ref{app:msa-status}.}
+\label{tab:sota}
+\begin{tabular}{l l c c c c c c c}
+\toprule
+\textbf{Method} & \textbf{Dataset} & \textbf{N} & \textbf{Dice} $\uparrow$ & \textbf{IoU} $\uparrow$ & \textbf{Precision} & \textbf{Recall} & \textbf{HD95} $\downarrow$ & \textbf{FPS} \\
+\midrule
+% B1: Vanilla SAM ViT-B zero-shot
+\multirow{2}{*}{B1: SAM ViT-B~\citep{kirillov2023sam} (zero-shot)} & Kvasir-SEG & 120 & $0.7497 \pm 0.295$ & 0.6680 & 0.7290 & 0.8012 & 95.63 & 8.24 \\
+ & CVC-ClinicDB  & 612 & $0.5182 \pm 0.363$ & 0.4300 & 0.4767 & 0.6377 & 63.76 & 8.71 \\
+\midrule
+% B2: MedSAM zero-shot
+\multirow{2}{*}{B2: MedSAM~\citep{ma2024medsam} (zero-shot)} & Kvasir-SEG & 120 & $0.7034 \pm 0.235$ & 0.5846 & 0.6217 & 0.8394 & 96.35 & 7.94 \\
+ & CVC-ClinicDB  & 612 & $0.5172 \pm 0.211$ & 0.3755 & 0.4096 & \underline{0.7672} & 51.65 & 8.68 \\
+\midrule
+% B3: MSA — N/A
+\multirow{2}{*}{B3: MSA~\citep{wu2023medical} (zero-shot)$^\dag$} & Kvasir-SEG & 120 & -- & -- & -- & -- & -- & -- \\
+ & CVC-ClinicDB  & 612 & -- & -- & -- & -- & -- & -- \\
+\midrule
+% B4: PP-SAM 1-shot (ours)
+\multirow{2}{*}{\textbf{B4: PP-SAM (ours, 1-shot)}} & Kvasir-SEG & 120 & $\mathbf{0.8251} \pm 0.193$ & $\mathbf{0.7388}$ & \underline{0.7949} & $\mathbf{0.9020}$ & \underline{80.94} & \underline{8.11} \\
+ & CVC-ClinicDB  & 612 & $\mathbf{0.7619} \pm 0.215$ & $\mathbf{0.6550}$ & $\mathbf{0.6900}$ & $\mathbf{0.9010}$ & $\mathbf{40.11}$ & $\mathbf{8.75}$ \\
+\bottomrule
+\end{tabular}
+\end{table}

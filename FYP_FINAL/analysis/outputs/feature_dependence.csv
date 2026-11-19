@@ -1,0 +1,3 @@
+dataset,n,area_contrast_spearman
+CVC-ClinicDB,612,0.370654524
+Kvasir-SEG-val,120,0.2574484339

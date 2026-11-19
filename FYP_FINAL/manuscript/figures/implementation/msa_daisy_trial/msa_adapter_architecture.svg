@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="600" viewBox="0 0 1480 600">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#455A64"/>
+    </marker>
+    <filter id="sh"><feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-opacity="0.12"/></filter>
+    <style>.t{font-family:Helvetica,Arial,sans-serif}.tb{font-weight:700}.tm{font-style:italic}</style>
+  </defs>
+  <rect width="1480" height="600" fill="#FFFFFF"/>
+  <text x="30" y="60" class="t tb" font-size="52.42" fill="#26364A">Medical SAM Adapter</text>
+  <text x="31" y="106" class="t" font-size="33.92" fill="#536579">One image-encoder block in MSA-B and MSA-L</text>
+  <rect x="22" y="137" width="766" height="389" rx="20" fill="#FAFBFD" stroke="#C7D3E2" stroke-width="1.5"/>
+  <rect x="798" y="137" width="670" height="389" rx="20" fill="#FAFBFD" stroke="#C7D3E2" stroke-width="1.5"/>
+  <text x="62" y="189" class="t tb" font-size="38.54" fill="#26364A">Attention sublayer</text>
+  <text x="825" y="189" class="t tb" font-size="38.54" fill="#26364A">Feed-forward sublayer</text>
+  <text x="447" y="241" class="t" font-size="33.92" fill="#536579" text-anchor="middle">Residual</text>
+  <text x="1090" y="241" class="t" font-size="33.92" fill="#536579" text-anchor="middle">Residual</text>
+  <text x="88" y="336" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Input</text>
+  <text x="88" y="373" class="t" font-size="33.92" fill="#26364A" text-anchor="middle">tokens</text>
+  <line x1="142" y1="340" x2="188" y2="340" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="168" y1="340" x2="168" y2="260" stroke="#455A64" stroke-width="3"/>
+  <line x1="168" y1="260" x2="747" y2="260" stroke="#455A64" stroke-width="3"/>
+  <line x1="747" y1="260" x2="747" y2="320" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="164" y="336" width="8" height="8" rx="4" fill="#455A64" stroke="#455A64" stroke-width="0.5"/>
+  <rect x="188" y="301" width="123" height="78" rx="13" fill="#FFF2D9" stroke="#92733D" stroke-width="2"/>
+  <text x="249.5" y="351.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Norm</text>
+  <line x1="311" y1="340" x2="334" y2="340" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="334" y="301" width="168" height="78" rx="13" fill="#E6EDF9" stroke="#5E729C" stroke-width="2"/>
+  <text x="418.0" y="351.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Attention</text>
+  <line x1="502" y1="340" x2="523" y2="340" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="523" y="301" width="187" height="78" rx="13" fill="#FADECD" stroke="#9E5539" stroke-width="2"/>
+  <text x="616.5" y="334.5" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Spatial</text>
+  <text x="616.5" y="367.5" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Adapter</text>
+  <text x="617" y="422" class="t" font-size="33.92" fill="#536579" text-anchor="middle">Internal skip</text>
+  <line x1="710" y1="340" x2="727" y2="340" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="727" y="320" width="40" height="40" rx="20" fill="#FFFFFF" stroke="#455A64" stroke-width="2.3"/>
+  <line x1="739" y1="340" x2="755" y2="340" stroke="#26364A" stroke-width="2.4"/>
+  <line x1="747" y1="332" x2="747" y2="348" stroke="#26364A" stroke-width="2.4"/>
+  <line x1="767" y1="340" x2="837" y2="340" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="810" y1="340" x2="810" y2="260" stroke="#455A64" stroke-width="3"/>
+  <line x1="810" y1="260" x2="1286" y2="260" stroke="#455A64" stroke-width="3"/>
+  <line x1="1286" y1="260" x2="1286" y2="320" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="806" y="336" width="8" height="8" rx="4" fill="#455A64" stroke="#455A64" stroke-width="0.5"/>
+  <rect x="837" y="301" width="112" height="78" rx="13" fill="#FFF2D9" stroke="#92733D" stroke-width="2"/>
+  <text x="893.0" y="351.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Norm</text>
+  <line x1="949" y1="340" x2="1000" y2="340" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="1000" y="301" width="179" height="78" rx="13" fill="#E6EDF9" stroke="#5E729C" stroke-width="2"/>
+  <text x="1089.5" y="351.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">MLP</text>
+  <line x1="1179" y1="340" x2="1266" y2="340" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="971" y1="340" x2="971" y2="455" stroke="#455A64" stroke-width="3"/>
+  <line x1="971" y1="455" x2="1000" y2="455" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="967" y="336" width="8" height="8" rx="4" fill="#455A64" stroke="#455A64" stroke-width="0.5"/>
+  <rect x="1000" y="416" width="179" height="78" rx="13" fill="#FADECD" stroke="#9E5539" stroke-width="2"/>
+  <text x="1089.5" y="449.5" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">MLP</text>
+  <text x="1089.5" y="482.5" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Adapter</text>
+  <text x="1232" y="438" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">×0.5</text>
+  <line x1="1179" y1="455" x2="1286" y2="455" stroke="#455A64" stroke-width="3"/>
+  <line x1="1286" y1="455" x2="1286" y2="360" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="1266" y="320" width="40" height="40" rx="20" fill="#FFFFFF" stroke="#455A64" stroke-width="2.3"/>
+  <line x1="1278" y1="340" x2="1294" y2="340" stroke="#26364A" stroke-width="2.4"/>
+  <line x1="1286" y1="332" x2="1286" y2="348" stroke="#26364A" stroke-width="2.4"/>
+  <line x1="1306" y1="340" x2="1335" y2="340" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <text x="1392" y="336" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Output</text>
+  <text x="1392" y="373" class="t" font-size="33.92" fill="#26364A" text-anchor="middle">tokens</text>
+  <rect x="36" y="550" width="29" height="24" rx="5" fill="#FADECD" stroke="#9E5539" stroke-width="1.8"/>
+  <text x="76" y="572" class="t" font-size="33.92" fill="#26364A">Trainable adapter</text>
+  <rect x="389" y="550" width="29" height="24" rx="5" fill="#E6EDF9" stroke="#5E729C" stroke-width="1.8"/>
+  <text x="429" y="572" class="t" font-size="33.92" fill="#26364A">Frozen SAM layer</text>
+  <rect x="739" y="550" width="29" height="24" rx="5" fill="#FFF2D9" stroke="#92733D" stroke-width="1.8"/>
+  <text x="779" y="572" class="t" font-size="33.92" fill="#26364A">Frozen layer norm</text>
+</svg>

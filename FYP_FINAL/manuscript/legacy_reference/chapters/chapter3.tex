@@ -1,0 +1,223 @@
+%% ========================================================================
+%% chapter3.tex -- Chapter 3: Research Methodology
+%% Topic: Current-stage v3 benchmark for SAM-family polyp segmentation
+%% Last updated: 2026-06-25
+%% ========================================================================
+
+\chapter{Research Methodology}
+\label{chap:methodology}
+\label{chap:outline}
+
+This chapter describes the research methodology used to turn the literature review of Chapter~2 into a reproducible current-stage benchmark. Rather than proposing a single new architecture, this partial thesis establishes a unified v3 evaluation protocol and applies it to a selected set of SAM-family baselines. The methodology has three purposes: first, to compare zero-shot foundation-model transfer under one prompt protocol; second, to quantify few-shot and parameter-efficient adaptation through PP-SAM and SAMed LoRA; and third, to separate v3-aligned baselines from external references and exploratory pilots such as ASPS and OP-SAM.
+
+\section{Problem Formulation}
+\label{sec:problem-formulation}
+
+Given an RGB colonoscopy frame $\mathbf{I}\in\mathbb{R}^{H\times W\times 3}$, the goal of polyp segmentation is to predict a binary mask $\hat{\mathbf{M}}\in\{0,1\}^{H\times W}$ that delineates the polyp region. In a promptable segmentation setting, the prediction may depend on an input prompt $\mathbf{p}$ and, for few-shot or support-conditioned methods, a support set $\mathcal{S}$:
+\begin{equation}
+  \hat{\mathbf{M}} = f_{\theta}(\mathbf{I}, \mathbf{p}; \mathcal{S}).
+  \label{eq:task-formulation}
+\end{equation}
+\noindent where:
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \item $\mathbf{I}$ is the input colonoscopy image.
+  \item $\mathbf{p}$ is the prompt used at inference, such as a bounding box or an automatically generated prompt.
+  \item $\mathcal{S}$ is the support set; it is empty for zero-shot baselines, contains $K$ labelled examples for few-shot fine-tuning, and contains one support image--mask pair for OP-SAM.
+  \item $\theta$ denotes the model parameters, which may be frozen, fully adapted, or updated through parameter-efficient modules.
+  \item $\hat{\mathbf{M}}$ is the predicted binary segmentation mask.
+\end{itemize}
+
+This formulation covers the methods selected in Chapter~1. Zero-shot SAM, SAM2, and MedSAM use an empty support set and frozen parameters at evaluation time. PP-SAM and SAMed use $K$ labelled Kvasir-SEG training samples to update model parameters before evaluation. OP-SAM uses a support image at inference time without parameter updates. ASPS is a fully supervised dense model and is therefore treated separately as an external upper-bound reference rather than as a v3-aligned promptable baseline.
+
+\section{Study Design and Baseline Taxonomy}
+\label{sec:baseline-taxonomy}
+
+The current-stage study is organised around the five research questions defined in Chapter~\ref{chap:intro}. The selected baselines are not a flat ranking list; instead, they form a taxonomy with different roles. Some baselines are v3-aligned and directly comparable under the unified box-prompt protocol. Others are included only as external references or exploratory pilots because their supervision budget or prompt interface differs from the main protocol.
+
+\begin{table}[H]
+\centering
+\caption{Current-stage baseline taxonomy. ``v3-aligned'' means that the method is evaluated on Kvasir-SEG \texttt{val.txt} and CVC-ClinicDB with the fixed $\pm30$ pixel box-prompt protocol and the same five metrics. ASPS and OP-SAM are intentionally separated because they do not satisfy the same prompt/split assumptions.}
+\label{tab:baseline-taxonomy}
+\begin{tabular}{p{3.1cm}p{3.2cm}p{2.6cm}p{2.5cm}p{3.3cm}}
+\toprule
+\textbf{Category} & \textbf{Method} & \textbf{Training budget} & \textbf{Inference prompt} & \textbf{Role in thesis} \\
+\midrule
+Zero-shot SAM v1 & SAM~\cite{kirillov2023sam} ViT-B/L/H & 0 polyp labels & $\pm30$ box & Backbone-scaling axis for RQ1 \\
+Zero-shot SAM2 & SAM2~\cite{ravi2024sam2} Hiera-S/B+/L & 0 polyp labels & $\pm30$ box & SAM2 scaling axis for RQ1 \\
+Medical pre-training & MedSAM~\cite{ma2024medsam} & 0 polyp labels; generic medical pre-training & $\pm30$ box & Medical-transfer baseline for RQ2 \\
+Few-shot fine-tuning & PP-SAM~\cite{rahman2024ppsam} 1/5/10-shot & 1/5/10 labelled polyps & $\pm30$ box & Full-encoder adaptation reference for RQ3 \\
+Parameter-efficient adaptation & SAMed~\cite{zhang2023samed} LoRA 1/5/10-shot + full 880 & 1/5/10 labelled polyps; full train split & $\pm30$ box & K-shot PEFT for RQ3; full-data PEFT bridge for RQ4 \\
+External upper bound & ASPS~\cite{li2024asps} & Fully supervised PraNet protocol & None / dense & External reference for RQ4 \\
+Exploratory pilot & OP-SAM~\cite{li2025opsam} CPG-only & 1 support image, no fine-tuning & Automatically generated & Training-free pilot for RQ5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This taxonomy prevents two common sources of unfair comparison. First, backbone scaling is studied separately from adaptation: SAM ViT-L and ViT-H are used to understand zero-shot scaling, not to claim that all adaptation methods use the same capacity. Second, ASPS and OP-SAM are not placed into the same direct ranking as the box-prompt v3 baselines. ASPS is fully supervised and currently follows the PraNet split; OP-SAM uses a support-conditioned prompt-generation pipeline and does not consume the ground-truth box prompt.
+
+\section{Unified v3 Evaluation Protocol}
+\label{sec:v3-protocol}
+
+The v3 protocol is the central methodological control of this thesis. It defines the data split, prompt construction, metrics, and output artifacts used by all v3-aligned baselines.
+
+\subsection{Dataset Splits}
+\label{sec:dataset-splits}
+
+Kvasir-SEG and CVC-ClinicDB are used as the primary datasets. Kvasir-SEG provides the in-domain training and validation source, while CVC-ClinicDB is used as a cross-domain test set. The K-shot support images for PP-SAM and SAMed are drawn only from the Kvasir-SEG \texttt{train.txt} split; Kvasir-SEG \texttt{val.txt} is never used for fine-tuning.
+
+\begin{table}[H]
+\centering
+\caption{Dataset roles in the v3 protocol. Kvasir-SEG \texttt{train.txt} and \texttt{val.txt} are disjoint. CVC-ClinicDB is used as a cross-domain evaluation set. The PraNet test set is used only for ASPS to avoid test-on-train leakage from the official ASPS checkpoint.}
+\label{tab:dataset-splits}
+\begin{tabular}{p{3.2cm}p{3.1cm}p{2.4cm}p{5.3cm}}
+\toprule
+\textbf{Dataset} & \textbf{Split / subset} & \textbf{Images} & \textbf{Role} \\
+\midrule
+Kvasir-SEG & \texttt{train.txt} & 880 & K-shot support pool for PP-SAM and SAMed; never used for v3 evaluation \\
+Kvasir-SEG & \texttt{val.txt} & 120 & Held-out in-domain evaluation split \\
+CVC-ClinicDB & full PNG subset & 612 & Cross-domain evaluation split \\
+PraNet TestDataset & Kvasir / CVC-ClinicDB & 100 / 62 & Leakage-free ASPS external evaluation only \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The distinction between Kvasir-SEG \texttt{train.txt} and \texttt{val.txt} is important because few-shot fine-tuning can overfit rapidly. All K-shot samples are drawn from the 880 training images, whereas reported in-domain numbers are computed on the 120 held-out validation images. This prevents the support examples from leaking into the evaluation split.
+
+\subsection{Prompt Generation}
+\label{sec:prompt-generation}
+
+For every v3-aligned box-prompt baseline, the inference prompt is derived from the ground-truth mask and expanded by a fixed 30 pixels in each direction. Given the tight ground-truth box $(x_{\min},y_{\min},x_{\max},y_{\max})$ and image size $(H,W)$, the v3 prompt is
+\begin{equation}
+\begin{aligned}
+  \mathbf{b}_{30} = \bigl(&
+  \max(0, x_{\min}-30),\\
+  &\max(0, y_{\min}-30),\\
+  &\min(W, x_{\max}+30),\\
+  &\min(H, y_{\max}+30)
+  \bigr).
+\end{aligned}
+\label{eq:box-perturbation}
+\end{equation}
+\noindent where $\mathbf{b}_{30}$ is the perturbed box prompt used at inference time. The fixed $\pm30$ pixel perturbation follows the PP-SAM prompt-perturbation setting and provides a single controlled prompt-quality level for fair comparison. A multi-level prompt-quality study, such as 0/10/30/50 pixel perturbation, is left to future work.
+
+\subsection{Evaluation Metrics}
+\label{sec:evaluation-metrics}
+
+Five metrics are reported for each v3-aligned baseline. Dice is the primary overlap metric:
+\begin{equation}
+  \mathrm{Dice}(P,G) = \frac{2|P\cap G|}{|P| + |G|},
+  \label{eq:dice}
+\end{equation}
+where $P$ is the predicted binary mask and $G$ is the ground-truth mask. IoU is used as a secondary overlap metric:
+\begin{equation}
+  \mathrm{IoU}(P,G) = \frac{|P\cap G|}{|P\cup G|}.
+  \label{eq:iou}
+\end{equation}
+Precision and recall separate over-segmentation from under-segmentation:
+\begin{equation}
+  \mathrm{Precision}=\frac{TP}{TP+FP},\qquad
+  \mathrm{Recall}=\frac{TP}{TP+FN}.
+  \label{eq:precision-recall}
+\end{equation}
+Finally, HD95 is used as a boundary-sensitive metric:
+\begin{equation}
+  \mathrm{HD95}(P,G) = \max\bigl(d_{95}(P,G), d_{95}(G,P)\bigr),
+  \label{eq:hd95}
+\end{equation}
+where $d_{95}(P,G)$ denotes the 95th percentile of directed distances from the predicted boundary points to the ground-truth boundary points. FPS is also recorded as an efficiency reference, but it is not used as the primary ranking criterion.
+
+\subsection{Output Artifacts}
+\label{sec:output-artifacts}
+
+Each evaluation run writes a compact summary and per-image records. The summary file reports dataset-level means and standard deviations, while the per-image file stores the image name, all metrics, and runtime information. Qualitative triptychs are saved when supported by the baseline script. This output format makes it possible to audit results after training without rerunning the model.
+
+\begin{table}[H]
+\centering
+\caption{Standard output artifacts for v3-aligned evaluation scripts.}
+\label{tab:output-artifacts}
+\begin{tabular}{p{3.4cm}p{10.0cm}}
+\toprule
+\textbf{Artifact} & \textbf{Purpose} \\
+\midrule
+\texttt{summary.json} & Dataset-level Dice, IoU, precision, recall, HD95, FPS, and model metadata \\
+\texttt{per\_image.json} & Per-image metric records for error analysis and future stratified evaluation \\
+\texttt{preds/} & Binary predicted masks saved for qualitative inspection and re-analysis \\
+\texttt{triptychs/} & Image--ground-truth--prediction visual comparisons when enabled \\
+Training history JSON & Epoch-level validation trace for detecting overfitting and selecting best checkpoints \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Protocol Caveats and Non-Aligned Entries}
+\label{sec:protocol-caveats}
+
+Two methods require explicit caveats because they do not share the same prompt and split assumptions as the v3-aligned box-prompt baselines.
+
+\subsection{ASPS as an External Upper-Bound Reference}
+\label{sec:asps-caveat}
+
+ASPS is a fully supervised dense segmentation model. It removes the prompt path at inference time and augments SAM with a CNN branch and uncertainty-guided regularisation. The available ASPS checkpoint was trained under the PraNet protocol, whose training set includes 900 Kvasir-SEG images and 550 CVC-ClinicDB images. Evaluating this checkpoint on Kvasir-SEG \texttt{val.txt} or the full CVC-ClinicDB set would therefore include training images in the test set. To avoid this leakage, the current thesis reports ASPS only on the PraNet held-out test set and treats it as an external upper-bound reference.
+
+A fully v3-aligned ASPS comparison is left as a next-stage experiment. In that experiment, ASPS should be retrained on Kvasir-SEG \texttt{train.txt} and evaluated on Kvasir-SEG \texttt{val.txt} and CVC-ClinicDB under the same five-metric protocol. Only after this retraining should ASPS be directly ranked alongside PP-SAM full-training or SAMed full-training variants.
+
+\subsection{OP-SAM as an Exploratory Training-Free Pilot}
+\label{sec:opsam-caveat}
+
+OP-SAM is a support-conditioned, training-free method. Unlike PP-SAM and SAMed, it does not update model parameters and does not consume the v3 ground-truth box prompt. The current implementation in this thesis reports only the Cascaded Prior Generator (CPG) path wrapped around SAM2. The complete OP-SAM pipeline additionally includes the Support Prior Filter (SPF) and Ensemble Prior Enhancer (EPE). Therefore, the current OP-SAM result should be interpreted as an exploratory CPG-only pilot, not as a complete reproduction of the original OP-SAM paper.
+
+Full OP-SAM reproduction with CPG, SPF, and EPE is listed as future work. If the full pipeline still underperforms after exact reproduction, a separate OP-SAM-plus-fine-tuning extension may be studied as a new method; it should not be described as a reproduction of the original training-free OP-SAM.
+
+\section{Adaptation Recipes}
+\label{sec:adaptation-recipes}
+
+The current-stage adaptation study focuses on two recipes: PP-SAM, which adapts the image encoder and prompt encoder under a prompt-perturbation regime, and SAMed LoRA, which injects low-rank updates into the SAM image encoder as a parameter-efficient baseline.
+
+\subsection{PP-SAM Prompt-Perturbation Fine-Tuning}
+\label{sec:ppsam-recipe}
+
+PP-SAM~\cite{rahman2024ppsam} is used as the full-encoder prompt-perturbation reference. For each support size $K\in\{1,5,10\}$, $K$ images are sampled from Kvasir-SEG \texttt{train.txt}. The image encoder and prompt encoder are fine-tuned, while the mask decoder is frozen. During training, the box prompt is randomly perturbed to improve robustness to imperfect boxes; during evaluation, the fixed v3 $\pm30$ pixel prompt is used for all baselines.
+
+The PP-SAM training objective uses the structure loss commonly used in polyp segmentation, combining weighted binary cross-entropy and weighted IoU. This loss gives larger weight to ambiguous regions near object boundaries, which partially addresses the weak-boundary concern identified in Chapter~2. The best checkpoint is selected by validation Dice on the held-out Kvasir-SEG \texttt{val.txt} split.
+
+\subsection{SAMed LoRA Parameter-Efficient Fine-Tuning}
+\label{sec:samed-recipe}
+
+SAMed~\cite{zhang2023samed} LoRA is included to address the Adapter/LoRA requirement in the project brief. LoRA represents a weight update as a low-rank decomposition:
+\begin{equation}
+  \Delta W = BA,
+  \label{eq:lora-update}
+\end{equation}
+where $A\in\mathbb{R}^{r\times k}$ and $B\in\mathbb{R}^{d\times r}$ are trainable low-rank matrices and $r$ is the LoRA rank. In this thesis, rank-4 LoRA modules are injected into the query and value projections of SAM ViT-B attention blocks. The frozen backbone weights are preserved, while LoRA parameters, the prompt encoder, and the mask decoder are trained.
+
+The SAMed training objective follows the original SAMed recipe with a weighted combination of binary cross-entropy and Dice loss. Unlike PP-SAM, SAMed trains the mask decoder and updates the image encoder only through LoRA parameters. At the time of this partial thesis, the SAMed 1-shot, 5-shot, 10-shot, and full 880 runs have been completed; their cloud training logs, checkpoints, and evaluation files are archived under the formal results directory.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of the two current-stage adaptation recipes. PP-SAM adapts the encoder side under prompt perturbation, while SAMed uses LoRA as a parameter-efficient alternative.}
+\label{tab:adaptation-recipes}
+\begin{tabular}{p{3.3cm}p{5.2cm}p{5.2cm}}
+\toprule
+\textbf{Axis} & \textbf{PP-SAM} & \textbf{SAMed LoRA} \\
+\midrule
+Backbone & SAM ViT-B & SAM ViT-B \\
+Trainable image pathway & Image encoder trainable & LoRA rank-4 updates on Q/V projections \\
+Prompt encoder & Trainable & Trainable \\
+Mask decoder & Frozen & Trainable \\
+Training support sizes & 1/5/10 shots & 1/5/10 shots; full 880 run completed as full-data PEFT \\
+Training prompt & Random box perturbation & Tight training box in current implementation \\
+Evaluation prompt & Fixed $\pm30$ box & Fixed $\pm30$ box \\
+Loss & Structure loss & BCE + Dice loss \\
+Role & Full-encoder prompt-perturbation reference & LoRA PEFT reference \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Reproducibility and Current-Stage Boundaries}
+\label{sec:reproducibility-boundaries}
+
+The implementation is organised so that each baseline has its own wrapper while sharing the same evaluation contract wherever possible. The v3-aligned baselines use the same dataset split, prompt perturbation rule, metric definitions, and output schema. This design makes the comparison auditable: if a baseline differs from the shared contract, the difference must be documented as a protocol caveat rather than hidden inside the implementation.
+
+The current-stage boundary is deliberately explicit. The completed part of the methodology covers zero-shot SAM/SAM2/MedSAM evaluation, PP-SAM 1/5/10-shot adaptation, SAMed LoRA 1/5/10-shot and full 880 training, ASPS as an external upper-bound reference, and OP-SAM as a CPG-only exploratory pilot. The next stage includes ASPS retraining under the v3 split, full OP-SAM reproduction, multi-level prompt-quality evaluation, object-scale stratification, explicit weak-boundary refinement, and extension to additional polyp datasets.
+
+This boundary is not a weakness of the methodology; it is a reproducibility guard. By separating completed v3-aligned experiments from external references and future work, the thesis avoids treating incomparable numbers as a single ranking table and provides a clear roadmap for extending the benchmark in the next project phase.

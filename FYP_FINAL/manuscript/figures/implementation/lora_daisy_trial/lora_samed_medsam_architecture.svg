@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="960" viewBox="0 0 1480 960">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#455A64"/>
+    </marker>
+    <filter id="sh"><feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-opacity="0.12"/></filter>
+    <style>.t{font-family:Helvetica,Arial,sans-serif}.tb{font-weight:700}.tm{font-style:italic}</style>
+  </defs>
+  <rect width="1480" height="960" fill="#FFFFFF"/>
+  <text x="30" y="50" class="t tb" font-size="46.25" fill="#26364A">A   Shared SAM architecture and initial weights</text>
+  <rect x="22" y="76" width="1436" height="247" rx="20" fill="#FAFBFD" stroke="#C7D3E2" stroke-width="1.5"/>
+  <text x="52" y="121" class="t tb" font-size="33.92" fill="#26364A">Starting weights:</text>
+  <text x="362" y="121" class="t" font-size="33.92" fill="#26364A">SAM ViT-B  →  SAMed</text>
+  <text x="809" y="121" class="t" font-size="33.92" fill="#26364A">MedSAM ViT-B  →  MedSAM+LoRA</text>
+  <line x1="52" y1="143" x2="1426" y2="143" stroke="#C7D3E2" stroke-width="1.6"/>
+  <text x="56" y="191" class="t" font-size="33.92" fill="#26364A">Box prompt</text>
+  <text x="56" y="263" class="t" font-size="33.92" fill="#26364A">RGB frame</text>
+  <line x1="247" y1="181" x2="356" y2="181" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="247" y1="252" x2="356" y2="252" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="356" y="153.0" width="344" height="56" rx="13" fill="#FADECD" stroke="#9E5539" stroke-width="2"/>
+  <text x="528.0" y="192.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Prompt encoder</text>
+  <rect x="356" y="219" width="344" height="91" rx="13" fill="#E6EDF9" stroke="#5E729C" stroke-width="2"/>
+  <text x="528" y="252" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">ViT image encoder</text>
+  <rect x="412" y="262" width="232" height="39" rx="8" fill="#FADECD" stroke="#9E5539" stroke-width="1.7"/>
+  <text x="528" y="291" class="t tb" font-size="32.38" fill="#26364A" text-anchor="middle">Q/V LoRA</text>
+  <line x1="700" y1="181" x2="800" y2="181" stroke="#455A64" stroke-width="3"/>
+  <line x1="800" y1="181" x2="800" y2="211" stroke="#455A64" stroke-width="3"/>
+  <line x1="800" y1="211" x2="880" y2="211" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="700" y1="253" x2="800" y2="253" stroke="#455A64" stroke-width="3"/>
+  <line x1="800" y1="253" x2="800" y2="233" stroke="#455A64" stroke-width="3"/>
+  <line x1="800" y1="233" x2="880" y2="233" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="880" y="184.5" width="258" height="75" rx="13" fill="#FADECD" stroke="#9E5539" stroke-width="2"/>
+  <text x="1009.0" y="233.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Mask decoder</text>
+  <line x1="1138" y1="222" x2="1219" y2="222" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <text x="1233" y="213" class="t tb" font-size="33.92" fill="#26364A">Polyp mask</text>
+  <text x="1233" y="250" class="t" font-size="32.38" fill="#26364A">+ mask score</text>
+  <line x1="528" y1="301" x2="528" y2="339" stroke="#9E5539" stroke-width="3" stroke-dasharray="8 6"/>
+  <line x1="528" y1="339" x2="829" y2="339" stroke="#9E5539" stroke-width="3" stroke-dasharray="8 6"/>
+  <line x1="829" y1="339" x2="829" y2="407" stroke="#9E5539" stroke-width="3" stroke-dasharray="8 6"/>
+  <text x="30" y="388" class="t tb" font-size="46.25" fill="#26364A">B   LoRA inside ViT self-attention</text>
+  <rect x="22" y="409" width="1436" height="475" rx="20" fill="#FAFBFD" stroke="#C7D3E2" stroke-width="1.5"/>
+  <text x="113" y="638" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Input</text>
+  <text x="113" y="676" class="t" font-size="33.92" fill="#26364A" text-anchor="middle">tokens</text>
+  <line x1="166" y1="650" x2="235" y2="650" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="235" y="594.0" width="240" height="112" rx="13" fill="#E6EDF9" stroke="#5E729C" stroke-width="2"/>
+  <text x="355.0" y="644.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">QKV</text>
+  <text x="355.0" y="678.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">projection</text>
+  <line x1="475" y1="613" x2="542" y2="613" stroke="#455A64" stroke-width="3"/>
+  <line x1="542" y1="613" x2="542" y2="552" stroke="#455A64" stroke-width="3"/>
+  <line x1="542" y1="552" x2="1003" y2="552" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="475" y1="687" x2="542" y2="687" stroke="#455A64" stroke-width="3"/>
+  <line x1="542" y1="687" x2="542" y2="749" stroke="#455A64" stroke-width="3"/>
+  <line x1="542" y1="749" x2="1003" y2="749" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="201" y1="650" x2="201" y2="472" stroke="#455A64" stroke-width="3"/>
+  <line x1="201" y1="472" x2="562" y2="472" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <text x="417" y="459" class="t" font-size="32.38" fill="#536579" text-anchor="middle">Query update</text>
+  <rect x="562" y="442.0" width="124" height="60" rx="13" fill="#FADECD" stroke="#9E5539" stroke-width="2"/>
+  <text x="624.0" y="483.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">A</text>
+  <line x1="686" y1="472" x2="827" y2="472" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="827" y="442.0" width="124" height="60" rx="13" fill="#FADECD" stroke="#9E5539" stroke-width="2"/>
+  <text x="889.0" y="483.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">B</text>
+  <line x1="951" y1="472" x2="1023" y2="472" stroke="#455A64" stroke-width="3"/>
+  <line x1="1023" y1="472" x2="1023" y2="532" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <text x="624" y="537" class="t" font-size="32.38" fill="#536579" text-anchor="middle">dimension → 4</text>
+  <text x="889" y="537" class="t" font-size="32.38" fill="#536579" text-anchor="middle">4 → dimension</text>
+  <rect x="1003" y="532" width="40" height="40" rx="20" fill="#FFFFFF" stroke="#455A64" stroke-width="2.3"/>
+  <line x1="1015" y1="552" x2="1031" y2="552" stroke="#26364A" stroke-width="2.4"/>
+  <line x1="1023" y1="544" x2="1023" y2="560" stroke="#26364A" stroke-width="2.4"/>
+  <line x1="201" y1="650" x2="201" y2="832" stroke="#455A64" stroke-width="3"/>
+  <line x1="201" y1="832" x2="562" y2="832" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <text x="417" y="819" class="t" font-size="32.38" fill="#536579" text-anchor="middle">Value update</text>
+  <rect x="562" y="802.0" width="124" height="60" rx="13" fill="#FADECD" stroke="#9E5539" stroke-width="2"/>
+  <text x="624.0" y="843.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">A</text>
+  <line x1="686" y1="832" x2="827" y2="832" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="827" y="802.0" width="124" height="60" rx="13" fill="#FADECD" stroke="#9E5539" stroke-width="2"/>
+  <text x="889.0" y="843.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">B</text>
+  <line x1="951" y1="832" x2="1023" y2="832" stroke="#455A64" stroke-width="3"/>
+  <line x1="1023" y1="832" x2="1023" y2="769" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <text x="624" y="793" class="t" font-size="32.38" fill="#536579" text-anchor="middle">dimension → 4</text>
+  <text x="889" y="793" class="t" font-size="32.38" fill="#536579" text-anchor="middle">4 → dimension</text>
+  <rect x="1003" y="729" width="40" height="40" rx="20" fill="#FFFFFF" stroke="#455A64" stroke-width="2.3"/>
+  <line x1="1015" y1="749" x2="1031" y2="749" stroke="#26364A" stroke-width="2.4"/>
+  <line x1="1023" y1="741" x2="1023" y2="757" stroke="#26364A" stroke-width="2.4"/>
+  <rect x="197" y="646" width="8" height="8" rx="4" fill="#455A64" stroke="#455A64" stroke-width="0.5"/>
+  <rect x="1204" y="514.0" width="218" height="272" rx="13" fill="#FFFFFF" stroke="#455A64" stroke-width="2"/>
+  <text x="1313.0" y="644.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Attention</text>
+  <text x="1313.0" y="678.0" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">mixing</text>
+  <line x1="1043" y1="552" x2="1204" y2="552" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <text x="1110" y="541" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">Q</text>
+  <line x1="475" y1="650" x2="1204" y2="650" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <text x="1110" y="639" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">K</text>
+  <line x1="1043" y1="749" x2="1204" y2="749" stroke="#455A64" stroke-width="3" marker-end="url(#a)"/>
+  <text x="1110" y="738" class="t tb" font-size="33.92" fill="#26364A" text-anchor="middle">V</text>
+  <rect x="34" y="911" width="29" height="24" rx="5" fill="#FADECD" stroke="#9E5539" stroke-width="1.8"/>
+  <text x="74" y="934" class="t" font-size="33.92" fill="#26364A">Trainable module</text>
+  <rect x="423" y="911" width="29" height="24" rx="5" fill="#E6EDF9" stroke="#5E729C" stroke-width="1.8"/>
+  <text x="463" y="934" class="t" font-size="33.92" fill="#26364A">Frozen layer</text>
+  <text x="820" y="934" class="t" font-size="33.92" fill="#536579">Token dimension = 768</text>
+</svg>

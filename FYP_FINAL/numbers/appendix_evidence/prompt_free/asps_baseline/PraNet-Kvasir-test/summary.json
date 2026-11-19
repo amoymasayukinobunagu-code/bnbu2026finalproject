@@ -1,0 +1,14 @@
+{
+  "dataset": "PraNet-Kvasir",
+  "n": 100,
+  "model": "ASPS (SAM-B + MSCAN-L, iter 15200)",
+  "checkpoint": "E:\\Project\\FYP\\checkpoints\\asps\\B-L-0015200.pth",
+  "dice_mean": 0.9092916945582608,
+  "dice_std": 0.14935026610412971,
+  "iou_mean": 0.8572122698128467,
+  "iou_std": 0.17573095155054352,
+  "precision_mean": 0.9370343349958294,
+  "recall_mean": 0.9028461106542122,
+  "hd95_mean": 80.45534987816998,
+  "fps_mean": 7.059495455038293
+}

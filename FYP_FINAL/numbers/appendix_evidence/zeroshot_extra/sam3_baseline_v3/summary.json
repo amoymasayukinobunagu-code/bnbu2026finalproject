@@ -1,0 +1,26 @@
+{
+  "Kvasir-SEG-val": {
+    "n": 120,
+    "dice_mean": 0.7661484316612829,
+    "dice_std": 0.24661147413481307,
+    "iou_mean": 0.6715438745785007,
+    "iou_std": 0.2579034557383002,
+    "precision_mean": 0.7056895053403914,
+    "recall_mean": 0.8857134365302901,
+    "hd95_mean": 96.75362431757797,
+    "fps_mean": 7.26128463071616,
+    "prompt_mode": "sam3_predict_inst_box_xyxy_pm30"
+  },
+  "CVC-ClinicDB": {
+    "n": 612,
+    "dice_mean": 0.6286750947489966,
+    "dice_std": 0.2751279308510424,
+    "iou_mean": 0.5104280554742238,
+    "iou_std": 0.26391961112567974,
+    "precision_mean": 0.5268172336952599,
+    "recall_mean": 0.8521454810513864,
+    "hd95_mean": 56.811964111294586,
+    "fps_mean": 7.5975550869762225,
+    "prompt_mode": "sam3_predict_inst_box_xyxy_pm30"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "document": "E:\\Project\\FYP_FINAL\\manuscript\\drafts\\FYP_Word_Review_02.docx",
+  "status": "draft_for_author_review",
+  "date": "2026-11-18",
+  "sources": [
+    {
+      "id": "E01",
+      "path": "E:\\Project\\FYP_FINAL\\charter\\PROJECT_BRIEF.md",
+      "sha256": "b92ce2546e0408682db59a9c99fa4467175bcb3533d68dc7f83bc7fe82fc2aeb",
+      "purpose": "Project scope and experiment status; documentary source",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E02",
+      "path": "E:\\Project\\FYP_FINAL\\charter\\SCOPE.md",
+      "sha256": "d9b49e287b4496be05617cc68e4f69dafb7dc0bb15968ce7590c6df55d151d78",
+      "purpose": "Writing boundaries and incomplete analyses",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E03",
+      "path": "E:\\Project\\FYP_FINAL\\numbers\\NUMBERS_INDEX.md",
+      "sha256": "aa6e21d01f9b8822751be6c33027e4fb751b3ba0779505294895d2f3748b59e0",
+      "purpose": "Formal runs and source caveats",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E04",
+      "path": "E:\\Project\\FYP_FINAL\\splits\\Kvasir-SEG\\Data-split\\train.txt",
+      "sha256": "a0d12bd5c6d335dabe6eb2fd7481653c4700820aee3af6127df4ae247e8be34a",
+      "purpose": "880 training IDs; checked programmatically",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E05",
+      "path": "E:\\Project\\FYP_FINAL\\splits\\Kvasir-SEG\\Data-split\\val.txt",
+      "sha256": "2d3a401b36387873da3f8ac4e18311429d62d31047eabcafe3bf94a737da2814",
+      "purpose": "120 validation IDs; checked programmatically",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E06",
+      "path": "E:\\Project\\FYP_FINAL\\numbers\\prompt_ablation_box_expand_SUMMARY.md",
+      "sha256": "ac572f495828c0963a6d763e853d8ca4831b95dd42ee540e29bc7c5f2199388f",
+      "purpose": "Fixed outward expansions and source differences",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E07",
+      "path": "E:\\Project\\FYP_FINAL\\numbers\\notes\\medsam_peft_EVAL_R4_FULL_BEST.md",
+      "sha256": "df4f16119b2dc933008a36b47713a6b3af65488e2949f11494f6f6394aa5fb34",
+      "purpose": "Best validation checkpoint and evaluation records",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E08",
+      "path": "E:\\Project\\FYP_FINAL\\numbers\\notes\\msa_polyp_zeroshot_or_trained_v3.md",
+      "sha256": "06b353e30f74ed9256606e214ab19397aa590bd1d3e4e8c876f44c6f5bb3938a",
+      "purpose": "Trained adapter, best checkpoint and evaluation",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E09",
+      "path": "E:\\Project\\FYP\\code\\samed_baseline\\train_samed.py",
+      "sha256": "da230dfc9d69ea5985a75904f911d50f8e6493e32c6a70751266612b8982fcb5",
+      "purpose": "Validation and best-checkpoint selection; current code, run-version reconciliation pending",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E10",
+      "path": "E:\\Project\\FYP\\code\\medical_sam_adapter\\eval_polyp_v3.py",
+      "sha256": "c1d192ecea7110ecc13a1b2d4c06544fd9cff8ee258f8a46370e899183ad90b1",
+      "purpose": "Evaluation split and prompt generation; current code",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E11",
+      "path": "E:\\Project\\FYP_FINAL\\templet\\[GroupID] FYP Thesis.docx",
+      "sha256": "95d7913d014745ca1ee731174deb04273c007d5dcbb35f94705b22f2e50d33cc",
+      "purpose": "University structure and written formatting requirements",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E12",
+      "path": "E:\\Project\\FYP_FINAL\\analysis\\REMAINING_EXPERIMENTS_RESULTS.md",
+      "sha256": "08bf7370f615c887fa1cf657361225bd255eef0a7d3ac2f94b96e61a399eb77b",
+      "purpose": "MSA-B prompt comparison, sequence analysis, training pilot and new metric table",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E13",
+      "path": "E:\\Project\\FYP_FINAL\\analysis\\PROTOCOL.md",
+      "sha256": "577d28dbace2a4c4154aab2d47b2133133dbc40f9a441e7b400cd8ecd11f1701",
+      "purpose": "Relative area and boundary proxy definitions and metric protocol",
+      "human_verification": "pending"
+    },
+    {
+      "id": "E14",
+      "path": "E:\\Project\\FYP_FINAL\\manuscript\\tables\\table_main_boxprompt_surface_hd95.csv",
+      "sha256": "360874f2214025954b41e82110a83d1fd81a7e0c9e8ef6e19694ee2c377c2c97",
+      "purpose": "Reconciled primary results with surface metrics",
+      "human_verification": "pending"
+    }
+  ],
+  "sample_paragraph_sources": {
+    "1": [
+      "E01",
+      "E03",
+      "E12",
+      "E13"
+    ],
+    "2": [
+      "E04",
+      "E05",
+      "E07",
+      "E08",
+      "E09"
+    ],
+    "3": [
+      "E01",
+      "E03"
+    ],
+    "4": [
+      "E03",
+      "E09",
+      "E12"
+    ],
+    "5": [
+      "E06",
+      "E10",
+      "E12"
+    ],
+    "6": [
+      "E13",
+      "E14"
+    ]
+  },
+  "automated_checks": {
+    "split_train": 880,
+    "split_val": 120,
+    "split_overlap": 0,
+    "core_summary_files": 15,
+    "template_unchanged": true,
+    "preserve_only_package_parts_unchanged": true
+  },
+  "unresolved": [
+    "Author and supervisor review",
+    "Run-specific implementation reconciliation",
+    "Original-paper citation verification",
+    "Complete metric audit",
+    "Final schematic and qualitative figure creation"
+  ]
+}

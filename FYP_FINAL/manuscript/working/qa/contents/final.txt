@@ -1,0 +1,1162 @@
+Promptable Medical Image Segmentation Foundation
+    Models for Endoscopic Polyp Segmentation
+
+                                 by
+
+                [Student name(s) and student ID(s)]
+
+
+                    A Final Year Project Thesis
+         submitted in partial fulfillment of the requirements
+                          for the degree of
+
+
+                        Bachelor of Science
+                                in
+                           Data Science
+                                at
+
+
+          Beijing Normal-Hong Kong Baptist University
+
+
+                           [Month, Year]
+
+
+
+
+                                                                I
+                                    ABSTRACT
+
+Endoscopic polyp segmentation requires a model to delineate lesions that vary in size,
+appearance and boundary contrast. Promptable segmentation models can use location cues
+supplied as boxes or points, but their performance depends on how those cues are generated and
+whether the model has been adapted to the target task. This study evaluates general-purpose
+Segment Anything Model (SAM), medically pretrained MedSAM and polyp-specific
+adaptations under a shared prompting protocol.
+The primary comparison used 880 Kvasir-SEG images for adaptation, 120 Kvasir-SEG
+validation images and 612 CVC-ClinicDB frames for evaluation. The reference prompt was a
+bounding box derived from the annotation and expanded by 30 pixels on each side. The
+comparison included low-rank adaptation, Medical SAM Adapter and PP-SAM as an existing
+fine-tuning reference. Segmentation was assessed using Dice, intersection over union and
+contour metrics. A separate benchmark measured inference latency on three configurations.
+SAM ViT-L achieved the highest zero-shot mean Dice on Kvasir-SEG validation and CVC-
+ClinicDB, at 0.8140 and 0.6588, respectively. All four full-data low-rank or adapter
+configurations improved mean Dice over their corresponding zero-shot baselines on both
+primary datasets. PP-SAM achieved the highest mean Dice on Kvasir-SEG validation (0.9226),
+while SAMed led on CVC-ClinicDB (0.8608). In the five-configuration external follow-up, PP-
+SAM led on CVC-ColonDB and zero-shot SAM ViT-B led on ETIS-LaribPolypDB. The effects
+of prompt type, translation and enlargement varied by configuration and dataset. Area and
+boundary-contrast analyses also revealed configuration-dependent differences.
+The study provides a reproducible reference for comparing promptable polyp segmentation
+under controlled location cues. The results characterise segmentation of individual frames using
+annotation-derived prompts and illustrate why cross-dataset evaluation is needed when
+selecting a model.
+
+
+
+
+                                                                                              II
+                                                                            Contents
+
+ABSTRACT .....................................................................................................................................................II
+1 Introduction ................................................................................................................................................... 1
+     1.1 Background and motivation .................................................................................................................... 1
+     1.2 Research problem ................................................................................................................................... 1
+     1.3 Research questions .................................................................................................................................. 2
+     1.4 Contributions and scope.......................................................................................................................... 2
+     1.5 Thesis organisation ................................................................................................................................. 2
+2 Related Work ................................................................................................................................................. 3
+     2.1 Endoscopic polyp segmentation ............................................................................................................. 3
+     2.2 SAM and medical-domain adaptation .................................................................................................... 3
+     2.3 Parameter-efficient adaptation ................................................................................................................ 4
+     2.4 Limited annotation and prompt sensitivity ............................................................................................. 5
+     2.5 Position of this study............................................................................................................................... 5
+3 Research Methodology .................................................................................................................................. 6
+     3.1 Study design............................................................................................................................................ 6
+     3.2 Datasets and partitioning......................................................................................................................... 6
+     3.3 Model groups and comparisons .............................................................................................................. 7
+     3.4 Prompt construction and variants............................................................................................................ 8
+     3.5 Evaluation and subgroup analysis ........................................................................................................... 9
+          3.5.1 Evaluation metrics .......................................................................................................................... 9
+          3.5.2 Image subgroup definitions .......................................................................................................... 10
+          3.5.3 Inference timing ........................................................................................................................... 10
+     3.6 Statistical analysis and validity ............................................................................................................. 11
+          3.6.1 Statistical comparisons ................................................................................................................. 11
+          3.6.2 Validity of comparisons ............................................................................................................... 11
+4 Design and Implementation ........................................................................................................................ 12
+     4.1 Experimental pipeline ........................................................................................................................... 12
+     4.2 Input preprocessing and prompt preparation ........................................................................................ 12
+     4.3 Model adaptation and training .............................................................................................................. 13
+     4.4 Inference and evaluation outputs .......................................................................................................... 14
+     4.5 Reproducibility records......................................................................................................................... 14
+
+                                                                                                                                                                III
+5 Results and Discussion ................................................................................................................................ 15
+     5.1 Zero-shot performance (RQ1)............................................................................................................... 16
+     5.2 Polyp-specific adaptation (RQ2)........................................................................................................... 16
+          5.2.1 Full-data comparison .................................................................................................................... 16
+          5.2.2 Additional cross-dataset evaluation ............................................................................................. 17
+          5.2.3 Annotation budget ........................................................................................................................ 17
+     5.3 Prompt sensitivity (RQ3) ...................................................................................................................... 18
+          5.3.1 Box expansion .............................................................................................................................. 18
+          5.3.2 Point prompts and translated boxes .............................................................................................. 19
+          5.3.3 Sequence-level comparison on CVC-ClinicDB ........................................................................... 19
+     5.4 Relative polyp area and boundary contrast (RQ3) ................................................................................ 20
+          5.4.1 Relative polyp area ....................................................................................................................... 20
+          5.4.2 Boundary colour contrast ............................................................................................................. 20
+     5.5 Inference speed ..................................................................................................................................... 22
+     5.6 Interpretation and limitations ................................................................................................................ 22
+6 Conclusion and Future Work ..................................................................................................................... 24
+     6.1 Answers to the research questions ........................................................................................................ 24
+     6.2 Contributions and scope........................................................................................................................ 24
+     6.3 Future work ........................................................................................................................................... 24
+References ....................................................................................................................................................... 25
+Appendix A Reproduction Index .................................................................................................................. 26
+Appendix B Pseudo-label and Automatic-prompt Pilot.............................................................................. 27
+
+
+
+
+                                                                                                                                                                 IV
+                                    DECLARATION
+
+I hereby declare that all the work done in this project is of my independent effort. I also certify
+that I have never submitted the idea and product of this project for any academic or employment
+credits.
+
+Signature: ___________________________
+Student Name: ___________________________
+
+Student ID: ___________________________
+Date: ___________________________
+
+
+
+
+                                                                                                 V
+             Beijing Normal-Hong Kong Baptist University
+
+                                 Data Science Program
+
+We hereby recommend that the project submitted by [Student name(s)], entitled "Promptable
+Medical Image Segmentation Foundation Models for Endoscopic Polyp Segmentation", is
+accepted in partial fulfillment of the requirements for the degree of Bachelor of Science
+(Honours) in Data Science Program.
+
+Supervisor: ___________________________
+Date: ___________________________
+
+
+
+
+                                                                                       VI
+                            ACKNOWLEDGEMENT
+
+We thank our supervisor, Dr. Donglong Chen, for his guidance on this final year project. We
+also acknowledge the researchers who made the datasets, models and software used in this study
+publicly available.
+
+
+
+
+                                                                                           VII
+1 Introduction
+
+1.1 Background and motivation
+
+Endoscopic polyp segmentation delineates the visible extent of a polyp in a colonoscopy image. The
+output is a mask that assigns each pixel to foreground or background. A location cue such as a point
+or a box can narrow the region of interest, but the model must still infer the shape and boundary of
+the lesion from the image. Variation in apparent size, indistinct transitions between polyps and
+surrounding tissue, and differences across imaging sources can make this task difficult [1, 2, 3].
+
+The Segment Anything Model (SAM) accepts spatial prompts and predicts a corresponding mask [4].
+Its use on colonoscopy images raises two practical questions. The first is how well existing
+checkpoints segment polyps when given an informative prompt. The second is how much the
+observed performance changes when the models are adapted to labelled polyp images. MedSAM
+provides a medical-domain reference [5], while low-rank updates and adapter modules offer different
+ways to fit a segmentation model to a specific task. These approaches motivate a comparison that
+gives the evaluated configurations the same prompt information and uses the same outcome
+definitions.
+
+1.2 Research problem
+
+Performance figures from separate publications can describe different tasks. A supervised image-only
+polyp segmenter receives the image, while a promptable model may also receive a box around the
+lesion. Training partitions, test datasets and metric implementations can differ as well. To assess the
+models under a defined condition, this study compares SAM-based configurations on shared
+evaluation images using boxes generated from the reference masks.
+The main experiments distinguish zero-shot evaluation from adaptation on the Kvasir-SEG training
+split [6]. Checkpoints are evaluated on the Kvasir-SEG validation split and CVC-ClinicDB [7]. This
+design makes it possible to examine performance within the development dataset and on a second
+dataset. Additional experiments test whether results depend on the prompt setting or vary across
+images grouped by relative polyp area or boundary contrast.
+
+
+
+
+                                                                                                     1
+1.3 Research questions
+
+RQ1. Under the same box-prompt protocol, how do zero-shot SAM and MedSAM differ in polyp
+segmentation performance on the Kvasir-SEG validation split and CVC-ClinicDB?
+RQ2. After adaptation on the full Kvasir-SEG training split, how do the LoRA and Adapter
+configurations perform relative to the zero-shot baselines on Kvasir-SEG validation and CVC-
+ClinicDB?
+
+RQ3. For the evaluated models, how does segmentation performance change with prompt type, box
+expansion or box translation? What differences are observed across groups defined by relative polyp
+area and boundary contrast?
+RQ1 and RQ2 define the main comparison. RQ3 is exploratory. The effect of using smaller labelled
+support sets is examined as a supplementary analysis of RQ2.
+
+1.4 Contributions and scope
+
+This thesis establishes a common evaluation protocol for zero-shot and polyp-adapted configurations.
+It records how the prompts, data partitions and metrics are constructed so that each reported result
+can be interpreted under its evaluation conditions.
+It compares LoRA and Adapter configurations trained on Kvasir-SEG against the available zero-shot
+baselines. PP-SAM provides an existing fine-tuning reference. The primary comparison reports
+within-dataset and cross-dataset performance. A follow-up evaluates five fixed configurations on two
+additional datasets.
+It also examines sensitivity to box size, box position and point prompts, and reports descriptive
+differences across image-area and boundary-contrast groups. The main experiments concern
+individual images with prompts derived from the annotations. Relative foreground area and contrast
+describe image properties, and the conclusions apply to the evaluated configurations and prompt
+conditions.
+
+1.5 Thesis organisation
+
+Chapter 2 reviews polyp segmentation, promptable models and adaptation methods. Chapter 3
+specifies the datasets, experimental comparisons, prompting protocols and evaluation measures.
+Chapter 4 describes the implementation and the information required to reproduce the reported results.
+Chapter 5 presents and discusses the findings for each research question. Chapter 6 summarises the
+conclusions and outlines further work.
+
+
+
+
+                                                                                                    2
+2 Related Work
+
+2.1 Endoscopic polyp segmentation
+
+Supervised polyp segmentation methods learn to map endoscopic images to binary masks. PraNet
+combines features into an initial polyp prediction and uses reverse attention to refine regions that the
+initial prediction leaves unresolved [1]. UACANet explicitly models uncertain regions in an
+intermediate saliency map and uses this information when refining its predictions [2]. These studies
+illustrate two reasons to examine more than average overlap. Fine structures may be lost when
+features are combined across scales, and a plausible foreground region may still have an inaccurate
+contour.
+Cross-dataset performance is also relevant. The PolypGen data descriptor documents images and
+sequences from multiple centres and frames generalisability as a distinct evaluation problem [3]. In
+this thesis, Kvasir-SEG is the development dataset and CVC-ClinicDB provides the principal cross-
+dataset comparison [6, 7]. Relative foreground area captures the amount of annotated polyp visible
+within the image. Boundary contrast provides a separate image-derived description of the transition
+around the reference contour. Both properties can vary between datasets, which motivates reporting
+subgroup results separately for each dataset.
+
+PraNet's coarse-to-fine design offers a way to revisit ambiguous regions, while UACANet explicitly
+separates predictions by their estimated uncertainty. Both can run from an image alone, which makes
+them relevant to automatic segmentation. A reported score for either method also reflects its training
+partitions and test images. The present benchmark gives each configuration an annotation-derived
+box, so a direct comparison with an image-only score would require an evaluation that accounts for
+the extra location information.
+
+2.2 SAM and medical-domain adaptation
+
+SAM separates image encoding, prompt encoding and mask decoding [4]. The image encoder
+produces a representation of the frame. The prompt encoder represents the spatial cue. The mask
+decoder uses both representations to predict the segmentation. A point conveys a location, while a
+box conveys location and approximate extent. This distinction matters in colonoscopy because the
+amount of information supplied by the prompt can affect the apparent difficulty of the task.
+
+MedSAM adapts the SAM framework using medical images and annotations [5]. It offers a relevant
+comparison with general-purpose SAM because the two checkpoints reflect different training
+domains. The comparison in this thesis evaluates both without further fitting on Kvasir-SEG. It
+therefore addresses the behaviour of the selected pretrained configurations on the evaluated polyp
+datasets. The same prompting protocol makes their outputs comparable for this task, while checkpoint
+and input pipeline differences remain part of the configurations being tested.
+                                                                                                      3
+Figure 2.1 illustrates how MedSAM combines the image embedding with a bounding-box prompt to
+produce a mask.
+
+
+
+
+Figure 2.1 MedSAM training modalities and box-prompted architecture. The CT example illustrates the published model.
+Source: Ma et al. [5], Fig. 2.
+
+
+2.3 Parameter-efficient adaptation
+
+Low-rank adaptation (LoRA) represents a weight update as the product of two smaller trainable
+matrices [8]. The rank determines the size of that update. SAMed applies this approach to SAM for
+medical image segmentation [9]. A LoRA configuration can still update components outside the
+layers with low-rank updates. For reproducibility, the exact set of trainable modules must therefore
+be stated alongside the rank.
+
+Medical SAM Adapter introduces trainable adapter components into SAM for medical image
+segmentation [10]. LoRA constrains updates to selected weight matrices, while adapters add a
+separate trainable path within the network. Both approaches offer a way to adapt the image encoder
+without updating all its pretrained weights. In these implementations, other modules can also be
+trainable. A comparison between the complete recipes therefore measures the combined effects of
+initial weights, trainable modules and inference settings. Section 4.3 documents the modules updated
+in each configuration.
+
+Table 2.1 Roles of the main model families in the study
+
+ Model family               Role in this study
+
+ SAM and MedSAM             Pretrained zero-shot references under the common box-prompt protocol.
+
+ SAMed and                  Low-rank polyp adaptation compared with the appropriate available zero-shot
+ MedSAM with                baselines.
+ LoRA
+
+ Medical SAM                Polyp-trained adapter configurations with ViT-B and ViT-L backbones.
+ Adapter
+
+ PP-SAM                     Published polyp adaptation method used as a full-encoder fine-tuning
+                            reference.
+
+                                                                                                                  4
+2.4 Limited annotation and prompt sensitivity
+
+Few-shot adaptation examines what can be achieved with a small set of labelled training images. PP-
+SAM used perturbed bounding-box prompts during fine-tuning and evaluated its sensitivity to such
+perturbations at inference [11]. This strategy directly addresses variation in boxes. Its results depend
+on how training perturbations and evaluation boxes are generated. In this study, PP-SAM provides a
+full-encoder reference alongside the lightweight adaptations. The number of labelled training images
+governs supervision during adaptation, while the inference prompt determines the spatial information
+available for an individual prediction.
+
+These choices are evaluated separately here. The annotation-budget comparison reports SAMed and
+PP-SAM runs trained with 1, 5, 10 and 880 images. The prompt comparisons reuse fixed checkpoints
+and change the prompts at inference. Outward expansion changes the amount of surrounding tissue
+included in the box. Translation changes the position of a box whose dimensions are held fixed. A
+point and a box supply different spatial cues, so the point-versus-box comparison concerns a change
+in prompt representation.
+
+2.5 Position of this study
+
+Prior work provides supervised systems for delineating polyps, general and medical promptable
+checkpoints, and several ways to adapt the checkpoints with labelled data. The present study brings
+selected configurations together under a common box-prompt protocol for two-dimensional
+colonoscopy images. It compares zero-shot and polyp-adapted performance across the designated
+datasets and then examines where outcomes differ with prompt conditions, foreground area and
+boundary contrast. These complementary comparisons connect the methods reviewed in this chapter
+to the experimental design in Chapter 3.
+
+
+
+
+                                                                                                      5
+3 Research Methodology
+
+3.1 Study design
+
+This study evaluates promptable segmentation models on two-dimensional colonoscopy images.
+Each prediction is made from one image and its prompt. The main comparison uses a common
+evaluation split, an annotation-derived box and the same outcome definitions. This setup allows the
+performance of zero-shot and polyp-adapted configurations to be compared under a common
+prompting protocol.
+RQ1 examines zero-shot SAM and MedSAM. RQ2 compares zero-shot baselines with models
+adapted using the full Kvasir-SEG training partition. RQ3 explores variation in performance under
+different prompt settings and in groups defined by foreground area and boundary contrast. Table 3.1
+maps these questions to the experiments.
+
+Table 3.1 Research questions and corresponding comparisons
+
+ Question                Comparison
+
+ RQ1 Zero-shot           Evaluate SAM ViT-B, SAM ViT-L and MedSAM on the same frames using
+ performance             the default box.
+
+ RQ2 Polyp-specific      Compare the full-data LoRA and Adapter configurations with zero-shot
+ adaptation              baselines. Use PP-SAM as an existing fine-tuning reference.
+
+ RQ3 Prompt and          Compare box expansion, box translation and point prompts. Summarise
+ image conditions        performance by relative area and boundary contrast.
+The annotation-budget comparison supplements RQ2. It uses the recorded SAMed and PP-SAM runs
+with 1, 5, 10 and 880 labelled training images. The smaller support sets come from the same training
+partition. A separate 5-shot SAMed pilot crossed three optimisation seeds with fixed and redrawn
+support settings, yielding six training runs. The pilot used a 12-epoch schedule at a learning rate of
+0.0005 and evaluated the final checkpoint. It used the full Kvasir validation split and one frame from
+each of the 29 locally indexed CVC sequences. The shortened schedule and the sampled CVC set
+define a separate repeatability analysis.
+
+3.2 Datasets and partitioning
+
+Kvasir-SEG provides endoscopic polyp images and pixel-level masks [6]. In this study, the filename
+lists specify 880 training images and 120 validation images. The lists have no overlapping identifiers.
+Adaptation uses the training partition. The validation partition is used for model selection where
+applicable and for reporting within-dataset performance.
+
+
+                                                                                                     6
+CVC-ClinicDB was used for cross-dataset evaluation [7]. The evaluated set contains 612 annotated
+frames. No CVC-ClinicDB images were used to fit or select the polyp-adapted checkpoints in the
+main comparison. Local frame metadata group these 612 images into 29 sequences for the exploratory
+statistical analysis in Section 3.6.1.
+ETIS-LaribPolypDB [12] and CVC-ColonDB [13] provide an additional evaluation of five fixed
+configurations. The local TestDataset copies contained 196 and 380 files, respectively, matching the
+counts documented for the PraNet redistribution [14]. The screened inputs are identified by image
+and binary-mask hashes in the evaluation archive. The follow-up evaluated zero-shot SAM ViT-B,
+MSA-B, SAMed, MedSAM+LoRA and PP-SAM with fixed checkpoints and 30-pixel boxes. Exact
+SHA-256 checks covered the local Kvasir-SEG and CVC-ClinicDB sets and the two external sets.
+Repeated images with identical annotations were counted once, and duplicate groups with conflicting
+masks were excluded. The retained sets contained 190 and 342 images. Exact file hashing can miss
+re-encoded copies, and the provenance of images used in base-model pretraining is unknown.
+
+Table 3.2 Data partitions and analysis roles
+
+ Dataset or partition         Images           Role
+
+ Kvasir-SEG training          880              Fit adapted models and draw few-shot support sets.
+
+ Kvasir-SEG validation        120              Select checkpoints where applicable and evaluate performance
+                                               within Kvasir-SEG.
+
+ CVC-ClinicDB                 612              Evaluate cross-dataset performance and analyse paired prompt
+                                               changes by video sequence.
+
+ ETIS-LaribPolypDB            190              Evaluate five fixed configurations on an additional dataset.
+
+ CVC-ColonDB                  342              Evaluate the same five configurations on a second additional
+                                               dataset.
+
+
+3.3 Model groups and comparisons
+
+The zero-shot group consists of Segment Anything Model (SAM) ViT-B and ViT-L [4] and the
+medical-domain MedSAM model [5]. Zero-shot here indicates that these checkpoints were evaluated
+without polyp-specific fitting in this project. Ground-truth-derived prompts were supplied during
+inference for all configurations in the main comparison.
+The adapted group includes rank-four low-rank adaptation (LoRA) configurations based on SAMed
+[9] and MedSAM, and polyp-trained Medical SAM Adapter configurations with ViT-B and ViT-L
+backbones [10]. The adapter configurations are referred to as MSA-B and MSA-L. The main
+adaptation comparison uses the checkpoints trained with all 880 Kvasir training images. Comparisons
+with zero-shot configurations use the closest available initial weights and backbone as the reference.
+For example, MedSAM with LoRA is compared with zero-shot MedSAM. The wider comparison
+                                                                                                              7
+describes the performance of complete model configurations, which can differ in training recipes,
+input resolution and mask selection.
+PP-SAM is an existing polyp adaptation method based on perturbed box prompts [11]. In the project
+implementation, it serves as a full-encoder fine-tuning reference. The evaluated training recipe left
+the mask decoder frozen. Training details and trainable modules are documented in Chapter 4. Results
+from methods evaluated without the default annotation-derived box belong in separate comparisons
+because the input information differs.
+
+3.4 Prompt construction and variants
+
+The default evaluation prompt was derived from the tight bounding box of the annotated foreground
+in the original image. Let the box coordinates be xmin, ymin, xmax and ymax, with maxima defined by the
+foreground pixel indices. Each minimum is decreased by the chosen expansion and each maximum
+is increased by the same amount. The resulting coordinates are clipped to the image bounds using the
+evaluation code's coordinate convention. The default expansion is 30 pixels. Prompt generation takes
+place before any model-specific coordinate transformation. The same prompt is supplied to every
+configuration in the main comparison.
+
+Figure 3.1 shows how the reference mask and an annotation box relate to the original frame.
+
+
+
+
+Figure 3.1 Examples of image, mask and box annotations in Kvasir-SEG. The bottom row shows dataset boxes. The 30-
+pixel expansion used in this study is applied separately. Source: Jha et al. [6], Fig. 2.
+
+The expansion experiment uses deterministic outward expansions of 0, 10, 30 and 50 pixels on
+selected trained configurations. Its analysis uses runs with traceable raw outputs for the plotted
+comparisons. The local SAMed expansion series uses its own 30-pixel rerun, while the main
+comparison retains the formal SAMed checkpoint evaluation. The training-time random box
+perturbation in PP-SAM serves a separate purpose from these fixed evaluation settings.
+                                                                                                               8
+The point and box-translation experiments use zero-shot SAM ViT-B and MSA-B. For translations,
+the 30-pixel reference box is shifted in each cardinal direction. The requested displacement is 5% of
+the corresponding image dimension, rounded to a whole pixel. When the image edge prevents the full
+shift, the displacement is reduced while box width and height are preserved. The overall analysis
+retains these cases. A supplementary comparison records results for the subset that received the full
+requested displacement in each direction.
+Point prompts are derived from the same annotation. One condition uses the foreground pixel farthest
+from the background, with ties resolved in row-major order. A second condition adds one sampled
+negative point from the background using base seed 24. A third condition samples one positive point
+uniformly from the foreground for each of three base seeds (24, 42 and 1234). The seed for a frame
+is derived from the base seed and a stable hash of the image identifier. Within each model, its decoder
+and mask-selection settings are held constant across prompt conditions.
+
+3.5 Evaluation and subgroup analysis
+
+3.5.1 Evaluation metrics
+Metrics are computed between a binary prediction and the reference mask at native image resolution.
+Let TP, FP and FN denote the numbers of true-positive, false-positive and false-negative foreground
+pixels. The Dice coefficient is 2TP/(2TP + FP + FN), and intersection over union (IoU) is TP/(TP +
+FP + FN). Precision is TP/(TP + FP), and recall is TP/(TP + FN). Reported precision follows the
+archived implementation's convention of assigning 1 when the prediction contains no positive pixels.
+For an empty prediction on an image with annotated foreground, Dice, IoU, recall and boundary F1
+are zero. The reported segmentation means give one weight to each evaluated image. Standard
+deviations, where reported, describe variation across images.
+Boundary F1 measures contour agreement. A boundary pixel is obtained from the difference between
+a foreground mask and its four-connected erosion. The matching tolerance is 0.5% of the image
+diagonal, rounded to a whole pixel with a minimum of one pixel. Boundary precision is the proportion
+of predicted boundary pixels within the tolerance of the reference boundary. Boundary recall uses the
+reverse direction. Their harmonic mean gives boundary F1.
+Surface HD95 describes contour distance. For each boundary pixel, find the distance to its nearest
+point on the other boundary. Take the 95th percentile separately in each direction and report the larger
+value in original-image pixels. Surface HD95 is undefined for an empty prediction and the table gives
+the number of finite measurements. The same implementation was applied to saved predictions in all
+28 rows of the main results table. The saved predictions were reconciled against the recorded overlap
+metrics before recomputation.
+
+
+
+
+                                                                                                      9
+3.5.2 Image subgroup definitions
+Relative polyp area is the fraction of original-image pixels labelled as foreground. The primary groups
+use area fractions of at most 5%, greater than 5% up to 20%, and greater than 20%. A sensitivity
+analysis also uses the area tertiles estimated from the 880 Kvasir training masks and applies those
+cutoffs to both primary evaluation sets. Each area group describes how much of the image is occupied
+by annotated foreground.
+Boundary contrast is the Euclidean distance between the mean CIELAB colours in narrow bands
+immediately inside and outside the annotated boundary. The primary band width is 0.5% of the image
+diagonal, rounded to the nearest pixel with a minimum of two pixels. The lower and upper quartiles
+within each dataset define the low, intermediate and high contrast groups. Alternative band widths
+and the median grayscale gradient magnitude along the annotated boundary provide sensitivity checks.
+Area and contrast groups are also crossed to examine how their overlap may affect the descriptive
+results.
+
+Figure 3.2 illustrates examples selected by the contrast measure within the medium-area group.
+
+
+
+
+Figure 3.2 Boundary-contrast examples from Kvasir-SEG validation and CVC-ClinicDB. Each row shows the two lowest
+and two highest proxy values within that dataset's medium-area group. Cyan indicates the annotated contour. Selection
+used image and annotation features.
+
+3.5.3 Inference timing
+SAM ViT-B, SAM ViT-L and MSA-B were benchmarked at batch size one on an NVIDIA GeForce
+RTX 4070 Ti SUPER. Thirty images from each primary dataset were sampled without replacement
+using a fixed seed. After five warm-up images per dataset and configuration, the same 30 images
+                                                                                                                  10
+were used in three timed passes. GPU work was synchronised around each timer. Latency includes
+model-specific preprocessing, image encoding, prompt decoding and returning the mask to the host.
+The timed interval excludes disk reads, model loading and prompt generation. Each model retained
+its configured input resolution. Frames per second are computed by dividing 1,000 by the mean
+latency in milliseconds.
+
+3.6 Statistical analysis and validity
+
+3.6.1 Statistical comparisons
+For the point and box-translation study, the effect for a frame is the metric under the tested prompt
+minus the metric under that frame's 30-pixel reference box. The three trials for the random-positive
+condition are averaged within each frame before aggregation. This yields a matched comparison of
+prompts for each configuration.
+For CVC-ClinicDB, frame-level Dice changes are averaged within each of the 29 video sequences,
+then averaged equally across sequences. The exploratory analysis considers 21 contrasts across seven
+nonreference prompt conditions. These comprise the paired change within SAM ViT-B, the paired
+change within MSA-B and the difference between the two configurations' paired changes. Two-sided
+Monte Carlo sign-flip tests use 100,000 draws and assume independent, symmetric sequence-level
+paired differences under the null. Holm correction is applied across all 21 contrasts. Unadjusted 95%
+percentile intervals are obtained by bootstrapping sequences. Kvasir prompt results and the image
+subgroup comparisons are reported descriptively.
+
+3.6.2 Validity of comparisons
+The annotation-derived box and points provide lesion location information during evaluation. The
+resulting comparisons characterise segmentation under supplied prompts. The validation scores for
+Kvasir-SEG also reflect checkpoint selection, and the local CVC sequence groups define the sampling
+unit for the statistical analysis.
+
+The area and contrast analyses were conducted after the primary experiments. A fixed expansion in
+pixels changes the box size proportionally more for smaller boxes, so differences between area groups
+may reflect a combination of foreground scale and prompt geometry. The colour and gradient
+measurements are image-derived proxies for boundary visibility and can be affected by illumination,
+texture and reflections. Expert boundary ratings would be needed to determine how closely these
+proxies agree with human assessments. The few-shot pilot addresses training variation only for its
+own short schedule and the tested support draws.
+
+
+
+
+                                                                                                   11
+4 Design and Implementation
+
+4.1 Experimental pipeline
+
+The pipeline loaded released weights for the zero-shot baselines and fitted the adapted configurations
+on the Kvasir-SEG training partition. Checkpoint selection used mean Dice on Kvasir-SEG validation.
+Both branches converged at evaluation, where the scripts passed a common image and annotation-
+derived box through each configuration's input transformation and decoder (Figure 4.1).
+
+
+
+
+Figure 4.1 Training and evaluation pipeline for the primary comparison. Reference boxes for inference are derived from
+the corresponding frame annotations.
+
+
+4.2 Input preprocessing and prompt preparation
+
+Evaluation scripts paired each frame with its annotation by image identifier and decoded the frame
+as RGB. They converted the grayscale annotation into a binary reference, treating values above 127
+as foreground. The scripts constructed prompts on that original image grid and then mapped the
+prompt coordinates together with the image into the model's input space.
+SAM, MedSAM, both LoRA configurations and PP-SAM used the SAM predictor. It resized the
+longest side to 1,024 pixels while preserving aspect ratio, then normalised and padded the image for
+the encoder. It scaled the prompt coordinates using the resized dimensions. MSA-B and MSA-L used
+bilinear interpolation to resize images to 512 × 512 before model preprocessing. Horizontal and
+vertical prompt coordinates were scaled by 512 divided by the original width and height, respectively.
+
+
+
+
+                                                                                                                   12
+4.3 Model adaptation and training
+
+Table 4.1 records the full-data training runs used in the main comparison. The selected epoch corresponds to the best
+recorded Kvasir-SEG validation Dice for each configuration.
+
+Table 4.1 Training settings and selected epochs for the 880-image runs
+
+ Configuration           Initial weights and updated modules Optimisation and checkpoint
+                                                                         selection
+
+ SAMed                   SAM ViT-B. Rank-four LoRA on                    AdamW, peak learning rate 0.0005,
+                         query and value projections, plus the           batch size 1. Ran 160 epochs of a 200-
+                         prompt encoder and mask decoder.                epoch schedule. Selected epoch 35.
+
+ MedSAM + LoRA           MedSAM ViT-B. Same trainable                    AdamW, peak learning rate 0.0005,
+                         modules as SAMed.                               batch size 1. Ran 160 epochs of a 200-
+                                                                         epoch schedule. Selected epoch 50.
+
+ MSA-B                   SAM ViT-B. Image encoder adapters               Adam, LR 0.0001, batch size 4. 40
+                         and mask decoder.                               epochs, selected epoch 26.
+
+ MSA-L                   SAM ViT-L. Image encoder adapters               Adam, LR 0.0001, batch size 2. 40
+                         and mask decoder.                               epochs, selected epoch 21.
+
+ PP-SAM                  SAM ViT-B. Full image encoder and               AdamW, LR 0.0001, batch size 1. 100
+                         prompt encoder.                                 epochs, selected epoch 61.
+The SAMed and MedSAM + LoRA scripts attached rank-four low-rank updates to the query and
+value projections in the image encoder. The pretrained image encoder weights remained frozen, and
+the prompt encoder and mask decoder also received gradient updates. Each run updated
+approximately 4.21 million parameters, or 4.49% of the instantiated model. Both scripts used tight
+annotation boxes during training and combined binary cross-entropy and Dice losses with weights of
+0.2 and 0.8. The full-data runs used a 250-iteration learning-rate warm-up, polynomial decay, and
+AdamW weight decay of 0.1.
+For MSA-B and MSA-L, the training loop encoded a sampled positive point without updating the
+prompt encoder. It used foreground-weighted binary cross-entropy at a mask output size of 256 ×
+256. The default evaluation used the expanded box defined in Section 3.4.
+
+PP-SAM updated the full image encoder and prompt encoder with a frozen mask decoder. For training,
+it expanded each side of the tight box by an independently sampled integer between 0 and 50 pixels
+and clipped the coordinates to the image bounds. The training objective combined spatially weighted
+binary cross-entropy and IoU losses. This randomised training prompt preceded the deterministic box
+construction used at evaluation.
+
+
+                                                                                                                  13
+The annotation-budget experiments used separate SAMed and PP-SAM runs at 1, 5 and 10 labelled
+images. The archived SAMed few-shot runs used 100 epochs and a peak learning rate of 0.005. PP-
+SAM used its 100-epoch schedule at a learning rate of 0.0001 across budgets. The SAMed budget
+comparison therefore reflects the recorded recipes at each budget, including their different learning
+rates and schedules.
+
+4.4 Inference and evaluation outputs
+
+The SAM predictor configurations requested one candidate mask per prompt. The predictor restored
+the selected logits to native resolution, removed the input padding during that transformation and
+thresholded the restored logits at zero. The MSA evaluators requested multiple candidates and
+selected the mask with the highest model-predicted IoU score. They bilinearly resized that mask's
+logits to 512 ×512, applied a sigmoid and binarised at a probability threshold of 0.5. They then used
+nearest-neighbour interpolation to restore the binary mask to the original frame dimensions. Metric
+computation in both paths used the restored binary mask. During the dedicated point and box-
+translation experiments, each model reused the image embedding for the alternative prompts on the
+same frame.
+
+The evaluators wrote a predicted mask and per-image metric record keyed by image identifier, and a
+JSON summary for each run. The thesis results use those records for overlap metrics. For surface
+HD95, a common post-evaluation script paired the saved predictions with reference masks, verified
+the pairings by reconciling Dice and IoU with the recorded scores, and recomputed the contour
+statistic defined in Section 3.5.1. The aggregation retained the number of images with a defined
+surface distance.
+
+4.5 Reproducibility records
+
+Appendix A maps results to data splits, checkpoints, scripts and outputs. REPRODUCTION.md gives
+the commands for the prompt toolkit, evaluation and analysis. Training logs record the initial weights,
+optimisation settings and selected epoch. To rerun a few-shot experiment, use its recorded support
+set or sampling seed. Random evaluation points are reproduced from the base seed and image
+identifier.
+
+The primary SAMed runs used a cloud NVIDIA RTX 4090D. The MedSAM + LoRA and adapter
+runs used a local NVIDIA GeForce RTX 4070 Ti SUPER. The formal SAMed evaluation, local box
+series and shortened repeatability pilot have separate run records.
+
+
+
+
+                                                                                                     14
+5 Results and Discussion
+Tables 5.1 and 5.2 report the primary comparison on Kvasir-SEG validation and CVC-ClinicDB. All
+configurations received an annotation-derived box expanded by 30 pixels. The tables include the three
+zero-shot baselines and five configurations adapted using 880 labelled training images. Dice is
+reported as mean ±image-level standard deviation. The other columns report image-level means. BF1
+denotes boundary F1. Surface HD95 is measured in native-image pixels and averaged over defined
+distances.
+
+Table 5.1 Segmentation on Kvasir-SEG validation (120 images per configuration)
+
+ Model                   Dice (mean ±SD)        IoU       Precision     Recall   BF1      HD95
+                                                                                          (px)
+
+ SAM-B                   0.7497 ±0.2951         0.6680    0.7290        0.8012   0.4378   79.57
+
+ SAM-L                   0.8140 ±0.2390         0.7367    0.7873        0.8862   0.5222   76.12
+
+ MedSAM                  0.7034 ±0.2350         0.5846    0.6217        0.8394   0.2144   84.13
+
+ SAMed                   0.8955 ±0.1208         0.8280    0.8866        0.9334   0.6434   53.20
+
+ MedSAM+LoRA             0.9049 ±0.0978         0.8375    0.8692        0.9624   0.5845   54.52
+
+ MSA-B                   0.8524 ±0.2017         0.7826    0.8864        0.8670   0.5863   67.95
+
+ MSA-L                   0.8555 ±0.1823         0.7820    0.9118        0.8567   0.5288   62.29
+
+ PP-SAM                  0.9226 ±0.0705         0.8630    0.8962        0.9594   0.6133   41.58
+
+Table 5.2 Segmentation on CVC-ClinicDB (612 images per configuration)
+
+ Model                   Dice (mean ±SD)        IoU       Precision     Recall   BF1      HD95
+                                                                                          (px)
+
+ SAM-B                   0.5182 ±0.3625         0.4300    0.4767        0.6377   0.2950   54.02
+
+ SAM-L                   0.6588 ±0.3225         0.5676    0.5994        0.8181   0.3948   42.56
+
+ MedSAM                  0.5172 ±0.2105         0.3755    0.4096        0.7672   0.0863   46.07
+
+ SAMed                   0.8608 ±0.1587         0.7814    0.8513        0.9125   0.5181   28.06
+
+ MedSAM+LoRA             0.8476 ±0.1531         0.7596    0.8246        0.9098   0.4458   29.41
+
+ MSA-B                   0.7685 ±0.2808         0.6896    0.7998        0.8342   0.4821   52.27
+
+ MSA-L                   0.8234 ±0.2165         0.7432    0.8904        0.8170   0.4652   36.78
+
+ PP-SAM                  0.8576 ±0.1299         0.7699    0.8067        0.9511   0.4340   22.78
+
+
+
+                                                                                                   15
+Surface HD95 was defined for all 120 Kvasir frames per configuration. On CVC-ClinicDB, it was
+defined for 611 frames each for SAM-B, SAM-L and MSA-L, 610 for SAMed, and all 612 for the
+remaining configurations.
+
+5.1 Zero-shot performance (RQ1)
+
+SAM-L had the highest mean Dice and IoU among the zero-shot configurations on both datasets. Its
+Dice was 0.8140 on Kvasir validation and 0.6588 on CVC-ClinicDB, compared with 0.7497 and
+0.5182 for SAM-B. All three zero-shot configurations had lower mean Dice on CVC-ClinicDB than
+on Kvasir validation. The size of the difference varied by checkpoint.
+MedSAM reached a mean Dice of 0.7034 on Kvasir and 0.5172 on CVC. On CVC its Dice was close
+to SAM-B's, but its higher recall (0.7672 versus 0.6377) came with lower precision (0.4096 versus
+0.4767) and substantially lower boundary F1 (0.0863 versus 0.2950). Under the shared box protocol,
+medical pretraining alone did not confer a zero-shot Dice advantage for this MedSAM checkpoint.
+
+5.2 Polyp-specific adaptation (RQ2)
+
+5.2.1 Full-data comparison
+Each full-data LoRA or Adapter configuration improved mean Dice over its corresponding zero-shot
+baseline on both primary datasets. SAMed improved over SAM-B by 0.1457 on Kvasir and 0.3427
+on CVC. MedSAM+LoRA improved over MedSAM by 0.2014 and 0.3304, respectively. For the
+adapters, MSA-B reached 0.8524 on Kvasir and 0.7685 on CVC, while MSA-L reached 0.8555 and
+0.8234. The adapter comparisons reflect the full configurations, including the input resolutions and
+mask-selection policies described in Chapter 4.
+PP-SAM had the highest mean Dice on Kvasir (0.9226) and the lowest mean surface HD95 on both
+datasets. On CVC, SAMed and PP-SAM were close in mean Dice (0.8608 and 0.8576). SAMed had
+higher boundary F1 on both sets, whereas PP-SAM had lower mean surface HD95. The measures
+capture different aspects of the contour: boundary F1 counts contour agreement within a tolerance,
+while surface HD95 summarises distances near the tail of the contour-distance distribution. The small
+CVC Dice difference is descriptive and does not establish a stable ranking across runs.
+
+
+
+
+                                                                                                   16
+5.2.2 Additional cross-dataset evaluation
+
+Table 5.3 extends the SAM-B and MSA-B comparison to the full-data SAMed, MedSAM+LoRA and PP-SAM
+checkpoints. All five configurations used the same screened frames and 30-pixel annotation-derived boxes within each
+external dataset.
+
+Table 5.3 Mean Dice and IoU on two additional datasets
+
+ Model                          CVC-ColonDB (342 images),                 ETIS-LaribPolypDB (190
+                                Dice / IoU                                images), Dice / IoU
+
+ SAM-B                          0.6444 / 0.5534                           0.8613 / 0.7768
+
+ MSA-B                          0.6654 / 0.5819                           0.5575 / 0.4926
+
+ SAMed                          0.7754 / 0.6928                           0.7008 / 0.6339
+
+ MedSAM+LoRA                    0.7134 / 0.6270                           0.6582 / 0.5816
+
+ PP-SAM                         0.8493 / 0.7555                           0.8436 / 0.7483
+On CVC-ColonDB, all four adapted configurations scored higher than zero-shot SAM-B on both
+metrics. PP-SAM led with a mean Dice of 0.8493, an increase of 0.2049 over SAM-B. On ETIS-
+LaribPolypDB, SAM-B led with 0.8613. PP-SAM was the closest adapted configuration at 0.8436,
+followed by SAMed at 0.7008. The mean Dice and IoU rankings agreed within each dataset. The
+change in ranking shows that the advantage over SAM-B depended on the external dataset. These are
+descriptive comparisons of the five complete configurations.
+
+5.2.3 Annotation budget
+
+Table 5.4 reports the results for the archived SAMed and PP-SAM runs at four labelled training budgets. Both methods
+reached their highest mean Dice using all 880 images. Across the 1-, 5- and 10-image runs, PP-SAM scored higher than
+SAMed on both datasets. More labels within the small budgets did not always yield a higher score. For example, on CVC,
+PP-SAM scored 0.8040 with five images and 0.7709 with ten. These are individual training runs for each method and
+budget. SAMed's full-data run also used a different learning rate and schedule, so the budget results describe complete
+training recipes.
+
+Table 5.4 Mean Dice by number of labelled training images
+
+ Training images           SAMed Kvasir          SAMed CVC             PP-SAM Kvasir         PP-SAM CVC
+
+ 1                         0.7456                0.5759                0.7992                0.7516
+
+ 5                         0.7571                0.5747                0.8512                0.8040
+
+ 10                        0.7230                0.5435                0.8550                0.7709
+
+ 880                       0.8955                0.8608                0.9226                0.8576
+
+
+                                                                                                                    17
+The six-run SAMed pilot used a shorter schedule and the final checkpoint. Across three seeds with
+the same five support images, mean Dice ranged from 0.5437 to 0.6313 on Kvasir and from 0.4643
+to 0.5008 on the 29-frame CVC subset. With redrawn support, the ranges were 0.6046–0.6937 and
+0.4840–0.5822. Variation even with fixed support indicates sensitivity to the optimisation seed under
+this pilot schedule. The pilot ranges apply to its own schedule and evaluation subset.
+
+5.3 Prompt sensitivity (RQ3)
+
+5.3.1 Box expansion
+Figure 5.1 shows mean Dice at fixed outward expansions of 0, 10, 30 and 50 pixels. In every plotted
+series, mean Dice at 50 pixels was below the values at 0 and 10 pixels. PP-SAM peaked at 10 pixels
+on both datasets. On CVC, its mean Dice fell from 0.8859 with the tight box to 0.8025 at 50 pixels,
+a decrease of 8.34 percentage points. On Kvasir, MSA-B declined from 0.8573 to 0.8462 over the
+same interval, a decrease of 1.11 points. The two values describe both the sensitivity to expansion
+and the accuracy retained with the wider prompt.
+
+
+
+
+Figure 5.1 Mean Dice across fixed box expansions. MedSAM+LoRA is plotted for Kvasir validation, where a complete
+series of archived run outputs was available. The SAMed series uses its own local 30-pixel evaluation.
+
+Figure 5.2 illustrates one failure under box expansion. With the tight box, PP-SAM follows the
+annotated contour closely. With 50-pixel expansion, its prediction includes a much larger region of
+surrounding tissue. This frame had the largest paired Dice drop among the 612 CVC frames for PP-
+SAM.
+
+
+
+
+                                                                                                             18
+Figure 5.2 PP-SAM on CVC-ClinicDB frame 559. Cyan marks the reference contour, amber marks the prediction, and
+white dashed lines mark the input boxes. The frame was selected for the largest Dice decrease from the tight box to the
+50-pixel box.
+
+5.3.2 Point prompts and translated boxes
+
+Table 5.5 compares the box with the three point-prompt settings. All three point settings reduced SAM-B's mean Dice on
+Kvasir and increased it on CVC. On CVC, the interior point with a background point raised SAM-B's Dice from 0.5182
+to 0.6608. MSA-B gained Dice with point prompts on both datasets, with a smaller change on Kvasir. For example, the
+interior point on Kvasir increased MSA-B Dice by 0.0077, while boundary F1 fell from 0.5863 to 0.5705. In that setting,
+increased overlap did not imply better contour agreement.
+
+Table 5.5 Mean Dice for the reference box and point conditions
+
+ Dataset               Model         Box         Interior point      With background         Random
+                                                                     point                   positive
+
+ Kvasir val.           SAM-B         0.7497      0.6840              0.6935                  0.6813
+
+ Kvasir val.           MSA-B         0.8524      0.8601              0.8592                  0.8604
+
+ CVC-ClinicDB          SAM-B         0.5182      0.6305              0.6608                  0.6159
+
+ CVC-ClinicDB          MSA-B         0.7685      0.8068              0.8027                  0.8015
+Box translation gave direction-dependent results. Relative to the reference box, SAM-B's mean Dice
+change on CVC ranged from −0.0683 for a left shift to +0.0562 for a right shift. For MSA-B, the four
+CVC changes ranged from +0.0011 to +0.0040. The corresponding Kvasir ranges were −0.0436 to
++0.0031 for SAM-B and −0.0108 to +0.0057 for MSA-B. Image bounds sometimes limited the
+displacement. The CVC subset that received the full requested shift retained the opposite signs for
+SAM-B's left and right translations (−0.0677 and +0.0669). The tested shifts describe sensitivity to
+this specific perturbation of an annotation-derived box.
+
+5.3.3 Sequence-level comparison on CVC-ClinicDB
+Across the 29 equally weighted CVC sequences, the MSA-B interior point increased Dice by 0.0424
+relative to the default box. The marginal 95% bootstrap interval ran from 0.0250 to 0.0622, with
+                                                                                                                    19
+Holm-adjusted p = 0.00021. All three MSA-B point-versus-box comparisons had adjusted p below
+0.05. The between-model difference for left-shift effects also met that threshold (MSA-B minus
+SAM-B = 0.0737, adjusted p = 0.0365). No other contrast among the 21 met the threshold. The
+sequence weighting, multiplicity correction and sampling assumptions in Section 3.6.1 apply to these
+exploratory results.
+
+5.4 Relative polyp area and boundary contrast (RQ3)
+
+5.4.1 Relative polyp area
+Area-group results depended on the configuration (Figure 5.3). On CVC, SAM-B's mean Dice
+decreased from 0.5573 for small-area polyps to 0.2295 for large-area polyps. PP-SAM increased from
+0.7970 to 0.8986 over the same groups. On Kvasir, SAM-L scored 0.8892 in the small-area group
+and 0.7187 in the large-area group. Using the area tertiles defined on the training data retained the
+low upper-group result for SAM-B on both evaluation sets.
+
+
+
+
+Figure 5.3 Mean Dice by annotated foreground area. Small covers up to 5% of the frame, medium covers over 5% through
+20%, and large covers over 20%.
+
+To quantify relative prompt enlargement, the area of each clipped 50-pixel box was divided by the
+area of its tight box. Across CVC-ClinicDB, the mean ratios were 7.09 for small polyps (229 frames),
+3.06 for medium polyps (321 frames) and 1.92 for large polyps (62 frames). The same pixel margin
+therefore produced substantially different proportional changes across groups. Comparisons of
+expansion sensitivity by size reflect both target area and the relative amount of extra image context
+supplied by the prompt.
+
+5.4.2 Boundary colour contrast
+On Kvasir, MSA-B's low-contrast group had a mean boundary F1 of 0.4945, compared with 0.6332
+in the intermediate group and 0.5842 in the high group. On CVC, SAMed's boundary F1 rose from
+                                                                                                                 20
+0.4787 in the low group to 0.5617 in the high group. Group ordering varied by configuration and
+metric. For instance, CVC SAM-B had higher boundary F1 in the high-contrast group than in the low
+group (0.3374 versus 0.2526), while its Dice was lower (0.4135 versus 0.5633).
+
+
+
+
+Figure 5.4 Mean boundary F1 by within-dataset quartiles of boundary colour contrast. Group counts are shown in each
+panel.
+
+Area and boundary contrast were associated, with Spearman correlations of 0.257 on Kvasir and
+0.371 on CVC. The area-by-contrast analysis had uneven group sizes. For example, the CVC large-
+area group included 35 high-contrast frames and four low-contrast frames. The estimated differences
+describe the observed groups, including their different area distributions. The contrast proxy measures
+local colour separation at an annotated boundary, and expert ratings would be required to assess its
+agreement with perceived boundary visibility.
+Figure 5.5 illustrates the default-box outputs on two medium-area, low-contrast frames. Each frame
+was selected as the closest to the median paired Dice change from SAM-B to MSA-B within its
+dataset's eligible subgroup. On the illustrated CVC frame, the SAM-B mask extends beyond the
+annotated contour into the surrounding tissue. The MSA-B mask has less extension into that area.
+
+
+
+
+                                                                                                                21
+Figure 5.5 Selected low-contrast examples under the default box. Cyan shows the annotated contour and amber shows a
+prediction. Frame identifiers are cju32qr9tbvsj08013pkpjenq (Kvasir, top) and 307 (CVC, bottom).
+
+
+5.5 Inference speed
+
+Table 5.6 reports the three configurations timed using the same batch-one procedure. MSA-B had the lowest mean latency
+on both sets. Its configured input was 512 × 512, while the SAM baselines used a 1,024-pixel longest side. The timings
+reflect the full inference paths at their configured resolutions, including preprocessing, encoding, decoding and returning
+the mask to the host.
+
+Table 5.6 Mean inference latency and throughput on one RTX 4070 Ti SUPER
+
+ Model                   Kvasir validation (ms / FPS)                   CVC-ClinicDB (ms / FPS)
+
+ SAM-B                   124.75 / 8.02                                  122.62 / 8.16
+
+ SAM-L                   272.04 / 3.68                                  270.18 / 3.70
+
+ MSA-B                   38.27 / 26.13                                  37.42 / 26.72
+
+
+5.6 Interpretation and limitations
+
+The full-data adapted configurations improved on their corresponding baselines in the primary
+comparison. The follow-up extended this comparison to five configurations and found that their
+ordering depended on the dataset. All four adapted configurations exceeded SAM-B on CVC-
+ColonDB, and SAM-B led on ETIS-LaribPolypDB. The few-shot comparisons and short repeatability
+pilot indicate sensitivity to the training recipe and support images. Kvasir validation also informed
+
+
+                                                                                                                        22
+checkpoint selection, so CVC-ClinicDB provides the main comparison on data excluded from
+adaptation and selection. The CVC sequence-level tests concern prompt changes on fixed checkpoints.
+The reference prompts supplied lesion location from the annotations. The resulting scores characterise
+segmentation given that information. In the exploratory automatic-prompt pilot, the teacher-generated
+box followed by SAM-B yielded Dice of 0.2644 on Kvasir and 0.1298 on CVC, with missing boxes
+counted as empty outputs. Appendix B reports the related pseudo-label experiment and its supervised
+comparator. Claims about boundary visibility are limited to the image-derived proxy, and the speed
+estimates apply to the tested hardware, resolutions and inference paths.
+
+
+
+
+                                                                                                    23
+6 Conclusion and Future Work
+
+6.1 Answers to the research questions
+
+For RQ1, SAM-L led the zero-shot configurations in mean Dice on Kvasir-SEG validation (0.8140)
+and CVC-ClinicDB (0.6588). On CVC-ClinicDB, SAM-B and MedSAM had similar Dice. MedSAM
+recorded higher recall, while SAM-B achieved higher precision and boundary F1.
+For RQ2, the four full-data LoRA and Adapter configurations improved mean Dice over their paired
+zero-shot baselines on both primary datasets. PP-SAM led on Kvasir-SEG validation (0.9226) and
+SAMed on CVC-ClinicDB (0.8608). In the external follow-up, all four adapted configurations
+exceeded SAM-B on CVC-ColonDB, where PP-SAM led at 0.8493. On ETIS-LaribPolypDB, SAM-
+B led at 0.8613, followed by PP-SAM at 0.8436.
+
+For RQ3, 50-pixel expansion reduced mean Dice relative to 0 and 10 pixels in every verified series.
+Point prompts improved Dice for SAM-B and MSA-B on CVC-ClinicDB. On Kvasir, they reduced
+Dice for SAM-B and slightly improved it for MSA-B. Translation effects varied by direction and
+model. Area and contrast group rankings varied by model, dataset and metric.
+
+6.2 Contributions and scope
+
+The study compared released and polyp-adapted checkpoints under a common 30-pixel box protocol
+and recomputed surface HD95 from saved masks using one definition. The main results describe
+single-frame segmentation given annotation-derived location cues. The formal few-shot comparisons
+use one training run per method and budget. The boundary analysis uses an image-derived contrast
+proxy.
+
+6.3 Future work
+
+Independent endoscopy expert ratings can test whether the contrast proxy reflects perceived boundary
+visibility. Report agreement among raters and with the proxy.
+
+Repeat the budget study with multiple support draws and optimisation seeds under matched training
+schedules to estimate the effect of label count more reliably.
+
+Compare training with tight boxes, fixed-pixel expansions and margins proportional to box width and
+height. Hold the initial checkpoint, training split and optimisation schedule fixed, then evaluate all
+three strategies on the same prompt conditions.
+Evaluate an image-based localiser with fixed segmentation checkpoints on held-out data. Report
+missed proposals and mask errors on prompted frames to identify where accuracy is lost.
+
+
+                                                                                                    24
+References
+[1] D.-P. Fan et al., “PraNet: Parallel Reverse Attention Network for Polyp Segmentation,” in
+Medical Image Computing and Computer Assisted Intervention, 2020, pp. 263–273. doi:
+10.1007/978-3-030-59725-2_26.
+[2] T. Kim, H. Lee, and D. Kim, “UACANet: Uncertainty Augmented Context Attention for Polyp
+Segmentation,” in Proc. ACM International Conference on Multimedia, 2021, pp. 2167–2175. doi:
+10.1145/3474085.3475375.
+[3] S. Ali et al., “A multi-centre polyp detection and segmentation dataset for generalisability
+assessment,” Scientific Data, vol. 10, art. 75, 2023. doi: 10.1038/s41597-023-01981-y.
+[4] A. Kirillov et al., “Segment Anything,” in Proc. IEEE/CVF International Conference on
+Computer Vision, 2023, pp. 4015–4026. arXiv:2304.02643.
+[5] J. Ma et al., “Segment anything in medical images,” Nature Communications, vol. 15, art. 654,
+2024. doi: 10.1038/s41467-024-44824-z.
+[6] D. Jha et al., “Kvasir-SEG: A Segmented Polyp Dataset,” in Multimedia Modeling, 2020, pp.
+451–462. doi: 10.1007/978-3-030-37734-2_37.
+[7] J. Bernal et al., “WM-DOVA maps for accurate polyp highlighting in colonoscopy: Validation
+vs. saliency maps from physicians,” Computerized Medical Imaging and Graphics, vol. 43, pp. 99–
+111, 2015. doi: 10.1016/j.compmedimag.2015.02.007.
+[8] E. J. Hu et al., “LoRA: Low-Rank Adaptation of Large Language Models,” in Proc.
+International Conference on Learning Representations, 2022. arXiv:2106.09685.
+[9] K. Zhang and D. Liu, “Customized Segment Anything Model for Medical Image
+Segmentation,” arXiv:2304.13785, 2023.
+[10] J. Wu et al., “Medical SAM adapter: Adapting segment anything model for medical image
+segmentation,” Medical Image Analysis, vol. 102, art. 103547, 2025. doi:
+10.1016/j.media.2025.103547.
+[11] M. M. Rahman et al., “PP-SAM: Perturbed Prompts for Robust Adaption of Segment Anything
+Model for Polyp Segmentation,” in Proc. IEEE/CVF Conference on Computer Vision and Pattern
+Recognition Workshops, 2024, pp. 4989–4995.
+[12] J. Silva, A. Histace, O. Romain, X. Dray, and B. Granado, “Toward embedded detection of
+polyps in WCE images for early diagnosis of colorectal cancer,” International Journal of Computer
+Assisted Radiology and Surgery, vol. 9, no. 2, pp. 283–293, 2014, doi: 10.1007/s11548-013-0926-
+3.
+[13] J. Bernal, F. J. Sánchez, and F. Vilariño, “Towards automatic polyp detection with a polyp
+appearance model,” Pattern Recognition, vol. 45, no. 9, pp. 3166–3182, 2012, doi:
+10.1016/j.patcog.2012.03.002.
+[14] D.-P. Fan et al., “PraNet benchmark test dataset,” PraNet project repository. [Online].
+Available: https://github.com/DengPingFan/PraNet#31-trainingtesting
+
+
+
+
+                                                                                                   25
+Appendix A Reproduction Index
+The source package includes REPRODUCTION.md, which gives commands and data assumptions
+for the archived experiments. The primary evaluation uses the fixed Kvasir-SEG and CVC-ClinicDB
+partitions and the annotation-derived box defined in Section 3.4. Checkpoint selection and training
+settings are described in Section 4.3. The original training and inference scripts and pretrained
+weights are held in the accompanying implementation workspace.
+
+Table A.1 Inputs and outputs for the reported comparisons
+
+ Results                        Inputs and run records               Scripts or outputs
+
+ Primary comparison and         Kvasir train and validation lists,   Model evaluators in the
+ annotation budgets,            CVC-ClinicDB images, the             implementation workspace.
+ Tables 5.1, 5.2 and 5.4        checkpoint and run locations in      Surface metric export from
+                                NUMBERS_INDEX.md                     build_full_hd95_table.py.
+
+ External evaluation, Table Screened identifiers and image and       run_external_and_speed.py and
+ 5.3                            mask hashes in                       extend_external_evaluation.py.
+                                duplicate_label_audit.csv.           Reviewed summary and per-image
+                                Checkpoint hashes in the             CSVs.
+                                extension's run.json.
+
+ Prompt comparisons,            Archived expansion runs and          evaluate_prompt_variants.py and
+ Section 5.3                    paired prompt records for SAM-B      sequence_prompt_statistics.py.
+                                and MSA-B                            Per-image and sequence-level
+                                                                     paired effects.
+
+ Image subgroups and            Archived masks and data paths.       complete_supplement.py and
+ timing, Sections 5.4 and       Fixed timing sample and recorded     run_external_and_speed.py.
+ 5.5                            GPU environment.                     Subgroup tables and timing
+                                                                     summaries.
+The standalone prompt_toolkit.py utility generates boxes and points from binary annotations. The
+dedicated prompt-variant evaluator caps box translation while preserving box dimensions, as
+described in Section 3.4.
+
+
+
+
+                                                                                                       26
+Appendix B Pseudo-label and Automatic-prompt Pilot
+The pilot trained a supervised pixel classifier on 24 labelled Kvasir-SEG training frames. A second
+classifier used the same labelled pixels plus pseudo-labelled pixels from another 120 training frames.
+Pixels with teacher probabilities of at most 0.10 or at least 0.90 were eligible for pseudo-labelling.
+The pseudo-labelled pixels received half the weight of the labelled pixels during training. A separate
+experiment supplied the largest predicted foreground component's box to frozen SAM-B. Missing
+proposals yielded empty predictions.
+
+Table B.1 Mean Dice and IoU for the exploratory pilot
+
+ Configuration                              Kvasir-SEG validation,    CVC-ClinicDB, Dice / IoU
+                                            Dice / IoU
+
+ Supervised pixel classifier                0.2139 / 0.1342           0.0785 / 0.0479
+
+ Pixel classifier with pseudo-labels        0.2154 / 0.1361           0.0793 / 0.0490
+
+ Teacher-generated box with SAM-B           0.2644 / 0.2028           0.1298 / 0.1004
+
+ Annotation-derived reference box           0.7497 / 0.6680           0.5182 / 0.4300
+ with SAM-B
+The teacher yielded a box on 109 of 120 Kvasir validation frames and 241 of 612 CVC frames.
+Adding pseudo-labels changed mean Dice by approximately 0.0015 and 0.0008, respectively. These
+results describe one training split and a lightweight pixel classifier. A separate study would be needed
+to estimate the effects of pseudo-labels on SAM fine-tuning.
+
+
+
+
+                                                                                                      27
+

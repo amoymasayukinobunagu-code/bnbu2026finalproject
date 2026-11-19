@@ -1,0 +1,13 @@
+condition,seed,dataset,n,dice,iou
+fixed_support,1234,CVC-ClinicDB-one-frame-per-sequence,29,0.5007952710805391,0.35741839192902036
+fixed_support,1234,Kvasir-SEG-val,120,0.6069787066688362,0.47113670831686333
+fixed_support,2345,CVC-ClinicDB-one-frame-per-sequence,29,0.46926586062737424,0.3190447611359795
+fixed_support,2345,Kvasir-SEG-val,120,0.6313359170389083,0.4863264497767921
+fixed_support,3456,CVC-ClinicDB-one-frame-per-sequence,29,0.4643258643441412,0.31753868089191795
+fixed_support,3456,Kvasir-SEG-val,120,0.5436673158772611,0.4029030777145464
+resampled_support,1234,CVC-ClinicDB-one-frame-per-sequence,29,0.4839531093533181,0.3366088192052597
+resampled_support,1234,Kvasir-SEG-val,120,0.6682110442297612,0.5275884818592547
+resampled_support,2345,CVC-ClinicDB-one-frame-per-sequence,29,0.508663241276363,0.35998751364376813
+resampled_support,2345,Kvasir-SEG-val,120,0.604648942417327,0.4699315848460724
+resampled_support,3456,CVC-ClinicDB-one-frame-per-sequence,29,0.5821856632390471,0.4434551305103801
+resampled_support,3456,Kvasir-SEG-val,120,0.6937366369366359,0.5700968430934811

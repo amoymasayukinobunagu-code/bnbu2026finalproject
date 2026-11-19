@@ -1,0 +1,36 @@
+% Auto-exported from official summary.json in FYP_FINAL on 2026-11-17
+% Do not mix with June 2026 stale tables. PP-SAM is not labelled Ours.
+% Eval protocol: GT tight box + fixed outward expand (default 30 px), not random jitter.
+% Dice ± is test-image std, not multi-seed. FPS is not a unified measurement.
+\begin{table}[ht]
+\centering
+\caption{Additional verified baselines for the appendix (same v3 box-prompt protocol). These rows are not required in the Index 1 core comparison table. Exported from official \texttt{summary.json} on 2026-11-17.}
+\label{tab:appendix-extra}
+\begin{tabular}{llccccccc}
+\toprule
+Method & Dataset & N & Dice $\uparrow$ & IoU $\uparrow$ & Prec. & Rec. & HD95 $\downarrow$ & FPS$^*$ \\
+\midrule
+HQ-SAM ViT-B (zero-shot) & Kvasir-SEG val & 120 & 0.8007 ± 0.219 & 0.7104 & 0.7633 & 0.8891 & 91.09 & 7.71 \\
+HQ-SAM ViT-B (zero-shot) & CVC-ClinicDB & 612 & 0.6525 ± 0.294 & 0.5477 & 0.6339 & 0.7996 & 51.72 & 7.93 \\
+SAM3 (zero-shot, box XYXY) & Kvasir-SEG val & 120 & 0.7661 ± 0.247 & 0.6715 & 0.7057 & 0.8857 & 96.75 & 7.26 \\
+SAM3 (zero-shot, box XYXY) & CVC-ClinicDB & 612 & 0.6287 ± 0.275 & 0.5104 & 0.5268 & 0.8521 & 56.81 & 7.60 \\
+SAM ViT-H (zero-shot) & Kvasir-SEG val & 120 & 0.7574 ± 0.299 & 0.6808 & 0.7187 & 0.8360 & 102.04 & 2.29 \\
+SAM ViT-H (zero-shot) & CVC-ClinicDB & 612 & 0.6323 ± 0.329 & 0.5378 & 0.5597 & 0.7932 & 55.93 & 2.30 \\
+SAM2.1 Hiera-S (zero-shot) & Kvasir-SEG val & 120 & 0.7738 ± 0.218 & 0.6727 & 0.6986 & 0.9174 & 104.11 & 13.96 \\
+SAM2.1 Hiera-S (zero-shot) & CVC-ClinicDB & 612 & 0.5378 ± 0.314 & 0.4291 & 0.4512 & 0.7844 & 65.36 & 16.15 \\
+SAM2.1 Hiera-B+ (zero-shot) & Kvasir-SEG val & 120 & 0.7318 ± 0.236 & 0.6227 & 0.6455 & 0.9058 & 121.48 & 10.24 \\
+SAM2.1 Hiera-B+ (zero-shot) & CVC-ClinicDB & 612 & 0.4475 ± 0.288 & 0.3345 & 0.3655 & 0.7043 & 82.14 & 13.74 \\
+SAM2.1 Hiera-L (zero-shot) & Kvasir-SEG val & 120 & 0.7121 ± 0.296 & 0.6203 & 0.6438 & 0.8544 & 110.46 & 6.31 \\
+SAM2.1 Hiera-L (zero-shot) & CVC-ClinicDB & 612 & 0.5754 ± 0.299 & 0.4629 & 0.4815 & 0.8182 & 62.73 & 6.52 \\
+MobileSAM (zero-shot) & Kvasir-SEG val & 120 & 0.7848 ± 0.204 & 0.6838 & 0.7100 & 0.9393 & 102.09 & 24.54 \\
+MobileSAM (zero-shot) & CVC-ClinicDB & 612 & 0.5974 ± 0.283 & 0.4810 & 0.4962 & 0.8644 & 59.46 & 33.59 \\
+SAM-Med2D (zero-shot) & Kvasir-SEG val & 120 & 0.6577 ± 0.203 & 0.5230 & 0.7909 & 0.6086 & 97.77 & 29.55 \\
+SAM-Med2D (zero-shot) & CVC-ClinicDB & 612 & 0.5922 ± 0.239 & 0.4611 & 0.6538 & 0.5929 & 51.25 & 30.44 \\
+SAMUS (zero-shot) & Kvasir-SEG val & 120 & 0.6024 ± 0.199 & 0.4571 & 0.5323 & 0.7456 & 138.40 & 20.53 \\
+SAMUS (zero-shot) & CVC-ClinicDB & 612 & 0.3516 ± 0.215 & 0.2348 & 0.3021 & 0.4863 & 87.19 & 20.08 \\
+MedSAM+MSA (880) & Kvasir-SEG val & 120 & 0.7820 ± 0.183 & 0.6738 & 0.7725 & 0.8637 & 200.80 & 21.32 \\
+MedSAM+MSA (880) & CVC-ClinicDB & 612 & 0.7143 ± 0.257 & 0.6091 & 0.7113 & 0.8103 & 101.44 & 24.01 \\
+\bottomrule
+\end{tabular}
+\\[0.4em]{\small $^*$FPS values are taken from the same official \texttt{summary.json} and are not a unified speed test.}
+\end{table}

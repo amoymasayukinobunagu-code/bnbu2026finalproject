@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "started_at": "2026-11-18T17:24:29.002807+08:00",
+  "checkpoint": "E:\\Project\\FYP\\checkpoints\\sam_vit_b.pth",
+  "checkpoint_sha256": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912",
+  "official_per_image_sha256": "506f8dc3039919b40b3598c160c0bb1ccce91379875083e7d3e070becba532c7",
+  "random_seeds": [
+    24,
+    42,
+    1234
+  ],
+  "script_sha256": "92865dad01f4ab6306ad1607b45362a1b508042578cc60b62ffa3c6e31d0c0e5",
+  "toolkit_sha256": "2f25092848f6b3e984c80982f01ee74bb29343e6c841d6f3030385f21881569b",
+  "metric_script_sha256": "b9c14a446e3f72933b719b8e8b01f23b12b38befa826181d191925a5f7081bab",
+  "inference_runtime": {
+    "device": "cuda",
+    "torch": "2.11.0+cu126",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER"
+  },
+  "limit": null,
+  "model": "SAM ViT-B zero-shot",
+  "mask_selection": "single output for all conditions",
+  "translation": "round(5% of width or height), capped to available space, extent preserved",
+  "boundary_f1_tolerance": "max(1, round(0.005 * native image diagonal))",
+  "input_manifest_hashes": {
+    "prompts_kvasir_val.json": "1cb84eb33990226cc82749cd697716730503b4c5ce285f4ef752c5b355df2694",
+    "prompts_cvc.json": "37f8fe035594de1db204bffa7f2e1cb796a221f546170cea67cf9f34b5208113"
+  },
+  "max_baseline_errors": {
+    "Kvasir-SEG-val": {
+      "dice": 0.0,
+      "iou": 0.0,
+      "n": 120
+    },
+    "CVC-ClinicDB": {
+      "dice": 0.0,
+      "iou": 0.0,
+      "n": 612
+    }
+  },
+  "n_rows": 7320,
+  "elapsed_seconds": 146.69
+}

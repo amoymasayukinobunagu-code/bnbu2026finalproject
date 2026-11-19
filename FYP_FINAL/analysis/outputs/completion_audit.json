@@ -1,0 +1,111 @@
+{
+  "input_hashes_rechecked": 8234,
+  "changed_inputs": [],
+  "versions": {
+    "numpy": "2.2.5",
+    "scipy": "1.15.3",
+    "opencv": "4.13.0",
+    "matplotlib": "3.10.8",
+    "pandas": "2.3.3"
+  },
+  "tests": {
+    "toolkit": 5,
+    "surface_metrics": 2,
+    "original_box_helper_comparisons": 400
+  },
+  "prompt_records": 732,
+  "word_pages": 7,
+  "word_visual_review": "all final PNG pages inspected",
+  "figures": [
+    {
+      "path": "manuscript\\figures\\supplementary\\boundary_proxy_examples.png",
+      "sha256": "02161d39a8d54625181fd047db6597354df37ddfb399c9ab99a486660db9dd19",
+      "pixel_dimensions": [
+        2640,
+        1430
+      ]
+    },
+    {
+      "path": "manuscript\\figures\\supplementary\\boundary_proxy_examples.svg",
+      "sha256": "d61d8d2fb7634ad1b0aa8230736db350c47411daeb69c3b8dc19b569f7b0a3d2"
+    },
+    {
+      "path": "manuscript\\figures\\supplementary\\contrast_boundary_f1.png",
+      "sha256": "1ee67be5a22f9b4601e31a938cbbc53d50923403cddcdc26e2b19c2d1e9cbd7c",
+      "pixel_dimensions": [
+        2420,
+        1011
+      ]
+    },
+    {
+      "path": "manuscript\\figures\\supplementary\\contrast_boundary_f1.svg",
+      "sha256": "5b6a5a82cfc4c45c7c0077b01ca88db04480f2ec87a51059e9a3f055f3a89b8c"
+    },
+    {
+      "path": "manuscript\\figures\\supplementary\\contrast_dice.png",
+      "sha256": "2875776615904756c20ed2cbc01b124f98806db8ad0e014915cf7875759009ac",
+      "pixel_dimensions": [
+        2420,
+        1011
+      ]
+    },
+    {
+      "path": "manuscript\\figures\\supplementary\\contrast_dice.svg",
+      "sha256": "4d23b6f1aa339a0dae5eb391f1978b3e5ef726a2071af6205d8a9306cd956532"
+    },
+    {
+      "path": "manuscript\\figures\\supplementary\\prompt_expansion.png",
+      "sha256": "c9e8219adee7e31be0d955b1406f6fed4f5b97a974547fc6cc63c2e197819f95",
+      "pixel_dimensions": [
+        2200,
+        880
+      ]
+    },
+    {
+      "path": "manuscript\\figures\\supplementary\\prompt_expansion.svg",
+      "sha256": "05f4a1072fcfde79c8333bd5393eec0574288f6b46507e2fe0e0b92d15fef032"
+    },
+    {
+      "path": "manuscript\\figures\\supplementary\\scale_dice.png",
+      "sha256": "4e1568dca1473025dfdd5ffc7193e368c48e07355d26a1304681a8d952e771ef",
+      "pixel_dimensions": [
+        2420,
+        1011
+      ]
+    },
+    {
+      "path": "manuscript\\figures\\supplementary\\scale_dice.svg",
+      "sha256": "a8f9ed32afe20fe37be67cf89faaa3503f285b5e9104cb17519888b538df6480"
+    }
+  ],
+  "code_hashes": [
+    {
+      "path": "analysis/PROTOCOL.md",
+      "sha256": "577d28dbace2a4c4154aab2d47b2133133dbc40f9a441e7b400cd8ecd11f1701"
+    },
+    {
+      "path": "analysis/complete_supplement.py",
+      "sha256": "b9c14a446e3f72933b719b8e8b01f23b12b38befa826181d191925a5f7081bab"
+    },
+    {
+      "path": "analysis/build_supplement_report.py",
+      "sha256": "7622b4c3b4b79270d8f2897b35d4cef5f43d7f4e97b49819aa0064590e9047bf"
+    },
+    {
+      "path": "tools/prompt_toolkit.py",
+      "sha256": "2f25092848f6b3e984c80982f01ee74bb29343e6c841d6f3030385f21881569b"
+    },
+    {
+      "path": "tools/README.md",
+      "sha256": "b16a4d754b804b3187e3663fcfcd9c7a2eb4839a95ab48efd50ae8434fb9b703"
+    },
+    {
+      "path": "tools/test_prompt_toolkit.py",
+      "sha256": "08d676edf2c70d77aeda4c6355f8a7d159cfce42065a32b9d0ea6bdc80b31513"
+    },
+    {
+      "path": "analysis/test_analysis_metrics.py",
+      "sha256": "04b24493ec21af6287cab6e7a4a4c80cdf7242c2b88176de96c07b42b4faa6aa"
+    }
+  ]
+}

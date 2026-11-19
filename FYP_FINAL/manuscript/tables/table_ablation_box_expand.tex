@@ -1,0 +1,42 @@
+% Auto-exported from ablation summary.json on 2026-11-17
+% MedSAM+LoRA CVC 0/10/50 are NOT in this machine-run table; see USER_PROVIDED_MEDSAM_CVC.md.
+% SAMed Kvasir box 30 is the local run (0.8951), not the official cloud 0.8955.
+\begin{table}[ht]
+\centering
+\caption{Fixed outward box expand (0/10/30/50 pixels), not random jitter. MedSAM+LoRA CVC entries are omitted here because boxes 0/10/50 were user-provided and not re-run on this machine; see the marked note in the ablation folder. SAMed Kvasir box 30 is the local 0.8951 (official cloud eval is 0.8955). Exported on 2026-11-17.}
+\label{tab:box-expand}
+\begin{tabular}{llccc}
+\toprule
+Method & Dataset & Box & Dice & IoU \\
+\midrule
+MedSAM+LoRA r4 (Kvasir, this machine) & Kvasir-SEG val & 0 & 0.9269 & 0.8712 \\
+MedSAM+LoRA r4 (Kvasir, this machine) & Kvasir-SEG val & 10 & 0.9201 & 0.8614 \\
+MedSAM+LoRA r4 (Kvasir, this machine) & Kvasir-SEG val & 30 & 0.9049 & 0.8375 \\
+MedSAM+LoRA r4 (Kvasir, this machine) & Kvasir-SEG val & 50 & 0.8883 & 0.8120 \\
+PP-SAM full 880 & Kvasir-SEG val & 0 & 0.9228 & 0.8637 \\
+PP-SAM full 880 & Kvasir-SEG val & 10 & 0.9280 & 0.8720 \\
+PP-SAM full 880 & Kvasir-SEG val & 30 & 0.9226 & 0.8630 \\
+PP-SAM full 880 & Kvasir-SEG val & 50 & 0.9071 & 0.8394 \\
+PP-SAM full 880 & CVC-ClinicDB & 0 & 0.8859 & 0.8113 \\
+PP-SAM full 880 & CVC-ClinicDB & 10 & 0.8948 & 0.8221 \\
+PP-SAM full 880 & CVC-ClinicDB & 30 & 0.8576 & 0.7699 \\
+PP-SAM full 880 & CVC-ClinicDB & 50 & 0.8025 & 0.7016 \\
+SAMed r4 (this machine; see source note for box 30) & Kvasir-SEG val & 0 & 0.9039 & 0.8419 \\
+SAMed r4 (this machine; see source note for box 30) & Kvasir-SEG val & 10 & 0.9019 & 0.8385 \\
+SAMed r4 (this machine; see source note for box 30) & Kvasir-SEG val & 30 & 0.8951 & 0.8273 \\
+SAMed r4 (this machine; see source note for box 30) & Kvasir-SEG val & 50 & 0.8866 & 0.8147 \\
+SAMed r4 (this machine) & CVC-ClinicDB & 0 & 0.8680 & 0.7975 \\
+SAMed r4 (this machine) & CVC-ClinicDB & 10 & 0.8729 & 0.8012 \\
+SAMed r4 (this machine) & CVC-ClinicDB & 30 & 0.8608 & 0.7814 \\
+SAMed r4 (this machine) & CVC-ClinicDB & 50 & 0.8366 & 0.7506 \\
+MSA-B & Kvasir-SEG val & 0 & 0.8573 & 0.7869 \\
+MSA-B & Kvasir-SEG val & 10 & 0.8573 & 0.7871 \\
+MSA-B & Kvasir-SEG val & 30 & 0.8524 & 0.7826 \\
+MSA-B & Kvasir-SEG val & 50 & 0.8462 & 0.7770 \\
+MSA-B & CVC-ClinicDB & 0 & 0.7894 & 0.7082 \\
+MSA-B & CVC-ClinicDB & 10 & 0.7802 & 0.6998 \\
+MSA-B & CVC-ClinicDB & 30 & 0.7685 & 0.6896 \\
+MSA-B & CVC-ClinicDB & 50 & 0.7618 & 0.6840 \\
+\bottomrule
+\end{tabular}
+\end{table}

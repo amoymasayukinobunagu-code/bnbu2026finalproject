@@ -1,0 +1,34 @@
+{
+  "Kvasir-SEG-val": {
+    "n": 120,
+    "dice_mean": 0.3823089624314105,
+    "dice_std": 0.31289325681651586,
+    "iou_mean": 0.2952074607030298,
+    "iou_std": 0.30898688936648805,
+    "precision_mean": 0.30796758601435353,
+    "recall_mean": 0.9529104114831041,
+    "hd95_mean": 308.6719565884123,
+    "fps_mean": 0.7854817273020456,
+    "support_stem": "cju0qkwl35piu0993l0dewei2",
+    "mode": "spf+epe",
+    "use_spf": true,
+    "use_epe": true,
+    "feature_layer": 7
+  },
+  "CVC-ClinicDB": {
+    "n": 612,
+    "dice_mean": 0.2889056094945814,
+    "dice_std": 0.281149069236397,
+    "iou_mean": 0.21208437252429774,
+    "iou_std": 0.2673474144148331,
+    "precision_mean": 0.21919790996811972,
+    "recall_mean": 0.9130130569540447,
+    "hd95_mean": 172.23112648817573,
+    "fps_mean": 0.8433960257361107,
+    "support_stem": "cju0qkwl35piu0993l0dewei2",
+    "mode": "spf+epe",
+    "use_spf": true,
+    "use_epe": true,
+    "feature_layer": 7
+  }
+}
